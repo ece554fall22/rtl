@@ -21,6 +21,7 @@ always@(op) begin
         4'b0101: out = A ^ B:
         4'b0110: out = A << B;
         4'b0111: out = A >> B;
+        4'b1000: out = A - B;
         default: out = 32'b0;
     end
 end
