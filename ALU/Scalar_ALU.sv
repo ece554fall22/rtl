@@ -12,7 +12,7 @@ output logic nz, ez, lz, gz, le, ge;
 logic nz_next, ez_next, lz_next, gz_next, le_next, ge_next;
 
 always@(op) begin
-    case(op) begin
+    case(op) 
         4'b0000: out = A + B;
         4'b0001: out = A - B;
         4'b0010: out = A * B;
@@ -23,7 +23,7 @@ always@(op) begin
         4'b0111: out = A >> B[3:0];
         4'b1000: out = A - B;
         default: out = 32'b0;
-    end
+    endcase
 end
 
 assign nz_next = out != 36'b0;
