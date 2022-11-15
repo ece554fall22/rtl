@@ -1,0 +1,20 @@
+module fp_alu(A, B, op, out, gt);
+
+input [31:0] A, B;
+input [1:0] op;
+output logic [31:0] out;
+output logic gt;
+
+shortreal operand1, operand2, output;
+
+assign out = output;
+
+always_comb begin
+     operand1 = $bitstoshortreal(a);
+     operand2 = $bitstoshortreal(b);
+     output = (op == 2'b00) ? operand1 + operand2:
+              (op == 2'b01) ? operand1 - operand2:
+              (op == 2'b10) ? operand1 * operand2:
+              (op == 2'b11) ? operand2;
+    gt = (op == 2'b11) ? operand1 > operand2 : 0;
+end
