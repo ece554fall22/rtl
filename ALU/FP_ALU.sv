@@ -5,16 +5,18 @@ input [1:0] op;
 output logic [31:0] out;
 output logic gt;
 
-shortreal operand1, operand2, output;
+shortreal operand1, operand2, flout_out;
 
-assign out = output;
+assign out = flout_out;
 
 always_comb begin
      operand1 = $bitstoshortreal(a);
      operand2 = $bitstoshortreal(b);
-     output = (op == 2'b00) ? operand1 + operand2:
+     flout_out = (op == 2'b00) ? operand1 + operand2:
               (op == 2'b01) ? operand1 - operand2:
               (op == 2'b10) ? operand1 * operand2:
-              (op == 2'b11) ? operand2;
+              operand2;
     gt = (op == 2'b11) ? operand1 > operand2 : 0;
 end
+
+endmodule
