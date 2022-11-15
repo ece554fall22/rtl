@@ -1,9 +1,9 @@
 
-module alu (A, B, op, out, zf, sf, of, clk, rst_n);
-
+module alu (A, B, op, out, nz, ez, lz, gz, le, ge, clk, rst_n);
+input clk, rst_n;
 input [35:0] A, B;
 
-input [3:0] op
+input [3:0] op;
 
 output logic [35:0] out;
 
@@ -18,7 +18,7 @@ always@(op) begin
         4'b0010: out = A * B;
         4'b0011: out = A & B;
         4'b0100: out = A | B;
-        4'b0101: out = A ^ B:
+        4'b0101: out = A ^ B;
         4'b0110: out = A << B[3:0];
         4'b0111: out = A >> B[3:0];
         4'b1000: out = A - B;

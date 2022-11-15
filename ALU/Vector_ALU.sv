@@ -1,4 +1,5 @@
-module vector_alu(v1, v2, r1, r2, op, imm, clk, rst_n, en);
+module vector_alu(v1, v2, r1, r2, op, imm, clk, rst_n, en, vout, rout);
+input clk, rst_n, en;
 input [31:0] v1 [3:0];
 input [31:0] v2 [3:0];
 input [31:0] r1, r2;
@@ -321,4 +322,5 @@ always_comb begin
         end
     endcase
 end
+endmodule
 
