@@ -3,15 +3,15 @@ module alu (A, B, op, out, nz, ez, lz, gz, le, ge, clk, rst_n);
 input clk, rst_n;
 input [35:0] A, B;
 
-input [3:0] op;
+input [3:0] op;  // TODO: Micro Doc says [2:0]?
 
 output logic [35:0] out;
 
-output logic nz, ez, lz, gz, le, ge;
+output logic nz, ez, lz, gz, le, ge;  // TODO: ALU Flags?
 
 logic nz_next, ez_next, lz_next, gz_next, le_next, ge_next;
 
-always@(op) begin
+always@(op) begin //TODO: if two instructions that are the same come back to back, the output wont't change
     case(op) 
         4'b0000: out = A + B;
         4'b0001: out = A - B;
@@ -21,7 +21,7 @@ always@(op) begin
         4'b0101: out = A ^ B;
         4'b0110: out = A << B[3:0];
         4'b0111: out = A >> B[3:0];
-        4'b1000: out = A - B;
+        4'b1000: out = A - B;  // TODO: What is this?
         default: out = 32'b0;
     endcase
 end
