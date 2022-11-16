@@ -5,7 +5,7 @@ module tb_scalar_ALU();
     // inputs
     logic [35:0] A, B;
     logic [3:0] op;
-    logic clk, rst_n; // TODO: figure out how to make these signals
+    logic clk, rst_n;
 
     logic [35:0] out;
     logic [35:0] correct_out;
@@ -105,7 +105,6 @@ module tb_scalar_ALU();
         endcase
 
         if (error == 1'b1) begin
-            // TODO: Display incorrect values
             $display("Error check: A = %h , B = %h, op = %b, Out = %h, Expected Output: %h", A, B, op, out, correct_out);
             fail = 1'b1;
         end
