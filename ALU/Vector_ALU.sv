@@ -36,7 +36,7 @@ genvar i;
     generate;
         for (i=1; i<3; ++i) begin
             always_ff@( posedge clk, negedge rst_n ) begin
-                if (rst_n) begin 
+                if (!rst_n) begin 
                     out1[i] <= '0;
                     out2[i] <= '0;
                     out3[i] <= '0;
@@ -70,7 +70,7 @@ genvar i;
     endgenerate
 
 always_ff@( posedge clk, negedge rst_n ) begin
-    if (rst_n) begin 
+    if (!rst_n) begin 
         out5_q <= '0;
         out6_q <= '0;
     end
