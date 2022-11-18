@@ -100,13 +100,13 @@ assign b2 = (Sel_2 == 2'b00) ? v1[3] :
 assign b3 = (Sel_34) ? r1 : v2[2];
 assign b4 = (Sel_34) ? r1 : v2[3];
 
-fp_alu alu1 (.A(a1), .B(b1), .op(op1), .out(out1[0]), .gt(gts[0]));
+fp_alu alu1 (.A(a1), .B(b1), .op(op1), .out(out1[0]), .gt(gts[0][0]));
 
-fp_alu alu2 (.A(a2), .B(b2), .op(op2), .out(out2[0]), .gt(gts[1]));
+fp_alu alu2 (.A(a2), .B(b2), .op(op2), .out(out2[0]), .gt(gts[0][1]));
 
-fp_alu alu3 (.A(v1[2]), .B(b3), .op(op3), .out(out3[0]), .gt(gts[2]));
+fp_alu alu3 (.A(v1[2]), .B(b3), .op(op3), .out(out3[0]), .gt(gts[0][2]));
 
-fp_alu alu4 (.A(v1[3]), .B(b4), .op(op4), .out(out4[0]), .gt(gts[3]));
+fp_alu alu4 (.A(v1[3]), .B(b4), .op(op4), .out(out4[0]), .gt(gts[0][3]));
 
 fp_alu alu5 (.A(out1[1]), .B(out2[1]), .op(2'b00), .out(out5_d), .gt());
 
