@@ -1,4 +1,5 @@
 // Created by: Leo Garcia Calderon & Mark Xia
+// TODO: add other functional tests after passed the ADD function test
 module tb_vector_ALU();
 
 // Input signals
