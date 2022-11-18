@@ -1,5 +1,4 @@
 // Created by: Leo Garcia Calderon & Mark Xia
-
 module tb_scalar_ALU();
 
     // inputs
@@ -11,6 +10,7 @@ module tb_scalar_ALU();
     logic [35:0] correct_out;
     logic error;
     logic nz, ez, lz, gz, le, ge;
+    logic correct_nz, correct_ez, correct_lz, correct_gz, correct_le, correct_ge;
     logic fail;
 
     alu a1 ( // inputs 
@@ -38,7 +38,7 @@ module tb_scalar_ALU();
         end
         else begin
             $display("YAHOO! TEST PASSED!");
-            $finish;
+            $stop;
         end
     end
 
@@ -99,7 +99,13 @@ module tb_scalar_ALU();
             end
             4'b1000 : begin //subtract
                 correct_out = A - B;
-                if (correct_out !== out)
+                correct_nz = correct_out != 36'b0;
+                correct_ez = ~correct_nz;
+                correct_lz = correct_out[35];
+                correct_gz = ~correct_lz;
+                correct_le = correct_lz | correct_ez;
+                correct_ge = correct_gz | correct_ez;
+                if ((correct_out !== out) && (correct_nz !== nz) && (correct_ez !== ez) && (correct_lz !== lz) && (correct_gz !== gz) && (correct_le !== le) && (correct_ge !== ge))
                     error = 1'b1;
             end
         endcase
