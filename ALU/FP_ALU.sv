@@ -10,8 +10,8 @@ shortreal operand1, operand2, flout_out;
 assign out = flout_out;
 
 always_comb begin
-     operand1 = $bitstoshortreal(a);
-     operand2 = $bitstoshortreal(b);
+     operand1 = $bitstoshortreal(A);
+     operand2 = $bitstoshortreal(B);
      flout_out = (op == 2'b00) ? operand1 + operand2:
               (op == 2'b01) ? operand1 - operand2:
               (op == 2'b10) ? operand1 * operand2:
