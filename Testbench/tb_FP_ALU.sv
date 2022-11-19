@@ -46,10 +46,10 @@ always @(negedge clk) begin
     correct_gt = '0;
 
     case(op)
-        2'b00 : begin
+        2'b00 : begin // TODO: add comments for op codes
             flout_out = operand1 + operand2;
             correct_out = flout_out;
-            if (correct_out !== out)
+                  if (correct_out !== out) // TODO: if statements need to be one line if no begin/end
                 error = 1'b1;
         end
         2'b01 : begin
