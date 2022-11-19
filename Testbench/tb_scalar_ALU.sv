@@ -59,7 +59,7 @@ module tb_scalar_ALU();
         case(op)
             4'b0000 : begin //add
                 correct_out = A + B;
-                if (correct_out !== out)
+                if (correct_out !== out) // TODO: put all if statements with no begin/end on the same line
                     error = 1'b1;
             end
             4'b0001 : begin //subtract
@@ -106,7 +106,7 @@ module tb_scalar_ALU();
                 correct_le = correct_lz | correct_ez;
                 correct_ge = correct_gz | correct_ez;
                 if ((correct_out !== out) && (correct_nz !== nz) && (correct_ez !== ez) && (correct_lz !== lz) && (correct_gz !== gz) && (correct_le !== le) && (correct_ge !== ge))
-                    error = 1'b1;
+                    error = 1'b1; // TODO: if statement is too long
             end
         endcase
 
