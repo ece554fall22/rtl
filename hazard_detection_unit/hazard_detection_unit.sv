@@ -114,7 +114,7 @@ endgenerate
         vector_stall_counter[i] <= 0;
       end
       else begin
-        vector_stall_counter[i] <= (i==0) ? mem_stall_in : vector_stall_counter[i-1];
+        vector_stall_counter[i] <= (i==0) ? full_stall : vector_stall_counter[i-1];
       end
     end
   end
@@ -158,9 +158,9 @@ endgenerate
 
   // buffers the vector pipelines results if the vector pipeline needs to be written back after the scalar pipeline result
   assign buffer_register = newer & register_wr_ens_v[DEPTH-1] & register_wr_ens_s[1];
-  assign next_buffer_register_sel = buffer_register & ~mem_stall_in;
+  assign next_buffer_register_sel = buffer_register & ~full_stall;
   assign buffer_vector =  newer & vector_wr_ens_v[DEPTH-1] & vector_wr_ens_s[1];
-  assign next_buffer_vector_sel = buffer_vector & ~mem_stall_in;
+  assign next_buffer_vector_sel = buffer_vector & ~full_stall;
 
   // chooses whether the scalar pipeline or vector pipeline (including bufferred and non-bufferred) get to use the wb stage this cycle
   assign vector_wb_sel = vector_wr_ens_v[DEPTH-1] & ~buffer_vector;
