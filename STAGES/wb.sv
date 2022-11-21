@@ -75,7 +75,7 @@ end
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     vector_pipeline_vwb_reg <= 0;						
-    vector_pipeline_mask <= 0;
+    vector_pipeline_mask_reg <= 0;
   end else if (buffer_vector) begin
     vector_pipeline_vwb_reg <= vector_pipeline_vwb;
     vector_pipeline_mask_reg <= vector_pipeline_mask;
