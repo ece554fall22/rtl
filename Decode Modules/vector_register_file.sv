@@ -22,7 +22,7 @@ genvar i;
 generate;
     for(i =0; i <4; i++) begin
         out1[i] = (we[i] & (read1 == write_addr)) ? write_vector[(i*VECTOR_REG_SIZE + VECTOR_REG_SIZE -1): VECTOR_REG_SIZE*i] : reg_data1[i];
-        out1[2] = (we[i] & (read2 == write_addr)) ? write_vector[(i*VECTOR_REG_SIZE + VECTOR_REG_SIZE -1): VECTOR_REG_SIZE*i] : reg_data2[i];
+        out2[i] = (we[i] & (read2 == write_addr)) ? write_vector[(i*VECTOR_REG_SIZE + VECTOR_REG_SIZE -1): VECTOR_REG_SIZE*i] : reg_data2[i];
     end
 endgenerate
 
