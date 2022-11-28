@@ -1,6 +1,8 @@
-module data_cache_controller
+module data_cache_controller #(
+parameter ID = 0
+)
 (
-input logic clk, rst, r,
+input logic clk, rst, r, faa,
 input logic [1:0] w_type, flushtype,
 input logic [35:0] addr, mem_addr_in,
 input logic [127:0] w_data, mem_data_in,
@@ -13,17 +15,22 @@ output logic [4:0] id_req_out,
 output logic [2:0] packet_type_req_out
 );
 
+logic [11:0] flush_ctr;
 logic [7:0] r_index, w_index;
 logic [21:0] r_tag, w_tag;
 logic [5:0] r_line, w_line, fill_buffer_write_line;
 logic [127:0] dcache_w_data, dcache_data_out, read_mod_write_data, store_buffer, fwd_data_reg;
-logic [127:0] read_mod_write_data_32, read_mod_write_data_36;
+logic [127:0] read_mod_write_data_32, read_mod_write_data_36, read_data_out;
 logic [4:0] [127:0] fill_buffer;
 logic [1:0] dcache_flushtype, w_way, way, w_type_reg, evict_way_reg, evict_line, fwd_reg, fwd;
+logic [1:0] flushtype_reg;
 logic w_tagcheck, hit, dirty, dcache_r, dcache_w, evict_way_capture, ctr_en;
 logic fill_stall, fill_buffer_en, synch_buffer_rst, r_reg, fill_buffer_write;
+logic clean_dirty_reg, clean_dirty, clean_dirty_en, no_tagcheck_read;
+logic flush_ctr_en, flush_ctr_en_4, flush_ctr_en_16;
 logic [35:0] addr_reg, evict_addr_reg;
-logic [3:0] fill_buffer_valids, fill_buffer_writtens;
+logic [3:0] fill_buffer_valids, fill_buffer_writtens, dirty_array;
+
 
 // instantiation of data cache module
 data_cache dcache(.clk(clk), .rst(rst), .r_index(r_index), .w_index(w_index), 
@@ -31,11 +38,20 @@ data_cache dcache(.clk(clk), .rst(rst), .r_index(r_index), .w_index(w_index),
                   .w_data(dcache_w_data), .data_out(dcache_data_out),
                   .flushtype(dcache_flushtype), .w_way(w_way), .way(way),
                   .w_tagcheck(w_tagcheck), .hit(hit), .dirty(dirty),
-                  .r(dcache_r), .w(dcache_w));
+                  .r(dcache_r), .w(dcache_w), .dirty_array(dirty_array), .no_tagcheck_read(no_tagcheck_read),
+                  .no_tagcheck_way(flush_ctr[3:2]));
+
+assign id_req_out = ID;
 
 enum {
 idle, writing_back, write_back_ack_wait, 
-sending_fill_req, waiting_on_fill} 
+sending_fill_req, waiting_on_fill,
+flushing_line, flush_line_ack_wait,
+flushing_dirty, flush_dirty_ack_wait,
+flushing_clean, fetch_and_add_send,
+fetch_and_add_receive, synch_write,
+synch_write_ack_wait, synch_read_send,
+synch_read_receive} 
 state, next_state; 
 
 // FSM state logic
@@ -62,12 +78,58 @@ always_comb begin
   mem_data_out = dcache_data_out;
   mem_addr_out = addr;
   synch_buffer_rst = 1'b0;
+  dcache_flushtype = 2'b00;
+  no_tagcheck_read = 1'b0;
+  flush_ctr_en = 1'b0;
+  flush_ctr_en_4 = 1'b0;
+  flush_ctr_en_16 = 1'b0;
+  data_out = read_data_out;
 
   case(state)
 
       // cache hits, read and writes should all be processed in idle
       idle: begin
-           if (~hit & dirty) begin     // dirty miss means that writeback to memory is needed
+           if (~|addr[35:6]) begin
+             stall = 1'b1;
+             mem_data_out = w_data;
+             if(faa) begin
+               overwrite = ~|packet_type_req_in;
+               packet_type_req_out = 3'b111;
+               next_state = (~|packet_type_req_in) ? fetch_and_add_send : fetch_and_add_receive;
+             end else if (|w_type) begin
+               overwrite = ~|packet_type_req_in;
+               packet_type_req_out = 3'b010;
+               next_state = (~|packet_type_req_in) ? synch_write : synch_write_ack_wait;
+             end else if (r) begin
+               overwrite = ~|packet_type_req_in;
+               packet_type_req_out = 3'b100;
+               next_state = (~|packet_type_req_in) ?synch_read_send : synch_read_receive;
+             end			
+           end else if (flushtype_reg == 2'b11) begin
+             next_state = flushing_clean;
+             evict_way_capture = 1'b1;
+             stall = 1'b1;
+             dcache_w = 1'b0;
+             dcache_r = 1'b1;
+             r_index = flush_ctr[11:4];
+             r_line = {flush_ctr[1:0], 3'b000};
+           end else if (flushtype_reg == 2'b10) begin
+             next_state = flushing_dirty;
+             evict_way_capture = 1'b1;
+             stall = 1'b1;
+             dcache_w = 1'b0;
+             dcache_r = 1'b1;
+             r_index = flush_ctr[11:4];
+             r_line = {flush_ctr[1:0], 3'b000};
+             no_tagcheck_read = 1'b1;
+           end else if (flushtype_reg == 2'b01 & hit) begin
+             next_state = flushing_line;
+             evict_way_capture = 1'b1;
+             stall = 1'b1;
+             dcache_w = 1'b0;
+             dcache_r = 1'b1;
+             r_line = {evict_line, 3'b000};
+           end else if (~hit & dirty) begin     // dirty miss means that writeback to memory is needed
              next_state = writing_back;
              evict_way_capture = 1'b1;
              stall = 1'b1;
@@ -100,7 +162,7 @@ always_comb begin
            end else begin
              next_state = writing_back;
              dcache_r = 1'b1;
-             r_line = {evict_line, 3'b000};
+             r_line = (ctr_en) ? {evict_line + 1, 3'b000} : {evict_line, 3'b000};
              r_index = evict_addr_reg[35:28];
              r_tag = evict_addr_reg[27:6];
            end
@@ -143,14 +205,196 @@ always_comb begin
           next_state = idle;
           synch_buffer_rst = 1'b1;
         end else if((packet_type_req_in==3'b110) & (id_req_in==id_req_out)) begin
+          next_state = waiting_on_fill;
           stall = fill_stall;
           fill_buffer_en = 1'b1;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;
         end else begin
           next_state = waiting_on_fill;
           stall = fill_stall;
         end
       end
+      
+      flushing_line : begin
+           overwrite = ~|packet_type_req_in;
+           ctr_en = ~|packet_type_req_in;
+           dcache_w = 1'b0;
+           stall = 1'b1;
+           if((&evict_line) & (~|packet_type_req_in)) begin // when all writing is done must wait for ack from mem controller
+             dcache_flushtype = 2'b01;
+             next_state = flush_line_ack_wait;
+           end else begin
+             next_state = flushing_line;
+             dcache_r = 1'b1;
+             r_line = (ctr_en) ? {evict_line + 1, 3'b000} : {evict_line, 3'b000};
+             r_index = evict_addr_reg[35:28];
+             r_tag = evict_addr_reg[27:6];
+           end
+      end
 
+      // wait on ack stall and disable reading and writing
+      flush_line_ack_wait: begin
+        if((packet_type_req_in==3'b101) & (id_req_in==id_req_out)) begin
+          next_state = idle;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;              // release circ mem slot
+        end else begin
+          stall = 1'b1;
+          dcache_r = 1'b0;
+          dcache_w = 1'b0;
+          next_state = flush_line_ack_wait;
+        end
+      end
+
+      flushing_dirty : begin
+           overwrite = ~|packet_type_req_in & dirty_array[flush_ctr[3:2]];
+           flush_ctr_en = ~|packet_type_req_in & dirty_array[flush_ctr[3:2]];
+           flush_ctr_en_4 = ~dirty_array[flush_ctr[3:2]];
+           dcache_w = 1'b0;
+           dcache_r = 1'b1;
+           stall = 1'b1;
+           if((&flush_ctr[1:0]) & (~|packet_type_req_in)) begin // when all writing is done must wait for ack from mem controller
+             dcache_flushtype = 2'b10;
+             next_state = flush_dirty_ack_wait;
+           end else if ((&flush_ctr[11:2]) & flush_ctr_en_4) begin
+             no_tagcheck_read = 1'b1;
+             next_state = idle;
+           end else begin
+             next_state = flushing_dirty;
+             r_line = flush_ctr[1:0];
+             r_index = flush_ctr[11:4];
+             no_tagcheck_read = 1'b1;
+           end
+      end
+
+      // wait on ack stall and disable reading and writing
+      flush_dirty_ack_wait: begin
+        if((packet_type_req_in==3'b101) & (id_req_in==id_req_out) & ~|flush_ctr) begin
+          next_state = idle;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;              // release circ mem slot
+        end else if((packet_type_req_in==3'b101) & (id_req_in==id_req_out)) begin
+          stall = 1'b1;
+          next_state = flushing_dirty;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;              // release circ mem slot
+        end else begin
+          stall = 1'b1;
+          dcache_r = 1'b0;
+          dcache_w = 1'b0;
+          next_state = flush_dirty_ack_wait;
+        end
+      end
+
+      flushing_clean : begin
+           flush_ctr_en_16 = 1'b1;
+           dcache_w = 1'b0;
+           dcache_r = 1'b1;
+           stall = 1'b1;
+           dcache_flushtype = 2'b11;
+           r_index = flush_ctr[11:4];
+           if(&flush_ctr[11:4]) begin // when all writing is done must wait for ack from mem controller
+             next_state = idle;
+           end else begin
+             next_state = flushing_clean;
+           end
+      end
+     
+      // wait on ack stall and disable reading and writing
+      fetch_and_add_send: begin
+        stall = 1'b1;
+        dcache_r = 1'b0;
+        dcache_w = 1'b0;
+        mem_data_out = w_data;
+        if(~|packet_type_req_in) begin
+          next_state = fetch_and_add_receive;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b111;              
+        end else begin
+          next_state = fetch_and_add_send;
+        end
+      end
+
+      // wait on ack stall and disable reading and writing
+      fetch_and_add_receive: begin
+        dcache_r = 1'b0;
+        dcache_w = 1'b0;
+        if((packet_type_req_in==3'b110) & (id_req_in==id_req_out)) begin
+          next_state = idle;
+          data_out = mem_data_out;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;    // release circ mem unit            
+        end else begin
+          stall = 1'b1;
+          dcache_r = 1'b0;
+          dcache_w = 1'b0;
+          next_state = fetch_and_add_send;
+        end
+      end
+
+      // wait on ack stall and disable reading and writing
+      synch_write: begin
+        mem_data_out = w_data;
+        stall = 1'b1;
+        dcache_r = 1'b0;
+        dcache_w = 1'b0;
+        if(~|packet_type_req_in) begin
+          next_state = synch_write_ack_wait;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b010;              
+        end else begin
+          next_state = synch_write;
+        end
+      end
+
+      // wait on ack stall and disable reading and writing
+      synch_write_ack_wait: begin
+        dcache_r = 1'b0;
+        dcache_w = 1'b0;
+        if((packet_type_req_in==3'b101) & (id_req_in==id_req_out)) begin
+          next_state = idle;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;    // release circ mem unit            
+        end else begin
+          stall = 1'b1;
+          dcache_r = 1'b0;
+          dcache_w = 1'b0;
+          next_state = synch_write_ack_wait;
+        end
+      end
+
+      // wait on ack stall and disable reading and writing
+      synch_read_send: begin
+        mem_data_out = w_data;
+        stall = 1'b1;
+        dcache_r = 1'b0;
+        dcache_w = 1'b0;
+        if(~|packet_type_req_in) begin
+          next_state = synch_read_receive;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b100;              
+        end else begin
+          next_state = synch_read_send;
+        end
+      end
+
+      // wait on ack stall and disable reading and writing
+      synch_read_receive: begin
+        dcache_r = 1'b0;
+        dcache_w = 1'b0;
+        if((packet_type_req_in==3'b110) & (id_req_in==id_req_out)) begin
+          next_state = idle;
+          data_out = mem_data_out;
+          overwrite = 1'b1;
+          packet_type_req_out = 3'b000;    // release circ mem unit            
+        end else begin
+          stall = 1'b1;
+          dcache_r = 1'b0;
+          dcache_w = 1'b0;
+          next_state = synch_read_receive;
+        end
+      end
   endcase
 end
 
@@ -165,6 +409,7 @@ end
 // these flops hold write data from previous cycle
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
+    flushtype_reg <= 0;
     addr_reg <= 0;
     r_reg <= 0;
     w_type_reg <= 0;
@@ -172,6 +417,7 @@ always_ff @(posedge clk, posedge rst) begin
     fwd_reg <= 0;
     fwd_data_reg <= 0;
   end else begin
+    flushtype_reg <= flushtype;
     fwd_data_reg <= store_buffer;
     fwd_reg <= fwd;
     r_reg <= r;
@@ -234,6 +480,19 @@ always_ff @(posedge clk, posedge rst) begin
     evict_line <= evict_line + 1;
   end
 end
+
+// flush index/line counter
+always_ff @(posedge clk, posedge rst) begin
+  if(rst) begin
+    flush_ctr <= 0;
+  end else if (flush_ctr_en_16) begin
+     flush_ctr <= flush_ctr + 16;
+  end else if (flush_ctr_en_4) begin
+     flush_ctr <= flush_ctr + 4;
+  end else if (flush_ctr_en) begin
+     flush_ctr <= flush_ctr + 1;
+  end
+end
  
 // bit 0 is forward from store buffer, bit 1 is forward from fill buffer
 assign fwd[0] = (addr_reg==addr) & |w_type_reg & hit & r;
@@ -278,10 +537,10 @@ always_comb begin
     2'b11: read_mod_write_data <= store_buffer;
   endcase
   case(fwd_reg)
-    2'b00: data_out <= dcache_data_out;
-    2'b01: data_out <= fwd_data_reg;
-    2'b10: data_out <= fill_buffer[addr_reg[5:4]];
-    2'b11: data_out <= fwd_data_reg;
+    2'b00: read_data_out <= dcache_data_out;
+    2'b01: read_data_out <= fwd_data_reg;
+    2'b10: read_data_out <= fill_buffer[addr_reg[5:4]];
+    2'b11: read_data_out <= fwd_data_reg;
   endcase
 end
 
