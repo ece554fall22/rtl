@@ -87,7 +87,7 @@ always_comb begin
 
       // cache hits, read and writes should all be processed in idle
       idle: begin
-           if (~|addr[35:6]) begin
+        if (~|addr[35:5]) begin
              stall = 1'b1;
              mem_data_out = {{48{8'h00}}, w_data};
              if(faa) begin
