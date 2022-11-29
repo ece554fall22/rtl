@@ -2,10 +2,12 @@ module mem_controller #(
 parameter DEPTH = 512
 )
 (
-input logic empty, rd_done, full, wr_done, clk, rst,
+input logic empty, rd_done, full, wr_done, clk, rst, mmio_read,
 output logic rd_go, rd_en, wr_go, wr_en, overwrite,
 input logic [35:0] addr_in,
-output logic [35:0] rd_addr, wr_addr, addr_out,
+input logic [27:0] mmio_addr,
+output logic [63:0] rd_addr, wr_addr,
+output logic [35:0] addr_out,
 output logic [15:0] wr_size, cache_lines,
 input logic [511:0] rd_data,
 output logic [511:0] wr_data,
@@ -27,7 +29,8 @@ logic [15:0] [3:0] buffer_valids;
 logic [2:0] write_to_buffer;
 logic [1:0] wr_ctr;
 logic [511:0] buffer_write_mod_data;
-
+logic [27:0] mmio_addr_reg;
+  
 enum {idle, working} 
 read_state, next_read_state, write_state, next_write_state, writeback_state, next_writeback_state; 
 
@@ -38,8 +41,8 @@ assign addr_out = buffer_addrs[circ_index];
 
 
 // hal interface!! changes needed here probably
-assign rd_addr = buffer_addrs[read_index];
-assign wr_addr = buffer_addrs[write_index];
+assign rd_addr = {mmio_addr_reg, buffer_addrs[read_index]};
+assign wr_addr = {mmio_addr_reg, buffer_addrs[write_index]};
 assign wr_data = buffer_data[write_index];
 
 assign valid_req = (id_req_in==3'b011) | (id_req_in==3'b001);
@@ -289,4 +292,14 @@ always_ff @(posedge clk, posedge rst) begin
     wr_ctr <= wr_ctr + 1;
   end
 end
+ 
+  // mmio register
+always_ff @(posedge clk, posedge rst) begin
+  if(rst) begin
+    mmio_addr_reg <= 0;
+  end else if (mmio_read) begin
+    mmio_addr_Reg <= mmio_addr;
+  end
+end
+  
 endmodule
