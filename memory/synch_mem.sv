@@ -18,7 +18,7 @@ logic [3:0] [31:0] synch_regs;
 logic [31:0] synch_regs_write;
 logic [3:0] wr_ens;
 
-assign synch_regs_write = (packet_type_req_in==3'b111) ? data_in[31:0] : data_in[31:0] + {17'h00000, data_in[46:32]};
+  assign synch_regs_write = (packet_type_req_in==3'b111) ? data_in[31:0] : data_in[31:0] + {{17{data_in[46]}}, data_in[46:32]};
 
 assign id_req_out = id_req_in;
 
