@@ -13,8 +13,8 @@ logic [7:0] imm;
 // Output signals
 logic [31:0] vout [3:0];
 logic [31:0] rout;
-logic [31:0] correct_vout [3:0];
-logic [31:0] correct_rout [3:0];
+shortreal correct_vout [3:0];
+shortreal correct_rout [3:0];
 int fail_count;
 logic fail;
 
@@ -25,6 +25,7 @@ initial begin
     fail_count = 0;
     // Initialize clock signal
     clk = 0;
+    rst_n = 0; 
     // Initialize input values
     for (int i = 0; i < 4; i++) begin
         v1[i] = '0;
@@ -37,11 +38,9 @@ initial begin
     en = '1;
     // reset
     @(posedge clk);
-    rst_n = 0'b0; // active low reset
+    rst_n = 1; // reset finished
     @(posedge clk);
-    rst_n = 1'b1; // reset finished
-    @(posedge clk);
-    #20000;
+    repeat (100) @(posedge clk)
     if (fail) begin
         $display("Total errors: %d", fail_count);
         $display("ARRRR! Ya code be blast!!! Aye, there might be errors, get debugging!");
@@ -61,24 +60,20 @@ end
 // Testing based on randomized inputs
 always @(posedge clk) begin
     for (int i = 0; i < 4; i++) begin
-        // v1[i] = $random;
-        // v2[i] = $random;
-        v1[i] = 1;
-        v2[i] = 1;
+        v1[i] = $random;
+        v2[i] = $random;
+        //v1[i] = 1;
+        //v2[i] = 1;
     end
-    // r1 = $random;
-    // r2 = $random;
-    // op = $random;
-    // imm = $random;
-    r1 = 1;
-    r2 = 1;
+    r1 = $random;
+    r2 = $random;
     op = 5'h03;
-    imm = 1;
+    //imm = 1;
     case (op)
         5'h03: begin
             for(int i = 0; i < 4; i++) begin
-                correct_vout[i] = v1[i] + v2[i];
-                if (vout[i] !== correct_vout[i]) begin
+                correct_vout[i] = $bitstoshortreal(v1[i]) + $bitstoshortreal(v2[i]);
+                if (vout[i] != correct_vout[i]) begin
                     fail = 1;
                     fail_count++;
                     $display("Error check: v1[%d] = %h , v2[%d] = %h, op = %d, vout[%d] = %h, Expected vout[%d]: %h",i,v1[i],i,v2[i],op,i,vout[i],i,correct_vout[i]);
