@@ -134,8 +134,8 @@ always @(posedge clk) begin
         v1[i] = $random;
         v2[i] = $random;
         // if (cycle_count > 3)begin
-            $display("v1[%d]: %d\n",i,v1[i]);
-            $display("v2[%d]: %d\n",i,v2[i]);
+            $display("v1[%d]: %1.100f\n",i,$bitstoshortreal(v1[i]));
+            $display("v2[%d]: %1.100f\n",i,$bitstoshortreal(v2[i]));
         // end
     end
     r1 = $random;
@@ -148,6 +148,7 @@ always @(posedge clk) begin
             // Compute the correct output and put it in temporary location
             // shape(correct_vout) = 4*32
             for(int i = 0; i < 4; i++) begin
+                // correct_vout[i] = ($bitstoshortreal(v1[i]) + $bitstoshortreal(v2[i]));
                 correct_vout[i] = $bitstoshortreal(v1[i]) + $bitstoshortreal(v2[i]);
                 // pipeline the output
                 in[i] = $shortrealtobits(correct_vout[i]);
@@ -171,11 +172,11 @@ always @(posedge clk) begin
                 end
                 else begin
                     for(int g = 0; g < 4; g++)begin
-                        $display("op = %d, vout[%d] = %d, Expected vout[%d]: %d",op,g,inso2[g],g,out2[g]);
+                        $display("op = %d, vout[%d] = %1.100f, Expected vout[%d]: %1.100f",op,g,$bitstoshortreal(inso2[g]),g,$bitstoshortreal(out2[g]));
                     end
                 end
             end
-            default:$display("shit, went into default!");
+            default:$display("shit, ran into default!");
         endcase
     end
     cycle_count++;
