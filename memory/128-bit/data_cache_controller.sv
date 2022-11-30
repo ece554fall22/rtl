@@ -7,6 +7,7 @@ input logic [1:0] w_type, flushtype,
 input logic [35:0] addr, mem_addr_in,
 input logic [127:0] w_data, mem_data_in,
 input logic [4:0] id_req_in,
+input logic [2:0] bit_mask,
 input logic [2:0] packet_type_req_in,
 output logic [127:0] data_out, mem_data_out,
 output logic stall, overwrite,
@@ -20,7 +21,7 @@ logic [7:0] r_index, w_index;
 logic [21:0] r_tag, w_tag;
 logic [5:0] r_line, w_line, fill_buffer_write_line;
 logic [127:0] dcache_w_data, dcache_data_out, read_mod_write_data, store_buffer, fwd_data_reg;
-logic [127:0] read_mod_write_data_32, read_mod_write_data_36, read_data_out;
+  logic [127:0] read_mod_write_data_32, read_mod_write_data_36, read_data_out, vector_write_data;
 logic [4:0] [127:0] fill_buffer;
 logic [1:0] dcache_flushtype, w_way, way, w_type_reg, evict_way_reg, evict_line, fwd_reg, fwd;
 logic [1:0] flushtype_reg;
@@ -534,7 +535,7 @@ always_comb begin
     2'b00: read_mod_write_data <= store_buffer;
     2'b01: read_mod_write_data <= read_mod_write_data_32;
     2'b10: read_mod_write_data <= read_mod_write_data_36;
-    2'b11: read_mod_write_data <= store_buffer;
+    2'b11: read_mod_write_data <= vector_write_data;
   endcase
   case(fwd_reg)
     2'b00: read_data_out <= dcache_data_out;
@@ -543,5 +544,10 @@ always_comb begin
     2'b11: read_data_out <= fwd_data_reg;
   endcase
 end
+
+  assign vector_write_data[31:0] = (bit_mask[0]) ? dcache_Data_out[31:0]: storebuffer[31:0]; 
+  assign vector_write_data[63:32] = (bit_mask[1]) ? dcache_Data_out[31:32]: storebuffer[63:32];
+  assign vector_write_data[95:64] = (bit_mask[2]) ? dcache_Data_out[31:64]: storebuffer[95:64];
+  assign vector_write_data[127:96] = (bit_mask[3]) ? dcache_Data_out[31:96]: storebuffer[127:96];
 
 endmodule
