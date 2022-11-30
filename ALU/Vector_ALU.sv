@@ -8,20 +8,25 @@ input [7:0] imm;
 output logic [31:0] vout [3:0];
 output logic [31:0] rout;
 
-logic [31:0] a1, a2, b1, b2, b3, b4, out5_d, out6_d, out5_q, out6_q, out7;
+logic [31:0] a1, a2, b1, b2, b3, b4;
 
-logic [31:0] v10 [2:0];
-logic [31:0] v11 [2:0];
-logic [31:0] v12 [2:0];
-logic [31:0] v13 [2:0];
-logic [31:0] r1pip[2:0];
-logic [31:0] r2pip[2:0];
-logic [31:0] out1 [2:0]; 
-logic [31:0] out2 [2:0]; 
-logic [31:0] out3 [2:0]; 
-logic [31:0] out4 [2:0];
-logic [3:0] gts [2:0];
-logic [4:0] oppip [2:0];
+logic [31:0] out5 [5:0];
+logic [31:0] out6 [5:0];
+
+logic [31:0] out7 [2:0]
+
+logic [31:0] v10 [8:0];
+logic [31:0] v11 [8:0];
+logic [31:0] v12 [8:0];
+logic [31:0] v13 [8:0];
+logic [31:0] r1pip[8:0];
+logic [31:0] r2pip[8:0];
+logic [31:0] out1 [8:0]; 
+logic [31:0] out2 [8:0]; 
+logic [31:0] out3 [8:0]; 
+logic [31:0] out4 [8:0];
+logic [3:0] gts [8:0];
+logic [4:0] oppip [8:0];
 
 //pipeline for alu signals
 assign v10[0] =  v1[0];
@@ -34,7 +39,7 @@ assign oppip[0] = op;
 
 genvar i;
     generate;
-        for (i=1; i<3; ++i) begin
+        for (i=1; i<9; ++i) begin
             always_ff@( posedge clk, negedge rst_n ) begin
                 if (!rst_n) begin 
                     out1[i] <= '0;
@@ -69,16 +74,35 @@ genvar i;
         end
     endgenerate
 
-always_ff@( posedge clk, negedge rst_n ) begin
-    if (!rst_n) begin 
-        out5_q <= '0;
-        out6_q <= '0;
-    end
-    else if(en) begin
-        out5_q <= out5_d;
-        out6_q <= out6_d;
-    end
-end
+genvar y;
+    generate;
+        for(y = 1; y <5; y++) begin
+            always_ff@( posedge clk, negedge rst_n ) begin
+                if (!rst_n) begin 
+                    out5[i] <= '0;
+                    out6[i] <= '0;
+                end
+                else if(en) begin
+                    out5[i] <= out5[i-1];
+                    out6[i] <= out6[i-1];
+                end
+            end
+        end
+    endgenerate
+
+genvar z;
+    generate;
+        for(z = 1; z <2; z++) begin
+            always_ff@( posedge clk, negedge rst_n ) begin
+                if (!rst_n) begin 
+                    out7[i] <= '0;
+                end
+                else if(en) begin
+                    out7[i] <= out7[i-1];
+                end
+            end
+        end
+    endgenerate
 
 logic [1:0] op1, op2, op3, op4;
 
@@ -108,11 +132,11 @@ fp_alu alu3 (.A(v1[2]), .B(b3), .op(op3), .out(out3[0]), .gt(gts[0][2]));
 
 fp_alu alu4 (.A(v1[3]), .B(b4), .op(op4), .out(out4[0]), .gt(gts[0][3]));
 
-fp_alu alu5 (.A(out1[1]), .B(out2[1]), .op(2'b00), .out(out5_d), .gt());
+fp_alu alu5 (.A(out1[2]), .B(out2[2]), .op(2'b00), .out(out5[0]), .gt());
 
-fp_alu alu6 (.A(out3[1]), .B(out4[1]), .op(2'b00), .out(out6_d), .gt());
+fp_alu alu6 (.A(out3[2]), .B(out4[2]), .op(2'b00), .out(out6[0]), .gt());
 
-fp_alu alu7 (.A(out5_q), .B(out6_q), .op(2'b00), .out(out7), .gt());
+fp_alu alu7 (.A(out5[2]), .B(out6[2]), .op(2'b00), .out(out7[0]), .gt());
 
 
 
@@ -217,108 +241,108 @@ always_comb begin
     vout[3] = 32'b0;
     case(oppip[2])
         Fadd: begin
-            rout = out1[2];
+            rout = out1[8];
         end
         Fsub: begin
-            rout = out1[2];
+            rout = out1[8];
         end
         Fmult: begin
-            rout = out1[2];
+            rout = out1[8];
         end
         Vadd: begin
-            vout[0] = out1[2];
-            vout[1] = out2[2];
-            vout[2] = out3[2];
-            vout[3] = out4[2];
+            vout[0] = out1[8];
+            vout[1] = out2[8];
+            vout[2] = out3[8];
+            vout[3] = out4[8];
         end
         Vsub: begin
-            vout[0] = out1[2];
-            vout[1] = out2[2];
-            vout[2] = out3[2];
-            vout[3] = out4[2];
+            vout[0] = out1[8];
+            vout[1] = out2[8];
+            vout[2] = out3[8];
+            vout[3] = out4[8];
         end
         Vmult: begin
-            vout[0] = out1[2];
-            vout[1] = out2[2];
-            vout[2] = out3[2];
-            vout[3] = out4[2];
+            vout[0] = out1[8];
+            vout[1] = out2[8];
+            vout[2] = out3[8];
+            vout[3] = out4[8];
         end
         Vdot: begin
-            rout = out7;
+            rout = out7[2];
         end
         Vdota: begin
-            rout = out7 + r1pip[2];
+            rout = out7[2] + r1pip[8];
         end
         Vindx: begin
-            rout = (imm[1:0] == 2'b00) ? v10[2] :
-                    (imm[1:0] == 2'b01) ? v11[2] :
-                    (imm[1:0] == 2'b10) ? v12[2] :
-                    v13[0];
+            rout = (imm[1:0] == 2'b00) ? v10[8] :
+                    (imm[1:0] == 2'b01) ? v11[8] :
+                    (imm[1:0] == 2'b10) ? v12[8] :
+                    v13[8];
         end
         Vreduce: begin
-            rout = out5_q;
+            rout = out5[5];
         end
         Vsplat: begin
-            vout[0] = r1pip[2];
-            vout[1] = r1pip[2];
-            vout[2] = r1pip[2];
-            vout[3] = r1pip[2];
+            vout[0] = r1pip[8];
+            vout[1] = r1pip[8];
+            vout[2] = r1pip[8];
+            vout[3] = r1pip[8];
         end
         Vswizzle: begin
-            vout[0] = (imm[1:0] == 2'b00) ? v10[2] :
-                    (imm[1:0] == 2'b01) ? v11[2] :
-                    (imm[1:0] == 2'b10) ? v12[2] :
-                    v13[0];
-            vout[1] = (imm[3:2] == 2'b00) ? v10[2] :
-                    (imm[3:2] == 2'b01) ? v11[2] :
-                    (imm[3:2] == 2'b10) ? v12[2] :
-                    v13[0];
-            vout[2] = (imm[5:4] == 2'b00) ? v10[2] :
-                    (imm[5:4] == 2'b01) ? v11[2] :
-                    (imm[5:4] == 2'b10) ? v12[2] :
-                    v13[0];
-            vout[3] = (imm[7:6] == 2'b00) ? v10[2] :
-                    (imm[7:6] == 2'b01) ? v11[2] :
-                    (imm[7:6] == 2'b10) ? v12[2] :
-                    v13[0];
+            vout[0] = (imm[1:0] == 2'b00) ? v10[8] :
+                    (imm[1:0] == 2'b01) ? v11[8] :
+                    (imm[1:0] == 2'b10) ? v12[8] :
+                    v13[8];
+            vout[1] = (imm[3:2] == 2'b00) ? v10[8] :
+                    (imm[3:2] == 2'b01) ? v11[8] :
+                    (imm[3:2] == 2'b10) ? v12[8] :
+                    v13[8];
+            vout[2] = (imm[5:4] == 2'b00) ? v10[8] :
+                    (imm[5:4] == 2'b01) ? v11[8] :
+                    (imm[5:4] == 2'b10) ? v12[8] :
+                    v13[8];
+            vout[3] = (imm[7:6] == 2'b00) ? v10[8] :
+                    (imm[7:6] == 2'b01) ? v11[8] :
+                    (imm[7:6] == 2'b10) ? v12[8] :
+                    v13[8];
         end
         Vsadd: begin
-            vout[0] = out1[2];
-            vout[1] = out2[2];
-            vout[2] = out3[2];
-            vout[3] = out4[2];
+            vout[0] = out1[8];
+            vout[1] = out2[8];
+            vout[2] = out3[8];
+            vout[3] = out4[8];
         end
         Vssub: begin
-            vout[0] = out1[2];
-            vout[1] = out2[2];
-            vout[2] = out3[2];
-            vout[3] = out4[2];
+            vout[0] = out1[8];
+            vout[1] = out2[8];
+            vout[2] = out3[8];
+            vout[3] = out4[8];
         end
         Vsmult: begin
-            vout[0] = out1[2];
-            vout[1] = out2[2];
-            vout[2] = out3[2];
-            vout[3] = out4[2];
+            vout[0] = out1[8];
+            vout[1] = out2[8];
+            vout[2] = out3[8];
+            vout[3] = out4[8];
         end
         Vsma: begin
         end
         Vcompsel: begin
-            vout[0] = (gts[2][0]) ? r1 : r2;
-            vout[1] = (gts[2][1]) ? r1 : r2;
-            vout[2] = (gts[2][2]) ? r1 : r2;
-            vout[3] = (gts[2][3]) ? r1 : r2;            
+            vout[0] = (gts[8][0]) ? r1pip[8] : r2pip[8];
+            vout[1] = (gts[8][1]) ? r1pip[8] : r2pip[8];
+            vout[2] = (gts[8][2]) ? r1pip[8] : r2pip[8];
+            vout[3] = (gts[8][3]) ? r1pip[8] : r2pip[8];            
         end
         Vmax: begin
-            vout[0] = (gts[2][0]) ? v10[2] : out1[2];
-            vout[1] = (gts[2][1]) ? v11[2] : out2[2];
-            vout[2] = (gts[2][2]) ? v12[2] : out3[2];
-            vout[3] = (gts[2][3]) ? v13[2] : out4[2];  
+            vout[0] = (gts[8][0]) ? v10[8] : out1[8];
+            vout[1] = (gts[8][1]) ? v11[8] : out2[8];
+            vout[2] = (gts[8][2]) ? v12[8] : out3[8];
+            vout[3] = (gts[8][3]) ? v13[8] : out4[8];  
         end
         Vmin: begin
-            vout[0] = (gts[2][0]) ? out1[2] : v10[2];
-            vout[1] = (gts[2][1]) ? out2[2] : v11[2];
-            vout[2] = (gts[2][2]) ? out3[2] : v12[2];
-            vout[3] = (gts[2][3]) ? out4[2] : v13[2];
+            vout[0] = (gts[8][0]) ? out1[8] : v10[8];
+            vout[1] = (gts[8][1]) ? out2[8] : v11[8];
+            vout[2] = (gts[8][2]) ? out3[8] : v12[8];
+            vout[3] = (gts[8][3]) ? out4[8] : v13[8];
         end
     endcase
 end
