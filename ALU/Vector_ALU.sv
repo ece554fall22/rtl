@@ -13,7 +13,7 @@ logic [31:0] a1, a2, b1, b2, b3, b4;
 logic [31:0] out5 [5:0];
 logic [31:0] out6 [5:0];
 
-logic [31:0] out7 [2:0]
+logic [31:0] out7 [2:0];
 
 logic [31:0] v10 [8:0];
 logic [31:0] v11 [8:0];
@@ -79,12 +79,12 @@ genvar y;
         for(y = 1; y <5; y++) begin
             always_ff@( posedge clk, negedge rst_n ) begin
                 if (!rst_n) begin 
-                    out5[i] <= '0;
-                    out6[i] <= '0;
+                    out5[y] <= '0;
+                    out6[y] <= '0;
                 end
                 else if(en) begin
-                    out5[i] <= out5[i-1];
-                    out6[i] <= out6[i-1];
+                    out5[y] <= out5[y-1];
+                    out6[y] <= out6[y-1];
                 end
             end
         end
@@ -95,10 +95,10 @@ genvar z;
         for(z = 1; z <2; z++) begin
             always_ff@( posedge clk, negedge rst_n ) begin
                 if (!rst_n) begin 
-                    out7[i] <= '0;
+                    out7[z] <= '0;
                 end
                 else if(en) begin
-                    out7[i] <= out7[i-1];
+                    out7[z] <= out7[z-1];
                 end
             end
         end
