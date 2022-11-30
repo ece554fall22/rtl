@@ -19,11 +19,13 @@ shortreal correct_vout [3:0];
 shortreal correct_rout [3:0];
 int fail_count;
 logic fail;
+int cycle_count;
 
 vector_alu vec_alu1(.v1(v1), .v2(v2), .r1(r1), .r2(r2), .op(op), .imm(imm), .clk(clk), .rst_n(rst_n), .en(en), .vout(vout), .rout(rout));
 
 // Initialize signals, reset and provide final test bench result
 initial begin
+    cycle_count = '0;
     fail_count = 0;
     // Initialize clock signal
     clk = 0;
@@ -43,15 +45,16 @@ initial begin
     rst_n = 1; // reset finished
     @(posedge clk);
     // Repeat x clock cycles to test
-    repeat (2000) @(posedge clk);
+    repeat (12) @(posedge clk);
+    @(posedge clk);
     if (fail) begin
         $display("Total errors: %d", fail_count);
         $display("ARRRR! Ya code be blast!!! Aye, there might be errors, get debugging!");
         $stop;
     end
     else begin
-        // $display("YAHOO! TEST PASSED!");
-        // $stop;
+        $display("YAHOO! TEST PASSED!");
+        $stop;
     end
 end
 
@@ -77,15 +80,15 @@ generate;
                 for(int k = 0; k < 4; k++) begin
                     out1[k] <= '0;
                     out2[k] <= '0;
-                    out3[k] <= '0;
-                    out4[k] <= '0;
+                    // out3[k] <= '0;
+                    // out4[k] <= '0;
                 end
             end
             else begin
                 out1 <= in;
                 out2 <= out1;
-                out3 <= out2;
-                out4 <= out3;
+                // out3 <= out2;
+                // out4 <= out3;
             end
         end
     end
@@ -107,15 +110,15 @@ generate;
                 for(int k = 0; k < 4; k++) begin
                     inso1[k] <= '0;
                     inso2[k] <= '0;
-                    inso3[k] <= '0;
-                    inso4[k] <= '0;
+                    // inso3[k] <= '0;
+                    // inso4[k] <= '0;
                 end
             end
             else begin
                 inso1 <= in2;
                 inso2 <= inso1;
-                inso3 <= inso2;
-                inso4 <= inso3;
+                // inso3 <= inso2;
+                // inso4 <= inso3;
             end
         end
     end
@@ -130,6 +133,10 @@ always @(posedge clk) begin
     for (int i = 0; i < 4; i++) begin
         v1[i] = $random;
         v2[i] = $random;
+        // if (cycle_count > 3)begin
+            $display("v1[%d]: %d\n",i,v1[i]);
+            $display("v2[%d]: %d\n",i,v2[i]);
+        // end
     end
     r1 = $random;
     r2 = $random;
@@ -142,9 +149,7 @@ always @(posedge clk) begin
             // shape(correct_vout) = 4*32
             for(int i = 0; i < 4; i++) begin
                 correct_vout[i] = $bitstoshortreal(v1[i]) + $bitstoshortreal(v2[i]);
-            end
-            // pipeline the output
-            for(int i = 0; i < 4; i++) begin
+                // pipeline the output
                 in[i] = $shortrealtobits(correct_vout[i]);
             end
             
@@ -158,16 +163,22 @@ always @(posedge clk) begin
 end
 
 always @(posedge clk) begin
-    case (inso4[5])
-        5'h0003: begin
-            if (inso4[4:1] == out4[3:0]) begin
-                $display("yes! a hit!");
+    if (cycle_count >= 3) begin
+        case (inso2[5])
+            5'h0003: begin
+                if (inso2[4:1] == out2[3:0]) begin
+                    $display("yes! a hit!");
+                end
+                else begin
+                    for(int g = 0; g < 4; g++)begin
+                        $display("op = %d, vout[%d] = %d, Expected vout[%d]: %d",op,g,inso2[g],g,out2[g]);
+                    end
+                end
             end
-            else $display("shit!");
-        
-        end
-        default:$display("shit, default!");
-    endcase
+            default:$display("shit, went into default!");
+        endcase
+    end
+    cycle_count++;
 end
 
 
