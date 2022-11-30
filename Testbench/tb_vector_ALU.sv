@@ -42,8 +42,8 @@ initial begin
     @(posedge clk);
     rst_n = 1; // reset finished
     @(posedge clk);
-    // Repeat 100 clock cycles to test
-    repeat (2000) @(posedge clk)
+    // Repeat x clock cycles to test
+    repeat (2000) @(posedge clk);
     if (fail) begin
         $display("Total errors: %d", fail_count);
         $display("ARRRR! Ya code be blast!!! Aye, there might be errors, get debugging!");
