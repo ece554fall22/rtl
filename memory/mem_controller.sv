@@ -2,7 +2,7 @@ module mem_controller #(
 parameter DEPTH = 512
 )
 (
-input logic empty, rd_done, full, wr_done, clk, rst, mmio_read,
+input logic empty, rd_done, full, wr_done, clk, rst, mmioWrValid,
 output logic rd_go, rd_en, wr_go, wr_en, overwrite,
 input logic [35:0] addr_in,
 input logic [27:0] mmio_addr,
@@ -297,7 +297,7 @@ end
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     mmio_addr_reg <= 0;
-  end else if (mmio_read) begin
+  end else if (mmioWrValid) begin
     mmio_addr_Reg <= mmio_addr;
   end
 end
