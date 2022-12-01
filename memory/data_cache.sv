@@ -8,7 +8,7 @@ input logic [1:0] flushtype, w_way;	// type of flush 11 = flushclean 10 = flushd
 					// w_way is the way to write
 input logic [1:0] no_tagcheck_way;
 input logic w_tagcheck, rst, clk, w, r; // w_tagcheck is a signal that signifies to the cache that this is a read being done for purposes of a tagcheck
-input logic no_tagcheck_read;
+input logic no_tagcheck_read, miss_not_handled;
 output logic [17:0] tag_out;            // this is important because it means next cycle there will be a write to this address, since metadata is read
 output logic [127:0] data_out;          // once per cycle and needs to be used by the read that should be happenning simultaneously metadata needs to be updated
 output logic [1:0] way;                 // on the cycle that w_tagcheck is asserted
@@ -36,7 +36,7 @@ data_blockram data_blockram(.clk(clk), .clk2(clk), .rd_addr(rd_addr), .wr_data(w
 	.wr_index(wr_index), .wr_en(w), .data_out(block_data_out));
 
 metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.wr_data(metadata_in), 
-			    .wr_index(r_index_reg), .wr_en(r_reg & ~no_tagcheck_read), .data_out(metadata_out));
+			    .wr_index(r_index_reg), .wr_en(r_reg & ~no_tagcheck_read & ~miss_not_handled), .data_out(metadata_out));
 
 tag_blockram tags(.tag_out(block_tag_out), .r_index(r_index), .w_index(w_index), .tag_in(w_tag), 
                  .wr_en(w), .clk1(clk), .clk2(clk));
