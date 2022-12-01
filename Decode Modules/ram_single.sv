@@ -1,8 +1,8 @@
-module ram_single(q, a_in, a_out, d, we, clk);
+module ram_single(q, a, d, we, clk);
   parameter REG_SIZE = 36;
   parameter FILE_SIZE = 32;
   parameter ADDR_SIZE = 5;
-  output[REG_SIZE -1:0] q;
+  output logic [REG_SIZE -1:0] q;
   input [REG_SIZE -1:0] d;
   input [ADDR_SIZE -1:0] a;
   input we, clk;

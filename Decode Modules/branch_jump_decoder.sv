@@ -1,7 +1,7 @@
 module branch_jump_decoder(branch_jump, branch_type, branch_register, immediate, register, pc, nz, ez, lz, gz, le, ge, pc_next);
 input [1:0] branch_jump;
 input [2:0] branch_type;
-input branch_register, pc, nz, ez, lz, gz, le, ge;
+input branch_register, nz, ez, lz, gz, le, ge;
 input [24:0] immediate;
 input [35:0] register;
 input [35:0] pc;
@@ -11,15 +11,15 @@ logic [35:0] branch;
 
 
 always_comb begin
-    branch = (branch_type = 3'b000) ? ((nz) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
-             (branch_type = 3'b001) ? ((ez) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
-             (branch_type = 3'b010) ? ((lz) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
-             (branch_type = 3'b011) ? ((gz) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
-             (branch_type = 3'b100) ? ((le) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
-             (branch_type = 3'b101) ? ((ge) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
+    branch = (branch_type == 3'b000) ? ((nz) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
+             (branch_type == 3'b001) ? ((ez) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
+             (branch_type == 3'b010) ? ((lz) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
+             (branch_type == 3'b011) ? ((gz) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
+             (branch_type == 3'b100) ? ((le) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
+             (branch_type == 3'b101) ? ((ge) ? ((branch_register) ? pc + register + immediate: pc + immediate) : pc):
              pc;
-    pc_next = (branch_jump = 2'b01) ? ((branch_register) ? pc + register + immediate : pc + immediate) :
-              (branch_jump = 2'b10) ? branch: pc;
+    pc_next = (branch_jump == 2'b01) ? ((branch_register) ? pc + register + immediate : pc + immediate) :
+              (branch_jump == 2'b10) ? branch: pc;
 end
 
 

@@ -1,5 +1,4 @@
-module control_unit(inst, control_bus control);
-input [31:0] inst;
+module control_unit(input [31:0] inst, control_bus control);
 
 enum {halt, nop, jmp, jal, jmpr, jalr, bi, br, lih, lil, ld32, ld36, st32, st36, vldi, vsti, vldr, vstr, Addi, Subi, Andi, Ori, xori, shli, shri, cmpi, alu, Not, Falu, cmp, Vadd, Vsub,
 Vmult, Vdiv, Vdot, Vdota, Vindx, Vreduce, Vsplat, Vswizzle, Vsadd, Vsmult, Vssub, Vsdiv, vsma, writeA, writeB, writeC, matmul, readC,
@@ -49,7 +48,7 @@ always_comb begin
     control.v_read2 = 0;
     case (op_code)
         halt: begin
-            halt = 1;
+            control.halt = 1;
         end
         nop: begin
         end
@@ -60,7 +59,7 @@ always_comb begin
             control.branch_jump = 2'b01;
             control.register_wr_en = 1;
             control.scalar_write_register = 32'hFFFF;
-            store_pc = 1;
+            control.store_pc = 1;
         end
         jmpr: begin
             control.branch_jump = 2'b01;
@@ -373,7 +372,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
         end
-        Vcompsel: begin
+        VVcompsel: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVcompsel;
             control.v_read1 = 1;
@@ -408,11 +407,11 @@ always_comb begin
         end
         flushdirty: begin
             control.data_cache_flush = 1;
-            dirty = 1;
+            control.dirty = 1;
         end
         flushclean: begin
             control.data_cache_flush = 1;
-            clean = 1;
+            control.clean = 1;
         end
         flushicache: begin
             control.flushicache = 1;
