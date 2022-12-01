@@ -68,6 +68,10 @@ logic [31:0] out1 [3:0];
 logic [31:0] out2 [3:0];
 logic [31:0] out3 [3:0];
 logic [31:0] out4 [3:0];
+logic [31:0] out5 [3:0];
+logic [31:0] out6 [3:0];
+logic [31:0] out7 [3:0];
+logic [31:0] out8 [3:0];
 logic [31:0] in [3:0];
 logic [31:0] zero [3:0];
 assign zero = {32'h0000,32'h0000,32'h0000,32'h0000};
@@ -78,17 +82,26 @@ generate;
         always_ff@(posedge clk) begin
             if (!rst_n) begin
                 for(int k = 0; k < 4; k++) begin
+                    in[k] <= '0;
                     out1[k] <= '0;
                     out2[k] <= '0;
-                    // out3[k] <= '0;
-                    // out4[k] <= '0;
+                    out3[k] <= '0;
+                    out4[k] <= '0;
+                    out5[k] <= '0;
+                    out6[k] <= '0;
+                    out7[k] <= '0;
+                    out8[k] <= '0;
                 end
             end
             else begin
                 out1 <= in;
                 out2 <= out1;
-                // out3 <= out2;
-                // out4 <= out3;
+                out3 <= out2;
+                out4 <= out3;
+                out5 <= out4;
+                out6 <= out5;
+                out7 <= out6;
+                out8 <= out7;
             end
         end
     end
@@ -101,24 +114,36 @@ logic [31:0] inso1 [5:0];
 logic [31:0] inso2 [5:0];
 logic [31:0] inso3 [5:0];
 logic [31:0] inso4 [5:0];
+logic [31:0] inso5 [5:0];
+logic [31:0] inso6 [5:0];
+logic [31:0] inso7 [5:0];
+logic [31:0] inso8 [5:0];
 logic [31:0] in2 [5:0];
 genvar j;
 generate;
     for(j = 0; j < 3; j++) begin
         always_ff@(posedge clk) begin
             if (!rst_n) begin
-                for(int k = 0; k < 4; k++) begin
+                for(int k = 0; k < 6; k++) begin
                     inso1[k] <= '0;
                     inso2[k] <= '0;
-                    // inso3[k] <= '0;
-                    // inso4[k] <= '0;
+                    inso3[k] <= '0;
+                    inso4[k] <= '0;
+                    inso5[k] <= '0;
+                    inso6[k] <= '0;
+                    inso7[k] <= '0;
+                    inso8[k] <= '0;
                 end
             end
             else begin
                 inso1 <= in2;
                 inso2 <= inso1;
-                // inso3 <= inso2;
-                // inso4 <= inso3;
+                inso3 <= inso2;
+                inso4 <= inso3;
+                inso5 <= inso4;
+                inso6 <= inso5;
+                inso7 <= inso6;
+                inso8 <= inso7;
             end
         end
     end
@@ -164,11 +189,11 @@ always @(posedge clk) begin
 end
 
 always @(posedge clk) begin
-    if (cycle_count >= 3) begin
-        case (inso2[5])
+    if (cycle_count >= 8) begin
+        case (inso7[5])
             5'h0003: begin
-                if (inso2[4:1] == out2[3:0]) begin
-                    $display("yes! a hit!");
+                if (inso7[4:1] == out7[3:0]) begin
+                    $display("yes! a hit! at cycle%d",cycle_count);
                 end
                 else begin
                     for(int g = 0; g < 4; g++)begin
