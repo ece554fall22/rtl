@@ -16,6 +16,7 @@ logic r_reg, fwd_metadata, fwd_data, fwd_metadata_reg, fwd_data_reg, fwd_tag, fw
 logic [9:0] rd_addr;
 logic [7:0] r_index_reg;
 logic [11:0] wr_index;
+logic [9:0] wr_tag_index;	 			// write index for tags 
 logic [127:0] data_reg;
 logic [511:0] block_data_out, data_fwded;
 logic [10:0] metadata_out, metadata_fwded, metadata_reg;
@@ -29,13 +30,13 @@ logic [2:0] plru;
 logic [3:0] match;
 logic [1:0] victimway, fwd_way, fwd_way_reg;
 
-data_blockram data_blockram(.clk(clk), .clk2(clk), .rd_addr(rd_addr), .wr_data(w_data), 
-	.wr_index(wr_index), .wr_en(w), .data_out(block_data_out));
+data_blockram data_blockram(.clk1(clk), .clk2(clk), .rd_addr(rd_addr), .wr_data(w_data), 
+	.wr_addr(wr_index), .wr_en(w), .data_out(block_data_out)); // changed clk1, wr_addr, 
 
-metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.wr_data(metadata_in), 
-	.wr_index(r_index_reg), .wr_en(r_reg), .data_out(metadata_out));
+metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.data_in(metadata_in), 
+	.wr_addr(r_index_reg), .wr_en(r_reg), .data_out(metadata_out));
 
-tag_blockram tags(.tag_out(block_tag_out), .r_index(r_index), .w_index(w_index), .tag_in(w_tag), 
+tag_blockram tags(.tag_out(block_tag_out), .r_index(r_index), .w_index(wr_tag_index), .tag_in(w_tag), 
                  .wr_en(w), .clk1(clk), .clk2(clk));
 
 next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_array), .dirty_array(dirty_array), 
@@ -43,6 +44,7 @@ next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_arra
 
   assign rd_addr = {r_index, r_line[5:4]};
   assign wr_index = {w_index, w_line[5:4], w_way};
+  assign wr_tag_index = {w_index, w_line[5:4]};
   
   genvar i;
   generate
