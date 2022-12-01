@@ -6,7 +6,7 @@ module tpumac #(
   input logic en,
   input logic WrEn,
 
-  input logic [BIS_AB-1:0] Ain,
+  input logic [BITS_AB-1:0] Ain,
   input logic [BITS_AB-1:0] Bin,
   input logic [BITS_C-1:0]  Cin,
 
@@ -29,7 +29,7 @@ module tpumac #(
   shortreal operand1, operand2, A_mul_B, A_mul_B_plus_Cout, accum, cinput;
 
   always_comb begin
-     cinput = $bitstoshortreal(Cin)
+     cinput = $bitstoshortreal(Cin);
      operand1 = $bitstoshortreal(Ain);
      operand2 = $bitstoshortreal(Bin);
      A_mul_B = operand1 * operand2;

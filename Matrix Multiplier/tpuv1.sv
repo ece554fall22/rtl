@@ -1,4 +1,3 @@
-`default_nettype none
 module tpuv1 #(
   parameter BITS_AB=32,
   parameter BITS_C=32,
@@ -6,13 +5,13 @@ module tpuv1 #(
   parameter ADDRW=16,
   parameter DATAW=64
 ) (
-  input wire clk, rst_n, hl,
-  input [32:0] v_high [3:0];
-  input [32:0] v_low [3:0];
-  input [3:0] idx;
-  input [2:0] opcode;
-  input high_low;
-  output logic [128:0] data_out;
+  input clk, rst_n, hl,
+  input [31:0] v_high [3:0],
+  input [31:0] v_low [3:0],
+  input [3:0] idx,
+  input [2:0] opcode,
+  input high_low,
+  output logic [31:0] data_out [3:0]
 );
   /*------------------------------------------------------------------------------
   --  memories
@@ -27,7 +26,7 @@ module tpuv1 #(
   generate
     for(i = 0; i < DIM; i++) begin
       if(i < 4)
-        assign v_in[i] = vlow[i];
+        assign v_in[i] = v_low[i];
       else
         assign v_in[i] = v_high[i-4];
     end
@@ -35,7 +34,6 @@ module tpuv1 #(
   
 
   logic memA_en, memA_WrEn;
-  logic [ROWBITS-1:0] Arow;
   memA #(.BITS_AB(BITS_AB), .DIM(DIM)) memory_A (
     .clk  (clk),
     .rst_n(rst_n),
@@ -58,9 +56,8 @@ module tpuv1 #(
   /*------------------------------------------------------------------------------
   --  systolic array
   ------------------------------------------------------------------------------*/
-  logic systolic_WrEn;
-  logic [ROWBITS-1:0] Crow;
-  wire signed [BITS_C-1:0] Cout [DIM-1:0];
+  logic systolic_WrEn, systolic_en;
+  logic [BITS_C-1:0] Cout [DIM/2-1:0];
   systolic_array #(
     .BITS_AB(BITS_AB), .BITS_C(BITS_C), .DIM(DIM)
   ) systolic_arr (
@@ -68,7 +65,7 @@ module tpuv1 #(
     .rst_n(rst_n),
     .en   (systolic_en),
     .WrEn (systolic_WrEn),
-    .hl   (hl)
+    .hl   (hl),
     .Crow (idx),
     .Cin  (v_in),
     .Cout (Cout),
@@ -80,15 +77,15 @@ module tpuv1 #(
   /*------------------------------------------------------------------------------
   --  address selection logic
   ------------------------------------------------------------------------------*/
-
-  enum {writeA, writeB, writeC, matmul, readC, systolic_step}
+  logic read;
+  enum {writeA, writeB, writeC, matmul, readC, systolic_step} oppcodes;
   always_comb begin
     // defaults
     memA_en = '0;
     memA_WrEn = '0;
     memB_en = '0;
     systolic_WrEn = '0;
-    dataOut = '0;
+    read = '0;
     systolic_en = 0;
     case(opcode)
       writeA: begin
@@ -96,7 +93,7 @@ module tpuv1 #(
         memA_WrEn = 1;
       end
       writeB: begin
-        memB_en;
+        memB_en = 1;
       end
       writeC: begin
         systolic_en = 1;
@@ -113,8 +110,16 @@ module tpuv1 #(
         systolic_en = 1;
       end
       readC: begin
-        dataOut = Cout;
+        read = 1;
       end
     endcase
+  end
+
+  genvar y;
+  generate 
+    for(y = 0; y < 4; y++) begin
+      assign data_out[y] = (read) ? Cout[y] : 32'b0;
+    end
+  endgenerate
 
 endmodule // tpuv1

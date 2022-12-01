@@ -5,9 +5,9 @@
 
 module fifo #(
   parameter int DEPTH=8,
-  parameter int BITS=32
+  parameter int BITS=64
 ) (
-  input wire clk,rst_n,en, wr,
+  input wire clk,rst_n,en,
   input wire [BITS-1:0] d,
   output wire [BITS-1:0] q
 );
@@ -18,8 +18,6 @@ module fifo #(
     for (integer i = 0; i < DEPTH; i++) begin
       if (!rst_n)
         registers[i] <= '0;
-      else if (wr)
-
       else if (en)
         registers[i] <= (i == 0) ? d : registers[i-1];
     end
