@@ -92,7 +92,7 @@ genvar y;
 
 genvar z;
     generate;
-        for(z = 1; z <2; z++) begin
+        for(z = 1; z <3; z++) begin
             always_ff@( posedge clk, negedge rst_n ) begin
                 if (!rst_n) begin 
                     out7[z] <= '0;
