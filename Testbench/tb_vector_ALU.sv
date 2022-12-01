@@ -16,17 +16,21 @@ logic [31:0] vout [3:0];
 logic [31:0] rout;
 // Current cycle's correct outputs
 shortreal correct_vout [3:0];
+logic [31:0] correct_vout_temp [3:0];
 shortreal correct_rout [3:0];
 int fail_count;
 logic fail;
-int cycle_count;
+int cycle_count, num_tests;
+shortreal dotproduct;
 
 vector_alu vec_alu1(.v1(v1), .v2(v2), .r1(r1), .r2(r2), .op(op), .imm(imm), .clk(clk), .rst_n(rst_n), .en(en), .vout(vout), .rout(rout));
 
 // Initialize signals, reset and provide final test bench result
 initial begin
+    fail = 0;
     cycle_count = '0;
     fail_count = 0;
+    num_tests = 0;
     // Initialize clock signal
     clk = 0;
     rst_n = 0; 
@@ -50,7 +54,7 @@ initial begin
         cycle_count=cycle_count+9;
         r1 = $random;
         r2 = $random;
-        op = 5'h03;
+        op = 5'h06;
         // imm = 1;
         for (int i = 0; i < 4; i++) begin
             v1[i] = $random;
@@ -63,37 +67,82 @@ initial begin
 
         repeat (9) @(posedge clk);
         case (op)
-        5'h03: begin
-            // Compute the correct output and put it in temporary location
-            // shape(correct_vout) = 4*32
-            for(int i = 0; i < 4; i++) begin
-                correct_vout[i] = $bitstoshortreal(v1[i]) + $bitstoshortreal(v2[i]);
+            // Vadd
+            5'h03: begin
+                // Compute the correct output and put it in temporary location
+                // shape(correct_vout) = 4*32
+                for(int i = 0; i < 4; i++) begin
+                    correct_vout[i] = $bitstoshortreal(v1[i]) + $bitstoshortreal(v2[i]);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
             end
-        end
+            // Vsub
+            5'h04: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v1[i]) - $bitstoshortreal(v2[i]);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
+            // Vmult
+            5'h05: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
+            // Vdot
+            5'h06: begin
+                for(int i = 0; i < 4; i++) begin    
+                    dotproduct += $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
+                end
+            end
+            // Vdota
+            5'h07: begin
+                for(int i = 0; i < 4; i++) begin    
+                    dotproduct += $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
+                end
+                dotproduct += r2;
+            end
+            // Vindx
+            5'h08: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v1[i]) - $bitstoshortreal(v2[i]);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
         endcase
-        if (vout === correct_vout) begin
-            $display("yes! a hit! at cycle%d",cycle_count);
+        if (op == 5'h06 || op == 5'h07) begin
+            if ($bitstoshortreal(rout) == dotproduct) begin
+                $display("yes! a hit! at cycle%d",cycle_count);
+            end
         end
         else begin
-            for(int g = 0; g < 4; g++)begin
-                $display("op = %d, vout[%d] = %1.100f, Expected vout[%d]: %1.100f",op,g,vout[g],g,correct_vout[g]);
+            if (vout === correct_vout_temp) begin
+                $display("yes! a hit! at cycle%d",cycle_count);
             end
-            fail = 1;
-            fail_count++;
+            else begin
+                for(int g = 0; g < 4; g++)begin
+                    $display("op = %d, vout[%d] = %1.100f, Expected vout[%d]: %1.100f",op,g,vout[g],g,correct_vout[g]);
+                end
+                fail = 1;
+                fail_count++;
+            end
         end
 
         
         @(posedge clk);
+        num_tests++;
         if (fail) begin
             $display("Total errors: %d", fail_count);
             $display("ARRRR! Ya code be blast!!! Aye, there might be errors, get debugging!");
             $stop;
         end
         else begin
-            $display("YAHOO! TEST PASSED!");
-            $stop;
+            $display("TEST %d PASSED!",num_tests);
         end
     end
+    $display("YAHOO! TEST PASSED!");
+    $stop;
 end
 
 // Create clock signal
