@@ -29,9 +29,9 @@ module next_metadata_comb(way, plru, valid_array, dirty_array,
 
 always_comb begin
   case(flushtype)
-    2'b11 : next_valid_array = valid_array | ~dirty_array;
-    2'b10 : next_valid_array = valid_array | dirty_array;		// decides the next valid array
-    2'b01 : next_valid_array = valid_array | (way_onehot & {4{hit}});
+    2'b11 : next_valid_array = valid_array & ~dirty_array;
+    2'b10 : next_valid_array = valid_array & dirty_array;		// decides the next valid array
+    2'b01 : next_valid_array = valid_array & (way_onehot & {4{hit}});
     2'b00 : next_valid_array = (hit) ? valid_array : valid_array & ~way_onehot;
   endcase
 end
