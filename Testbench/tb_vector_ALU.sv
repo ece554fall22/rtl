@@ -17,11 +17,10 @@ logic [31:0] rout;
 // Current cycle's correct outputs
 shortreal correct_vout [3:0];
 logic [31:0] correct_vout_temp [3:0];
-shortreal correct_rout [3:0];
 int fail_count;
 logic fail;
 int cycle_count, num_tests;
-shortreal dotproduct;
+shortreal correct_rout;
 
 vector_alu vec_alu1(.v1(v1), .v2(v2), .r1(r1), .r2(r2), .op(op), .imm(imm), .clk(clk), .rst_n(rst_n), .en(en), .vout(vout), .rout(rout));
 
@@ -55,7 +54,8 @@ initial begin
         r1 = $random;
         r2 = $random;
         op = 5'h06;
-        // imm = 1;
+        if (op == 5'h08) imm = $urandom_range(0,3);
+        else imm = $random;
         for (int i = 0; i < 4; i++) begin
             v1[i] = $random;
             v2[i] = $random;
@@ -93,26 +93,89 @@ initial begin
             // Vdot
             5'h06: begin
                 for(int i = 0; i < 4; i++) begin    
-                    dotproduct += $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
+                    correct_rout += $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
                 end
             end
             // Vdota
             5'h07: begin
                 for(int i = 0; i < 4; i++) begin    
-                    dotproduct += $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
+                    correct_rout += $bitstoshortreal(v1[i]) * $bitstoshortreal(v2[i]);
                 end
-                dotproduct += r2;
+                correct_rout += r2;
             end
             // Vindx
             5'h08: begin
+                correct_rout = $bitstoshortreal(v1[imm]);
+            end
+            // Vreduce
+            5'h09: begin
+                correct_rout = $bitstoshortreal(v1[0]) + $bitstoshortreal(v1[1]) + $bitstoshortreal(v1[2]) + $bitstoshortreal(v1[3]);
+            end
+            // Vsplat
+            5'h0A: begin
                 for(int i = 0; i < 4; i++) begin    
-                    correct_vout[i] = $bitstoshortreal(v1[i]) - $bitstoshortreal(v2[i]);
+                    correct_vout[i] = r1;
                     correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
                 end
             end
+            // Vswizzle
+            5'h0B: begin
+                for(int i = 0; i < 4; i++) begin  
+                    correct_vout[i] = v2[imm[i*2+1:i*2]]
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
+            // Vsadd
+            5'h0C: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v2[i]) + $bitstoshortreal(r1);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
+            // Vssub
+            5'h0D: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v2[i]) - $bitstoshortreal(r1);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
+            // Vsmult
+            5'h0E: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v2[i]) * $bitstoshortreal(r1);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+                end
+            end
+            // Vsma
+            5'h0F: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = $bitstoshortreal(v1[i]) * $bitstoshortreal(r1);
+                    correct_vout[i] += $bitstoshortreal(v2[i]);
+                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
+
+                end
+            end
+            // Vcompsel
+            5'h10: begin
+                for (int i = 0; i < 4; i++) begin
+                    correct_vout[i] = ($bitstoshortreal(v1[i]) > $bitstoshortreal(v2[i])) ? r1 : r2;
+                end
+            end
+            // Vmax
+            5'h11: begin
+                for(int i = 0; i < 4; i++) begin
+                    correct_vout[i] = ($bitstoshortreal(v1[i]) > $bitstoshortreal(v2[i])) ? v1[i] : v2[i];
+                end
+            end
+            // Vmin
+            5'h12: begin
+                for(int i = 0; i < 4; i++) begin    
+                    correct_vout[i] = ($bitstoshortreal(v1[i]) < $bitstoshortreal(v2[i])) ? v1[i] : v2[i];
+                end
+            end
         endcase
-        if (op == 5'h06 || op == 5'h07) begin
-            if ($bitstoshortreal(rout) == dotproduct) begin
+        if (op == 5'h06 || op == 5'h07 || op == 5'h09) begin
+            if ($bitstoshortreal(rout) == correct_rout) begin
                 $display("yes! a hit! at cycle%d",cycle_count);
             end
         end
