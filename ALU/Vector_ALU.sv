@@ -76,7 +76,7 @@ genvar i;
 
 genvar y;
     generate;
-        for(y = 1; y <5; y++) begin
+        for(y = 1; y <6; y++) begin
             always_ff@( posedge clk, negedge rst_n ) begin
                 if (!rst_n) begin 
                     out5[y] <= '0;
@@ -201,7 +201,7 @@ always_comb begin
             Sel_2 = 2'b01;
         end
         Vsadd: begin
-            Sel_1 = 2'b01;
+            Sel_1 = 2'b11;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
@@ -210,7 +210,7 @@ always_comb begin
             op2 = 2'b01;
             op3 = 2'b01;
             op4 = 2'b01;
-            Sel_1 = 2'b01;
+            Sel_1 = 2'b11;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
@@ -219,7 +219,7 @@ always_comb begin
             op2 = 2'b10;
             op3 = 2'b10;
             op4 = 2'b10;
-            Sel_1 = 2'b01;
+            Sel_1 = 2'b11;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
@@ -267,7 +267,7 @@ always_comb begin
     vout[1] = 32'b0;
     vout[2] = 32'b0;
     vout[3] = 32'b0;
-    case(oppip[2])
+    case(oppip[8])
         Fadd: begin
             rout = out1[8];
         end
