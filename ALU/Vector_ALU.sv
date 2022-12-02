@@ -161,71 +161,99 @@ always_comb begin
             op1 = 2'b10;
         end
         Vadd: begin
-            Sel_1 = 2'b00;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vsub: begin
             op1 = 2'b01;
-            Sel_1 = 2'b00;
+            op2 = 2'b01;
+            op3 = 2'b01;
+            op4 = 2'b01;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vmult: begin
             op1 = 2'b10;
-            Sel_1 = 2'b00;
+            op2 = 2'b10;
+            op3 = 2'b10;
+            op4 = 2'b10;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vdot: begin
             op1 = 2'b10;
-            Sel_1 = 2'b00;
+            op2 = 2'b10;
+            op3 = 2'b10;
+            op4 = 2'b10;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vdota: begin
             op1 = 2'b10;
-            Sel_1 = 2'b00;
+            op2 = 2'b10;
+            op3 = 2'b10;
+            op4 = 2'b10;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vreduce: begin
-            op1 = 2'b01;
-            Sel_1 = 2'b00;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vsadd: begin
-            op1 = 2'b00;
-            Sel_1 = 2'b00;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
         Vssub: begin
             op1 = 2'b01;
-            Sel_1 = 2'b00;
+            op2 = 2'b01;
+            op3 = 2'b01;
+            op4 = 2'b01;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
         Vsmult: begin
             op1 = 2'b10;
-            Sel_1 = 2'b00;
+            op2 = 2'b10;
+            op3 = 2'b10;
+            op4 = 2'b10;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
         Vsma: begin
             op1 = 2'b10;
-            Sel_1 = 2'b00;
+            op2 = 2'b10;
+            op3 = 2'b10;
+            op4 = 2'b10;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b11;
             Sel_34 = 1;
         end
         Vcompsel: begin
             op1 = 2'b11;
-            Sel_1 = 2'b00;
+            op2 = 2'b11;
+            op3 = 2'b11;
+            op4 = 2'b11;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vmax: begin
             op1 = 2'b11;
-            Sel_1 = 2'b00;
+            op2 = 2'b11;
+            op3 = 2'b11;
+            op4 = 2'b11;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
         Vmin: begin
             op1 = 2'b11;
-            Sel_1 = 2'b00;
+            op2 = 2'b11;
+            op3 = 2'b11;
+            op4 = 2'b11;
+            Sel_1 = 2'b01;
             Sel_2 = 2'b01;
         end
     endcase
