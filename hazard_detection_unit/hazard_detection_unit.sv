@@ -3,7 +3,7 @@ module hazard_detection_unit
   parameter int DEPTH = 9
 )(
   // inputs from current operation in decode
-  input vector_wr_en, register_wr_en, mem_stall_in,
+  input vector_wr_en, register_wr_en, mem_stall_in, clk, rst,
   input [5:0] vector_read_register_one, vector_read_register_two,	// for all these bit 5 is 1 if that register is in use else 0
   input [5:0] scalar_read_register_one, scalar_read_register_two,	
   input [4:0] write_register,
