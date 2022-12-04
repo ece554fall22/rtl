@@ -184,7 +184,7 @@ endgenerate
   // stall_on_vector_pipeline means that the vector pipeline contains a result that the current instruction needs
   // vector_decode_stall means that the current operation is a vector operation therefore any dependency must be stalled on, including a scalar pipeline dependency
   assign stall_on_vector_pipeline = (|v1cmp[DEPTH-1:2]) | (|v2cmp[DEPTH-1:2]) | (|sc1cmp[DEPTH-1:2]) | (|sc2cmp[DEPTH-1:2]);
-  assign vector_decode_stall = ((|v1cmp) | (|v2cmp)) | ((|sc1cmp) | (|sc2cmp)) & op_type[1];
+  assign vector_decode_stall = ((|v1cmp) | (|v2cmp)) | (((|sc1cmp) | (|sc2cmp)) & op_type[1]);
   
 
 endmodule
