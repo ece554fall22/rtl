@@ -29,7 +29,7 @@ module hazard_detection_unit
   logic [4:0] write_registers_s [1:0];
 
   // cmp signals are 1 if there is a valid instruction writing to that valid input of the current decode instr
-  logic [DEPTH+2:0] v1cmp, v2cmp, sc1cmp, sc2cmp;
+  logic [DEPTH+1:0] v1cmp, v2cmp, sc1cmp, sc2cmp;
 
   // vector_decode_stall means current instruction goes to the vector pipeline and there exists some instruction in any pipeline writing to one of it's inputs   
   // partial_stall means that only decode and fetch need to stall
@@ -56,8 +56,8 @@ module hazard_detection_unit
   // this fifo holds the metadata about all instructions in the vector pipeline
   hazard_fifo #(.DEPTH(DEPTH))
             fifo_vector(.clk(clk), .rst(rst), .op_type(op_type), .write_register(write_register),
-                 .vector_wr_en(vector_wr_en & op_type[1]), 
-                 .register_wr_en(register_wr_en & op_type[1]), 
+                 .vector_wr_en(vector_wr_en & op_type[1] & ~stall_decode), 
+                 .register_wr_en(register_wr_en & op_type[1] & ~stall_decode), 
                  .en(1'b1), 
                  .op_types(op_types_v), 
                  .vector_wr_ens(vector_wr_ens_v), 
@@ -67,9 +67,9 @@ module hazard_detection_unit
   // this fifo holds metadata bout the execute and mem stages of the scalar pipeline
   hazard_fifo #(.DEPTH(2))
             fifo_scalar(.clk(clk), .rst(rst), .op_type(op_type), .write_register(write_register),
-                 .vector_wr_en(vector_wr_en & ~op_type[1]), 
-                 .register_wr_en(register_wr_en & ~op_type[1]), 
-                 .en(~mem_stall_in), 
+                 .vector_wr_en(vector_wr_en & ~op_type[1] & ~stall_decode), 
+                 .register_wr_en(register_wr_en & ~op_type[1] & ~stall_decode), 
+                 .en(~full_stall), 
                  .op_types(op_types_s), 
                  .vector_wr_ens(vector_wr_ens_s), 
                  .register_wr_ens(register_wr_ens_s), 
@@ -140,7 +140,7 @@ endgenerate
   // and the scalar pipeline should be stalled
   assign vector_same_age[2] = ^vector_stall_counter[1:0];
   assign vector_older[2] = ~|vector_stall_counter[1:0];
-  assign waw_hazard = |waw_hazards;  
+  assign waw_stall = |waw_hazards;  
 
   // buffers the register and vector selects that go into the wb controller
   always_ff @(posedge clk, posedge rst) begin
@@ -183,7 +183,7 @@ endgenerate
 
   // stall_on_vector_pipeline means that the vector pipeline contains a result that the current instruction needs
   // vector_decode_stall means that the current operation is a vector operation therefore any dependency must be stalled on, including a scalar pipeline dependency
-  assign stall_on_vector_pipeline = (|v1cmp[DEPTH-1:2]) | (|v2cmp[DEPTH-1:2]) | (|sc1cmp[DEPTH-1:2]) | (|sc2cmp[DEPTH-1:2]);
+  assign stall_on_vector_pipeline = (|v1cmp[DEPTH+1:2]) | (|v2cmp[DEPTH+1:2]) | (|sc1cmp[DEPTH+1:2]) | (|sc2cmp[DEPTH+1:2]);
   assign vector_decode_stall = ((|v1cmp) | (|v2cmp)) | (((|sc1cmp) | (|sc2cmp)) & op_type[1]);
   
 
