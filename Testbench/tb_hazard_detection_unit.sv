@@ -122,8 +122,8 @@ logic [127:0] vector_read_one_fwded, vector_read_two_fwded;
 hazard_detection_unit dut(.*);
 
 // declare wb module, using its capability to buffer vector results
-wb writeback(.scalar_pipeline_wb(register_data_sp[1]), .vector_pipeline_wb(register_data_vp[9]), .pc(0), .scalar_pipeline_vwb(vector_data_sp[2]), .vector_pipeline(vwb),
-             .scalar_pipeline_we(wr_ens_sp[2][0]), .vector_pipeline_we(wr_ens_vp[9][0]), .pc_sel(0), .scalar_pipeline_mask(4'hF), .vector_pipeline_mask(4'hF),
+wb writeback(.scalar_pipeline_wb(register_data_sp[1]), .vector_pipeline_wb(register_data_vp[9]), .pc({36{1'b0}}), .scalar_pipeline_vwb(vector_data_sp[2]), .vector_pipeline_vwb(vector_data_vp[9]),
+             .scalar_pipeline_we(wr_ens_sp[2][0]), .vector_pipeline_we(wr_ens_vp[9][0]), .pc_sel(1'b0), .scalar_pipeline_mask(4'hF), .vector_pipeline_mask(4'hF),
              .register_wb_sel(register_wb_sel_reg), .vector_wb_sel(vector_wb_sel_reg), .buffer_register_sel(buffer_register_sel_reg), .buffer_vector_sel(buffer_vector_sel_reg),
              .buffer_register(buffer_register_reg), .buffer_vector(buffer_vector_reg),
              .vector_we(vector_we), .register_we(register_we), .vector_data(vector_data), .register_data(register_data), .clk(clk), .rst(rst), .scalar_pipeline_wbr(wr_regs_sp[2]), 
@@ -151,11 +151,11 @@ assign vector_data_func = ((vector_read_register_one[5]) ? vector_read_one_fwded
 
 assign vector_data_func_sc = ((vector_read_register_one[5]) ? vector_register_model_sc[vector_read_register_one[4:0]] : 0) +
                           ((vector_read_register_two[5]) ? vector_register_model_sc[vector_read_register_two[4:0]] : random_vector_data) +
-                          ((scalar_read_register_one[5]) ? {{92{register_model_sc[scalar_read_register_one[4:0]][36]}}, 
+                          ((scalar_read_register_one[5]) ? {{92{register_model_sc[scalar_read_register_one[4:0]][35]}}, 
                           register_model_sc[scalar_read_register_one[4:0]]} : 0) +
-                          ((scalar_read_register_two[5]) ? {{92{register_model_sc[scalar_read_register_two[4:0]][36]}}, 
+                          ((scalar_read_register_two[5]) ? {{92{register_model_sc[scalar_read_register_two[4:0]][35]}}, 
                            register_model_sc[scalar_read_register_two[4:0]]} : 
-                          {{92{random_register_data[36]}}, random_register_data});
+                          {{92{random_register_data[35]}}, random_register_data});
 
 
 initial begin
@@ -167,8 +167,15 @@ initial begin
     vector_register_model_sc[i] = 0;
     vector_register_model[i] = 0;
   end
+  op_type = 0;
+  vector_read_register_one = 0;
+  vector_read_register_two = 0;
+  scalar_read_register_one = 0;
+  scalar_read_register_two = 0;
+  write_register = 0;
   begin_store_checking = 0;
   failed = 0;
+  mem_stall_in = 0;
   clk = 0;
   rst = 1;
   disable_instructions = 1;
@@ -367,17 +374,6 @@ always @(negedge clk) begin
         vector_wr_en = $random;
         register_wr_en = ~vector_wr_en;
       end
-      if(~|stall_freq) begin
-        mem_stall_in = 0;
-      end else if(stall_freq===2'b01) begin
-        stall_rand = $random;
-        mem_stall_in = (op_types_sp[1]===2'b01) & ~|stall_rand;
-      end else if(stall_freq===2'b10) begin
-        mem_stall_in = (op_types_sp[1]===2'b01) & $random;
-      end else begin
-        stall_rand = $random;
-        mem_stall_in = (op_types_sp[1]===2'b01) & |stall_rand;
-      end
     end else begin
       random_vector_data = 0;
       random_register_data = 0;
@@ -394,6 +390,21 @@ always @(negedge clk) begin
   end
 end
 
+// model random mem_stall_ins
+always @(negedge clk) begin
+  if(~|stall_freq) begin
+    mem_stall_in = 0; 
+  end else if(stall_freq===2'b01) begin
+    stall_rand = $random;
+    mem_stall_in = (op_types_sp[1]===2'b01) & ~|stall_rand;
+  end else if(stall_freq===2'b10) begin
+    mem_stall_in = (op_types_sp[1]===2'b01) & $random;
+  end else begin
+    stall_rand = $random;
+    mem_stall_in = (op_types_sp[1]===2'b01) & |stall_rand;
+  end
+end
+
 // model simplified scalar pipeline
 always @(posedge clk) begin
   if(~stall_execute) begin
@@ -403,9 +414,9 @@ always @(posedge clk) begin
     scalar_op1[0] <= (scalar_read_register_one[5]) ? register_model[scalar_read_register_one[4:0]] : 0;
     scalar_op2[0] <= (scalar_read_register_two[5]) ? register_model[scalar_read_register_two[4:0]] : random_register_data;
     vector_data_sp[0] <= (vector_wr_en) ? vector_data_func : random_vector_data;
-    ex_to_ex[0] <= ex_to_ex;
-    mem_to_ex[0] <= mem_to_ex;
-    mem_to_mem[0] <= mem_to_mem;
+    ex_to_ex_sp[0] <= ex_to_ex;
+    mem_to_ex_sp[0] <= mem_to_ex;
+    mem_to_mem_sp[0] <= mem_to_mem;
   end
   if(~stall_mem) begin
     op_types_sp[1] <= op_types_sp[0];
