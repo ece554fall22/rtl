@@ -10,7 +10,6 @@ module tpuv1 #(
   input [31:0] v_low [3:0],
   input [3:0] idx,
   input [2:0] opcode,
-  input high_low,
   output logic [31:0] data_out [3:0]
 );
   /*------------------------------------------------------------------------------
