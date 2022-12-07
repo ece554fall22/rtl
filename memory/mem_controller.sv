@@ -176,6 +176,8 @@ always_comb begin
   endcase
 end
 
+assign buffer_write_mod_data = wr_data;
+
 genvar i;
 generate
   for(i = 0; i < 16; i++) begin
@@ -187,7 +189,7 @@ generate
     assign buffer_wb_rst[i] = (circ_index==i) & (write_to_buffer==3'b100);
   
     if (DEPTH == 512) begin
-    assign buffer_write_mod_data = wr_data;
+
     end // else if (DEPTH == 128) begin // this is commented out because compiler didn't like
      // case(addr_in[5:4]) 
    //     2'b00: assign buffer_write_mod_data = {buffer_data[i][511:128], wr_data};
@@ -298,7 +300,7 @@ always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     mmio_addr_reg <= 0;
   end else if (mmioWrValid) begin
-    mmio_addr_Reg <= mmio_addr;
+    mmio_addr_reg <= mmio_addr;
   end
 end
   

@@ -6,8 +6,10 @@ module tb_mem_controller();
 // then wait on those requests and validate that they went through properly
 //
 
-logic empty, rd_done, full, wr_done, rd_go, rd_en, wr_go, wr_en, overwrite, clk, rst;
-logic [35:0] addr_in, rd_addr, wr_addr, addr_out;
+logic empty, rd_done, full, wr_done, rd_go, rd_en, wr_go, wr_en, overwrite, clk, rst, mmioWrValid;
+logic [27:0] mmio_addr;
+logic [35:0] addr_in, rd_addr_sans_mmio, wr_addr_sans_mmio, addr_out;
+logic [63:0] wr_addr, rd_addr;
 logic [15:0] wr_size, cache_lines;
 logic [511:0] rd_data, wr_data;
 logic [511:0] data_in, data_out;
@@ -34,6 +36,11 @@ logic failed, set_rand_delay_write, set_rand_delay_read;
 
 int requests_received;
 int requests_sent;
+
+assign rd_addr = {rd_addr_sans_mmio, mmio_addr};
+assign wr_addr = {wr_addr_sans_mmio, mmio_addr};
+assign mmio_addr = 28'h0000000;
+assign mmioWrValid = 1'b1;
 
 mem_controller dut(.*);
 
@@ -206,6 +213,7 @@ always_comb begin
   rd_done = 1'b0;
   read_dec = 1'b0;
   hal_read_next = idle;
+
 
   case(hal_read)
     idle: begin
