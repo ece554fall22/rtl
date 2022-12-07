@@ -8,7 +8,7 @@ module tb_mem_controller();
 
 logic empty, rd_done, full, wr_done, rd_go, rd_en, wr_go, wr_en, overwrite, clk, rst, mmioWrValid;
 logic [27:0] mmio_addr;
-logic [35:0] addr_in, rd_addr_sans_mmio, wr_addr_sans_mmio, addr_out;
+logic [35:0] addr_in, addr_out; //rd_addr_sans_mmio, wr_addr_sans_mmio
 logic [63:0] wr_addr, rd_addr;
 logic [15:0] wr_size, cache_lines;
 logic [511:0] rd_data, wr_data;
@@ -37,8 +37,8 @@ logic failed, set_rand_delay_write, set_rand_delay_read;
 int requests_received;
 int requests_sent;
 
-assign rd_addr = {rd_addr_sans_mmio, mmio_addr};
-assign wr_addr = {wr_addr_sans_mmio, mmio_addr};
+//assign rd_addr = {rd_addr_sans_mmio, mmio_addr};
+//assign wr_addr = {wr_addr_sans_mmio, mmio_addr};
 assign mmio_addr = 28'h0000000;
 assign mmioWrValid = 1'b1;
 
@@ -163,7 +163,7 @@ generate
             write_done = 1'b0;
           end
         end
-        if(wr_done & wr_addr==expected_addrs[k]) begin
+        if(wr_done & wr_addr ==expected_addrs[k]) begin
           if(!(data_out==expected_wr_datas[k])) begin
             $display("got a write request at hal but data was not correct");
             failed = 1;
@@ -269,7 +269,7 @@ always @(posedge clk) begin
   end
 end
 
-assign rd_data = (rd_done) ? {{476{1'b0}}, rd_addr} : {512{1'b0}};
+assign rd_data = (rd_done) ? {{448{1'b0}}, rd_addr} : {512{1'b0}};
 
 // simulate hal write interface
 always_comb begin
