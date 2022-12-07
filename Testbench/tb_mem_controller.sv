@@ -42,6 +42,8 @@ int requests_sent;
 assign mmio_addr = 28'h0000000;
 assign mmioWrValid = 1'b1;
 
+assign packet_type_req_in = packet_types_req_out[16];
+
 mem_controller dut(.*);
 
 // sets up 16 circular memory units and their state machines just processing random read/write requests
@@ -99,9 +101,9 @@ generate
           if(packet_type_req_out==3'b000) begin
             overwrites[k] = 1'b1;
             if(rand_bits[k]) begin
-              packet_types_req_in = 3'b001;
+              packet_types_req_in[k] = 3'b001;
             end else begin
-              packet_types_req_in = 3'b011;
+              packet_types_req_in[k] = 3'b011;
             end
           end
         end
@@ -163,7 +165,7 @@ generate
             write_done = 1'b0;
           end
         end
-        if(wr_done & wr_addr ==expected_addrs[k]) begin
+        if(wr_done && (wr_addr ==expected_addrs[k])) begin
           if(!(data_out==expected_wr_datas[k])) begin
             $display("got a write request at hal but data was not correct");
             failed = 1;
@@ -343,5 +345,8 @@ end
 always @(posedge clk) begin
   
 end
+
+always #5
+	clk = ~clk;
 
 endmodule
