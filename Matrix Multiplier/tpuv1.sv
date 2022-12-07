@@ -77,7 +77,7 @@ module tpuv1 #(
   --  address selection logic
   ------------------------------------------------------------------------------*/
   logic read;
-  enum {writeA, writeB, writeC, matmul, readC, systolic_step} oppcodes;
+  enum {nop, writeA, writeB, writeC, matmul, readC, systolic_step} opcodes;
   always_comb begin
     // defaults
     memA_en = '0;
