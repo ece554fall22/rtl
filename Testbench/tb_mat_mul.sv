@@ -108,7 +108,7 @@ module tb_mat_mul();
         end
 
         if(errors > 0) begin
-            $display("You have %d errors! You're dumb!", errors);
+            $display("Test failed! You have %d errors!", errors);
         end
         else begin
             $display("YAHOO! Test passed!");
