@@ -23,14 +23,19 @@ class data_cache_memory_class;
 	
 	// Initialize the data to zeros.
 	function new();
+		integer i;
 		data_memory = '{default:'0};
 		tag_memory = '{default:'0};
+		most_recent_r_index = '{default:'0};
 		next_set_metadata = '{default:'0};
-		metadata = '{default:'0};
 		next_set_metadata.valid = '{default:'0};
 		next_set_metadata.dirty = '{default:'0};
 		next_set_metadata = '{default:'0};
-		most_recent_r_index = '{default:'0};
+		metadata = '{default:'0};
+		
+		for(i = 0; i < NUM_OF_SETS; i = i + 1) begin
+			metadata.data[0] = '{default:'0};
+		end
 	endfunction
 	
 	/**
@@ -56,17 +61,8 @@ class data_cache_memory_class;
 		// Initialize return data
 		for (i = 0; i < WAY_PER_SET; i = i + 1) begin // i = way index (i = 0 for way -> 00)
 			way_index = 2'(i);	 
-			 // read_data[(WORD_SIZE * (i + 1)) - 1 : WORD_SIZE * i] = data_memory[{r_index, r_line[5:4], way_index}];
+			
 			 read_data[(WORD_SIZE * i) +: WORD_SIZE] = data_memory[{r_index, r_line[5:4], way_index}];
-			
-			// genvar i;
-			// generate
-				// for (i = 0; i < WAY_PER_SET; i = i + 1) begin
-					// read_data[(WORD_SIZE * (i + 1)) - 1 : WORD_SIZE * i] = data_memory[{r_index, r_line[5:4], way_index}];
-				
-				// end
-			// endgenerate
-			
 		end
 		
 	endtask
@@ -93,7 +89,6 @@ class data_cache_memory_class;
 		for (int i = 0; i < WAY_PER_SET; i = i + 1) begin // i = word index (i = 0 for word -> 00)
 			way_index = 2'(i);	 
 			
-			// read_data[(TAG_SIZE * (i + 1)) - 1 : TAG_SIZE * i] = tag_memory[{r_index, way_index}];
 			read_data[(TAG_SIZE * i) +: TAG_SIZE] = tag_memory[{r_index, way_index}];
 		end
 	endtask
@@ -178,15 +173,14 @@ class data_cache_memory_class;
 		ref logic dirty,												// Indicate whether the data present is dirty
 		ref logic [$clog2(WAY_PER_SET) - 1: 0] way						// Way where data is present
 	);		
-		
 									
 		// Helper signals 
 		logic [WAY_PER_SET - 1: 0] data_found; 							// indicate the index where the data was found
 		logic [TAG_SIZE - 1: 0] tag_at_index;							// variable in for loop for each way
 		logic [$clog2(WAY_PER_SET) - 1: 0] victimway;
-		
+
 		// data found 
-		for(int i = 0; i < WAY_PER_SET; i++) begin
+		for(int i = 0; i < WAY_PER_SET; i = i + 1) begin
 			tag_at_index = tag_block[(TAG_SIZE * i) +: TAG_SIZE];
 			data_found[i] = (tag_at_index === tag_in) ? 1'b1 : 1'b0;
 			
@@ -194,7 +188,7 @@ class data_cache_memory_class;
 			data_found[i] &= metadata_block.valid[i];
 			
 			if(data_found[i]) begin
-				// way = i[1:0]; //$size($clog2(WAY_PER_SET))'(i);
+				way = i[1:0];
 				
 				// invalid data should not be dirty
 				dirty = metadata_block.dirty[i] & metadata_block.valid[i];
@@ -205,12 +199,7 @@ class data_cache_memory_class;
 		// if data was found anywhere
 		hit = |data_found;
 		
-		// Render victim way instead
-		if(~hit) begin
-			way = victimway;
-		end
-			
-
+		
 		/********** Update Metadata ********/
 		
 		// Do not update metadata on a when writing back to memory 
@@ -228,6 +217,13 @@ class data_cache_memory_class;
 				
 		end
 		
+		// Render victim way instead
+		if(~hit) begin
+			$display("Miss occurred: value: %b", hit);
+			way = victimway;
+		end
+		$display("Hit occurred: value: %b", hit);
+		$display("Victimway value: %b", victimway);
 	endtask
 	
 	/**
@@ -389,7 +385,7 @@ class data_cache_memory_class;
 	);
 		// Helper signals
 		logic [WAY_PER_SET - 1:0]valid;							// Valid bits (one per way/tag)
-		bit any_invalid;										// indicate if there is an invalid line
+		bit any_valid;										// indicate if there is an invalid line
 		logic last_accessed_top_half_way_last_bit; 				// Indicate whether 11 or 10 was last accessed (represents the lower bit)
 		logic last_accessed_bottom_half_way_last_bit; 			// Indicate whether 01 or 00 was last accessed (represents the lower bit)
 		logic last_accessed_first_bit;							// Indicate whether 11/10 or 01/00 was accessed last (represents the higher bit (way[1]))
@@ -402,14 +398,14 @@ class data_cache_memory_class;
 		// Victim priority 11 -> 10 -> 01 -> 00
 		for(int i = WAY_PER_SET - 1; i > 0; i++) begin
 			if(valid[i]) begin
-				any_invalid = 1'b1;
+				any_valid = 1'b1;
 				victimway = WAY_PER_SET'(i); // 2 bits
-				return;
+				break;
 			end
 		end
 	
 		// When there all lines in the set are valid
-		if(~any_invalid) begin
+		if(~any_valid) begin
 			if(last_accessed_first_bit) begin // 11/10 was last accessed
 				if(last_accessed_bottom_half_way_last_bit) begin // 1 -> 01 was last accessed
 					victimway = 2'b00;
@@ -460,12 +456,18 @@ class data_cache_memory_class;
 		const ref logic [5:0] w_line,								// line which was compared to on the previous cycle
 		const ref logic [$clog2(WAY_PER_SET) - 1:0] w_way,			// Way in cache to be written to
 		const ref logic [WORD_SIZE - 1:0] w_data,					// data to be written to memory index 
-		const ref logic [TAG_SIZE - 1:0] w_tag						// tag to be written for the given way
+		const ref logic [TAG_SIZE - 1:0] w_tag,						// tag to be written for the given way
+		const ref logic last_write_from_mem							// assert on last write from memory to cache to make way valid
 	);
 	
 		// Write selected word on line to memory
 		data_memory[{w_index, w_line[5:4], w_way}] = w_data;
-		tag_memory[{w_index, w_way}] = w_tag;	
+		tag_memory[{w_index, w_way}] = w_tag;
+
+		// Update valid array as the way is newly fetched
+		if(last_write_from_mem) begin
+			metadata.data[w_index].valid |= w_way;
+		end
 	endtask
 	
 	

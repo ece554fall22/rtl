@@ -31,6 +31,7 @@ module data_cache_tb();
 	logic w;						// incoming write signal
 	logic r; 						// incoming read signal
 	logic no_tagcheck_read;			// Used when data is being read back to and from memory rather than just from the cache
+	logic last_write_from_mem;		// assert on last write from memory to cache to make way valid
 	logic [17:0] dut_tag_out;    	// it is used to write tag back to main memory
 	logic [127:0] dut_data_out;  	// data to be written back to main memory
 	logic [1:0] dut_way;         	// can be the way where a hit occurred or the victim way
@@ -39,8 +40,6 @@ module data_cache_tb();
 	logic [3:0] dut_dirty_array;	// Holds the dirty ways on the selected index
 
 	// Helper signals 
-	data_memory_type data_memory;	// refers to the data memory portion of a data cache instance
-	tag_memory_type tag_memory;		// refers to the tag cache memory of a data cache instance
 	bit access_type; 				// determine if a write or a read is to be perfomed 
 	
 	// DUT internal signals
@@ -85,20 +84,23 @@ module data_cache_tb();
 						.w(w), 
 						.r(r), 
 						.no_tagcheck_read(no_tagcheck_read),
+						.last_write_from_mem(last_write_from_mem),
 						.tag_out(dut_tag_out), 
 						.data_out(dut_data_out), 
 						.way(dut_way), 
 						.hit(dut_hit),
 						.dirty(dut_dirty),
 						.dirty_array(dut_dirty_array));
-					
-				
+						
+	// Create interface object
+	// read_procedure_if read_intf();
+						
 	/** Used for checking internal signals */
-	always begin
+	always @(CACHE0.valid_array, CACHE0.plru) begin
 		dut_valid_array = CACHE0.valid_array;	// to check the validity of arrays
 		dut_plru = CACHE0.plru;					// for the victim way logic 
 	end
-	
+					
 	/** Used for performing reads */
 	task automatic read_main(
 		const ref data_cache_memory_class data_cache,
@@ -133,17 +135,6 @@ module data_cache_tb();
 			.out_metadata(metadata_block)
 		);
 		
-		// Used in viewing exact data fetched (For comparisons)
-		data_cache.get_data_and_tag(
-			// Inputs 
-			.data_block(data_block),			// Data across ways (all data in a line)
-			.tag_block(tag_block),				// all tags in a set 18 * 4 bits
-			.way(perf_way),							// Way where data is present
-			// Output
-			.data_out(perf_data_out),
-			.tag_out(perf_tag_out)
-		);
-		
 		// Get the hit, victimway and way
 		data_cache.get_hit_dirty_victimway_and_way(
 			// Inputs 
@@ -161,6 +152,17 @@ module data_cache_tb();
 			.dirty(perf_dirty),							// Indicate whether the data present is dirty
 			.way(perf_way)								// Way where data is present
 		);		
+		
+		// Used in viewing exact data fetched (For comparisons)
+		data_cache.get_data_and_tag(
+			// Inputs 
+			.data_block(data_block),			// Data across ways (all data in a line)
+			.tag_block(tag_block),				// all tags in a set 18 * 4 bits
+			.way(perf_way),							// Way where data is present
+			// Output
+			.data_out(perf_data_out),
+			.tag_out(perf_tag_out)
+		);
 	
 	endtask
 	
@@ -188,6 +190,7 @@ module data_cache_tb();
 		const ref logic [$clog2(WAY_PER_SET) : 0] dut_plru,
 		// Inputs and Outputs
 		ref logic [5:0] r_line,
+		ref logic last_write_from_mem,
 		ref logic [RAM_READ_SIZE - 1: 0] data_block,				
 		ref logic [(TAG_SIZE * WAY_PER_SET) - 1: 0] tag_block,	
 		ref logic [$clog2(WAY_PER_SET) - 1: 0] perf_way,				
@@ -223,7 +226,8 @@ module data_cache_tb();
 													.w_way(w_way),							
 													.w_data(w_data),						
 													.w_tag(w_tag),							
-													.w_index(w_index)						
+													.w_index(w_index),
+													.last_write_from_mem(last_write_from_mem)
 												);		
 		end
 		
@@ -231,6 +235,7 @@ module data_cache_tb();
 		pre_write_procedure_done = 1'b0;
 		r = 1'b1;
 		no_tagcheck_read = 1'b0; // reading for tags initially
+		last_write_from_mem = 1'b0;
 		
 		// Perform read
 		read_main(
@@ -281,13 +286,14 @@ module data_cache_tb();
 		end
 		else begin
 			no_tagcheck_read = ~perf_hit; // On a miss assert to prevent modification of metadata
+			// Write back to memory starting from the way where the missed data was found 
+			no_tagcheck_way = perf_way;					
 			
 			if(dut_way != perf_way) begin
 				$display("FAILED: The DUT eviction way is different from the perf test");
 			end
 			
-			// Write back to memory starting from the way where the missed data was found 
-			no_tagcheck_way = perf_way;					
+			
 			
 			// Read out all four times for all the words on a way
 			for(int i = 0; i < RAM_READ_SIZE / WORD_SIZE; i++) begin
@@ -347,24 +353,39 @@ module data_cache_tb();
 				end
 			end
 			
-			// Writing in same order data was read
-			w_way = r_line;
+			
 			
 			// Write all 4 words on way // TO DO: Writing tags more than once
 			for(int i = 0; i < RAM_READ_SIZE / WORD_SIZE; i++) begin
-				r = 1'b0;
-				w = 1'b1;
-				w_data = WORD_SIZE'(0);
+				@(negedge clk) begin
+					if(i == 0) begin // initialize on first write
+						r = 1'b0;
+						w = 1'b1;	
+						// Writing in same order data was read
+						w_way = no_tagcheck_way;
+						w_tag = r_tag;
+						w_index = r_index;
+						w_data = WORD_SIZE'(0);
+						w_line[5:4] = r_line[5:4];
+						last_write_from_mem = 1'b0;
+					end
+					
+					if(i == (RAM_READ_SIZE / WORD_SIZE) - 1) begin
+						last_write_from_mem = 1'b1;
+					end
+				end
 				
-				@(posedge clk);
+				@(posedge clk) begin
 				
-				data_cache.write_data_tag_and_metadata(
-					.w_index(w_index),					
-					.w_line(w_line),				
-					.w_way(w_way),				
-					.w_data(w_data),					// data to be fetched from memory. Should always be zero
-					.w_tag(w_tag)		
-				);		
+					data_cache.write_data_tag_and_metadata(
+						.w_index(w_index),					
+						.w_line(w_line),				
+						.w_way(w_way),				
+						.w_data(w_data),	// data to be fetched from memory. Should always be zero
+						.w_tag(w_tag),		// write to particular tag which is needed to be read 
+						.last_write_from_mem(last_write_from_mem) // update the valid array at that location
+					);		
+				end
 				
 				// Write every word
 				if(w_line[5:4] == 2'b11) begin
@@ -375,8 +396,11 @@ module data_cache_tb();
 				end 
 			end
 			
-			r = 1'b1;
-			w = 1'b0;
+			@(negedge clk) begin
+				r = 1'b1;
+				w = 1'b0;
+				last_write_from_mem = 1'b0;
+			end
 			
 			// Attempt to read tag again 
 			@(posedge clk) begin
@@ -424,13 +448,15 @@ module data_cache_tb();
 			end
 		end
 		
-		// on a write, save the addresses for next cycle
-		if(w_tagcheck) begin
-			w_index = r_index;
-			w_line = r_line;						
-			w_way = dut_way;		
-			w_tag = r_tag;			
-			w_data = get_next_data(r_line, perf_way); // data to be written on previous write request											
+		@(negedge clk) begin
+			// on a write, save the addresses for next cycle
+			if(w_tagcheck) begin
+				w_index = r_index;
+				w_line = r_line;						
+				w_way = dut_way;		
+				w_tag = r_tag;			
+				w_data = get_next_data(r_line, perf_way); // data to be written on previous write request											
+			end
 		end
 	endtask
 	
@@ -452,16 +478,48 @@ module data_cache_tb();
 	/**************	TEST THE DUT LOGIC  *****************/
 	
 	initial begin
-		// Declare and Initialize 
-		data_cache_memory_class data_cache;
-		data_cache = new();	
-		DATA_ARRAY = '{128'hAAAA, 128'hBBBB, 128'hCCCC, 128'hDDDD};
+		// Cache and the rest
+		data_cache_memory_class d_cache;
+		d_cache = new();	
 		
+		// Declare and Initialize 
+		DATA_ARRAY = '{128'hAAAA, 128'hBBBB, 128'hCCCC, 128'hDDDD};
+		pre_write_procedure_done = 1'b0;
 		update_metadata = 1'b1;
+		flushtype = 2'b00; // no flushes
+		w_tagcheck = 1'b1; // same thing but for DUT
+		r_tag = 18'h0;
+		r_index = 8'd100;
+		r_line = 6'b000000; 
+		r = 1'b0;
+		w = 1'b0;
+		no_tagcheck_read = 1'b0;
+		last_write_from_mem = 1'b0;
+		perf_hit = 1'b0;
+		perf_dirty = 1'b0;
+		// perf_way = 1'b0;
+		perf_data_out = {WORD_SIZE{1'b0}};
+		perf_tag_out = {TAG_SIZE{1'b0}};
+		w_index = 2'b00;	
+		w_line = 6'b000000;								
+		w_way = 2'b00;		
+		w_data = {WORD_SIZE{1'b0}};					
+		w_tag = {TAG_SIZE{1'b0}};
+		no_tagcheck_way = 2'b00;
+		metadata_block = '{default:'0};
+		data_block = {RAM_READ_SIZE{1'b0}};			
+		tag_block = {(TAG_SIZE * WAY_PER_SET){1'b0}};	
+		
+		
+		// Init global signals
+		clk = 1'b0;
+		rst = 1'b1;
+		
+		repeat(5) @(negedge clk);
+		rst = 1'b0; // deassert reset
 		
 		flushtype = 2'b00; // no flushes
-						
-		
+
 		// Change data for next access
 		@(negedge clk) begin
 			w_tagcheck = 1'b1; // same thing but for DUT
@@ -474,7 +532,7 @@ module data_cache_tb();
 		pre_write_procedure_done = 1'b0;
 		
 		read_procedure(
-						.data_cache(data_cache),
+						.data_cache(d_cache),
 						.clk(clk),
 						// Inputs
 						.r_index(r_index),	
@@ -493,6 +551,7 @@ module data_cache_tb();
 						.dut_plru(dut_plru),
 						// Outputs and Inputs 
 						.r_line(r_line),
+						.last_write_from_mem(last_write_from_mem),
 						.data_block(data_block),				
 						.tag_block(tag_block),	
 						.perf_way(perf_way),				
@@ -516,10 +575,59 @@ module data_cache_tb();
 		
 		pre_write_procedure_done = 1'b1;
 		
+		// Change data for next read access
+		// Sidenote: Already on negedge from previous function
+		w_tagcheck = 1'b0; // same thing but for DUT
+		@(negedge clk) begin
+			
+		end
+		
+		// follow up read
+		read_procedure(
+						.data_cache(d_cache),
+						.clk(clk),
+						// Inputs
+						.r_index(r_index),	
+						.flushtype(flushtype),
+						.r_tag(r_tag),
+						.update_metadata(update_metadata),											
+						.w_tagcheck(w_tagcheck),
+						// Inputs: DUT outputs						
+						.dut_tag_out(dut_tag_out),
+						.dut_data_out(dut_data_out),
+						.dut_way(dut_way),
+						.dut_hit(dut_hit),
+						.dut_dirty(dut_dirty),
+						.dut_dirty_array(dut_dirty_array),
+						.dut_valid_array(dut_valid_array),
+						.dut_plru(dut_plru),
+						// Outputs and Inputs 
+						.r_line(r_line),
+						.last_write_from_mem(last_write_from_mem),
+						.data_block(data_block),				
+						.tag_block(tag_block),	
+						.perf_way(perf_way),				
+						.metadata_block(metadata_block),	
+						.pre_write_procedure_done(pre_write_procedure_done),
+						// Outputs
+						.no_tagcheck_read(no_tagcheck_read),
+						.perf_hit(perf_hit),
+						.perf_dirty(perf_dirty),		
+						.perf_data_out(perf_data_out),
+						.perf_tag_out(perf_tag_out),
+						.r(r),
+						.w(w),
+						.w_index(w_index),		
+						.w_line(w_line),								
+						.w_way(w_way),			
+						.w_data(w_data),					
+						.w_tag(w_tag),
+						.no_tagcheck_way(no_tagcheck_way)
+		);
 		
 		
 		
-		
+		$stop();
 		
 		// Read main
 		
@@ -570,8 +678,9 @@ module data_cache_tb();
 	end
 	
 	// Generate clock
-	always @(clk)
-		clk <= #2 ~clk;
+	always
+		#5 clk = ~clk;
 
+	
 
 endmodule
