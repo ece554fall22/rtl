@@ -37,6 +37,7 @@ always_comb begin
     control.matmul_opcode = '0;
     control.matmul_high_low = 0;
     control.synch_req = 0;
+    control.pc_select = 0;
     control.branch_jump = '0;
     control.branch_register = 0;
     control.store_pc = 0;
@@ -54,18 +55,21 @@ always_comb begin
         end
         jmp: begin
             control.branch_jump = 2'b01;
+            control.pc_select = 1;
         end
         jal: begin
             control.branch_jump = 2'b01;
             control.register_wr_en = 1;
             control.scalar_write_register = 32'hFFFF;
             control.store_pc = 1;
+            control.pc_select = 1;
         end
         jmpr: begin
             control.branch_jump = 2'b01;
             control.branch_register = 1;
             control.imm_type = 4'b0001;
             control.r_read1 = 1;
+            control.pc_select = 1;
         end
         jalr: begin
             control.branch_jump = 2'b01;
@@ -75,16 +79,19 @@ always_comb begin
             control.store_pc = 1;
             control.imm_type = 4'b0001;
             control.r_read1 = 1;
+            control.pc_select = 1;
         end
         bi: begin
             control.branch_jump = 2'b10;
             control.imm_type = 4'b0010;
+            control.pc_select = 1;
         end
         br: begin
             control.branch_jump = 2'b10;
             control.branch_register = 1;
             control.imm_type = 4'b0011;
             control.r_read1 = 1;
+            control.pc_select = 1;
         end
         lih: begin
             control.register_wr_en = 1;
@@ -336,29 +343,30 @@ always_comb begin
             control.r_read1 = 1;
         end
         writeA: begin
-            control.matmul_opcode = 3'b0;
-            control.v_read1 = 1;
-            control.v_read2 = 1;
-        end
-        writeB: begin
             control.matmul_opcode = 3'b001;
             control.v_read1 = 1;
             control.v_read2 = 1;
         end
-        writeC: begin
+        writeB: begin
             control.matmul_opcode = 3'b010;
             control.v_read1 = 1;
             control.v_read2 = 1;
         end
-        matmul: begin
+        writeC: begin
             control.matmul_opcode = 3'b011;
+            control.v_read1 = 1;
+            control.v_read2 = 1;
+        end
+        matmul: begin
+            control.matmul_opcode = 3'b100;
         end
         readC: begin
             control.vector_wr_en = 1;
-            control.matmul_opcode = 3'b100;
+            control.matmul_opcode = 3'b101;
             control.matmul_high_low = inst[16];
         end
         systolicstep: begin
+            control.matmul_opcode = 3'b110;
         end
         Vmax: begin
             control.vector_wr_en = 1;
