@@ -432,7 +432,7 @@ class data_cache_memory_class;
 	 */
 	task automatic get_data_and_tag(
 		// Inputs 
-		const ref logic [RAM_READ_SIZE - 1: 0] data_block,					// Data across ways (all data in a line)
+		const ref logic [RAM_READ_SIZE - 1: 0] data_block,					// Data across ways (all data in a line
 		const ref logic [(TAG_SIZE * WAY_PER_SET) - 1: 0] tag_block,	// all tags in a set 18 * 4 bits
 		const ref logic [$clog2(WAY_PER_SET) - 1: 0] way,						// Way where data is present
 		
