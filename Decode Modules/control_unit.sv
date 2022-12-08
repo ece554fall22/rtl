@@ -47,6 +47,8 @@ always_comb begin
     control.r_read2 = 0;
     control.v_read1 = 0;
     control.v_read2 = 0;
+    control.store_immediate = 0;
+    control.mask = inst[3:0];
     case (op_code)
         halt: begin
             control.halt = 1;
@@ -96,10 +98,12 @@ always_comb begin
         lih: begin
             control.register_wr_en = 1;
             control.imm_type = 4'b0100;
+            control.store_immediate = 1;
         end
         lil: begin
             control.register_wr_en = 1;
             control.imm_type = 4'b0100;
+            control.store_immediate = 1;
         end
         ld32: begin
             control.register_wr_en = 1;
