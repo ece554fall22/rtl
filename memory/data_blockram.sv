@@ -11,15 +11,15 @@ reg [127:0] mem [4095:0];	// memory array that holds data
 
 
 
-
+// No need to reset the blocks
 always @(posedge clk) begin	// blockram
   if(wr_en) begin
-    data_out[127:0] <= mem[{rd_addr_reg, 2'b00}];
+	mem[wr_addr] <= wr_data;				// wr
+  end
+	data_out[127:0] <= mem[{rd_addr_reg, 2'b00}];
     data_out[255:128] <= mem[{rd_addr_reg, 2'b01}];
     data_out[383:256] <= mem[{rd_addr_reg, 2'b10}];
     data_out[511:384] <= mem[{rd_addr_reg, 2'b11}];
-  end
-    mem[wr_addr] <= wr_data;				// wr
 end
 
 
