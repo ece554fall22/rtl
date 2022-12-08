@@ -80,6 +80,8 @@ logic [9:0] [4:0] wr_regs_vp;
 logic [2:0] [4:0] wr_regs_sp;
 logic [1:0] [35:0] scalar_op1;
 logic [1:0] [35:0] scalar_op2;
+logic [1:0] [127:0] vector_op1;
+logic [1:0] [127:0] vector_op2;
 
 // pipelined forward values
 logic [1:0] ex_to_ex_sp;
@@ -123,7 +125,7 @@ hazard_detection_unit dut(.*);
 
 // declare wb module, using its capability to buffer vector results
 wb writeback(.scalar_pipeline_wb(register_data_sp[1]), .vector_pipeline_wb(register_data_vp[9]), .pc({36{1'b0}}), .scalar_pipeline_vwb(vector_data_sp[2]), .vector_pipeline_vwb(vector_data_vp[9]),
-             .scalar_pipeline_we(wr_ens_sp[2][0]), .vector_pipeline_we(wr_ens_vp[9][0]), .pc_sel(1'b0), .scalar_pipeline_mask(4'hF), .vector_pipeline_mask(4'hF),
+             .scalar_pipeline_we(wr_ens_sp[2][0]), .vector_pipeline_we(wr_ens_vp[9][0]), .pc_sel(1'b0), .scalar_pipeline_mask({4{wr_ens_sp[2][1]}}), .vector_pipeline_mask({4{wr_ens_vp[9][1]}}),
              .register_wb_sel(register_wb_sel_reg), .vector_wb_sel(vector_wb_sel_reg), .buffer_register_sel(buffer_register_sel_reg), .buffer_vector_sel(buffer_vector_sel_reg),
              .buffer_register(buffer_register_reg), .buffer_vector(buffer_vector_reg),
              .vector_we(vector_we), .register_we(register_we), .vector_data(vector_data), .register_data(register_data), .clk(clk), .rst(rst), .scalar_pipeline_wbr(wr_regs_sp[2]), 
@@ -131,10 +133,10 @@ wb writeback(.scalar_pipeline_wb(register_data_sp[1]), .vector_pipeline_wb(regis
 
 
 // forward reads from register file in pipelined model
-assign scalar_read_one_fwded = (scalar_read_register_one[4:0]===register_wbr_out) ? register_data : register_model[scalar_read_register_one[4:0]];
-assign scalar_read_two_fwded = (scalar_read_register_two[4:0]===register_wbr_out) ? register_data : register_model[scalar_read_register_two[4:0]];
-assign vector_read_one_fwded = (vector_read_register_one[4:0]===vector_wbr_out) ? vector_data : vector_register_model[vector_read_register_one[4:0]];
-assign vector_read_two_fwded = (vector_read_register_two[4:0]===vector_wbr_out) ? vector_data : vector_register_model[vector_read_register_two[4:0]];
+assign scalar_read_one_fwded = ((scalar_read_register_one[4:0]===register_wbr_out) & register_we) ? register_data : register_model[scalar_read_register_one[4:0]];
+assign scalar_read_two_fwded = ((scalar_read_register_two[4:0]===register_wbr_out) & register_we) ? register_data : register_model[scalar_read_register_two[4:0]];
+assign vector_read_one_fwded = ((vector_read_register_one[4:0]===vector_wbr_out) & vector_we) ? vector_data : vector_register_model[vector_read_register_one[4:0]];
+assign vector_read_two_fwded = ((vector_read_register_two[4:0]===vector_wbr_out) & vector_we) ? vector_data : vector_register_model[vector_read_register_two[4:0]];
 
 // following 4 assign statements just add in use registers 
 assign register_data_func = ((scalar_read_register_one[5]) ? scalar_read_one_fwded : 0) +
@@ -167,7 +169,11 @@ initial begin
     vector_register_model_sc[i] = 0;
     vector_register_model[i] = 0;
   end
+  wr_ens_sp = 0;
+  wr_ens_vp = 0;
   op_type = 0;
+  random_vector_data = 0;
+  random_register_data = 0;
   vector_read_register_one = 0;
   vector_read_register_two = 0;
   scalar_read_register_one = 0;
@@ -175,6 +181,8 @@ initial begin
   write_register = 0;
   begin_store_checking = 0;
   failed = 0;
+  vector_wr_en = 0;
+  register_wr_en = 0;
   mem_stall_in = 0;
   clk = 0;
   rst = 1;
@@ -212,9 +220,11 @@ initial begin
       high_dependencies = 1;
       stall_freq = 2'b11;
     end
-    
+
     // will run 100 times in each of the 8 combonations
+    // can switch between deeper tests (100 each) and 1 each
     for(int i = 0; i < 100; i++) begin
+//    if (1) begin
       disable_instructions = 0;
       begin_store_checking = 0;
       
@@ -226,7 +236,7 @@ initial begin
       disable_instructions = 1;
 
       // allow remaining instructions to writeback
-      for(int k = 0; k < 15; k++)
+      for(int k = 0; k < 30; k++)
         @(posedge clk);
       
       // once we have waited for all instructions to writeback check state of pipelined model versus
@@ -235,7 +245,8 @@ initial begin
         if(!(vector_register_model_sc[k]===vector_register_model[k])) begin
           failed = 1;
           $display("error single cycle and simplified pipelined processor vector register files do not match!!");
-        end else if (!(register_model_sc[k]===register_model[k])) begin
+        end
+        if (!(register_model_sc[k]===register_model[k])) begin
           failed = 1;
           $display("error single cycle and simplified pipelined processor register files do not match!!");
         end
@@ -269,6 +280,9 @@ always @(posedge clk) begin
   if(~stall_decode & op_type[1]) begin
      wr_ens_vp[0][0] <= register_wr_en;
      wr_ens_vp[0][1] <= vector_wr_en;
+  end else begin
+     wr_ens_vp[0][0] <= 0;
+     wr_ens_vp[0][1] <= 0;
   end
 end
 
@@ -277,7 +291,8 @@ always @(posedge clk) begin
   if(~stall_decode) begin
     if(register_wr_en) begin
       register_model_sc[write_register] <= register_data_func_sc;
-    end else if (vector_wr_en) begin
+    end
+    if (vector_wr_en) begin
       vector_register_model_sc[write_register] <= vector_data_func_sc;
     end
   end
@@ -296,12 +311,12 @@ end
 
 // simplified processor store checking
 always @(posedge clk) begin
-  if(~|wr_ens_sp[1] & op_types_sp[1][0] & ~op_types_sp[1][1]) begin
-    if(!(vector_data_sp[1]===vector_store_sc[store_count % 3])) begin
+  if(~|wr_ens_sp[2] & op_types_sp[2][0] & ~op_types_sp[2][1] & ~stall_mem) begin
+    if(!(vector_data_sp[2]===vector_store_sc[store_count % 3])) begin
       failed = 1;
       $display("vector data did not match expected during a store.");
     end
-    if(!(register_data_sp[0]===scalar_store_sc[store_count % 3])) begin
+    if(!(register_data_sp[1]===scalar_store_sc[store_count % 3])) begin
       failed = 1;
       $display("register data did not match expected during a store.");
     end
@@ -313,80 +328,82 @@ end
 always @(negedge clk) begin
   if(~stall_decode) begin
     if(~disable_instructions) begin
-      random_vector_data = $random;
-      random_register_data = $random;
+      random_vector_data <= $random;
+      random_register_data <= $random;
       op_type = $random;
       if(~high_dependencies) begin
-        vector_read_register_one = $random;
-        vector_read_register_two = $random;
-        scalar_read_register_one = $random;
-        scalar_read_register_two = $random;
+        vector_read_register_one <= $random;
+        vector_read_register_two <= $random;
+        scalar_read_register_one <= $random;
+        scalar_read_register_two <= $random;
         write_register = $random;
       end else begin
         rand_selector = $random;
         if(rand_selector[1])
-          vector_read_register_one[4:0] = 5'b00000;
+          vector_read_register_one[4:0] <= 5'b00000;
         else if(rand_selector[0])
-          vector_read_register_one[4:0] = 5'b00001;
+          vector_read_register_one[4:0] <= 5'b00001;
         else
-          vector_read_register_one[4:0] = $random;
-        vector_read_register_one[5] = $random;
+          vector_read_register_one[4:0] <= $random;
+        vector_read_register_one[5] <= $random;
+
+        rand_selector <= $random;
+        if(rand_selector[1])
+          vector_read_register_two[4:0] <= 5'b00000;
+        else if(rand_selector[0])
+          vector_read_register_two[4:0] <= 5'b00001;
+        else
+          vector_read_register_two[4:0] <= $random;
+        vector_read_register_two[5] <= $random;
+
+        rand_selector <= $random;
+        if(rand_selector[1])
+          scalar_read_register_one[4:0] <= 5'b00000;
+        else if(rand_selector[0])
+          scalar_read_register_one[4:0] <= 5'b00001;
+        else
+          scalar_read_register_one[4:0] <= $random;
+        scalar_read_register_one[5] <= $random;
 
         rand_selector = $random;
         if(rand_selector[1])
-          vector_read_register_two[4:0] = 5'b00000;
+          scalar_read_register_two[4:0] <= 5'b00000;
         else if(rand_selector[0])
-          vector_read_register_two[4:0] = 5'b00001;
+          scalar_read_register_two[4:0] <= 5'b00001;
         else
-          vector_read_register_two[4:0] = $random;
-        vector_read_register_two[5] = $random;
+          scalar_read_register_two[4:0] <= $random;
+        scalar_read_register_two[5] <= $random;
 
-        rand_selector = $random;
+        rand_selector <= $random;
         if(rand_selector[1])
-          scalar_read_register_one[4:0] = 5'b00000;
+          write_register <= 5'b00000;
         else if(rand_selector[0])
-          scalar_read_register_one[4:0] = 5'b00001;
+          write_register <= 5'b00001;
         else
-          scalar_read_register_one[4:0] = $random;
-        scalar_read_register_one[5] = $random;
-
-        rand_selector = $random;
-        if(rand_selector[1])
-          scalar_read_register_two[4:0] = 5'b00000;
-        else if(rand_selector[0])
-          scalar_read_register_two[4:0] = 5'b00001;
-        else
-          scalar_read_register_two[4:0] = $random;
-        scalar_read_register_two[5] = $random;
-
-        rand_selector = $random;
-        if(rand_selector[1])
-          write_register = 5'b00000;
-        else if(rand_selector[0])
-          write_register = 5'b00001;
-        else
-          write_register = $random;
+          write_register <= $random;
       end
       if(op_type[0]) begin
-        vector_wr_en = $random;
-        register_wr_en = $random & ~vector_wr_en;
+        vector_wr_en <= $random;
+        register_wr_en <= $random & ~vector_wr_en;
       end else begin
-        vector_wr_en = $random;
-        register_wr_en = ~vector_wr_en;
+        vector_wr_en <= $random;
+        register_wr_en <= ~vector_wr_en;
       end
     end else begin
-      random_vector_data = 0;
-      random_register_data = 0;
-      op_type = 0;
-      vector_wr_en = 0;
-      register_wr_en = 0;
-      mem_stall_in = 0;
-      vector_read_register_one = 0;
-      vector_read_register_two = 0;
-      scalar_read_register_one = 0;
-      scalar_read_register_two = 0;
-      write_register = 0;
+      random_vector_data <= 0;
+      random_register_data <= 0;
+      op_type <= 0;
+      vector_wr_en <= 0;
+      register_wr_en <= 0;
+      mem_stall_in <= 0;
+      vector_read_register_one <= 0;
+      vector_read_register_two <= 0;
+      scalar_read_register_one <= 0;
+      scalar_read_register_two <= 0;
+      write_register <= 0;
     end
+  end else if(disable_instructions) begin
+    mem_stall_in <= 0;
   end
 end
 
@@ -408,29 +425,36 @@ end
 // model simplified scalar pipeline
 always @(posedge clk) begin
   if(~stall_execute) begin
-    op_types_sp[0] <= op_type;
-    wr_ens_sp[0] <= (op_type[1]) ? {vector_wr_en, register_wr_en} : 0;
+    op_types_sp[0] <= (stall_decode) ? 0 : op_type;
+    wr_ens_sp[0] <= (~op_type[1] & ~stall_decode) ? {vector_wr_en, register_wr_en} : 0;
     wr_regs_sp[0] <= write_register;
-    scalar_op1[0] <= (scalar_read_register_one[5]) ? register_model[scalar_read_register_one[4:0]] : 0;
-    scalar_op2[0] <= (scalar_read_register_two[5]) ? register_model[scalar_read_register_two[4:0]] : random_register_data;
-    vector_data_sp[0] <= (vector_wr_en) ? vector_data_func : random_vector_data;
-    ex_to_ex_sp[0] <= ex_to_ex;
-    mem_to_ex_sp[0] <= mem_to_ex;
+    scalar_op1[0] <= (scalar_read_register_one[5]) ? scalar_read_one_fwded : 0;
+    scalar_op2[0] <= (scalar_read_register_two[5]) ? scalar_read_two_fwded : random_register_data;
+    vector_data_sp[0] <= vector_data_func;
+    vector_op1[0] <= (vector_read_register_one[5]) ? vector_read_one_fwded : 0;
+    vector_op2[0] <= (vector_read_register_two[5]) ? vector_read_two_fwded : random_vector_data;
+    ex_to_ex_sp <= ex_to_ex;
+    mem_to_ex_sp <= mem_to_ex;
     mem_to_mem_sp[0] <= mem_to_mem;
   end
   if(~stall_mem) begin
+    mem_to_mem_sp[1] <= mem_to_mem_sp[0];
     op_types_sp[1] <= op_types_sp[0];
     wr_ens_sp[1] <= wr_ens_sp[0];
     wr_regs_sp[1] <= wr_regs_sp[0];
-    scalar_op1[1] <= scalar_op1[0];
-    scalar_op2[1] <= scalar_op2[0];
+    scalar_op1[1] <= (mem_to_ex_sp[0]) ? register_data_sp[1] : ((ex_to_ex_sp[0]) ? register_data_sp[0] : scalar_op1[0]);
+    scalar_op2[1] <= (mem_to_ex_sp[1]) ? register_data_sp[1] : ((ex_to_ex_sp[1]) ? register_data_sp[0] : scalar_op2[0]);
+    vector_op1[1] <= vector_op1[0];
+    vector_op2[1] <= vector_op2[0];
     vector_data_sp[1] <= vector_data_sp[0];
     register_data_sp[0] <= ((mem_to_ex_sp[0]) ? register_data_sp[1] : ((ex_to_ex_sp[0]) ? register_data_sp[0] : scalar_op1[0]))
                          + ((mem_to_ex_sp[1]) ? register_data_sp[1] : ((ex_to_ex_sp[1]) ? register_data_sp[0] : scalar_op2[0]));
-  end
     register_data_sp[1] <= (~op_types_sp[1][0]) ? register_data_sp[0] : (((mem_to_mem_sp[1][0]) ? register_data_sp[1] : scalar_op1[1]) +
                            ((mem_to_mem_sp[1][1]) ? register_data_sp[1] : scalar_op2[1]));
-    vector_data_sp[2] <= vector_data_sp[1];
+  end
+
+    vector_data_sp[2] <= ((mem_to_mem_sp[1][0]) ? {{92{register_data_sp[1][35]}}, register_data_sp[1]} : {{92{scalar_op1[1][35]}}, scalar_op1[1]}) + vector_op1[1] +
+                         ((mem_to_mem_sp[1][1]) ? {{92{register_data_sp[1][35]}}, register_data_sp[1]} : {{92{scalar_op2[1][35]}}, scalar_op2[1]}) + vector_op2[1];
     wr_regs_sp[2] <= wr_regs_sp[1];
   if(stall_mem)
     wr_ens_sp[2] <= 0;
