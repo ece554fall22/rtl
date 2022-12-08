@@ -3,7 +3,11 @@ module proc(
     output err,
 );
 
-control_bus fetch_control, decode_control, s_execute_control, s_memory_control, s_writeback_control, vector_execute_control, v_writeback_control;
+control_bus fetch_control, decode_control, s_execute_control, s_memory_control, s_writeback_control, vector_execute_control_0, vector_execute_control_1, vector_execute_control_2,vector_execute_control_3, vector_execute_control_4, vector_execute_control_5, vector_execute_control_6, vector_execute_control_7, vector_execute_control_8, v_writeback_control;
+
+logic rst_n;
+
+assign rst_n = !rst;
 
 logic [35:0] branch_pc;
 
@@ -13,15 +17,13 @@ logic [35:0] pc_f, pc_d, pc_e, pc_m, pc_w;
 
 logic [35:0] register_write_data;
 
-logic [3:0] mask;
-
 logic [31:0] vector_write_data [3:0];
 
 logic [4:0] vread1, vread2;
 
 logic nz, ez, lz, gz, le, ge;
 
-logic [31:0] vdata1_d, vdata2_d, vdata1_e, vdata2_e, vdata_out_e, matmul_data_out_e, vdata_out_w [3:0];
+logic [31:0] vdata1_d, vdata2_d, vdata1_e, vdata2_e, vdata_out_e, matmul_data_out_e, matmul_data_out_w, vdata_out_w [3:0];
 
 logic [35:0] sdata1_d, sdata2_d, sdata1_e, sdata2_e, sdata_out_e, sdata_out_m, sdata_out_w, fdata_out_e, fdata_out_w;
 
@@ -30,7 +32,7 @@ logic [7:0] vector_imm_d, vector_imm_e;
 logic [24:0] immediate_d, immediate_e;
 
 fetch (.clk(clk), .rst(rst), .pc_control(fetch_control.pc_select), .stall(1'b0), .halt(fetch_control.halt), 
-.unhalt(), .cache_stall(), .pc_branch(branch_pc), .instr(inst_f), .pc_next(pc_next), .is_running(), .vread1(vread1), .vread2(vread2));
+.unhalt(), .cache_stall(), .pc_branch(branch_pc), .instr(inst_f), .pc_next(pc_f), .is_running(), .vread1(vread1), .vread2(vread2));
 
 
 
@@ -68,10 +70,69 @@ scalar_pipeline_we(writeback_control.register_we), .vector_pipeline_we(writeback
 
 
 control_pipeline df(.clk(clk) .rst_n(!rst), .control_q(fetch_control), .control_d(decode_control));
-control_pipeline de(.clk(clk) .rst_n(!rst), .control_q(execute_control), .control_d(decode_control));
-control_pipeline em(.clk(clk) .rst_n(!rst), .control_q(memory_control), .control_d(execute_control));
-control_pipeline mw(.clk(clk) .rst_n(!rst), .control_q(writeback_control), .control_d(memory_control));
+control_pipeline de(.clk(clk) .rst_n(!rst), .control_q(s_execute_control), .control_d(decode_control));
+control_pipeline em(.clk(clk) .rst_n(!rst), .control_q(s_memory_control), .control_d(s_execute_control));
+control_pipeline mw(.clk(clk) .rst_n(!rst), .control_q(s_writeback_control), .control_d(s_memory_control));
 
-always_ff @(posedge clk) begin
 
+
+control_pipeline ve_1(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_1), .control_d(vector_execute_control_0));
+control_pipeline ve_2(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_2), .control_d(vector_execute_control_1));
+control_pipeline ve_3(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_3), .control_d(vector_execute_control_2));
+control_pipeline ve_4(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_4), .control_d(vector_execute_control_3));
+control_pipeline ve_5(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_5), .control_d(vector_execute_control_4));
+control_pipeline ve_6(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_6), .control_d(vector_execute_control_5));
+control_pipeline ve_7(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_7), .control_d(vector_execute_control_6));
+control_pipeline ve_8(.clk(clk) .rst_n(!rst), .control_q(vector_execute_control_8), .control_d(vector_execute_control_7));
+control_pipeline ve_9(.clk(clk) .rst_n(!rst), .control_q(v_writeback_control), .control_d(vector_execute_control_8));
+
+always_ff @(posedge clk, negedge rst_n) begin
+    if(!rst_n) begin
+        inst_d <= '0;
+        pc_d <= '0;
+        pc_e <= '0;
+        pc_m <= '0;
+        pc_w <= '0;
+        sdata1_e <= '0;
+        sdata2_e <= '0;
+        sdata_out_m <= '0;
+        sdata_out_w <= '0;
+        fdata_out_w <= '0;
+        vector_imm_e <= '0;
+        immediate_e <= '0;
+    end
+    else begin
+        inst_d <= inst_f;
+        pc_d <= pc_f;
+        pc_e <= pc_d;
+        pc_m <= pc_m;
+        pc_w <= pc_w;
+        sdata1_e <= sdata1_d;
+        sdata2_e <= sdata2_d;
+        sdata_out_m <= sdata_out_e;
+        sdata_out_w <= sdata_out_m;
+        fdata_out_w <= fdata_out_e;
+        vector_imm_e <= vector_imm_d;
+        immediate_e <= immediate_d;
+    end
 end
+
+genvar i;
+generate;
+    for(i = 0; i < 4; i ++) begin
+        always_ff @(posedge clk, negedge rst_n) begin
+            if(!rst_n) begin
+                vdata1_e[i] <= '0;
+                vdata2_e[i] <= '0;
+                vdata_out_w[i] <= '0;
+                matmul_data_out_w <= '0;
+            end
+            else begin
+                vdata1_e[i] <= vdata1_d[i];
+                vdata2_e[i] <= vdata1_d[i];
+                vdata_out_w[i] <= vdata_out_e[i];
+                matmul_data_out_w <= matmul_data_out_e[i];
+            end
+        end
+    end
+endgenerate
