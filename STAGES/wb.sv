@@ -36,57 +36,66 @@ vector_pipeline_wbr, vector_wbr, register_wbr
 
 // makes vector we signal taking into account the mask
 assign vector_we = (vector_wb_sel) ? 
-		     (buffer_vector_sel) ? 
-                       {4{vector_pipeline_we_reg}} & vector_pipeline_mask_reg : 
-                       {4{vector_pipeline_we}} & vector_pipeline_mask : 	
-	             {4{scalar_pipeline_we}} & scalar_pipeline_mask;
+		     ((buffer_vector_sel) ? 
+                       vector_pipeline_mask_reg : 
+                       vector_pipeline_mask) : 	
+	             scalar_pipeline_mask;
 
 // register write enable signal selected between vector_pipeline buffer vector_pipeline and scalar_pipeline versions
 assign register_we = (register_wb_sel) ? 
-		       (buffer_register_sel) ? 
+		       ((buffer_register_sel) ? 
 		         vector_pipeline_we_reg : 
-		         vector_pipeline_we : 
+		         vector_pipeline_we) : 
 		        scalar_pipeline_we;	
 
 // the vector write back register selected between values in vector and scalar pipelines
 assign vector_wbr = (vector_wb_sel) ? 
-		       (buffer_register_sel) ? 
+		       ((buffer_vector_sel) ? 
 		         vector_pipeline_wbr_reg : 
-		         vector_pipeline_wbr : 
+		         vector_pipeline_wbr) : 
 		        scalar_pipeline_wbr;
 					
 // the vector write back register selected between values in vector and scalar pipelines
 assign register_wbr = (register_wb_sel) ? 
-		       (buffer_register_sel) ? 
+		       ((buffer_register_sel) ? 
 		         vector_pipeline_wbr_reg : 
-		         vector_pipeline_wbr : 
+		         vector_pipeline_wbr) : 
 		        scalar_pipeline_wbr;
 							
 // same as prevous but for vector data		
 assign vector_data = (vector_wb_sel) ? 					
-                       (buffer_vector_sel) ?  			       		
+                       ((buffer_vector_sel) ?  			       		
                          vector_pipeline_vwb_reg :
-                         vector_pipeline_vwb : 
+                         vector_pipeline_vwb) : 
                        scalar_pipeline_vwb;
 
 // same as prevous but for register data and can also select pc from the scalar pipeline if pc_sel is high
 assign register_data = (register_wb_sel) ? 
-                         (buffer_register_sel) ? 
+                         ((buffer_register_sel) ? 
                            vector_pipeline_wb_reg : 
-                           vector_pipeline_wb : 
-                         (pc_sel) ?
+                           vector_pipeline_wb) : 
+                         ((~pc_sel) ?
 		           scalar_pipeline_wb :
-			   pc;
+			   pc);
 
 // buffers the register results of the vector pipeline
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     vector_pipeline_wb_reg <= 0;
     vector_pipeline_we_reg <= 0;
+    vector_pipeline_vwb_reg <= 0;
     vector_pipeline_wbr_reg <= 0;
-  end else if (buffer_register) begin
+    vector_pipeline_mask_reg <= 0;
+  end else begin
+    if (buffer_register) begin
     vector_pipeline_wb_reg <= vector_pipeline_wb;
     vector_pipeline_we_reg <= vector_pipeline_we;
+    end
+    if (buffer_vector) begin
+    vector_pipeline_mask_reg <= vector_pipeline_mask;
+    vector_pipeline_vwb_reg <= vector_pipeline_vwb;
+    end
+    if (buffer_register | buffer_vector)
     vector_pipeline_wbr_reg <= vector_pipeline_wbr;
   end
 end

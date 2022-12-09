@@ -9,15 +9,15 @@ module systolic_array #(
   input [BITS_AB-1:0] B [DIM-1:0],
   input [BITS_C-1:0]  Cin [DIM-1:0],
   input [$clog2(DIM)-1:0]    Crow,
-  output signed [BITS_C-1:0] Cout [DIM/2-1:0]
+  output logic [BITS_C-1:0] Cout [DIM/2-1:0]
 );
   genvar row, col;
 
   // Ains, Bins oversized by 1 in dimension of propagation to avoid special-casing in generate;
   // those wires are just stubs that will optimize out
-  wire signed [BITS_AB-1:0] Ains  [DIM-1:0] [DIM:0];
-  wire signed [BITS_AB-1:0] Bins  [DIM:0] [DIM-1:0];
-  wire signed [BITS_C-1:0]  Couts [DIM-1:0] [DIM-1:0];
+  logic [BITS_AB-1:0] Ains  [DIM-1:0] [DIM:0];
+  logic  [BITS_AB-1:0] Bins  [DIM:0] [DIM-1:0];
+  logic[BITS_C-1:0]  Couts [DIM-1:0] [DIM-1:0];
 
   generate
     // first row/col A/B inputs: feed from A, B
@@ -54,5 +54,5 @@ module systolic_array #(
   endgenerate
 
   // demuxing for C outputs
-  assign Cout = (hl) ? Couts[Crow][DIM-1:DIM/2-1] : Couts[Crow][DIM/2-1:0];
+  assign Cout = (hl) ? Couts[Crow][7:4] : Couts[Crow][3:0];
 endmodule // systolic_array

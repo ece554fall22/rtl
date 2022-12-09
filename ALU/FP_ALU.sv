@@ -7,7 +7,7 @@ output logic gt;
 
 shortreal operand1, operand2, flout_out;
 
-assign out = flout_out;
+assign out = $shortrealtobits(flout_out);
 
 always_comb begin
      operand1 = $bitstoshortreal(A);

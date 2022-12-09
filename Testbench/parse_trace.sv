@@ -40,14 +40,15 @@ initial begin
     for(int i = 0; i < 4; i++) begin
         $fgets(line, fd);
 
-        // first line
+
+////////// first line //////////
         if (line.substr(0,2) == "***") begin
 
             $sscanf(line, "*** %x: %x ***", PC, inst);
         end
 
 
-        // second line
+////////// second line //////////
         else if(line.substr(0,9) == "    inputs") begin
             // rD with imm
             if ($sscanf(line, "    inputs: rD=r%x=%x imm=%d", rD, rD_value, imm) == 3) begin
@@ -61,7 +62,7 @@ initial begin
         end
         
 
-        // third line
+////////// third line //////////
         else if(line.substr(0,19) == "    scalar_writeback") begin
             $sscanf(line, "    scalar_writeback: rD=r%x=%x", wb_reg, wb_reg_value);
         end
@@ -87,7 +88,7 @@ initial begin
         end
 
 
-        // fourth line
+////////// fourth line //////////
         else if(line.substr(0,2) == "asm") begin
             // TODO: do something
         end
