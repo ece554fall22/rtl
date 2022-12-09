@@ -6,8 +6,10 @@ module tb_mem_controller();
 // then wait on those requests and validate that they went through properly
 //
 
-logic empty, rd_done, full, wr_done, rd_go, rd_en, wr_go, wr_en, overwrite, clk, rst;
-logic [35:0] addr_in, rd_addr, wr_addr, addr_out;
+logic empty, rd_done, full, wr_done, rd_go, rd_en, wr_go, wr_en, overwrite, clk, rst, mmioWrValid;
+logic [27:0] mmio_addr;
+logic [35:0] addr_in, addr_out; //rd_addr_sans_mmio, wr_addr_sans_mmio
+logic [63:0] wr_addr, rd_addr;
 logic [15:0] wr_size, cache_lines;
 logic [511:0] rd_data, wr_data;
 logic [511:0] data_in, data_out;
@@ -19,7 +21,7 @@ enum {idle, stalling, working} hal_write, hal_write_next, hal_read, hal_read_nex
 logic [16:0] overwrites;
 logic [16:0] [35:0] addrs_circ_in, addrs_req_in, addrs_circ_out, addrs_req_out;
 logic [16:0] [511:0] datas_circ_in, datas_circ_out, datas_req_in, datas_req_out;
-logic [16:0] [4:0] ids_circ_in, ids_req_in, ids_circ_out, ids_req_out;
+logic [16:0] [3:0] ids_circ_in, ids_req_in, ids_circ_out, ids_req_out;
 logic [16:0] [2:0] packet_types_circ_in, packet_types_circ_out, packet_types_req_in, packet_types_req_out;
 logic [5:0] rand_delay_read, rand_delay_write;
 logic [5:0] rand_read, rand_write;
@@ -34,6 +36,11 @@ logic failed, set_rand_delay_write, set_rand_delay_read;
 
 int requests_received;
 int requests_sent;
+
+//assign rd_addr = {rd_addr_sans_mmio, mmio_addr};
+//assign wr_addr = {wr_addr_sans_mmio, mmio_addr};
+assign mmio_addr = 28'h0000000;
+assign mmioWrValid = 1'b1;
 
 mem_controller dut(.*);
 
@@ -52,13 +59,14 @@ generate
       assign ids_circ_in[k] = ids_circ_out[k-1];
       assign packet_types_circ_in[k] = packet_types_circ_out[k-1];
       assign packet_types_req_in[k] = packet_type_req_out;
-      assign packet_types_req_out[k] = packet_types_req_in;
+      assign packet_type_req_in = packet_types_req_out[k];
       assign ids_req_in[k] = id_req_out;
-      assign ids_req_out[k] = id_req_in;
+      assign id_req_in = ids_req_out[k];
       assign datas_req_in[k] = data_out;
-      assign datas_req_out[k] = data_in;
+      assign data_in = datas_req_out[k];
       assign addrs_req_in[k] = addr_out;
-      assign addrs_req_out[k] = addr_in;
+      assign addr_in  = addrs_req_out[k];
+      assign overwrites[k] = overwrite;
     end else begin
       assign addrs_circ_in[k] = addrs_circ_out[k-1];
       assign datas_circ_in[k] = datas_circ_out[k-1];
@@ -76,36 +84,44 @@ generate
   
   // simple state machines run read/write requests to random addresses on repeat
   if(!(k==16)) begin
+
+    // randomize inputs every clock cycle
+    always @(posedge clk) begin
+      addrs_req_in[k] <= $random;
+      datas_req_in[k] <= $random;
+      rand_bits[k] <= $random;
+    end
+   
     always_comb begin
       // defaults
       packet_types_req_in[k] = 0;
       ids_req_in[k] = k | 4'h0;
-      addrs_req_in[k] = $random;
-      datas_req_in[k] = $random;
       overwrites[k] = 0;
-      rand_bits[k] = $random;
       next_state[k] = 1'b0;
 
       // case statement
       case(state[k])
         1'b0: begin
-          if(packet_type_req_out==3'b000) begin
+          if(packet_types_req_out==3'b000) begin
+            next_state[k] = 1'b1;
             overwrites[k] = 1'b1;
             if(rand_bits[k]) begin
-              packet_types_req_in = 3'b001;
+              packet_types_req_in[k] = 3'b001;
             end else begin
-              packet_types_req_in = 3'b011;
+              packet_types_req_in[k] = 3'b011;
             end
           end
         end
         1'b1: begin
-          if(packet_types_req_out[k]==3'b101 & read_write_state[k]) begin
+          if((packet_types_req_out[k]==3'b101) & read_write_state[k] & (ids_req_out[k]==ids_req_in[k])) begin
+            next_state[k] = 1'b0;
             overwrites[k] = 1'b1;
             ids_req_in[k] = 0;
-          end else if (packet_types_req_out[k]==3'b110 & ~read_write_state[k]) begin
+          end else if (packet_types_req_out[k]==3'b110 & ~read_write_state[k] & (ids_req_out[k]==ids_req_in[k])) begin
+            next_state[k] = 1'b0;
             overwrites[k] = 1'b1;
             ids_req_in[k] = 0;
-          end
+          end else
           next_state[k] = 1'b1;
         end
       endcase
@@ -117,8 +133,8 @@ generate
           read_write_state[k] <= 0;
           state[k] <= 1'b0;
         end else begin
-          if(next_state[k]==1'b1 & state[k]== 1'b0) begin
-            read_write_state <= rand_bits[k];
+          if((next_state[k]==1'b1) & (state[k] == 1'b0)) begin
+            read_write_state[k] <= rand_bits[k];
           end
           state[k] <= next_state[k];
         end
@@ -131,13 +147,14 @@ generate
           expected_wr_datas[k] <= datas_req_in[k];
           expected_addrs[k] <= addrs_req_in[k];
           requests_sent += 1;
+          write_done[k] = 1'b0;
         end else if(state[k]==1'b0 & next_state[k]==1'b1 & ~rand_bits[k]) begin
           expected_addrs[k] <= addrs_req_in[k];
           requests_sent += 1;
         end
-        if (state[k]==1'b1 & ids_req_in[k]==ids_req_out[k] & ~read_write_state[k]) begin
+        if(state[k]==1'b1 & next_state[k]==1'b0 & ~read_write_state[k]) begin
           requests_received += 1;
-          if(!(packet_types_req_in[k]==3'b110)) begin
+          if(!(packet_types_req_out[k]==3'b110)) begin
             $display("state machine expected a read but received something else");
             failed = 1;
           end
@@ -148,20 +165,21 @@ generate
           if(!(datas_req_out[k]=={{476{1'b0}}, expected_addrs[k]})) begin
             $display("got wrong data for read");
           end
-        end else if(state[k]==1'b1 & ids_req_in[k]==ids_req_out[k] & read_write_state[k]) begin
+        end else if(state[k]==1'b1 & next_state[k]==1'b0 & read_write_state[k]) begin
           requests_received += 1;
-          if(!(packet_types_req_in[k]==3'b101)) begin
+          if(!(packet_types_req_out[k]==3'b101)) begin
             $display("state machine expected a write ack but received something else");
             failed = 1;
             write_done = 1'b0;
           end
-        end
-        if(wr_done & wr_addr==expected_addrs[k]) begin
-          if(!(data_out==expected_wr_datas[k])) begin
-            $display("got a write request at hal but data was not correct");
+          if(!(write_done[k])) begin
             failed = 1;
-            write_done[k] = 1'b1;
+            $display("mem_controller sent back write ack but the write has not been resolved correctly.");
           end
+        end
+        if(wr_done && (wr_addr == expected_addrs[k]) && (wr_data==expected_wr_datas[k])) begin
+     //   $display("A valid write made it to the hal interface!!");
+          write_done[k] = 1'b1;
         end
       end
     end
@@ -186,6 +204,7 @@ rst = 0;
   end
 
 if((requests_received + 16 < requests_sent) | (requests_sent < 50)) begin
+  failed = 1;
   $display("either requests are not being sent enough, or some requests were sent but not received");
 end
 
@@ -206,17 +225,18 @@ always_comb begin
   rd_done = 1'b0;
   read_dec = 1'b0;
   hal_read_next = idle;
+  set_rand_delay_read = 1'b1;
 
   case(hal_read)
     idle: begin
       if(rd_go) begin
-        set_rand_delay_read = 1'b1;
+        set_rand_delay_read = 1'b0;
         if(rand_delay_read) begin
         read_dec = 1'b1;
         hal_read_next = stalling;
         empty = 1'b1;
         end else begin
-          if(rd_go) begin
+          if(rd_en) begin
             hal_read_next = idle;
             rd_done = 1;
           end else
@@ -226,7 +246,7 @@ always_comb begin
     end
     stalling: begin
       if(!(rand_delay_read)) begin
-        if(rd_go) begin
+        if(rd_en) begin
            hal_read_next = idle;
            rd_done = 1;
         end else
@@ -236,12 +256,13 @@ always_comb begin
         read_dec = 1'b1;
         empty = 1'b1;
       end
+      set_rand_delay_read = 1'b0;
     end
     working: begin
-      if(rd_go) begin
+      if(rd_en) begin
         hal_read_next = idle;
         rd_done = 1;
-      end
+      end else
         hal_read_next = working;
     end
   endcase
@@ -257,11 +278,11 @@ always @(posedge clk) begin
     end else if (set_rand_delay_read) begin
       rand_delay_read <= rand_read;
     end
-      hal_read = hal_write_next;
+      hal_read = hal_read_next;
   end
 end
 
-assign rd_data = (rd_done) ? {{476{1'b0}}, rd_addr} : {512{1'b0}};
+assign rd_data = (rd_done) ? {{448{1'b0}}, rd_addr} : {512{1'b0}};
 
 // simulate hal write interface
 always_comb begin
@@ -270,17 +291,18 @@ always_comb begin
   wr_done = 1'b0;
   write_dec = 1'b0;
   hal_write_next = idle;
+  set_rand_delay_write = 1'b1;
 
   case(hal_write)
     idle: begin
       if(wr_go) begin
-        set_rand_delay_write = 1'b1;
+        set_rand_delay_write = 1'b0;
         if(rand_delay_write) begin
         write_dec = 1'b1;
         hal_write_next = stalling;
         full = 1'b1;
         end else begin
-          if(wr_go) begin
+          if(wr_en) begin
             hal_write_next = idle;
             wr_done = 1;
           end else
@@ -289,8 +311,9 @@ always_comb begin
       end
     end
     stalling: begin
+      set_rand_delay_write = 1'b0;
       if(!(rand_delay_write)) begin
-        if(wr_go) begin
+        if(wr_en) begin
            hal_write_next = idle;
            wr_done = 1;
         end else
@@ -302,10 +325,10 @@ always_comb begin
       end
     end
     working: begin
-      if(wr_go) begin
+      if(wr_en) begin
         hal_write_next = idle;
         wr_done = 1;
-      end
+      end else
         hal_write_next = working;
     end
   endcase
@@ -335,5 +358,8 @@ end
 always @(posedge clk) begin
   
 end
+
+always #5
+	clk = ~clk;
 
 endmodule
