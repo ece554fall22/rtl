@@ -1,5 +1,5 @@
 
-module alu (A, B, op, out, nz, ez, lz, gz, le, ge, clk, rst_n);
+module alu (A, B, op, out, zero, sign, overflow, clk, rst_n);
 input clk, rst_n;
 input [35:0] A, B;
 
@@ -7,9 +7,9 @@ input [3:0] op;
 
 output logic [35:0] out;
 
-output logic nz, ez, lz, gz, le, ge;  
+output logic zero, sign, overflow;  
 
-logic nz_next, ez_next, lz_next, gz_next, le_next, ge_next;
+logic next_zero, next_sign, next_overflow;
 
 always_comb begin 
     case(op) 
@@ -26,34 +26,24 @@ always_comb begin
     endcase
 end
 
-assign nz_next = out != 36'b0;
+assign next_zero = out != 36'b0;
 
-assign ez_next = ~nz_next;
+assign next_sign = out[35];
 
-assign lz_next = out[35];
+assign next_overflow = ((A>0) & (B<0) & (out<0)) | ((A<0) & (B>0) & (out >0));
 
-assign gz_next = ~lz_next;
 
-assign le_next = lz_next | ez_next;
-
-assign ge_next = gz_next | ez_next;
 
 always_ff@(posedge clk, negedge !rst_n) begin
     if(!rst_n) begin
-       nz <= 0;
-       ez <= 0;
-       lz <= 0;
-       gz <= 0;
-       le <= 0;
-       ge <= 0;
+       zero <= '0;
+       sign <= '0;
+       overflow <= '0;
     end
     else if(op[3] == 1'b1) begin
-        nz <= nz_next;
-        ez <= ez_next;
-        lz <= lz_next;
-        gz <= gz_next;
-        le <= le_next;
-        ge <= ge_next;
+       zero <= next_zero;
+       sign <= next_sign;
+       overflow <= next_overflow;
     end
 
 end
