@@ -21,7 +21,7 @@ logic [31:0] vector_write_data [3:0];
 
 logic [4:0] vread1, vread2;
 
-logic nz, ez, lz, gz, le, ge;
+logic zero, sign, overflow;
 
 logic [31:0] vdata1_d, vdata2_d, vdata1_e, vdata2_e, vdata_out_e, matmul_data_out_e, matmul_data_out_w, vdata_out_w [3:0];
 
@@ -39,11 +39,11 @@ fetch (.clk(clk), .rst(rst), .pc_control(fetch_control.pc_select), .stall(1'b0),
 decode(.clk(clk), .rst_n(!rst), .s_wr_en(writeback_control.register_wr_en), .inst(inst_d), .pc_plus_4(pc_d), 
 .write_data(register_data), .v_read1(vread1), .v_read(vread2), .v_write_addr(writeback_control.vector_write_register), 
 .r_write_addr(writeback_control.scalar_write_register), .r_read1(inst_f[19:15]), .r_read2(inst_f[14:10]), .write_vector(vector_data), 
-.mask(mask), .nz(nz), .ez(ez), .lz(lz), .gz(gz), .le(le), .ge(ge), .control(decode_control), .vdata1(vdata1_d), .vdata2(vdata2_d), .sdata1(sdata1_d), .sdata2(sdata2_d), .immediate(immediate), .pc_next(branch_pc));
+.mask(mask), .zero(zero), .sign(sign), .overflow(overflow), .control(decode_control), .vdata1(vdata1_d), .vdata2(vdata2_d), .sdata1(sdata1_d), .sdata2(sdata2_d), .immediate(immediate), .pc_next(branch_pc));
 
 assign vector_imm_d = inst_d[14:7]
 
-scalar_execute (.clk(clk), .rst_n(!rst), .data1(sdata1_e), .data2(sdata2_e), .control(execute_control), .immediate(immediate_e), .nz(nz), .ez(ez), .lz(lz), .gz(gz), .le(le), .ge(ge), .data_out(sdata_out_e));
+scalar_execute (.clk(clk), .rst_n(!rst), .data1(sdata1_e), .data2(sdata2_e), .control(execute_control), .immediate(immediate_e), .zero(zero), .sign(sign), .overflow(overflow), .data_out(sdata_out_e));
 
 vector_execute(.clk(clk), .rst_n(!rst), .vdata1(vdata1_e), .vdata2(vdata2_e), .data1(sdata1_e), .data2(sdata2_e), .immediate(vector_imm_e), .control(execute_control), .vdata_out(vdata_out_e), .rdata_out(fdata_out_e));
 

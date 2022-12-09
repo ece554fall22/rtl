@@ -19,7 +19,7 @@ input logic [2:0] packet_type_req_in,
 output logic [2:0] packet_type_req_out
 );
 
-logic valid_req, circ_available, next_read, next_write, wb_rst, next_writeback, wr_ctr_en;
+logic valid_req, circ_available, next_read, next_write, next_writeback, wr_ctr_en;
 logic [3:0] read_index, write_index, circ_index;
 logic [15:0] [DEPTH-1:0] buffer_data;
 logic [15:0] [35:0] buffer_addrs;
@@ -36,16 +36,20 @@ read_state, next_read_state, write_state, next_write_state, writeback_state, nex
 
 assign wr_size = 16'h0001;
 assign cache_lines = 16'h0001;
-assign id_req_out = circ_index;
-assign addr_out = buffer_addrs[circ_index];
 
+if(DEPTH==128) begin
+  assign data_out = (wr_ctr[1]) ? ((wr_ctr[0]) ? buffer_data[circ_index][511:384] : buffer_data[circ_index][383:256]) : 
+                                  ((wr_ctr[0]) ? buffer_data[circ_index][255:128] : buffer_data[circ_index][127:0]);
+end else if (DEPTH==512) begin
+  assign data_out = buffer_data[circ_index];
+end
 
 // hal interface!! changes needed here probably
 assign rd_addr = {mmio_addr_reg, buffer_addrs[read_index]};
 assign wr_addr = {mmio_addr_reg, buffer_addrs[write_index]};
 assign wr_data = buffer_data[write_index];
 
-assign valid_req = (id_req_in==3'b011) | (id_req_in==3'b001);
+assign valid_req = (packet_type_req_in==3'b011) | (packet_type_req_in==3'b001);
 assign circ_available = valid_req | (id_req_in==3'b000);
 
 always_ff @(posedge clk, posedge rst) begin
@@ -73,7 +77,7 @@ always_comb begin
   rd_go = 1'b0;
   rd_en = 1'b0;
   next_read_state = idle;
-  
+
   case(read_state)
     idle: begin
       if ((~|buffer_valids[read_index]) & (buffer_r[read_index])) begin
@@ -105,7 +109,7 @@ always_comb begin
   wr_go = 1'b0;
   wr_en = 1'b0;
   next_write_state = idle;
-  
+
   case(write_state)
     idle: begin
       if ((&buffer_valids[write_index]) & (buffer_w[write_index]) & ~buffer_written[write_index]) begin
@@ -135,7 +139,12 @@ always_comb begin
   next_writeback = 1'b1;
   write_to_buffer[2] = 1'b0;
   next_writeback_state = idle;
-  
+  overwrite = circ_available;
+  packet_type_req_out = 3'b000;
+  addr_out = 0;
+  id_req_out = 0;
+  wr_ctr_en = 1'b0;
+
   case(writeback_state)
     idle: begin
       if (buffer_w[circ_index] & buffer_written[circ_index]) begin
@@ -144,6 +153,8 @@ always_comb begin
         write_to_buffer[2] = circ_available;
         overwrite = circ_available;
         packet_type_req_out = 3'b101;
+        addr_out = buffer_addrs[circ_index];
+        id_req_out = circ_index | 4'b0;
       end else if (buffer_r[circ_index] & (&buffer_valids[circ_index])) begin
         if(DEPTH == 512) begin
           next_writeback_state = idle;
@@ -151,17 +162,22 @@ always_comb begin
           write_to_buffer[2] = circ_available;
           overwrite = circ_available;
           packet_type_req_out = 3'b110;
+          addr_out = buffer_addrs[circ_index];
+          id_req_out = circ_index | 4'b0;
         end else if (DEPTH == 128) begin
           next_writeback = 1'b0;
           overwrite = circ_available;
           packet_type_req_out = 3'b110;
           wr_ctr_en = circ_available;
           next_writeback_state = working;
+          addr_out = buffer_addrs[circ_index];
+          id_req_out = circ_index | 4'b0;
         end
       end
     end
 
     working: begin
+      addr_out = buffer_addrs[circ_index];
       packet_type_req_out = 3'b110;
       wr_ctr_en = circ_available;
       write_to_buffer[2] = circ_available;
@@ -176,18 +192,20 @@ always_comb begin
   endcase
 end
 
+assign buffer_write_mod_data = data_in;
+
 genvar i;
 generate
   for(i = 0; i < 16; i++) begin
 
-    assign buffer_r_we[i] = buffer_r[i] & (write_to_buffer==3'b001) & (read_index==i);  
-    assign buffer_w_we[i] = buffer_w[i] & (write_to_buffer==3'b010) & (write_index==i);
+    assign buffer_r_we[i] = buffer_r[i] & (write_to_buffer[0]) & (read_index==i);  
+    assign buffer_w_we[i] = buffer_w[i] & (write_to_buffer[1]) & (write_index==i);
     assign buffer_circ_w_we[i] = (id_req_in==i) & (packet_type_req_in==3'b001);
     assign buffer_circ_r_we[i] = (id_req_in==i) & (packet_type_req_in==3'b011);
-    assign buffer_wb_rst[i] = (circ_index==i) & (write_to_buffer==3'b100);
+    assign buffer_wb_rst[i] = (circ_index==i) & (write_to_buffer[2]);
   
     if (DEPTH == 512) begin
-    assign buffer_write_mod_data = wr_data;
+
     end // else if (DEPTH == 128) begin // this is commented out because compiler didn't like
      // case(addr_in[5:4]) 
    //     2'b00: assign buffer_write_mod_data = {buffer_data[i][511:128], wr_data};
@@ -216,7 +234,7 @@ generate
         buffer_data[i] <= rd_data;
         buffer_valids[i] <= 4'hF;
       end else if (buffer_w_we[i]) begin
-        buffer_written <= 1'b1;
+        buffer_written[i] <= 1'b1;
       end else if (buffer_circ_w_we[i]) begin
         buffer_data[i] <= buffer_write_mod_data;
         buffer_w[i] <= 1'b1;
@@ -225,10 +243,10 @@ generate
           buffer_valids[i] <= 4'hF;
         end else if (DEPTH == 128) begin
           buffer_valids[i][addr_in[5:4]] <= 1'b1;
-        end else if (buffer_circ_r_we[i]) begin
+        end
+      end else if (buffer_circ_r_we[i]) begin
         buffer_r[i] <= 1'b1;
         buffer_addrs[i] <= addr_in;
-        end
       end
     end
   end
@@ -298,7 +316,7 @@ always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     mmio_addr_reg <= 0;
   end else if (mmioWrValid) begin
-    mmio_addr_Reg <= mmio_addr;
+    mmio_addr_reg <= mmio_addr;
   end
 end
   

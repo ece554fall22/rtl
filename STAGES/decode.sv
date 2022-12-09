@@ -5,7 +5,7 @@ module decode(
     input [4:0] v_read1, v_read, v_write_addr, r_write_addr, r_read1, r_read2,
     input [31:0] write_vector [3:0],
     input [3:0] mask,
-    input nz, ez, lz, gz, le, ge,
+    input zero, sign, overflow,
     control_bus control,
     output logic [31:0] vdata1 [3:0],
     output logic [31:0] vdata2 [3:0],
@@ -37,7 +37,7 @@ register_file sregs (.read1(r_read1), .read2(r_read2), .write_addr(write_addr), 
 
 control_unit control_decode (.inst(inst), .control(control));
 
-branch_jump_decoder bjdec (.branch_jump(control.branch_jump), .branch_type(inst[24:22]), .branch_register(control.branch_register), .immediate(immediate), .register(sdata1), .pc(pc_plus_4), .nz(nz), .ez(ez), .lz(lz), .gz(gz), .le(le), .ge(ge), .pc_next(pc_next));
+branch_jump_decoder bjdec (.branch_jump(control.branch_jump), .branch_type(inst[24:22]), .branch_register(control.branch_register), .immediate(immediate), .register(sdata1), .pc(pc_plus_4), .zero(zero), .sign(sign), .overflow(overflow), .pc_next(pc_next));
 
 endmodule
 
