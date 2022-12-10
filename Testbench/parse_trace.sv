@@ -53,7 +53,7 @@ initial begin
             end
 
             // rD with rA and rB
-            else if ($sscanf("    inputs: rD=r%x=%x rA=r%x=%x rB=r%x=%x", rD, rD_value, rA, rA_value, rB, rB_value) == 6) begin
+            else if (line, $sscanf("    inputs: rD=r%x=%x rA=r%x=%x rB=r%x=%x", rD, rD_value, rA, rA_value, rB, rB_value) == 6) begin
             end
 
             // TODO: vector inputs
