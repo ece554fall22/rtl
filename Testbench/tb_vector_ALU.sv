@@ -56,13 +56,7 @@ initial begin
         cycle_count=cycle_count+9;
         r1 = $random;
         r2 = $random;
-<<<<<<< HEAD
-        op = 5'h06;
-        if (op == 5'h08) imm = $urandom_range(0,3);
-        else imm = $random;
-=======
         op = tests;
->>>>>>> main
         for (int i = 0; i < 4; i++) begin
             shortreal a,b;
             a = 2.0;
@@ -115,11 +109,7 @@ initial begin
             end
             // Vindx
             5'h08: begin
-<<<<<<< HEAD
-                correct_rout = $bitstoshortreal(v1[imm]);
-=======
                 correct_rout = $bitstoshortreal(v1[imm1]);
->>>>>>> main
             end
             // Vreduce
             5'h09: begin
@@ -128,58 +118,35 @@ initial begin
             // Vsplat
             5'h0A: begin
                 for(int i = 0; i < 4; i++) begin    
-<<<<<<< HEAD
-                    correct_vout[i] = r1;
-=======
                     correct_vout[i] = $bitstoshortreal(r1);
->>>>>>> main
                     correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
                 end
             end
             // Vswizzle
             5'h0B: begin
-<<<<<<< HEAD
-                for(int i = 0; i < 4; i++) begin  
-                    correct_vout[i] = v2[imm[i*2+1:i*2]]
-                    correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
-                end
-=======
                 correct_vout[0] = $bitstoshortreal(v1[imm1]);
                 correct_vout[1] = $bitstoshortreal(v1[imm2]);
                 correct_vout[2] = $bitstoshortreal(v1[imm3]);
                 correct_vout[3] = $bitstoshortreal(v1[imm4]);
->>>>>>> main
             end
             // Vsadd
             5'h0C: begin
                 for(int i = 0; i < 4; i++) begin    
-<<<<<<< HEAD
-                    correct_vout[i] = $bitstoshortreal(v2[i]) + $bitstoshortreal(r1);
-=======
                     correct_vout[i] = $bitstoshortreal(v1[i]) + $bitstoshortreal(r1);
->>>>>>> main
                     correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
                 end
             end
             // Vssub
             5'h0D: begin
                 for(int i = 0; i < 4; i++) begin    
-<<<<<<< HEAD
-                    correct_vout[i] = $bitstoshortreal(v2[i]) - $bitstoshortreal(r1);
-=======
                     correct_vout[i] = $bitstoshortreal(v1[i]) - $bitstoshortreal(r1);
->>>>>>> main
                     correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
                 end
             end
             // Vsmult
             5'h0E: begin
                 for(int i = 0; i < 4; i++) begin    
-<<<<<<< HEAD
-                    correct_vout[i] = $bitstoshortreal(v2[i]) * $bitstoshortreal(r1);
-=======
                     correct_vout[i] = $bitstoshortreal(v1[i]) * $bitstoshortreal(r1);
->>>>>>> main
                     correct_vout_temp[i] = $shortrealtobits(correct_vout[i]);
                 end
             end
@@ -211,11 +178,7 @@ initial begin
                 end
             end
         endcase
-<<<<<<< HEAD
-        if (op == 5'h06 || op == 5'h07 || op == 5'h09) begin
-=======
         if (op == 5'h06 || op == 5'h07 || op == 5'h08 ||op == 5'h09) begin
->>>>>>> main
             if ($bitstoshortreal(rout) == correct_rout) begin
                 $display("yes! a hit! at cycle%d",cycle_count);
             end
