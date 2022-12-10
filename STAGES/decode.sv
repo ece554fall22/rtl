@@ -2,7 +2,7 @@ module decode(
     input clk, rst_n, s_wr_en,
     input [31:0] inst,
     input [35:0] pc_plus_4, write_data,
-    input [4:0] v_read1, v_read, v_write_addr, r_write_addr, r_read1, r_read2,
+    input [4:0] v_read1, v_read2, v_write_addr, r_write_addr, r_read1, r_read2,
     input [31:0] write_vector [3:0],
     input [3:0] mask,
     input zero, sign, overflow,
