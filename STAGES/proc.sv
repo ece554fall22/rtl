@@ -3,7 +3,21 @@ module proc(
     output err
 );
 
-control_bus fetch_control, decode_control, s_execute_control, s_memory_control, s_writeback_control, vector_execute_control_0, vector_execute_control_1, vector_execute_control_2,vector_execute_control_3, vector_execute_control_4, vector_execute_control_5, vector_execute_control_6, vector_execute_control_7, vector_execute_control_8, v_writeback_control;
+control_bus fetch_control(); 
+control_bus decode_control();
+control_bus s_execute_control();
+control_bus s_memory_control();
+control_bus s_writeback_control();
+control_bus vector_execute_control_0();
+control_bus vector_execute_control_1();
+control_bus vector_execute_control_2();
+control_bus vector_execute_control_3();
+control_bus vector_execute_control_4();
+control_bus vector_execute_control_5();
+control_bus vector_execute_control_6();
+control_bus vector_execute_control_7();
+control_bus vector_execute_control_8();
+control_bus v_writeback_control();
 
 logic rst_n;
 
@@ -43,11 +57,12 @@ decode decode(.clk(clk), .rst_n(!rst), .s_wr_en(writeback_control.register_wr_en
 
 assign vector_imm_d = inst_d[14:7];
 
-scalar_execute sexecut (.clk(clk), .rst_n(!rst), .data1(sdata1_e), .data2(sdata2_e), .control(execute_control), .immediate(immediate_e), .zero(zero), .sign(sign), .overflow(overflow), .data_out(sdata_out_e));
+scalar_execute sexecut (.clk(clk), .rst_n(!rst), .data1(sdata1_e), .data2(sdata2_e), .control(s_execute_control), 
+.immediate(immediate_e), .zero(zero), .sign(sign), .overflow(overflow), .data_out(sdata_out_e));
 
 vector_execute vexecute(.clk(clk), .rst_n(!rst), .vdata1(vdata1_e), .vdata2(vdata2_e), .data1(sdata1_e), .data2(sdata2_e), .immediate(vector_imm_e), .control(execute_control), .vdata_out(vdata_out_e), .rdata_out(fdata_out_e));
 
-tpuv1 (.clk(clk), .rst_n(!rst), .hl(execute_control.matmul_high_low), .v_high(vdata1_e), .v_low(vdata2_e), .idx(execute_control.matmul_idx), .opcode(execute_control.matmul_opcode), .data_out(matmul_data_out_e));
+//tpuv1 (.clk(clk), .rst_n(!rst), .hl(execute_control.matmul_high_low), .v_high(vdata1_e), .v_low(vdata2_e), .idx(execute_control.matmul_idx), .opcode(execute_control.matmul_opcode), .data_out(matmul_data_out_e));
 
 
 logic [35:0] smem_data_m, smem_data_w;
