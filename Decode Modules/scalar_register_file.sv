@@ -1,4 +1,4 @@
-module register_file(read1, read2, write_addr, write_data, we, data1, data2, clk, rst_n);
+module scalar_register_file(read1, read2, write_addr, write_data, we, data1, data2, clk, rst_n);
 
 input [35:0] write_data;
 input [4:0] read1, read2, write_addr;

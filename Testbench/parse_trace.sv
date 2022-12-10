@@ -1,11 +1,4 @@
 module parse_trace;
-
-initial begin
-    // Integer variable to hold file descriptor
-    int fd;
-    // String variable to hold the line of the file
-    string line;
-
     // first line
     bit [35:0] PC;
     bit [31:0] inst;
@@ -25,6 +18,21 @@ initial begin
     bit [4:0] wb_reg;
     bit [35:0] wb_reg_value;
 
+    logic clk, rst_n;
+
+    proc proc1(.clk(clk), .rst(rst_n), .err());
+
+    // Create clock signal
+    always begin
+    #5 clk = ~clk;
+    end
+
+initial begin
+    // Integer variable to hold file descriptor
+    int fd;
+    // String variable to hold the line of the file
+    string line;
+
     // Open the tracer file in the current folder with "read" permission
     // fd = 0 if file doesn't exist
     fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test.trace", "r");
@@ -34,6 +42,12 @@ initial begin
         $fclose(fd);
         $stop;
     end
+
+    rst_n = 0;
+    @(posedge clk);
+    rst_n = 1; // reset finished
+    @(posedge clk);
+
     // while (!$feof(fd)) begin
     for(int i = 0; i < 4; i++) begin
         $fgets(line, fd);
@@ -53,7 +67,7 @@ initial begin
             end
 
             // rD with rA and rB
-            else if (line, $sscanf("    inputs: rD=r%x=%x rA=r%x=%x rB=r%x=%x", rD, rD_value, rA, rA_value, rB, rB_value) == 6) begin
+            else if ($sscanf(line, "    inputs: rD=r%x=%x rA=r%x=%x rB=r%x=%x", rD, rD_value, rA, rA_value, rB, rB_value) == 6) begin
             end
 
             // TODO: vector inputs
@@ -88,7 +102,10 @@ initial begin
 
 ////////// fourth line //////////
         else if(line.substr(0,2) == "asm") begin
-            // TODO: do something
+            assign proc1.inst_f = inst;
+            repeat (5) @(posedge clk);
+            $display("WB Reg: %h", proc1.writeback_control.scalar_write_register);
+            $display("WB Reg Value: %h", proc1.register_data);
         end
 
         // debugging
