@@ -31,9 +31,9 @@ end
 
 
 
-vector_register_file vregs(.read1(v_read1), .read2(v_read2), .write_addr(write_addr), .write_vector(write_vector), .data1(vdata1), .data2(vdata2), .we(mask), .clk(clk), .rst_n(rst_n));
+vector_register_file vregs(.read1(v_read1), .read2(v_read2), .write_addr(v_write_addr), .write_vector(write_vector), .data1(vdata1), .data2(vdata2), .we(mask), .clk(clk), .rst_n(rst_n));
 
-register_file sregs (.read1(r_read1), .read2(r_read2), .write_addr(write_addr), .write_data(write_data), .we(s_wr_en), .data1(sdata1), .data2(sdata2), .clk(clk), .rst_n(rst_n));
+register_file sregs (.read1(r_read1), .read2(r_read2), .write_addr(r_write_addr), .write_data(write_data), .we(s_wr_en), .data1(sdata1), .data2(sdata2), .clk(clk), .rst_n(rst_n));
 
 control_unit control_decode (.inst(inst), .control(control));
 
