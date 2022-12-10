@@ -107,7 +107,9 @@ module afu
        )
      memory_map (.*);
 
-  cache_test_hierarchy cth(.clk(clk), .rst(rst), .wr_offset_mmio, .virt_addr_offset_mmio, .wr_offset(offset[35:0]),
+ logic done_in;
+	
+  cache_test_hierarchy cth(.clk(clk), .rst(rst), .wr_offset_mmio, .wr_offset(offset[35:0]),
 input logic [27:0] virt_addr_offset,
 .wr_done(dma.wr_done), .rd_done(dma.rd_done),
 .full(dma.full), .empty(dma.empty),
@@ -143,6 +145,12 @@ input logic [27:0] virt_addr_offset,
 
    // The AFU is done when the DMA is done writing size cache lines.
    assign done = // TODO add logic to make this
+   always_ff @(posedge clk) begin
+      if(rst) begin
+         done <= 0;   
+      end else if(done_in) begin
+         done <= done_in;
+   end
             
 endmodule
 
