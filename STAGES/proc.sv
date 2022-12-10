@@ -69,14 +69,14 @@ logic [35:0] smem_data_m, smem_data_w;
 
 logic [31:0] vmem_data_m, vmem_data_w [3:0];
 
-mem memory (.clk(clk), .rst(rst), .line(), .w_type(memory_control.w_type), .cache_data(), .alu_data(sdata_out_m), .mem_operation(memory_control.r_type), .register_wb(smem_data), .vector_wb(vmem_data));
+mem memory (.clk(clk), .rst(rst), .line(), .w_type(s_memory_control.w_type), .cache_data(), .alu_data(sdata_out_m), .mem_operation(s_memory_control.r_type), .register_wb(smem_data), .vector_wb(vmem_data));
 
 logic [35:0] swb_data;
 
 assign swb_data = (writeback_control.mem_read) ? smem_data_w : sdata_out_w;
 
 wb writeback(.scalar_pipeline_wb(swb_data), .vector_pipeline_wb(fdata_out_w), .pc(oc_w), .scalar_pipeline_vwb(vmem_data_w), .vector_pipeline_vwb(vdata_out_w), 
-.scalar_pipeline_we(writeback_control.register_we), .vector_pipeline_we(writeback_control.vector_wr_en), .pc_sel(writeback_control.store_pc), .scalar_pipeline_mask(swriteback_control.mask), .vector_pipeline_mask(v_writeback_control.mask),
+.scalar_pipeline_we(s_writeback_control.register_we), .vector_pipeline_we(v_writeback_control.vector_wr_en), .pc_sel(s_writeback_control.store_pc), .scalar_pipeline_mask(s_writeback_control.mask), .vector_pipeline_mask(v_writeback_control.mask),
 .register_wb_sel(1'b1), .vector_wb_sel(1'b1), .buffer_register_sel(1'b0), .buffer_vector_sel(1'b0), .buffer_register(1'b0), .buffer_vector(1'b0),
 .vector_we(), .register_we(), .vector_data(vector_write_data), .register_data(register_write_data), .clk(clk), .rst(rst), .scalar_pipeline_wbr(s_writeback_control.scalar_write_register),
 .vector_pipeline_wbr(v_writeback_control.vector_write_register), .vector_wbr(v_writeback_control.vector_write_register), .register_wbr(s_writeback_control.scalar_write_register)
