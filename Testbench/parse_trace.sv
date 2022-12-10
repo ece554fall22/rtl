@@ -18,9 +18,9 @@ module parse_trace;
     bit [4:0] wb_reg;
     bit [35:0] wb_reg_value;
 
-    logic clk, rst_n;
+    logic clk, rst;
 
-    proc proc1(.clk(clk), .rst(rst_n), .err());
+    proc proc1(.clk(clk), .rst(rst), .err());
 
     // Create clock signal
     always begin
@@ -43,9 +43,9 @@ initial begin
         $stop;
     end
 
-    rst_n = 0;
+    rst = 1;
     @(posedge clk);
-    rst_n = 1; // reset finished
+    rst = 0; // reset finished
     @(posedge clk);
 
     // while (!$feof(fd)) begin
@@ -101,11 +101,11 @@ initial begin
 
 
 ////////// fourth line //////////
-        else if(line.substr(0,2) == "asm") begin
+        else if(line.substr(0,6) == "    asm") begin
             assign proc1.inst_f = inst;
             repeat (5) @(posedge clk);
-            $display("WB Reg: %h", proc1.writeback_control.scalar_write_register);
-            $display("WB Reg Value: %h", proc1.register_data);
+            $display("WB Reg: %h", proc1.s_writeback_control.scalar_write_register);
+            $display("WB Reg Value: %h", proc1.register_write_data);
         end
 
         // debugging
@@ -113,6 +113,8 @@ initial begin
     end
     
     $fclose(fd);
+
+    $stop();
 end
 
 
