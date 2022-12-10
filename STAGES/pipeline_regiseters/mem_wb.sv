@@ -1,16 +1,16 @@
 module mem_wb
 (
 input clk, rst,
-input [35:0] scalar_pipeline_wb, vector_pipeline_wb, pc,
-output [35:0] scalar_pipeline_wb_reg, vector_pipeline_wb_reg, pc_reg,
-input [127:0] scalar_pipeline_vwb, vector_pipeline_vwb,
-output [127:0] scalar_pipeline_vwb_reg, vector_pipeline_vwb_reg.
-input [3:0] scalar_pipeline_mask, vector_pipeline_mask,
-output [3:0] scalar_pipeline_mask_reg, vector_pipeline_mask_reg,
-input register_wb_sel, vector_wb_sel, pc_sel, scalar_pipeline_we, vector_pipeline_we,
-output register_wb_sel_reg, vector_wb_sel_reg, pc_sel_reg, scalar_pipeline_we_reg, vector_pipeline_we_reg,
-input buffer_register_sel, buffer_vector_sel, buffer_register, buffer_vector,
-output buffer_register_sel_reg, buffer_vector_sel_reg, buffer_register_reg, buffer_vector_reg
+input logic [35:0] scalar_pipeline_wb, vector_pipeline_wb, pc,
+output logic [35:0] scalar_pipeline_wb_reg, vector_pipeline_wb_reg, pc_reg,
+input logic [127:0] scalar_pipeline_vwb, vector_pipeline_vwb,
+output logic [127:0] scalar_pipeline_vwb_reg, vector_pipeline_vwb_reg,
+input logic [3:0] scalar_pipeline_mask, vector_pipeline_mask,
+output logic [3:0] scalar_pipeline_mask_reg, vector_pipeline_mask_reg,
+input logic register_wb_sel, vector_wb_sel, pc_sel, scalar_pipeline_we, vector_pipeline_we,
+output logic register_wb_sel_reg, vector_wb_sel_reg, pc_sel_reg, scalar_pipeline_we_reg, vector_pipeline_we_reg,
+input logic buffer_register_sel, buffer_vector_sel, buffer_register, buffer_vector,
+output logic buffer_register_sel_reg, buffer_vector_sel_reg, buffer_register_reg, buffer_vector_reg
 );
 
 // it's a pipeline register

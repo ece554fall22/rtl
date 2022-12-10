@@ -43,10 +43,15 @@ initial begin
         $stop;
     end
 
+    clk = 0;
     rst = 1;
     @(posedge clk);
     rst = 0; // reset finished
     @(posedge clk);
+
+    $display("0");
+
+
 
     // while (!$feof(fd)) begin
     for(int i = 0; i < 4; i++) begin
@@ -55,6 +60,7 @@ initial begin
 
 ////////// first line //////////
         if (line.substr(0,2) == "***") begin
+            $display("1");
 
             $sscanf(line, "*** %x: %x ***", PC, inst);
         end
@@ -68,6 +74,7 @@ initial begin
 
             // rD with rA and rB
             else if ($sscanf(line, "    inputs: rD=r%x=%x rA=r%x=%x rB=r%x=%x", rD, rD_value, rA, rA_value, rB, rB_value) == 6) begin
+                $display("2");
             end
 
             // TODO: vector inputs
@@ -77,6 +84,7 @@ initial begin
 ////////// third line //////////
         else if(line.substr(0,19) == "    scalar_writeback") begin
             $sscanf(line, "    scalar_writeback: rD=r%x=%x", wb_reg, wb_reg_value);
+            $display("3");
         end
 
         else if(line.substr(0,19) == "    vector_writeback") begin
@@ -102,10 +110,24 @@ initial begin
 
 ////////// fourth line //////////
         else if(line.substr(0,6) == "    asm") begin
+            $display("4");
             assign proc1.inst_f = inst;
-            repeat (5) @(posedge clk);
-            $display("WB Reg: %h", proc1.s_writeback_control.scalar_write_register);
-            $display("WB Reg Value: %h", proc1.register_write_data);
+            assign proc1.sdata1_d = rA_value;
+            assign proc1.sdata2_d = rB_value;
+            repeat (20) @(posedge clk);
+            $display("R%x: %x", rA, rA_value);
+            $display("R%x: %x", rB, rB_value);
+            $display("R%x: %x", wb_reg, wb_reg_value);
+            $display("WB Reg: %x", proc1.s_writeback_control.scalar_write_register);
+            $display("WB Reg Value: %x", proc1.register_write_data);
+            $display("Decode Read1: %x", proc1.inst_f[19:15]);
+            $display("Decode Read2: %x", proc1.inst_f[14:10]);
+            $display("Decode Data1: %x", proc1.sdata1_d);
+            $display("Decode Data2: %x", proc1.sdata2_d);            
+            $display("Scalar Execute Data1: %x", proc1.sdata1_e);
+            $display("Scalar Execute Data2: %x", proc1.sdata2_e);
+            $display("Scalar Execute opcode: %x", proc1.sexecut.ALU.op);
+            $display("Scalar Execute Data Out: %x", proc1.sdata_out_e);
         end
 
         // debugging
