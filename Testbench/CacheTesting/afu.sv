@@ -109,9 +109,8 @@ module afu
 
  logic done_in;
 	
-  cache_test_hierarchy cth(.clk(clk), .rst(rst), .wr_offset_mmio, .wr_offset(offset[35:0]),
-input logic [27:0] virt_addr_offset,
-.wr_done(dma.wr_done), .rd_done(dma.rd_done),
+  cache_test_hierarchy cth(.clk(clk), .rst(rst), .go(go), .done(done_in), .wr_offset(offset[35:0]),
+.wr_done(dma.wr_done), .rd_done(dma.rd_done), .virt_addr_base(rd_addr),
 .full(dma.full), .empty(dma.empty),
 .rd_data(dma.rd_data),
 .wr_data(dma.wr_data),
