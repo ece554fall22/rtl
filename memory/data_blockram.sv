@@ -1,4 +1,4 @@
-module data_blockram(clk1, rd_addr, wr_data, wr_addr, wr_en, data_out);
+module data_blockram(clk, rd_addr, wr_data, wr_addr, wr_en, data_out);
 
 output[511:0] data_out;		// Cache lines are 512 bits, this output is the same fourth of the Cacheline in the 4 different ways
 input [127:0] wr_data;		// wr_data is the fourth of the cacheline to be written
