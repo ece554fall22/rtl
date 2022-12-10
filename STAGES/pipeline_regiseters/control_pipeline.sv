@@ -23,7 +23,6 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.r_type <= '0;
         control_q.scalar_op_sel <= '0;
         control_q.synch_op <= '0;
-        control_q.branch_control_q <= '0;
         control_q.matmul_idx <= '0;
         control_q.matmul_opcode <= '0;
         control_q.matmul_high_low <= '0; 
@@ -62,7 +61,6 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.r_type <= control_d.r_type;
         control_q.scalar_op_sel <= control_d.scalar_op_sel;
         control_q.synch_op <= control_d.synch_op ;
-        control_q.branch_control_q <= control_d.branch_control_q;
         control_q.matmul_idx <= control_d.matmul_idx;
         control_q.matmul_opcode <= control_d.matmul_opcode;
         control_q.matmul_high_low <= control_d.matmul_high_low; 
