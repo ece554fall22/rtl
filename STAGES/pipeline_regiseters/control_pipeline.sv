@@ -1,13 +1,13 @@
-module control_q_pipeline(input clk, rst_n, control_bus control_q, control_bus control_d);
+module control_pipeline(input clk, rst_n, control_bus control_q, control_bus control_d);
     always_ff @ (posedge clk, negedge rst_n) begin
         if(!rst_n) begin
         control_q.halt  <= '0;
         control_q.flushicache <= '0;
-        control_q.data_cache_flush <= '0';
+        control_q.data_cache_flush <= '0;
         control_q.dirty <= '0;
-        control_q.clean <= '0';
-        control_q.matrix_mutplier_en <= '0';
-        control_q.vector_wr_en <= '0';
+        control_q.clean <= '0;
+        control_q.matrix_mutplier_en <= '0;
+        control_q.vector_wr_en <= '0;
         control_q.register_wr_en <= '0;
         control_q.mem_read <='0;
         control_q.mem_write <= '0;
@@ -16,7 +16,7 @@ module control_q_pipeline(input clk, rst_n, control_bus control_q, control_bus c
         control_q.scalar_read_register1 <= '0;
         control_q.scalar_read_register2 <= '0;
         control_q.vector_write_register  <= '0;
-        control_q.scalar_write_register <= '0' 
+        control_q.scalar_write_register <= '0; 
         control_q.vector_alu_op  <= '0;
         control_q.op_type <= '0;
         control_q.w_type <= '0; 
