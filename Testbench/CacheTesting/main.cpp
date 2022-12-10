@@ -219,9 +219,9 @@ unsigned long stringToPositiveInt(char *str) {
 
 
 bool checkUsage(int argc, char *argv[], 
-		unsigned long &size, unsigned long &num_tests) {
+		 unsigned long &num_tests) {
   
-  if (argc == 3) {
+  if (argc == 2) {
     try {
       num_tests = stringToPositiveInt(argv[1]);
     }

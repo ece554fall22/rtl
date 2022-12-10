@@ -143,12 +143,13 @@ module afu
    //assign dma.wr_data = dma.rd_data;
 
    // The AFU is done when the DMA is done writing size cache lines.
-   assign done = // TODO add logic to make this
+   //assign done = // TODO add logic to make this
    always_ff @(posedge clk) begin
       if(rst) begin
          done <= 0;   
       end else if(done_in) begin
          done <= done_in;
+      end
    end
             
 endmodule

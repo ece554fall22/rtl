@@ -32,14 +32,14 @@ logic [2:0] plru;
 logic [3:0] match;
 logic [1:0] victimway, fwd_way, fwd_way_reg;
 
-data_blockram data_blockram(.clk(clk), .clk2(clk), .rd_addr(rd_addr), .wr_data(w_data), 
-	.wr_index(wr_index), .wr_en(w), .data_out(block_data_out));
+data_blockram data_blockram(.clk(clk), .rd_addr(rd_addr), .wr_data(w_data), 
+	.wr_addr(wr_index), .wr_en(w), .data_out(block_data_out));
 
-metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.wr_data(metadata_in), 
-			    .wr_index(r_index_reg), .wr_en(r_reg & ~no_tagcheck_read), .data_out(metadata_out));
+metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.data_in(metadata_in), 
+			    .wr_addr(r_index_reg), .wr_en(r_reg & ~no_tagcheck_read), .data_out(metadata_out));
 
 tag_blockram tags(.tag_out(block_tag_out), .r_index(r_index), .w_index(w_index), .tag_in(w_tag), 
-                 .wr_en(w), .clk1(clk), .clk2(clk));
+                 .wr_en(w), .clk(clk));
 
 next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_array), .dirty_array(dirty_array), 
                          .w_tagcheck(w_tagcheck), .flushtype(flushtype), .hit(hit), .next_metadata(metadata_in));

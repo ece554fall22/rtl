@@ -52,22 +52,6 @@ assign wr_data = buffer_data[write_index];
 assign valid_req = (packet_type_req_in==3'b011) | (packet_type_req_in==3'b001);
 assign circ_available = valid_req | (id_req_in==3'b000);
 
-always_ff @(posedge clk, posedge rst) begin
-  if (rst) begin
-    read_index <= 0;
-  end else if (next_read) begin
-    read_index <= read_index + 1;
-  end
-end
-
-always_ff @(posedge clk, posedge rst) begin
-  if (rst) begin
-    write_index <= 0;
-  end else if (next_write) begin
-    write_index <= write_index + 1;
-  end
-end
-
 // read fsm
 always_comb begin
   
