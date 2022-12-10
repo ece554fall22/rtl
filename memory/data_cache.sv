@@ -1,5 +1,5 @@
 module data_cache(w_index, r_index, w_tag, r_tag, w_line, r_line, w_data, flushtype, w_way,
-                  w_tagcheck, rst, clk, w, r, tag_out, data_out, way, hit, dirty, no_tagcheck_way, no_tagcheck_read);
+                  w_tagcheck, rst, clk, w, r, tag_out, data_out, way, hit, dirty, dirty_array, no_tagcheck_way, no_tagcheck_read);
 input logic [7:0] w_index, r_index;	// indexes for write and read operation
 input logic [17:0] w_tag, r_tag;	// the write tag and the tag to be compared for read
 input logic [5:0] w_line, r_line;	// desired line for write and read, this module only uses the first two bits of these
