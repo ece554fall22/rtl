@@ -37,6 +37,9 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.v_read1 <= '0;
         control_q.v_read2 <= '0;
         control_q.pc_select <= '0;
+        control_q.store_immediate <= '0;
+        control_q.mask <= '0;
+        control_q.scalar_alu_op <= '0;
         end 
         else begin
         control_q.halt  <= control_d.halt;
@@ -60,7 +63,7 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.w_type <= control_d.w_type; 
         control_q.r_type <= control_d.r_type;
         control_q.scalar_op_sel <= control_d.scalar_op_sel;
-        control_q.synch_op <= control_d.synch_op ;
+        control_q.synch_op <= control_d.synch_op;
         control_q.matmul_idx <= control_d.matmul_idx;
         control_q.matmul_opcode <= control_d.matmul_opcode;
         control_q.matmul_high_low <= control_d.matmul_high_low; 
@@ -75,6 +78,9 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.v_read1 <= control_d.v_read1;
         control_q.v_read2 <= control_d.v_read2;
         control_q.pc_select <= control_d.pc_select;
+        control_q.store_immediate <= control_d.store_immediate;
+        control_q.mask <= control_d.mask;
+        control_q.scalar_alu_op <= control_d.scalar_alu_op;
         end
     end
 endmodule
