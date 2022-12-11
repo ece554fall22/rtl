@@ -48,6 +48,7 @@ always_comb begin
     control.v_read2 = 0;
     control.store_immediate = 0;
     control.mask = inst[3:0];
+    control.scalar_alu_op = '0;
     case (op_code)
         halt: begin
             control.halt = 1;
