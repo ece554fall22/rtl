@@ -1,3 +1,5 @@
+// Created by: Leo Garcia Calderon & Mark Xia
+
 module parse_trace;
     // first line
     bit [35:0] PC;
@@ -34,7 +36,7 @@ initial begin
 
     // Open the tracer file in the current folder with "read" permission
     // fd = 0 if file doesn't exist
-    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test_no_lih.trace", "r");
+    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test_no_lih.trace", "r"); // will need to change based on user
     if (fd) $display("Trace file opened successfully : %0d", fd);
     else begin
         $display("File not opened successfully : %0d", fd);
