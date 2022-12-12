@@ -28,6 +28,11 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 	int loop_cnt1;   		// For ACT 2
 	int loop_cnt2;   		// For ACT 2
 	int line_index;  		// For ACT 2
+	logic [TAG_SIZE - 1: 0] evicted_tag;
+	logic [TAG_SIZE - 1: 0] new_tag_in;	
+	int tag_index_traversed [];
+	int tag_cnt_before;		// number of tags evicted until now
+	int tag_cnt;
 		
 	// Instantiate data cache
 	data_cache CACHE0(
@@ -170,6 +175,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 		// Wait for input to stabilize
 		@(negedge clk);
 		inf.w = 1'b0;
+		w_way_save = inf.dut_way;
 		
 		// Evaluate read
 		if(inf.perf_hit) begin			
@@ -197,7 +203,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 		else begin
 			// Write back to memory starting from the way where the missed data was found 
 			inf.no_tagcheck_way = inf.perf_way;	
-			w_way_save = inf.dut_way;
+			evicted_tag = inf.perf_tag_out;
 			
 			if(inf.dut_way !== inf.perf_way) begin
 				$display("FAILED: The DUT eviction way is different from the perf test");
@@ -223,6 +229,8 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 					@(negedge clk);
 				end
 				
+				
+				
 				// Evaluate the DUT
 				d_cache.compare_results(
 											.dut_tag_out(inf.dut_tag_out),
@@ -246,7 +254,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 				// Already on neg edge of clock
 				if(i == 0) begin
 					// if the line is not dirty, write immediately
-					if(~inf.metadata_block.dirty) begin
+					if(~inf.dut_dirty) begin //~inf.metadata_block.dirty) begin
 						break;
 					end
 					
@@ -256,7 +264,8 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 					inf.w_index = 8'h0;
 					inf.w_line = 6'h0;						
 					inf.w_way = 2'h0;		
-					inf.w_tag = 18'h0;	
+					inf.w_tag = 18'h0;
+					inf.r_tag = evicted_tag;
 				end
 				
 				// Already on neg edge of clock
@@ -277,7 +286,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 					inf.w = 1'b1;	
 					// Writing in same order data was read
 					inf.w_way = w_way_save;
-					inf.w_tag = inf.r_tag;
+					inf.w_tag = r_tag_save;
 					inf.w_index = inf.r_index;
 					inf.w_data = WORD_SIZE'(0);
 					inf.w_line[5:4] = inf.r_line[5:4];
@@ -413,8 +422,8 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 	
 	initial begin
 		// Declare
-		rand_gen rand_gen_inst1 = new(16 * 3); // for writing to 3 indices
-		rand_gen rand_gen_inst2 = new(16 * 3); // for reading from 3 indices
+		rand_gen rand_gen_inst1; // for writing to 3 indices
+		rand_gen rand_gen_inst2; // for reading from 3 indices
 		// Initialize signal
 		inf.update_metadata = 1'b1;
 		inf.flushtype = 2'b00; // no flushes
@@ -580,7 +589,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 		loop_cnt1 = 0;
 		loop_cnt2 = 0;
 		while(loop_cnt1 < (16 * 3)) begin
-			rand_gen_inst1.randomize();
+			void'(rand_gen_inst1.randomize());
 			loop_cnt1 += 1;
 			
 			// Change data for next read access
@@ -603,7 +612,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 			
 			// Give some time for actual data to be present before reading
 			if(loop_cnt1 >= 24) begin
-				rand_gen_inst2.randomize();
+				void'(rand_gen_inst2.randomize());
 				loop_cnt2 += 1;
 				
 				// Change data for next access
@@ -625,7 +634,7 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 		
 		// Read the remaining positions
 		while(loop_cnt2 < (16 * 3)) begin
-			rand_gen_inst2.randomize();
+			void'(rand_gen_inst2.randomize());
 			loop_cnt2 += 1;
 				
 			// Change data for next access
@@ -643,6 +652,101 @@ module data_cache_tb_sub(interface inf, ref data_cache_memory_class d_cache, ref
 			read_procedure();
 			d_cache.delay_update_metadata();
 		end
+		
+		/*******************************ACT 3 ***************************/
+		// 1. Swaps tags to ensure all tags are evicted at least once
+		
+		new_tag_in = inf.TAG_ARRAY[4];
+		
+		for(int i = 0; i < 4; i += 1) begin
+			// Change data for next read access
+			// Sidenote: Already on negedge from previous function
+			//TAGS
+			inf.r_tag = new_tag_in;
+			// Change data for next access
+			inf.r_index = 100;	
+			
+			// Write remaining lines to cache (same tag as above)
+			// Line -> 00
+			inf.access_type = 1'b1;
+			inf.r_line = 6'b000000; // only top 2 bits change from 00 -> 11
+			read_procedure();
+			prepare_next_cycle_write();
+			
+			//TAGS
+			inf.r_tag = new_tag_in;
+			// Change data for next access
+			inf.r_index = 100;	
+			
+			// Write remaining lines to cache (same tag as above)
+			// Line -> 01
+			inf.access_type = 1'b1;
+			inf.r_line = 6'b010000; // only top 2 bits change from 00 -> 11
+			read_procedure();
+			prepare_next_cycle_write();
+			
+			//TAGS
+			inf.r_tag = new_tag_in;
+			// Change data for next access
+			inf.r_index = 100;	
+			
+			// Line -> 10
+			inf.access_type = 1'b1;
+			inf.r_line = 6'b100000; // only top 2 bits change from 00 -> 11
+			read_procedure();
+			prepare_next_cycle_write();
+			
+			//TAGS
+			inf.r_tag = new_tag_in;
+			// Change data for next access
+			inf.r_index = 100;	
+			
+			// Line -> 11
+			inf.access_type = 1'b1;
+			inf.r_line = 6'b110000; // only top 2 bits change from 00 -> 11
+			read_procedure();
+			prepare_next_cycle_write();
+			
+			// Add evicted tag to index to evict another tag
+			new_tag_in = evicted_tag;
+			
+			
+			foreach(inf.TAG_ARRAY[k]) begin
+				if(evicted_tag == inf.TAG_ARRAY[k]) begin // evicted tag is in array
+					tag_cnt_before = tag_cnt;
+					tag_cnt += 1;
+					if(tag_cnt == 1) begin
+						tag_index_traversed = new [1];
+					end
+					else begin
+					
+						foreach(tag_index_traversed[j]) begin
+							if(tag_index_traversed[j] == k) begin // duplicate eviction
+								tag_cnt -= 1;
+								break;
+							end
+						end
+						
+						if(tag_cnt_before >= tag_cnt) begin // tag count did not increase so duplicate tags were evicted
+							break;
+						end
+						tag_index_traversed = new [tag_index_traversed.size() + 1](tag_index_traversed); // grow by 1
+					end
+					
+					tag_index_traversed[tag_index_traversed.size() - 1] = k;					
+					break;
+				end
+			end
+		end
+		
+		if(tag_cnt != 4) begin
+			$display("FAILED: Cache does not evict from all ways first before reevicting from a particular way");
+		end
+		else begin
+			$display("Passed: Cache evicts from all ways in a fair manner");
+		end
+		
+		
 		
 		@(negedge clk);
 		
