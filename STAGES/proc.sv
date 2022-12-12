@@ -78,7 +78,7 @@ assign immediate_w_h = immediate_w;
 logic [35:0] swb_data;
 
 assign swb_data = (s_writeback_control.mem_read) ? smem_data_w : 
-                  (s_writeback_control.store_immediate) ? ((s_writeback_control) ? immediate_w_h << 16 : immediate_w) :
+                  (s_writeback_control.store_immediate) ? ((s_writeback_control.imm_hl) ? immediate_w_h << 16 : immediate_w) :
                    sdata_out_w;
 
 wb writeback(.scalar_pipeline_wb(swb_data), .vector_pipeline_wb(fdata_out_w), .pc(pc_w), .scalar_pipeline_vwb({vmem_data_w[3], vmem_data_w[2], vmem_data_w[1], vmem_data_w[0]}), .vector_pipeline_vwb({vdata_out_w[3], vdata_out_w[2], vdata_out_w[1], vdata_out_w[0]}), 
