@@ -84,7 +84,7 @@ logic [35:0] swb_data;
 
 logic vwb_sel, rwb_sel;
 
-assign vwb_sel = 
+
 
 assign swb_data = (s_writeback_control.mem_read) ? smem_data_w : 
                   (s_writeback_control.store_immediate) ? (s_writeback_control.imm_hl) ? {immediate_w_h[17:0], sdata1_w[17:0]} : {sdata1_w[35:18], immediate_w_h[17:0]} :
@@ -93,7 +93,7 @@ assign swb_data = (s_writeback_control.mem_read) ? smem_data_w :
 
 wb writeback(.scalar_pipeline_wb(swb_data), .vector_pipeline_wb(fdata_out_w), .pc(pc_w), .scalar_pipeline_vwb({vmem_data_w[3], vmem_data_w[2], vmem_data_w[1], vmem_data_w[0]}), .vector_pipeline_vwb({vdata_out_w[3], vdata_out_w[2], vdata_out_w[1], vdata_out_w[0]}), 
 .scalar_pipeline_we(s_writeback_control.register_wr_en), .vector_pipeline_we(v_writeback_control.vector_wr_en), .pc_sel(s_writeback_control.store_pc), .scalar_pipeline_mask(4'b1111), .vector_pipeline_mask(4'b1111),
-.register_wb_sel(), .vector_wb_sel(v_writeback_control.vector_wr_en), .buffer_register_sel(1'b0), .buffer_vector_sel(1'b0), .buffer_register(1'b0), .buffer_vector(1'b0),
+.register_wb_sel(1'b0), .vector_wb_sel(1'b1), .buffer_register_sel(1'b0), .buffer_vector_sel(1'b0), .buffer_register(1'b0), .buffer_vector(1'b0),
 .vector_we(), .register_we(), .vector_data({vector_write_data[3], vector_write_data[2], vector_write_data[1], vector_write_data[0]}), .register_data(register_write_data), .clk(clk), .rst(rst), .scalar_pipeline_wbr(s_writeback_control.scalar_write_register),
 .vector_pipeline_wbr(v_writeback_control.vector_write_register), .vector_wbr(), .register_wbr());
 
