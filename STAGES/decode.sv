@@ -17,8 +17,8 @@ module decode(
 
 always_comb begin
     case(control.imm_type)
-        4'b0001: immediate = inst[24:0];
-        4'b0001: immediate = {{4{inst[24]}},inst[24:20], inst[15:0]};
+        4'b0000: immediate = inst[24:0];
+        4'b0001: immediate = {{4{inst[24]}},inst[24:20], inst[14:0]};
         4'b0010: immediate = {{3{inst[21]}}, inst[21:0]};
         4'b0011: immediate = {{10{inst[14]}}, inst[14:0]};
         4'b0100: immediate = {{6{inst[18]}}, inst[18:0]};

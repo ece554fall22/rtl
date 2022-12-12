@@ -23,7 +23,7 @@ logic rst_n;
 
 assign rst_n = !rst;
 
-logic [35:0] branch_pc;
+logic [35:0] branch_pc_d, branch_pc_f;
 
 logic [31:0] inst_f, inst_d;
 
@@ -33,27 +33,32 @@ logic [35:0] register_write_data;
 
 logic [31:0] vector_write_data [3:0];
 
-logic [4:0] vread1, vread2;
+logic [4:0] vread1, vread2, read1_reg_f, read1_reg_d;
 
 logic zero, sign, overflow;
 
 logic [31:0] vdata1_d [3:0], vdata2_d [3:0], vdata1_e [3:0], vdata2_e [3:0], vdata_out_e [3:0], matmul_data_out_e [3:0], matmul_data_out_w [3:0], vdata_out_w [3:0];
 
-logic [35:0] sdata1_d, sdata2_d, sdata1_e, sdata2_e, sdata_out_e, sdata_out_m, sdata_out_w, fdata_out_e, fdata_out_w;
+logic [35:0] sdata1_d, sdata2_d, sdata1_e, sdata1_m, sdata1_w, sdata2_e, sdata_out_e, sdata_out_m, sdata_out_w, fdata_out_e, fdata_out_w;
 
 logic [7:0] vector_imm_d, vector_imm_e;
 
 logic [24:0] immediate_d, immediate_e, immediate_m, immediate_w;
 
-fetch fetch (.clk(clk), .rst(rst), .pc_control(fetch_control.pc_select), .stall(1'b0), .halt(fetch_control.halt), 
-.unhalt(), .cache_stall(), .pc_branch(branch_pc), .instr(inst_f), .pc_next(pc_f), .is_running(), .vread1(vread1), .vread2(vread2));
+logic li;
 
+fetch fetch (.clk(clk), .rst(rst), .pc_control(fetch_control.pc_select), .stall(1'b0), .halt(fetch_control.halt), 
+.unhalt(1'b1), .cache_stall(1'b0), .pc_branch(branch_pc_f), .instr(inst_f), .li(li), .pc_next(pc_f), .is_running(), .vread1(vread1), .vread2(vread2));
+
+
+
+assign read1_reg_f = (li) ? inst_f[24:20] : inst_f[19:15];
 
 
 decode decode(.clk(clk), .rst_n(!rst), .s_wr_en(s_writeback_control.register_wr_en), .inst(inst_d), .pc_plus_4(register_write_data), .s_write_data(register_write_data), 
 .v_read1(vread1), .v_read2(vread2), .v_write_addr(v_writeback_control.vector_write_register), 
-.r_write_addr(s_writeback_control.scalar_write_register), .r_read1(inst_f[19:15]), .r_read2(inst_f[14:10]), .write_vector(vector_write_data), 
-.mask(v_writeback_control.mask), .zero(zero), .sign(sign), .overflow(overflow), .control(decode_control), .vdata1(vdata1_d), .vdata2(vdata2_d), .sdata1(sdata1_d), .sdata2(sdata2_d), .immediate(immediate_d), .pc_next(branch_pc));
+.r_write_addr(s_writeback_control.scalar_write_register), .r_read1(read1_reg_f), .r_read2(inst_f[14:10]), .write_vector(vector_write_data), 
+.mask(v_writeback_control.mask), .zero(zero), .sign(sign), .overflow(overflow), .control(decode_control), .vdata1(vdata1_d), .vdata2(vdata2_d), .sdata1(sdata1_d), .sdata2(sdata2_d), .immediate(immediate_d), .pc_next(branch_pc_d));
 
 assign vector_imm_d = inst_d[14:7];
 
@@ -78,7 +83,7 @@ assign immediate_w_h = immediate_w;
 logic [35:0] swb_data;
 
 assign swb_data = (s_writeback_control.mem_read) ? smem_data_w : 
-                  (s_writeback_control.store_immediate) ? ((s_writeback_control.imm_hl) ? immediate_w_h << 16 : immediate_w) :
+                  (s_writeback_control.store_immediate) ? (s_writeback_control.imm_hl) ? {immediate_w_h[17:0], sdata1_w[17:0]} : {sdata1_w[35:18], immediate_w_h[17:0]} :
                    sdata_out_w;
 
 wb writeback(.scalar_pipeline_wb(swb_data), .vector_pipeline_wb(fdata_out_w), .pc(pc_w), .scalar_pipeline_vwb({vmem_data_w[3], vmem_data_w[2], vmem_data_w[1], vmem_data_w[0]}), .vector_pipeline_vwb({vdata_out_w[3], vdata_out_w[2], vdata_out_w[1], vdata_out_w[0]}), 
@@ -114,6 +119,8 @@ always_ff @(posedge clk, negedge rst_n) begin
         pc_m <= '0;
         pc_w <= '0;
         sdata1_e <= '0;
+        sdata1_m <= '0;
+        sdata1_w <= '0;
         sdata2_e <= '0;
         sdata_out_m <= '0;
         sdata_out_w <= '0;
@@ -122,14 +129,18 @@ always_ff @(posedge clk, negedge rst_n) begin
         immediate_e <= '0;
         immediate_m <= '0;
         immediate_w <= '0;
+        branch_pc_f <= '0;
+        read1_reg_d <= '0;
     end
     else begin
         inst_d <= inst_f;
         pc_d <= pc_f;
         pc_e <= pc_d;
-        pc_m <= pc_m;
-        pc_w <= pc_w;
+        pc_m <= pc_e;
+        pc_w <= pc_m;
         sdata1_e <= sdata1_d;
+        sdata1_m <= sdata1_e;
+        sdata1_w <= sdata1_m;
         sdata2_e <= sdata2_d;
         sdata_out_m <= sdata_out_e;
         sdata_out_w <= sdata_out_m;
@@ -138,6 +149,9 @@ always_ff @(posedge clk, negedge rst_n) begin
         immediate_e <= immediate_d;
         immediate_m <= immediate_e;
         immediate_w <= immediate_m;
+        branch_pc_f <= branch_pc_d;
+        read1_reg_d <= read1_reg_f;
+        
     end
 end
 

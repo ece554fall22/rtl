@@ -3,6 +3,7 @@ module fetch
   input logic clk, rst, pc_control, stall, halt, unhalt, cache_stall,
   input logic [35:0] pc_branch,
   input logic [31:0] instr,
+  output logic li,
   output [35:0] pc_next,
   output is_running,
   output[4:0] vread1, vread2
@@ -59,5 +60,9 @@ assign vread1 = (vread1_inter) ? instr[9:5] : instr[19:15];
 
 // "decodes" the second read register
 assign vread2 = instr[14:10];
+
+assign li = (instr[31:25] == 7'b0001000) ? 1'b1 :
+            (instr[31:25] == 7'b0001001) ? 1'b1 :
+            1'b0;
 
 endmodule
