@@ -7,8 +7,8 @@ input logic [35:0] addr_circ_in, addr_req_in,
 output logic [35:0] addr_circ_out, addr_req_out,
 input logic [DEPTH-1:0] data_circ_in, data_req_in,
 output logic [DEPTH-1:0] data_circ_out, data_req_out,
-input logic [4:0] id_circ_in, id_req_in,
-output logic [4:0] id_circ_out, id_req_out,
+input logic [3:0] id_circ_in, id_req_in,
+output logic [3:0] id_circ_out, id_req_out,
 input logic [2:0] packet_type_circ_in, packet_type_req_in,
 output logic [2:0] packet_type_circ_out, packet_type_req_out
 );
@@ -32,11 +32,12 @@ assign next_packet_type_circ_out = (overwrite) ? packet_type_req_in : packet_typ
 // flops for outputs
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
+    $display("reseting cmu");
     addr_circ_out <= 0;
     data_circ_out <= 0;
     id_circ_out <= 0;
     packet_type_circ_out <= 0;
-  end else if(rst) begin
+  end else begin
     addr_circ_out <= next_addr_circ_out;
     data_circ_out <= next_data_circ_out;
     id_circ_out <= next_id_circ_out;
