@@ -1,0 +1,86 @@
+C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vector_alu
+
+Top level modules:
+	vector_alu
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ram_single
+
+Top level modules:
+	ram_single
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fifo
+
+Top level modules:
+	fifo
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_vector_ALU.sv {1 {vlog -work work -sv -stats=none {C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Testbench\tb_vector_ALU.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_vector_ALU
+
+Top level modules:
+	tb_vector_ALU
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv {0 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module decode
+** Error: (vlog-13069) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv(26): near "*": syntax error, unexpected '*'.
+-- Compiling interface data_bus
+
+} {4.0 5.0} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vector_register_file
+
+Top level modules:
+	vector_register_file
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv} {2 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memB
+** Warning: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv(7): (vlog-13314) Defaulting port 'Bin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	memB
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tpumac
+
+Top level modules:
+	tpumac
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv} {2 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fifo_preload
+** Warning: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv(11): (vlog-13314) Defaulting port 'd' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	fifo_preload
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module register_file
+
+Top level modules:
+	register_file
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_FP_ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_FP_ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_FP_ALU
+
+Top level modules:
+	tb_FP_ALU
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memA
+
+Top level modules:
+	memA
+
+} {} {}}

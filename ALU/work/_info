@@ -1,0 +1,790 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+valu
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1670877599
+!i10b 1
+!s100 1kPBJPNF[gEm8AL18WRZ60
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I3JN9m:OSNl7zlYK=5`OzX1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z3 dC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU
+w1670877591
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Scalar_ALU.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Scalar_ALU.sv
+!i122 413
+L0 2 51
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1670877598.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Scalar_ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Scalar_ALU.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+vbranch_jump_decoder
+R0
+!s110 1670878323
+!i10b 1
+!s100 O@a7h3zG0f4O=zm=C4VmL0
+R1
+I<;]D5Me:jmV6jmYL78DoP3
+R2
+S1
+R3
+w1670878209
+8C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\branch_jump_decoder.sv
+FC:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\branch_jump_decoder.sv
+!i122 418
+L0 1 35
+R4
+r1
+!s85 0
+31
+!s108 1670878323.000000
+!s107 C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\branch_jump_decoder.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\branch_jump_decoder.sv|
+!i113 1
+R5
+R6
+Ycontrol_bus
+R0
+Z7 !s110 1670880498
+!i10b 1
+!s100 [?7lIkAXhVA@;FY[DCJ1I3
+R1
+I`7>fmJQ_IR93kmJ`9=eeU1
+R2
+S1
+R3
+w1670880461
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv
+!i122 433
+L0 1 0
+R4
+r1
+!s85 0
+31
+Z8 !s108 1670880498.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv|
+!i113 1
+R5
+R6
+vcontrol_pipeline
+R0
+R7
+!i10b 1
+!s100 mU;Nd]N>PS;<0E9=;j]1A0
+R1
+IjO7MhogFim:NzeCcGa>jz2
+R2
+S1
+R3
+w1670880490
+Z9 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv
+Z10 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv
+!i122 435
+L0 1 90
+R4
+r1
+!s85 0
+31
+R8
+Z11 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv|
+Z12 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv|
+!i113 1
+R5
+R6
+vcontrol_q_pipeline
+R0
+!s110 1670700753
+!i10b 1
+!s100 i1h5Y153?LR3aVjVQZ1Ma0
+R1
+ICS^WIKnEW@z:n>LVmJoNN1
+R2
+S1
+R3
+w1670700744
+R9
+R10
+!i122 164
+L0 1 82
+R4
+r1
+!s85 0
+31
+!s108 1670700753.000000
+R11
+R12
+!i113 1
+R5
+R6
+vcontrol_unit
+R0
+!s110 1670882278
+!i10b 1
+!s100 :WoW@:6`2AebS3NKgz`RD2
+R1
+IN3DfH:SB_G_zBia0PARbh3
+R2
+S1
+R3
+w1670882267
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv
+!i122 443
+L0 1 470
+R4
+r1
+!s85 0
+31
+!s108 1670882278.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv|
+!i113 1
+R5
+R6
+Ydata_bus
+R0
+!s110 1669941163
+!i10b 1
+!s100 BJhCg^=ZQ:m4I6TF4[Y<51
+R1
+Ie<lUhD??3z2`@NPNJj=:R1
+R2
+S1
+R3
+w1669941153
+Z13 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+Z14 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+!i122 47
+L0 33 0
+R4
+r1
+!s85 0
+31
+!s108 1669941163.000000
+Z15 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv|
+Z16 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv|
+!i113 1
+R5
+R6
+vdecode
+R0
+!s110 1670876696
+!i10b 1
+!s100 Zz6KCmd19D0i;95h4C?W93
+R1
+IKc:9J:X8GF2obKV;A7UGk2
+R2
+S1
+R3
+w1670876219
+R13
+R14
+!i122 410
+L0 1 43
+R4
+r1
+!s85 0
+31
+!s108 1670876695.000000
+R15
+R16
+!i113 1
+R5
+R6
+vfetch
+R0
+!s110 1670871239
+!i10b 1
+!s100 bdZOAUgnQC<SPX5Be^nAC0
+R1
+IW@8=N?G3`GOWaRz5l51;Z3
+R2
+S1
+R3
+w1670870762
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv
+!i122 380
+L0 1 68
+R4
+r1
+!s85 0
+31
+!s108 1670871239.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv|
+!i113 1
+R5
+R6
+vfifo
+R0
+Z17 !s110 1670697162
+!i10b 1
+!s100 R9^A>dZX^:D2S?j3b`C^T0
+R1
+I:TnSGB]g=G[WE;_HZeLTQ1
+R2
+S1
+R3
+w1669933637
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv
+!i122 130
+L0 6 22
+R4
+r1
+!s85 0
+31
+Z18 !s108 1670697162.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv|
+!i113 1
+R5
+R6
+vfifo_preload
+R0
+R17
+!i10b 1
+!s100 ?bI`Z3A3cMAi@R:^<8z[M1
+R1
+I8V9KY;X6_4XVcHKQ3b`D?3
+R2
+S1
+R3
+w1669768643
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv
+!i122 131
+L0 6 33
+R4
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv|
+!i113 1
+R5
+R6
+vfp_alu
+R0
+Z19 !s110 1670868568
+!i10b 1
+!s100 8iRHjD5]Q1TzD=7bKFLbG3
+R1
+IczKTS_nZX[b481KDTig`A3
+R2
+S1
+R3
+w1670015891
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/FP_ALU.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/FP_ALU.sv
+!i122 354
+L0 1 22
+R4
+r1
+!s85 0
+31
+!s108 1670868567.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/FP_ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/FP_ALU.sv|
+!i113 1
+R5
+R6
+vmem
+R0
+Z20 !s110 1670868569
+!i10b 1
+!s100 ]TZGbJZDGaDHSO2TX0zY61
+R1
+I^U;k5Gnm?F7LFPPSgaEne2
+R2
+S1
+R3
+w1669056429
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv
+!i122 365
+L0 1 30
+R4
+r1
+!s85 0
+31
+Z21 !s108 1670868569.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv|
+!i113 1
+R5
+R6
+vmemA
+R0
+R17
+!i10b 1
+!s100 L4i9PzAc5ACOQ=om[JG@U0
+R1
+IZAcP7z1mdcVQ3jg5`C;E03
+R2
+S1
+R3
+Z22 w1670696115
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv
+!i122 132
+Z23 L0 1 21
+R4
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv|
+!i113 1
+R5
+R6
+nmem@a
+vmemB
+R0
+R17
+!i10b 1
+!s100 :8B9f0c1?1i3J;^:bMN<J2
+R1
+I@b9WUKI?[`hg60E?Qa`L51
+R2
+S1
+R3
+w1669768647
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv
+!i122 133
+L0 1 25
+R4
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv|
+!i113 1
+R5
+R6
+nmem@b
+vparse_trace
+R0
+!s110 1670883465
+!i10b 1
+!s100 dGk9_P<KGkon2Io@6P@E;3
+R1
+Im_D2PUC]fQ8RAl^cgFQ1H1
+R2
+S1
+R3
+w1670883449
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv
+!i122 449
+L0 3 197
+R4
+r1
+!s85 0
+31
+!s108 1670883464.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv|
+!i113 1
+R5
+R6
+vproc
+R0
+!s110 1670882963
+!i10b 1
+!s100 Al>z^?S[l75]bgZj<:CGI1
+R1
+IPA59b`Hb:Ik>Pom81a@hX3
+R2
+S1
+R3
+w1670882956
+8C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv
+FC:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv
+!i122 447
+L0 1 178
+R4
+r1
+!s85 0
+31
+!s108 1670882962.000000
+!s107 C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv|
+!i113 1
+R5
+R6
+vram_single
+R0
+R19
+!i10b 1
+!s100 X^R@l2B5g05:DmM3cEJgY3
+R1
+IbG_KhDUTMli;zG;QTd1VV0
+R2
+S1
+R3
+Z24 w1670868118
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv
+!i122 360
+R23
+R4
+r1
+!s85 0
+31
+Z25 !s108 1670868568.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv|
+!i113 1
+R5
+R6
+vregister_file
+R0
+!s110 1670730353
+!i10b 1
+!s100 X6Z_9Q8c2YFlfhT:foTQk1
+R1
+I>GF8Be2J7=3DmOb^k5WX02
+R2
+S1
+R3
+w1670720535
+Z26 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv
+Z27 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv
+!i122 331
+Z28 L0 1 17
+R4
+r1
+!s85 0
+31
+!s108 1670730353.000000
+Z29 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv|
+Z30 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv|
+!i113 1
+R5
+R6
+vscalar_execute
+R0
+R20
+!i10b 1
+!s100 ]@cZ?Aa_kYW8Qh4`0oPjd2
+R1
+I3I?@LzHf[R3dA^<7EjldG1
+R2
+S1
+R3
+Z31 w1670706326
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv
+!i122 367
+L0 1 16
+R4
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv|
+!i113 1
+R5
+R6
+vscalar_register_file
+R0
+R20
+!i10b 1
+!s100 eK;g2XkE=lR>KSZ=2]U921
+R1
+I:3XSgEPB9GQ`GfNJF<:d>0
+R2
+S1
+R3
+R24
+R26
+R27
+!i122 361
+R28
+R4
+r1
+!s85 0
+31
+R25
+R29
+R30
+!i113 1
+R5
+R6
+vsystolic_array
+R0
+R17
+!i10b 1
+!s100 0_URNN?AohkbNmjl11_OR2
+R1
+IW[SH`gM^Maj<^gMb_W12]0
+R2
+S1
+R3
+w1670371126
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv
+!i122 134
+L0 1 58
+R4
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv|
+!i113 1
+R5
+R6
+vtb_FP_ALU
+R0
+!s110 1670015621
+!i10b 1
+!s100 ;A[hQ>zK2WjHKIiB6IPXA0
+R1
+I6M1gDo3]RBnAPT;QFdIcI1
+R2
+S1
+R3
+w1670015610
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_FP_ALU.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_FP_ALU.sv
+!i122 70
+L0 2 91
+R4
+r1
+!s85 0
+31
+!s108 1670015621.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_FP_ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_FP_ALU.sv|
+!i113 1
+R5
+R6
+ntb_@f@p_@a@l@u
+vtb_mat_mul
+R0
+!s110 1670546718
+!i10b 1
+!s100 zmf32hF^VjPTVkMY9iaGD1
+R1
+Ijk2nFYDciAg1ah@bfXLbY1
+R2
+S1
+R3
+w1670546709
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_mat_mul.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_mat_mul.sv
+!i122 119
+L0 3 130
+R4
+r1
+!s85 0
+31
+!s108 1670546718.000000
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_mat_mul.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_mat_mul.sv|
+!i113 1
+R5
+R6
+vtb_vector_ALU
+R0
+!s110 1670021925
+!i10b 1
+!s100 `BBbZNl1k3`i;YQX=[^z30
+R1
+IJCKMRGH1i8UfVSUWT;RR72
+R2
+S1
+R3
+w1670021917
+8C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Testbench\tb_vector_ALU.sv
+FC:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Testbench\tb_vector_ALU.sv
+!i122 80
+L0 4 218
+R4
+r1
+!s85 0
+31
+!s108 1670021925.000000
+!s107 C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Testbench\tb_vector_ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Testbench\tb_vector_ALU.sv|
+!i113 1
+R5
+R6
+ntb_vector_@a@l@u
+vtpumac
+R0
+R17
+!i10b 1
+!s100 :gl1e3n`e]hk`Oo2PRJf43
+R1
+IjI^e=`HoXMS_:;jMXLe440
+R2
+S1
+R3
+R22
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv
+!i122 135
+L0 1 49
+R4
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv|
+!i113 1
+R5
+R6
+vtpuv1
+R0
+R17
+!i10b 1
+!s100 45dihYTeiPOWJ:bQCh=gi0
+R1
+Ia27:O[;4mO[gFc62EUL8o1
+R2
+S1
+R3
+R22
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv
+!i122 136
+L0 1 124
+R4
+r1
+!s85 0
+31
+R18
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv|
+!i113 1
+R5
+R6
+vvector_alu
+R0
+R19
+!i10b 1
+!s100 =@]Mc4]?`^T^1;Td`_MAL2
+R1
+IGG6N`k>H_6@DWH]kK^ZzX3
+R2
+S1
+R3
+w1670022266
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv
+!i122 356
+L0 1 377
+R4
+r1
+!s85 0
+31
+R25
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv|
+!i113 1
+R5
+R6
+vvector_execute
+R0
+R20
+!i10b 1
+!s100 CPKIcBT_Q>;?UhE2Q=;8i3
+R1
+IIkS747Oe7fhDSUGdW2S6;2
+R2
+S1
+R3
+R31
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv
+!i122 368
+L0 1 18
+R4
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv|
+!i113 1
+R5
+R6
+vvector_register_file
+R0
+!s110 1670883116
+!i10b 1
+!s100 2TJE7Q8jjKA1eI:TdT?h@0
+R1
+ImQn1IaI7QF70kiTjWLzbD1
+R2
+S1
+R3
+w1670883108
+8C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\vector_register_file.sv
+FC:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\vector_register_file.sv
+!i122 448
+L0 1 37
+R4
+r1
+!s85 0
+31
+!s108 1670883116.000000
+!s107 C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\vector_register_file.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\vector_register_file.sv|
+!i113 1
+R5
+R6
+vwb
+R0
+!s110 1670868570
+!i10b 1
+!s100 mARTB6ZI4`=02Sf3h6[U42
+R1
+IBJT_38k=^L7CHThkD>Uf10
+R2
+S1
+R3
+w1670703098
+8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv
+FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv
+!i122 369
+L0 1 103
+R4
+r1
+!s85 0
+31
+R21
+!s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv|
+!i113 1
+R5
+R6

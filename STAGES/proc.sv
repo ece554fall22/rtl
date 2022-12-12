@@ -55,7 +55,7 @@ fetch fetch (.clk(clk), .rst(rst), .pc_control(fetch_control.pc_select), .stall(
 assign read1_reg_f = (li) ? inst_f[24:20] : inst_f[19:15];
 
 
-decode decode(.clk(clk), .rst_n(!rst), .s_wr_en(s_writeback_control.register_wr_en), .inst(inst_d), .pc_plus_4(register_write_data), .s_write_data(register_write_data), 
+decode decode(.clk(clk), .rst_n(!rst), .s_wr_en(s_writeback_control.register_wr_en), .inst(inst_d), .pc_plus_4(pc_d), .s_write_data(register_write_data), 
 .v_read1(vread1), .v_read2(vread2), .v_write_addr(v_writeback_control.vector_write_register), 
 .r_write_addr(s_writeback_control.scalar_write_register), .r_read1(read1_reg_f), .r_read2(inst_f[14:10]), .write_vector(vector_write_data), 
 .mask(v_writeback_control.mask), .zero(zero), .sign(sign), .overflow(overflow), .control(decode_control), .vdata1(vdata1_d), .vdata2(vdata2_d), .sdata1(sdata1_d), .sdata2(sdata2_d), .immediate(immediate_d), .pc_next(branch_pc_d));
@@ -82,13 +82,18 @@ assign immediate_w_h = immediate_w;
 
 logic [35:0] swb_data;
 
+logic vwb_sel, rwb_sel;
+
+assign vwb_sel = 
+
 assign swb_data = (s_writeback_control.mem_read) ? smem_data_w : 
                   (s_writeback_control.store_immediate) ? (s_writeback_control.imm_hl) ? {immediate_w_h[17:0], sdata1_w[17:0]} : {sdata1_w[35:18], immediate_w_h[17:0]} :
+                  (s_writeback_control.invert) ? ~sdata1_w :
                    sdata_out_w;
 
 wb writeback(.scalar_pipeline_wb(swb_data), .vector_pipeline_wb(fdata_out_w), .pc(pc_w), .scalar_pipeline_vwb({vmem_data_w[3], vmem_data_w[2], vmem_data_w[1], vmem_data_w[0]}), .vector_pipeline_vwb({vdata_out_w[3], vdata_out_w[2], vdata_out_w[1], vdata_out_w[0]}), 
-.scalar_pipeline_we(s_writeback_control.register_wr_en), .vector_pipeline_we(v_writeback_control.vector_wr_en), .pc_sel(s_writeback_control.store_pc), .scalar_pipeline_mask(s_writeback_control.mask), .vector_pipeline_mask(v_writeback_control.mask),
-.register_wb_sel(1'b0), .vector_wb_sel(1'b0), .buffer_register_sel(1'b0), .buffer_vector_sel(1'b0), .buffer_register(1'b0), .buffer_vector(1'b0),
+.scalar_pipeline_we(s_writeback_control.register_wr_en), .vector_pipeline_we(v_writeback_control.vector_wr_en), .pc_sel(s_writeback_control.store_pc), .scalar_pipeline_mask(4'b1111), .vector_pipeline_mask(4'b1111),
+.register_wb_sel(), .vector_wb_sel(v_writeback_control.vector_wr_en), .buffer_register_sel(1'b0), .buffer_vector_sel(1'b0), .buffer_register(1'b0), .buffer_vector(1'b0),
 .vector_we(), .register_we(), .vector_data({vector_write_data[3], vector_write_data[2], vector_write_data[1], vector_write_data[0]}), .register_data(register_write_data), .clk(clk), .rst(rst), .scalar_pipeline_wbr(s_writeback_control.scalar_write_register),
 .vector_pipeline_wbr(v_writeback_control.vector_write_register), .vector_wbr(), .register_wbr());
 
@@ -100,7 +105,7 @@ control_pipeline em(.clk(clk), .rst_n(!rst), .control_q(s_memory_control), .cont
 control_pipeline mw(.clk(clk), .rst_n(!rst), .control_q(s_writeback_control), .control_d(s_memory_control));
 
 
-
+control_pipeline vde(.clk(clk), .rst_n(!rst), .control_q(vector_execute_control_0), .control_d(decode_control));
 control_pipeline ve_1(.clk(clk), .rst_n(!rst), .control_q(vector_execute_control_1), .control_d(vector_execute_control_0));
 control_pipeline ve_2(.clk(clk), .rst_n(!rst), .control_q(vector_execute_control_2), .control_d(vector_execute_control_1));
 control_pipeline ve_3(.clk(clk), .rst_n(!rst), .control_q(vector_execute_control_3), .control_d(vector_execute_control_2));

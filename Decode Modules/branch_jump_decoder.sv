@@ -13,8 +13,8 @@ logic nz, ez, lz, gz, le, ge;
 
 assign nz = !zero;
 assign ez = zero;
-assign lz = sign & !overflow;
-assign gz = !sign & !overflow;
+assign lz = sign & !overflow & !zero;
+assign gz = !sign & !overflow & !zero;
 assign le = lz | ez;
 assign ge = gz | ez;
 

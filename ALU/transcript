@@ -1,0 +1,1944 @@
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 18:23:29 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'write_data'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/sregs File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 36
+# Error loading design
+# End time: 18:23:29 on Dec 10,2022, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 26
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 18:24:52 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[0]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[1]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[2]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r1'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 24
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(24): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'r2'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Error: (vsim-3063) Port 'clk' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/vregs/genblk1[3]/r2 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv Line: 25
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk1'.
+# ** Warning: (vsim-3722) C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv(25): [TFMPC] - Missing connection for port 'clk2'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'write_data'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/sregs File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 36
+# Error loading design
+# End time: 18:24:53 on Dec 10,2022, Elapsed time: 0:00:01
+# Errors: 8, Warnings: 26
+# Compile of vector_register_file.sv was successful.
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 18:26:08 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'write_data'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/sregs File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 36
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+run -all
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+add wave -position insertpoint sim:/parse_trace/proc1/decode/sregs/*
+add wave -position insertpoint sim:/parse_trace/proc1/decode/sregs/r1/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'write_data'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/sregs File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 36
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+# Warning in wave window restart: (vish-4014) No objects found matching '/parse_trace/proc1/decode/write_data'. 
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/register_write_data
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+quit -sim
+# End time: 18:41:20 on Dec 10,2022, Elapsed time: 0:15:12
+# Errors: 0, Warnings: 1
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 18:41:24 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+run -all
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/register_write_data
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of decode.sv was successful.
+# Compile of proc.sv was successful.
+# 2 compiles, 0 failed with no errors.
+quit -sim
+# End time: 18:46:10 on Dec 10,2022, Elapsed time: 0:04:46
+# Errors: 0, Warnings: 2
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 18:46:11 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'pc'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/branch_jump_decoder.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/bjdec File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 41
+# WARNING: No extended dataflow license exists
+run -all
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'pc'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/branch_jump_decoder.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/bjdec File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 41
+run -all
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (36) does not match connection size (1) for port 'pc'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/branch_jump_decoder.sv(1).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode/bjdec File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv Line: 41
+# Compile of decode.sv failed with 1 errors.
+# Compile of proc.sv was successful.
+# 2 compiles, 1 failed with 1 error.
+quit -sim
+# End time: 18:48:35 on Dec 10,2022, Elapsed time: 0:02:24
+# Errors: 0, Warnings: 3
+# Compile of decode.sv was successful.
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 18:48:48 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+run -all
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of scalar_register_file.sv was successful.
+# Compile of decode.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+# Loading work.scalar_register_file
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(149)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 149
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Trace file opened successfully : -2147483645
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(151)
+#    Time: 135 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 151
+quit -sim
+# End time: 18:56:41 on Dec 10,2022, Elapsed time: 0:07:53
+# Errors: 0, Warnings: 1
+restart -f
+# No Design Loaded!
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 21:43:11 on Dec 10,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# WARNING: No extended dataflow license exists
+# Compile of control_unit.sv was successful.
+# Compile of ram_single.sv was successful.
+# Compile of scalar_register_file.sv was successful.
+# Compile of vector_register_file.sv was successful.
+# Compile of decode.sv was successful.
+# Compile of proc.sv was successful.
+# Compile of control_pipeline.sv was successful.
+# Compile of parse_trace.sv was successful.
+# 8 compiles, 0 failed with no errors.
+run -all
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/scalar_pipeline_test.trace" for reading.
+# No such file or directory. (errno = ENOENT)    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(38)
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace
+# File not opened successfully : 0
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(43)
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 43
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/clk \
+sim:/parse_trace/proc1/rst
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/pc_f
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.control_pipeline
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(151)
+#    Time: 135 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 151
+# Compile of FP_ALU.sv was successful.
+# Compile of Scalar_ALU.sv was successful.
+# Compile of Vector_ALU.sv was successful.
+# Compile of branch_jump_decoder.sv was successful.
+# Compile of control_interface.sv was successful.
+# Compile of control_unit.sv was successful.
+# Compile of ram_single.sv was successful.
+# Compile of scalar_register_file.sv was successful.
+# Compile of vector_register_file.sv was successful.
+# Compile of decode.sv was successful.
+# Compile of fetch.sv was successful.
+# Compile of mem.sv was successful.
+# Compile of proc.sv was successful.
+# Compile of scalar_execute.sv was successful.
+# Compile of vector_execute.sv was successful.
+# Compile of wb.sv was successful.
+# Compile of control_pipeline.sv was successful.
+# Compile of parse_trace.sv was successful.
+# 18 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(151)
+#    Time: 135 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 151
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(156)
+#    Time: 65 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 156
+add wave -position insertpoint sim:/parse_trace/proc1/fetch/*
+restart -f
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(156)
+#    Time: 65 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 156
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(156)
+#    Time: 65 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 156
+add wave -position insertpoint sim:/parse_trace/proc1/decode/bjdec/*
+restart -f
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(156)
+#    Time: 65 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 156
+# Compile of branch_jump_decoder.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.branch_jump_decoder
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(156)
+#    Time: 65 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 156
+quit -sim
+# End time: 15:17:51 on Dec 11,2022, Elapsed time: 17:34:40
+# Errors: 0, Warnings: 1
+# Compile of branch_jump_decoder.sv was successful.
+# Compile of control_interface.sv was successful.
+# Compile of control_unit.sv was successful.
+# Compile of ram_single.sv was successful.
+# Compile of scalar_register_file.sv was successful.
+# Compile of vector_register_file.sv was successful.
+# Compile of decode.sv was successful.
+# Compile of proc.sv was successful.
+# Compile of control_pipeline.sv was successful.
+# Compile of parse_trace.sv was successful.
+# 10 compiles, 0 failed with no errors.
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 12:09:08 on Dec 12,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# ** Error: (vsim-3043) Unresolved reference to 'pro1'.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv Line: 142
+# Error loading design
+# End time: 12:09:08 on Dec 12,2022, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of FP_ALU.sv was successful.
+# Compile of Scalar_ALU.sv was successful.
+# Compile of Vector_ALU.sv was successful.
+# Compile of branch_jump_decoder.sv was successful.
+# Compile of control_interface.sv was successful.
+# Compile of control_unit.sv was successful.
+# Compile of ram_single.sv was successful.
+# Compile of scalar_register_file.sv was successful.
+# Compile of vector_register_file.sv was successful.
+# Compile of decode.sv was successful.
+# Compile of fetch.sv was successful.
+# Compile of mem.sv was successful.
+# Compile of proc.sv was successful.
+# Compile of scalar_execute.sv was successful.
+# Compile of vector_execute.sv was successful.
+# Compile of wb.sv was successful.
+# Compile of control_pipeline.sv was successful.
+# Compile of parse_trace.sv was successful.
+# 18 compiles, 0 failed with no errors.
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 12:09:33 on Dec 12,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint sim:/parse_trace/proc1/decode/bjdec/*
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/fetch/clk \
+sim:/parse_trace/proc1/fetch/rst
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/fetch/pc_control
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/fetch/pc_branch
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/fetch/pc_next
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/fetch/pc_next_mux
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/fetch/pc
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "I:\ece554\rtl\Testbench\scalar_pipeline_test.trace" for reading.
+# No such file or directory. (errno = ENOENT)    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(38)
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace
+# File not opened successfully : 0
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(43)
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 43
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "I:\ece554\rtl\Testbench\scalar_pipeline_test.trace" for reading.
+# No such file or directory. (errno = ENOENT)    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(38)
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace
+# File not opened successfully : 0
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(43)
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 43
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/pc_f
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+# Compile of proc.sv failed with 1 errors.
+# Compile of proc.sv was successful.
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/clk \
+sim:/parse_trace/proc1/rst
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/pc_f
+add wave -position insertpoint sim:/parse_trace/proc1/fetch/*
+add wave -position insertpoint sim:/parse_trace/proc1/decode/bjdec/*
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+restart -f
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+restart -f
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+add wave -position insertpoint sim:/parse_trace/proc1/writeback/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(145)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 145
+# Compile of fetch.sv was successful.
+# Compile of proc.sv failed with 1 errors.
+# Compile of parse_trace.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of proc.sv was successful.
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.fetch
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+# Compile of proc.sv failed with 1 errors.
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/immediate_w_h
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/swb_data
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/sdata1_w
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+# ** Error: (vsim-3043) Unresolved reference to 'w_writeback_control'.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1 File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv Line: 60
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (1) for port 'r_write_addr'. The port definition is at: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv(5).
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/decode File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv Line: 58
+restart -f
+# No Design Loaded!
+# Compile of proc.sv was successful.
+restart -f
+# No Design Loaded!
+# Break key hit
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 12:09:33 on Dec 12,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint sim:/parse_trace/proc1/writeback/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/pc_f \
+sim:/parse_trace/proc1/pc_d \
+sim:/parse_trace/proc1/pc_e \
+sim:/parse_trace/proc1/pc_m \
+sim:/parse_trace/proc1/pc_w
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint sim:/parse_trace/proc1/fetch/*
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint sim:/parse_trace/proc1/decode/bjdec/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+add wave -position insertpoint sim:/parse_trace/proc1/decode/sregs/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 75 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(148)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 148
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+quit -sim
+# End time: 13:39:31 on Dec 12,2022, Elapsed time: 1:29:58
+# Errors: 0, Warnings: 1
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 13:39:32 on Dec 12,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+# WARNING: No extended dataflow license exists
+run -all
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+restart -f
+run -continue
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 125 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv was successful.
+# Compile of proc.sv was successful.
+# Compile of parse_trace.sv was successful.
+# 3 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 145 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 145 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv failed with 1 errors.
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 145 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 145 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+add wave -position insertpoint sim:/parse_trace/proc1/decode/bjdec/*
+add wave -position insertpoint sim:/parse_trace/proc1/fetch/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 145 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 185 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 185 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(152)
+#    Time: 185 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 152
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+add wave -position insertpoint sim:/parse_trace/proc1/sexecut/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+# Compile of control_unit.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.control_unit
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+# Compile of control_unit.sv was successful.
+# Compile of decode.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+# Loading work.control_unit
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+add wave -position insertpoint sim:/parse_trace/proc1/decode/control_decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+# Compile of decode.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.decode
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(168)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 168
+# Compile of parse_trace.sv failed with 1 errors.
+# Compile of parse_trace.sv failed with 1 errors.
+# Compile of parse_trace.sv failed with 1 errors.
+# Compile of parse_trace.sv failed with 2 errors.
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+# Compile of control_unit.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.control_unit
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+add wave -position insertpoint sim:/parse_trace/proc1/sexecut/ALU/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+# Compile of Scalar_ALU.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.alu
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(170)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 170
+# Compile of parse_trace.sv was successful.
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/clk \
+sim:/parse_trace/proc1/rst
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/pc_f
+add wave -position insertpoint sim:/parse_trace/proc1/fetch/*
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+run -all
+# Break key hit
+# Break in Module vector_alu in file C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(174)
+#    Time: 225 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 174
+add wave -position insertpoint sim:/parse_trace/proc1/decode/bjdec/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(174)
+#    Time: 225 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 174
+# Compile of branch_jump_decoder.sv was successful.
+# Compile of proc.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+# Loading work.branch_jump_decoder
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(174)
+#    Time: 225 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 174
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(174)
+#    Time: 225 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 174
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(174)
+#    Time: 225 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 174
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(174)
+#    Time: 225 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 174
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+add wave -position insertpoint sim:/parse_trace/proc1/decode/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/inst_f
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+add wave -position insertpoint sim:/parse_trace/proc1/sexecut/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of control_unit.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.control_unit
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(175)
+#    Time: 165 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 175
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 265 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of control_interface.sv failed with 1 errors.
+# Compile of control_unit.sv failed with 2 errors.
+# Compile of proc.sv failed with 1 errors.
+# Compile of control_pipeline.sv failed with 2 errors.
+# Compile of parse_trace.sv was successful.
+# 5 compiles, 4 failed with 6 errors.
+# Compile of control_interface.sv was successful.
+# Compile of control_unit.sv was successful.
+# Compile of proc.sv failed with 1 errors.
+# Compile of control_pipeline.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.control_unit
+# Loading work.control_pipeline
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 265 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 265 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+restart -f
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 345 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/decode/clk \
+sim:/parse_trace/proc1/decode/rst_n \
+sim:/parse_trace/proc1/decode/s_wr_en \
+sim:/parse_trace/proc1/decode/inst \
+sim:/parse_trace/proc1/decode/pc_plus_4 \
+sim:/parse_trace/proc1/decode/v_read1 \
+sim:/parse_trace/proc1/decode/v_read2 \
+sim:/parse_trace/proc1/decode/v_write_addr \
+sim:/parse_trace/proc1/decode/r_write_addr \
+sim:/parse_trace/proc1/decode/r_read1 \
+sim:/parse_trace/proc1/decode/r_read2 \
+sim:/parse_trace/proc1/decode/write_vector \
+sim:/parse_trace/proc1/decode/mask \
+sim:/parse_trace/proc1/decode/s_write_data \
+sim:/parse_trace/proc1/decode/zero \
+sim:/parse_trace/proc1/decode/sign \
+sim:/parse_trace/proc1/decode/overflow \
+sim:/parse_trace/proc1/decode/sdata1 \
+sim:/parse_trace/proc1/decode/sdata2 \
+sim:/parse_trace/proc1/decode/immediate \
+sim:/parse_trace/proc1/decode/pc_next
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/decode/vdata1 \
+sim:/parse_trace/proc1/decode/vdata2
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 345 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint sim:/parse_trace/proc1/vexecute/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 345 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint sim:/parse_trace/proc1/vexecute/v_alu/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 345 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of proc.sv failed with 1 errors.
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of control_unit.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.control_unit
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint sim:/parse_trace/proc1/decode_control/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of control_unit.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.control_unit
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/vdata_out_w
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint sim:/parse_trace/proc1/writeback/*
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+# ** Error (suppressible): (vsim-3053) Illegal output or inout port connection for port 'vector_we'.
+#    Time: 0 ps  Iteration: 0  Instance: /parse_trace/proc1/writeback File: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv Line: 90
+restart -f
+# No Design Loaded!
+# Compile of proc.sv was successful.
+restart -f
+# No Design Loaded!
+# Break key hit
+vsim work.parse_trace
+# vsim work.parse_trace 
+# Start time: 13:39:32 on Dec 12,2022
+# Loading sv_std.std
+# Loading work.parse_trace
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.fetch
+# Loading work.decode
+# Loading work.vector_register_file
+# Loading work.scalar_register_file
+# Loading work.ram_single
+# Loading work.control_unit
+# Loading work.branch_jump_decoder
+# Loading work.scalar_execute
+# Loading work.alu
+# Loading work.vector_execute
+# Loading work.vector_alu
+# Loading work.fp_alu
+# Loading work.wb
+# Loading work.control_pipeline
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+add wave -position insertpoint  \
+sim:/parse_trace/proc1/vector_write_data
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of vector_register_file.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.vector_register_file
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(183)
+#    Time: 415 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 183
+# Compile of parse_trace.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.parse_trace
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195

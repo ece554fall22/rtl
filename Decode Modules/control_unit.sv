@@ -1,6 +1,6 @@
 module control_unit(input [31:0] inst, control_bus control);
 
-enum {halt, nop, jmp, jal, jmpr, jalr, bi, br, lih, lil, ld32, ld36, st32, st36, vldi, vsti, vldr, vstr, Addi, Subi, Andi, Ori, xori, shli, shri, cmpi, alu, Not, Falu, cmp, Vadd, Vsub,
+enum {halt, nop, jmp, jal, jmpr, jalr, bi, br, lih, lil, ld32, ld36, st32, st36, vldi, xx, vsti, vldr, vstr, Addi, Subi, Andi, Ori, xori, shli, shri, cmpi, alu, Not, Falu, cmp, Vadd, Vsub,
 Vmult, Vdiv, Vdot, Vdota, Vindx, Vreduce, Vsplat, Vswizzle, Vsadd, Vsmult, Vssub, Vsdiv, vsma, writeA, writeB, writeC, matmul, readC,
 systolicstep, Vmax, Vmin, Vcomp, ftoi, itof, wcsr, rcsr, fa, cmpx, flushdirty, flushclean, flushicache, flushline, cmpdec, cmpinc} oppcode;
 
@@ -47,9 +47,12 @@ always_comb begin
     control.v_read1 = 0;
     control.v_read2 = 0;
     control.store_immediate = 0;
-    control.mask = inst[3:0];
+    control.mask = '0;
     control.scalar_alu_op = '0;
     control.imm_hl = 0;
+    control.invert = 0;
+    control.scalar_vector_wb = 0;
+    control.vector_scalar_wb = 0;
     case (op_code)
         halt: begin
             control.halt = 1;
@@ -154,6 +157,7 @@ always_comb begin
             control.scalar_write_register = inst[19:15];
             control.r_read1 = 1;
             control.r_read2 = 1;
+            control.mask = inst[3:0];
         end
         vsti: begin
             control.mem_write = 1;
@@ -166,6 +170,7 @@ always_comb begin
             control.scalar_write_register = inst[19:15];
             control.r_read1 = 1;
             control.v_read1 = 1;
+            control.mask = inst[3:0];
         end
         vldr: begin
             control.mem_read = 1;
@@ -177,6 +182,7 @@ always_comb begin
             control.scalar_write_register = inst[19:15];
             control.r_read1 = 1;
             control.r_read2 = 1;
+            control.mask = inst[3:0];
         end
         vstr: begin
             control.mem_write = 1;
@@ -189,60 +195,61 @@ always_comb begin
             control.r_read1 = 1;
             control.r_read2 = 1;
             control.v_read1 = 1;
+            control.mask = inst[3:0];
         end
         Addi: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0000;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         Subi: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0001;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         Andi: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0010;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         Ori: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0011;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         xori: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0100;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         shli: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0101;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         shri: begin
             control.register_wr_en = 1;
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b0111;
-            control.imm_type = 4'b0110;
+            control.imm_type = 4'b0011;
             control.r_read1 = 1;
         end
         cmpi: begin
             control.alu_operands = 1;
             control.scalar_alu_op = 4'b1000;
-            control.imm_type = 4'b0111;
+            control.imm_type = 4'b0001;
             control.r_read1 = 1;
         end
         alu: begin
@@ -254,6 +261,7 @@ always_comb begin
         Not: begin
             control.register_wr_en = 1;
             control.r_read1 = 1;
+            control.invert = 1;
         end
         Falu: begin
             control.register_wr_en = 1;
@@ -271,18 +279,21 @@ always_comb begin
             control.vector_alu_op = VVadd;
             control.v_read1 = 1;
             control.v_read2 = 1;
+            control.mask = inst[3:0];
         end
         Vsub: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVsub;
             control.v_read1 = 1;
             control.v_read2 = 1;
+            control.mask = inst[3:0];
         end
         Vmult: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVmult;
             control.v_read1 = 1;
             control.v_read2 = 1;
+            control.mask = inst[3:0];
         end
         Vdiv: begin
         end
@@ -291,6 +302,7 @@ always_comb begin
             control.vector_alu_op = VVdot;
             control.v_read1 = 1;
             control.v_read2 = 1;
+            control.mask = inst[3:0];
         end
         Vdota: begin
             control.register_wr_en = 1;
@@ -300,6 +312,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.r_read1 = 1;
+            control.mask = inst[3:0];
         end
         Vindx: begin
             control.register_wr_en = 1;
@@ -310,16 +323,19 @@ always_comb begin
             control.register_wr_en = 1;
             control.vector_alu_op = VVreduce;
             control.v_read1 = 1;
+            control.mask = inst[3:0];
         end
         Vsplat: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVsplat;
             control.v_read1 = 1;
+            control.mask = inst[3:0];
         end
         Vswizzle: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVswizzle;
             control.v_read1 = 1;
+            control.mask = inst[3:0];
         end
         Vsadd: begin
             control.vector_wr_en = 1;
@@ -332,12 +348,14 @@ always_comb begin
             control.vector_alu_op = VVsmult;
             control.v_read2 = 1;
             control.r_read1 = 1;
+            control.mask = inst[3:0];
         end
         Vssub: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVssub;
             control.v_read2 = 1;
             control.r_read1 = 1;
+            control.mask = inst[3:0];
         end
         vsma: begin
             control.vector_wr_en = 1;
@@ -347,6 +365,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.r_read1 = 1;
+            control.mask = inst[3:0];
         end
         writeA: begin
             control.matmul_opcode = 3'b001;
@@ -370,6 +389,7 @@ always_comb begin
             control.vector_wr_en = 1;
             control.matmul_opcode = 3'b101;
             control.matmul_high_low = inst[16];
+            control.mask = 4'b1111;
         end
         systolicstep: begin
             control.matmul_opcode = 3'b110;
@@ -379,12 +399,14 @@ always_comb begin
             control.vector_alu_op = VVmax;
             control.v_read1 = 1;
             control.v_read2 = 1;
+            control.mask = inst[3:0];
         end
         Vmin: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVmin;
             control.v_read1 = 1;
             control.v_read2 = 1;
+            control.mask = inst[3:0];
         end
         VVcompsel: begin
             control.vector_wr_en = 1;
@@ -393,6 +415,7 @@ always_comb begin
             control.v_read2 = 1;
             control.r_read1 = 1;
             control.r_read2 = 1;
+            control.mask = inst[3:0];
         end
         ftoi: begin
             control.r_read1 = 1;
