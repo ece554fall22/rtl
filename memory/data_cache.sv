@@ -31,7 +31,7 @@ logic [127:0] data [3:0];
 logic [3:0] valid_array, fwd_way_reg_onehot;
 logic [2:0] plru;
 logic [3:0] match;
-logic [1:0] victimway, fwd_way, fwd_way_reg;
+logic [1:0] victimway, fwd_way_reg;
 logic w_tagcheck_reg;
 
 data_blockram data_blockram(.clk(clk), .rd_addr(rd_addr), .wr_data(w_data), 
@@ -92,14 +92,16 @@ next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_arra
  
   always_ff @(posedge clk, posedge rst) begin
     if(rst) begin
+	  w_tagcheck_reg <= 0;
       tag_reg <= 0;
       metadata_reg <= 0;
       data_reg <=0;
       fwd_metadata_reg <=0;                     // registers that hold fwding data, as well as read data, since metadata is updated
       fwd_data_reg <= 0;                        // one cycle after a read
-      fwd_way <= 0;
+      fwd_way_reg <= 0;
       r_reg <= 0;
-      r_index_reg  <= 0;
+	  r_tag_reg <= 0;
+      r_index_reg  <= 0;        
     end
     else begin
 	  w_tagcheck_reg <= w_tagcheck;
