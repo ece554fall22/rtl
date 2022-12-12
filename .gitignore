@@ -1,4 +1,6 @@
 work/
 *.mti
 *.mpf
-
+*.do
+*.vstf
+*.vcd
