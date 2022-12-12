@@ -2,10 +2,10 @@ module mem_controller #(
 parameter DEPTH = 512
 )
 (
-input logic empty, rd_done, full, wr_done, clk, rst, mmioWrValid,
+input logic empty, rd_done, full, wr_done, clk, rst,
 output logic rd_go, rd_en, wr_go, wr_en, overwrite,
 input logic [35:0] addr_in,
-input logic [27:0] mmio_addr,
+input logic [63:0] mmio_addr,
 output logic [63:0] rd_addr, wr_addr,
 output logic [35:0] addr_out,
 output logic [15:0] wr_size, cache_lines,
@@ -19,7 +19,7 @@ input logic [2:0] packet_type_req_in,
 output logic [2:0] packet_type_req_out
 );
 
-logic valid_req, circ_available, next_read, next_write, next_writeback, wr_ctr_en;
+logic valid_req, circ_available, next_read, next_write, next_writeback, wr_ctr_en, written, read;
 logic [3:0] read_index, write_index, circ_index;
 logic [15:0] [DEPTH-1:0] buffer_data;
 logic [15:0] [35:0] buffer_addrs;
@@ -29,10 +29,65 @@ logic [15:0] [3:0] buffer_valids;
 logic [2:0] write_to_buffer;
 logic [1:0] wr_ctr;
 logic [511:0] buffer_write_mod_data;
-logic [27:0] mmio_addr_reg;
   
 enum {idle, working} 
 read_state, next_read_state, write_state, next_write_state, writeback_state, next_writeback_state; 
+
+always @(empty) begin
+   $display("empty: %b", empty);
+end
+
+always @(posedge rd_go) begin
+   $display("a rd request has begun");
+   $display("addr: %h", buffer_addrs[read_index]);
+   $display("true addr: %h", rd_addr);
+   $display("empty: %b", empty);
+   $display("base addr: %h", mmio_addr);
+end
+always @(posedge rd_done) begin
+  $display(" a rd request has finished");
+  $display("buffer_data@read_index %h", buffer_data[read_index]);
+end
+
+always @(posedge clk) begin
+  if(write_to_buffer[0]) begin
+    $display("reading in : %h", rd_data);
+  end
+end
+
+always @(negedge empty) begin
+  $display("rd_addr: %h", rd_addr);
+  $display("rd_data: %h", rd_data);
+end
+
+always @(posedge rd_en) begin
+ $display("a rd_en has gone high");
+end
+
+always @(posedge wr_go) begin
+// $display("a wr request has begun");
+end
+always @(posedge wr_done) begin
+// $display(" a wr request has finished");
+end
+
+
+always @(posedge clk) begin
+//$display("mem_controller current mmio_addr = %h", mmio_addr);
+//$display("mem_controller current overwrite = %b", overwrite);
+//$display("mem_controller current id_req_in = %b", id_req_in);
+if(rd_go) begin
+//$display("mem_controller reading: current mmio_addr = %h", mmio_addr);
+//$display("mem_controller reading: current rd_addr = %h", rd_addr);
+//$display("mem_controller reading: current buffer_addrs[read_index] = %h", buffer_addrs[read_index]);
+end
+if(wr_go) begin
+//$display("mem_controller writing: current mmio_addr = %h", mmio_addr);
+//$display("mem_controller writing: current wr_addr = %h", wr_addr);
+//$display("mem_controller writing: current buffer_addrs[write_index] = %h", buffer_addrs[write_index]);
+end
+
+end
 
 assign wr_size = 16'h0001;
 assign cache_lines = 16'h0001;
@@ -45,28 +100,12 @@ end else if (DEPTH==512) begin
 end
 
 // hal interface!! changes needed here probably
-assign rd_addr = {mmio_addr_reg, buffer_addrs[read_index]};
-assign wr_addr = {mmio_addr_reg, buffer_addrs[write_index]};
+assign rd_addr = mmio_addr + {{28{buffer_addrs[read_index][35]}}, buffer_addrs[read_index]};
+assign wr_addr = mmio_addr + {{28{buffer_addrs[write_index][35]}}, buffer_addrs[write_index]};
 assign wr_data = buffer_data[write_index];
 
 assign valid_req = (packet_type_req_in==3'b011) | (packet_type_req_in==3'b001);
-assign circ_available = valid_req | (id_req_in==3'b000);
-
-always_ff @(posedge clk, posedge rst) begin
-  if (rst) begin
-    read_index <= 0;
-  end else if (next_read) begin
-    read_index <= read_index + 1;
-  end
-end
-
-always_ff @(posedge clk, posedge rst) begin
-  if (rst) begin
-    write_index <= 0;
-  end else if (next_write) begin
-    write_index <= write_index + 1;
-  end
-end
+assign circ_available = valid_req | (packet_type_req_in==3'b000);
 
 // read fsm
 always_comb begin
@@ -88,11 +127,12 @@ always_comb begin
     end
 
     working: begin
-      rd_en = ~empty;
-      write_to_buffer[0] = ~empty;
+      write_to_buffer[0] = ~empty & ~read;
       if (rd_done) begin
+	rd_en = 1'b0;
         next_read_state = idle;
       end else begin
+	rd_en = read;
         next_read = 1'b0;
         next_read_state = working;
       end
@@ -120,7 +160,7 @@ always_comb begin
     end
 
     working: begin
-      wr_en = ~full;
+      wr_en = ~full & ~written;
       if (wr_done) begin
         write_to_buffer[1] = 1'b1;
         next_write_state = idle;
@@ -269,8 +309,12 @@ end
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     read_index <= 0;
+    read <= 0;
   end else if(next_read) begin
     read_index <= read_index + 1;
+    read <= 0;
+  end else begin
+    read <= read | write_to_buffer[0];
   end
 end
 
@@ -278,20 +322,14 @@ end
 always_ff @(posedge clk, posedge rst) begin
   if(rst) begin
     write_index <= 0;
+    written <= 0;
   end else if(next_write) begin
     write_index <= write_index + 1;
+    written <= 0;
+  end else begin
+    written <= write_to_buffer[1] | written;
   end
 end
-
-// writeback index counter
-always_ff @(posedge clk, posedge rst) begin
-  if(rst) begin
-    circ_index <= 0;
-  end else if(next_writeback) begin
-    circ_index <= circ_index + 1;
-  end
-end
-
 
 // writeback index counter
 always_ff @(posedge clk, posedge rst) begin
@@ -311,13 +349,4 @@ always_ff @(posedge clk, posedge rst) begin
   end
 end
  
-  // mmio register
-always_ff @(posedge clk, posedge rst) begin
-  if(rst) begin
-    mmio_addr_reg <= 0;
-  end else if (mmioWrValid) begin
-    mmio_addr_reg <= mmio_addr;
-  end
-end
-  
 endmodule
