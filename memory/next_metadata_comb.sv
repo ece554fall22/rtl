@@ -24,13 +24,19 @@ module next_metadata_comb(way, plru, valid_array, dirty_array,
   assign next_plru[0] = (way[1]) ? plru[0] : way[0];
 
 	// decides the next dirty array
-  assign next_dirty_array = (hit) ? dirty_array | (way_onehot & {4{w_tagcheck}}) :
-                          dirty_array & (~way_onehot | {4{|flushtype}});
+always_comb begin
+  case(flushtype)
+    2'b11 : next_dirty_array = dirty_array;
+    2'b10 : next_dirty_array = 4'h0;			// decides the next valid array
+    2'b01 : next_dirty_array = dirty_array & ~(way_onehot & {4{hit}});
+    2'b00 : next_dirty_array = ((dirty_array | (way_onehot & {4{w_tagcheck}})) & ~(way_onehot & {4{~hit & ~w_tagcheck}})); // make that way dirty if this is a w_tagcheck
+  endcase
+end 
 
 always_comb begin
   case(flushtype)
-    2'b11 : next_valid_array = valid_array & ~dirty_array;
-    2'b10 : next_valid_array = valid_array & dirty_array;		// decides the next valid array
+    2'b11 : next_valid_array = valid_array & dirty_array;
+    2'b10 : next_valid_array = valid_array & ~dirty_array;		// decides the next valid array
     2'b01 : next_valid_array = valid_array & (way_onehot & {4{hit}});
     2'b00 : next_valid_array = (hit) ? valid_array : valid_array | way_onehot; // make that way valid
   endcase
@@ -39,3 +45,4 @@ end
   assign next_metadata = {next_valid_array, next_dirty_array, next_plru};
 
 endmodule
+
