@@ -69,12 +69,16 @@ logic [35:0] smem_data_m, smem_data_w;
 
 logic [31:0] vmem_data_m [3:0], vmem_data_w [3:0];
 
+logic [35:0] immediate_w_h;
+
+assign immediate_w_h = immediate_w;
+
 //mem memory (.clk(clk), .rst(rst), .line(), .w_type(s_memory_control.w_type), .cache_data(), .alu_data(sdata_out_m), .mem_operation(s_memory_control.r_type), .register_wb(smem_data_m), .vector_wb({vmem_data_m[3], vmem_data_m[2], vmem_data_m[1], vmem_data_m[0]}));
 
 logic [35:0] swb_data;
 
 assign swb_data = (s_writeback_control.mem_read) ? smem_data_w : 
-                  (s_writeback_control.store_immediate) ? immediate_w :
+                  (s_writeback_control.store_immediate) ? ((s_writeback_control) ? immediate_w_h << 16 : immediate_w) :
                    sdata_out_w;
 
 wb writeback(.scalar_pipeline_wb(swb_data), .vector_pipeline_wb(fdata_out_w), .pc(pc_w), .scalar_pipeline_vwb({vmem_data_w[3], vmem_data_w[2], vmem_data_w[1], vmem_data_w[0]}), .vector_pipeline_vwb({vdata_out_w[3], vdata_out_w[2], vdata_out_w[1], vdata_out_w[0]}), 

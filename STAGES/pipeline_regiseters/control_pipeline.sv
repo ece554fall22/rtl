@@ -40,6 +40,7 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.store_immediate <= '0;
         control_q.mask <= '0;
         control_q.scalar_alu_op <= '0;
+        control_q.imm_hl <= '0;
         end 
         else begin
         control_q.halt  <= control_d.halt;
@@ -81,6 +82,7 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.store_immediate <= control_d.store_immediate;
         control_q.mask <= control_d.mask;
         control_q.scalar_alu_op <= control_d.scalar_alu_op;
+        control_q.imm_hl <= control_d.imm_hl;
         end
     end
 endmodule
