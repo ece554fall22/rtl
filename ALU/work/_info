@@ -61,24 +61,24 @@ R5
 R6
 Ycontrol_bus
 R0
-Z7 !s110 1670880498
+!s110 1670885070
 !i10b 1
-!s100 [?7lIkAXhVA@;FY[DCJ1I3
+!s100 gcSBGXLBTl5<fC<Y6`SBP3
 R1
-I`7>fmJQ_IR93kmJ`9=eeU1
+I<U1?JFaEQEb@izGnV9a763
 R2
 S1
 R3
-w1670880461
+w1670884319
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv
-!i122 433
+!i122 450
 L0 1 0
 R4
 r1
 !s85 0
 31
-Z8 !s108 1670880498.000000
+!s108 1670885070.000000
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_interface.sv|
 !i113 1
@@ -86,26 +86,26 @@ R5
 R6
 vcontrol_pipeline
 R0
-R7
+!s110 1670886733
 !i10b 1
-!s100 mU;Nd]N>PS;<0E9=;j]1A0
+!s100 lRA68gSYZ@3If`m<?f2c=0
 R1
-IjO7MhogFim:NzeCcGa>jz2
+IoUQIPb5P2ajl:k5ej8Fj31
 R2
 S1
 R3
-w1670880490
-Z9 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv
-Z10 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv
-!i122 435
-L0 1 90
+w1670886725
+Z7 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv
+Z8 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv
+!i122 460
+L0 1 94
 R4
 r1
 !s85 0
 31
-R8
-Z11 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv|
-Z12 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv|
+!s108 1670886732.000000
+Z9 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv|
+Z10 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/pipeline_regiseters/control_pipeline.sv|
 !i113 1
 R5
 R6
@@ -120,8 +120,8 @@ R2
 S1
 R3
 w1670700744
-R9
-R10
+R7
+R8
 !i122 164
 L0 1 82
 R4
@@ -129,31 +129,31 @@ r1
 !s85 0
 31
 !s108 1670700753.000000
-R11
-R12
+R9
+R10
 !i113 1
 R5
 R6
 vcontrol_unit
 R0
-!s110 1670882278
+!s110 1670887012
 !i10b 1
-!s100 :WoW@:6`2AebS3NKgz`RD2
+!s100 [[>6;h_JQJN=Y]7dOnMoi0
 R1
-IN3DfH:SB_G_zBia0PARbh3
+I>NE3mX2TN7D16Z6;Jc?kh0
 R2
 S1
 R3
-w1670882267
+w1670886999
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv
-!i122 443
-L0 1 470
+!i122 462
+L0 1 478
 R4
 r1
 !s85 0
 31
-!s108 1670882278.000000
+!s108 1670887012.000000
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/control_unit.sv|
 !i113 1
@@ -170,8 +170,8 @@ R2
 S1
 R3
 w1669941153
-Z13 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
-Z14 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+Z11 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+Z12 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
 !i122 47
 L0 33 0
 R4
@@ -179,8 +179,8 @@ r1
 !s85 0
 31
 !s108 1669941163.000000
-Z15 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv|
-Z16 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv|
+Z13 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv|
+Z14 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv|
 !i113 1
 R5
 R6
@@ -195,8 +195,8 @@ R2
 S1
 R3
 w1670876219
-R13
-R14
+R11
+R12
 !i122 410
 L0 1 43
 R4
@@ -204,8 +204,8 @@ r1
 !s85 0
 31
 !s108 1670876695.000000
-R15
-R16
+R13
+R14
 !i113 1
 R5
 R6
@@ -236,7 +236,7 @@ R5
 R6
 vfifo
 R0
-Z17 !s110 1670697162
+Z15 !s110 1670697162
 !i10b 1
 !s100 R9^A>dZX^:D2S?j3b`C^T0
 R1
@@ -253,7 +253,7 @@ R4
 r1
 !s85 0
 31
-Z18 !s108 1670697162.000000
+Z16 !s108 1670697162.000000
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv|
 !i113 1
@@ -261,7 +261,7 @@ R5
 R6
 vfifo_preload
 R0
-R17
+R15
 !i10b 1
 !s100 ?bI`Z3A3cMAi@R:^<8z[M1
 R1
@@ -278,7 +278,7 @@ R4
 r1
 !s85 0
 31
-R18
+R16
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv|
 !i113 1
@@ -286,7 +286,7 @@ R5
 R6
 vfp_alu
 R0
-Z19 !s110 1670868568
+Z17 !s110 1670868568
 !i10b 1
 !s100 8iRHjD5]Q1TzD=7bKFLbG3
 R1
@@ -311,7 +311,7 @@ R5
 R6
 vmem
 R0
-Z20 !s110 1670868569
+Z18 !s110 1670868569
 !i10b 1
 !s100 ]TZGbJZDGaDHSO2TX0zY61
 R1
@@ -328,7 +328,7 @@ R4
 r1
 !s85 0
 31
-Z21 !s108 1670868569.000000
+Z19 !s108 1670868569.000000
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv|
 !i113 1
@@ -336,7 +336,7 @@ R5
 R6
 vmemA
 R0
-R17
+R15
 !i10b 1
 !s100 L4i9PzAc5ACOQ=om[JG@U0
 R1
@@ -344,16 +344,16 @@ IZAcP7z1mdcVQ3jg5`C;E03
 R2
 S1
 R3
-Z22 w1670696115
+Z20 w1670696115
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv
 !i122 132
-Z23 L0 1 21
+Z21 L0 1 21
 R4
 r1
 !s85 0
 31
-R18
+R16
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv|
 !i113 1
@@ -362,7 +362,7 @@ R6
 nmem@a
 vmemB
 R0
-R17
+R15
 !i10b 1
 !s100 :8B9f0c1?1i3J;^:bMN<J2
 R1
@@ -379,7 +379,7 @@ R4
 r1
 !s85 0
 31
-R18
+R16
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv|
 !i113 1
@@ -413,24 +413,24 @@ R5
 R6
 vproc
 R0
-!s110 1670882963
+!s110 1670886880
 !i10b 1
-!s100 Al>z^?S[l75]bgZj<:CGI1
+!s100 lK0^R1lc`KZBMjXciceWN1
 R1
-IPA59b`Hb:Ik>Pom81a@hX3
+IB_TNcB9V>EH?KN>2C`K<Y0
 R2
 S1
 R3
-w1670882956
+w1670886874
 8C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv
 FC:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv
-!i122 447
-L0 1 178
+!i122 461
+L0 1 181
 R4
 r1
 !s85 0
 31
-!s108 1670882962.000000
+!s108 1670886880.000000
 !s107 C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\STAGES\proc.sv|
 !i113 1
@@ -438,7 +438,7 @@ R5
 R6
 vram_single
 R0
-R19
+R17
 !i10b 1
 !s100 X^R@l2B5g05:DmM3cEJgY3
 R1
@@ -446,16 +446,16 @@ IbG_KhDUTMli;zG;QTd1VV0
 R2
 S1
 R3
-Z24 w1670868118
+Z22 w1670868118
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv
 !i122 360
-R23
+R21
 R4
 r1
 !s85 0
 31
-Z25 !s108 1670868568.000000
+Z23 !s108 1670868568.000000
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv|
 !i113 1
@@ -472,23 +472,23 @@ R2
 S1
 R3
 w1670720535
-Z26 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv
-Z27 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv
+Z24 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv
+Z25 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv
 !i122 331
-Z28 L0 1 17
+Z26 L0 1 17
 R4
 r1
 !s85 0
 31
 !s108 1670730353.000000
-Z29 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv|
-Z30 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv|
+Z27 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv|
+Z28 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv|
 !i113 1
 R5
 R6
 vscalar_execute
 R0
-R20
+R18
 !i10b 1
 !s100 ]@cZ?Aa_kYW8Qh4`0oPjd2
 R1
@@ -496,7 +496,7 @@ I3I?@LzHf[R3dA^<7EjldG1
 R2
 S1
 R3
-Z31 w1670706326
+Z29 w1670706326
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv
 !i122 367
@@ -505,7 +505,7 @@ R4
 r1
 !s85 0
 31
-R21
+R19
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv|
 !i113 1
@@ -513,7 +513,7 @@ R5
 R6
 vscalar_register_file
 R0
-R20
+R18
 !i10b 1
 !s100 eK;g2XkE=lR>KSZ=2]U921
 R1
@@ -521,24 +521,24 @@ I:3XSgEPB9GQ`GfNJF<:d>0
 R2
 S1
 R3
+R22
 R24
-R26
-R27
+R25
 !i122 361
-R28
+R26
 R4
 r1
 !s85 0
 31
-R25
-R29
-R30
+R23
+R27
+R28
 !i113 1
 R5
 R6
 vsystolic_array
 R0
-R17
+R15
 !i10b 1
 !s100 0_URNN?AohkbNmjl11_OR2
 R1
@@ -555,7 +555,7 @@ R4
 r1
 !s85 0
 31
-R18
+R16
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv|
 !i113 1
@@ -640,7 +640,7 @@ R6
 ntb_vector_@a@l@u
 vtpumac
 R0
-R17
+R15
 !i10b 1
 !s100 :gl1e3n`e]hk`Oo2PRJf43
 R1
@@ -648,7 +648,7 @@ IjI^e=`HoXMS_:;jMXLe440
 R2
 S1
 R3
-R22
+R20
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv
 !i122 135
@@ -657,7 +657,7 @@ R4
 r1
 !s85 0
 31
-R18
+R16
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv|
 !i113 1
@@ -665,7 +665,7 @@ R5
 R6
 vtpuv1
 R0
-R17
+R15
 !i10b 1
 !s100 45dihYTeiPOWJ:bQCh=gi0
 R1
@@ -673,7 +673,7 @@ Ia27:O[;4mO[gFc62EUL8o1
 R2
 S1
 R3
-R22
+R20
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv
 !i122 136
@@ -682,7 +682,7 @@ R4
 r1
 !s85 0
 31
-R18
+R16
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv|
 !i113 1
@@ -690,7 +690,7 @@ R5
 R6
 vvector_alu
 R0
-R19
+R17
 !i10b 1
 !s100 =@]Mc4]?`^T^1;Td`_MAL2
 R1
@@ -707,7 +707,7 @@ R4
 r1
 !s85 0
 31
-R25
+R23
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv|
 !i113 1
@@ -715,7 +715,7 @@ R5
 R6
 vvector_execute
 R0
-R20
+R18
 !i10b 1
 !s100 CPKIcBT_Q>;?UhE2Q=;8i3
 R1
@@ -723,7 +723,7 @@ IIkS747Oe7fhDSUGdW2S6;2
 R2
 S1
 R3
-R31
+R29
 8C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv
 FC:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv
 !i122 368
@@ -732,7 +732,7 @@ R4
 r1
 !s85 0
 31
-R21
+R19
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv|
 !i113 1
@@ -782,7 +782,7 @@ R4
 r1
 !s85 0
 31
-R21
+R19
 !s107 C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv|
 !i113 1

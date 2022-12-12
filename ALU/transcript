@@ -1942,3 +1942,94 @@ run -all
 # ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
 #    Time: 835 ps  Iteration: 1  Instance: /parse_trace
 # Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of control_interface.sv was successful.
+# Compile of control_unit.sv was successful.
+# Compile of proc.sv was successful.
+# Compile of control_pipeline.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+# Loading work.control_bus
+# Loading work.control_unit
+# Loading work.control_pipeline
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of proc.sv failed with 6 errors.
+# Compile of proc.sv failed with 6 errors.
+# Compile of proc.sv was successful.
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of proc.sv was successful.
+# Compile of control_pipeline.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+# Loading work.control_pipeline
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of proc.sv was successful.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.proc
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# ** Note: $stop    : C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv(195)
+#    Time: 835 ps  Iteration: 1  Instance: /parse_trace
+# Break in Module parse_trace at C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv line 195
+# Compile of control_unit.sv was successful.
