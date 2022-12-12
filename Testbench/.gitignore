@@ -1,0 +1,8 @@
+# Include only project files
+*.mti
+*.mpf
+work
+main_repo
+wlf*
+*.wlf
+Scalar_ALU.sv

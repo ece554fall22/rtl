@@ -1,0 +1,7 @@
+work/
+*.mti
+*.mpf
+*.do
+*.vstf
+*.vcd
+data_cache_tb
