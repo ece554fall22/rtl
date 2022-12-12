@@ -1,5 +1,6 @@
 module data_cache(w_index, r_index, w_tag, r_tag, w_line, r_line, w_data, flushtype, w_way,
-                  w_tagcheck, rst, clk, w, r, tag_out, data_out, way, hit, dirty, no_tagcheck_way, no_tagcheck_read);
+                  w_tagcheck, rst, clk, w, r, tag_out, data_out, way, hit, dirty, 
+				  no_tagcheck_way, no_tagcheck_read, dirty_array);
 input logic [7:0] w_index, r_index;	// indexes for write and read operation
 input logic [17:0] w_tag, r_tag;	// the write tag and the tag to be compared for read
 input logic [5:0] w_line, r_line;	// desired line for write and read, this module only uses the first two bits of these
@@ -24,25 +25,26 @@ logic [511:0] block_data_out, data_fwded;
 logic [10:0] metadata_out, metadata_fwded, metadata_reg;
 logic [10:0] metadata_in;
 logic [71:0] block_tag_out, tag_fwded;
-logic [17:0] tag_reg, wr_tag;
+logic [17:0] tag_reg, wr_tag, r_tag_reg;
 logic [17:0] tag_data [3:0];
 logic [127:0] data [3:0];
 logic [3:0] valid_array, fwd_way_reg_onehot;
 logic [2:0] plru;
 logic [3:0] match;
 logic [1:0] victimway, fwd_way, fwd_way_reg;
+logic w_tagcheck_reg;
 
-data_blockram data_blockram(.clk(clk), .clk2(clk), .rd_addr(rd_addr), .wr_data(w_data), 
-	.wr_index(wr_index), .wr_en(w), .data_out(block_data_out));
+data_blockram data_blockram(.clk(clk), .rd_addr(rd_addr), .wr_data(w_data), 
+	.wr_addr(wr_index), .wr_en(w), .data_out(block_data_out));
 
-metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.wr_data(metadata_in), 
-			    .wr_index(r_index_reg), .wr_en(r_reg & ~no_tagcheck_read), .data_out(metadata_out));
+metadata_registers metadata(.clk(clk), .rst(rst), .rd_addr(r_index),.data_in(metadata_in), 
+			    .wr_addr(r_index_reg), .wr_en(r_reg & ~no_tagcheck_read), .data_out(metadata_out));
 
-tag_blockram tags(.tag_out(block_tag_out), .r_index(r_index), .w_index(w_index), .tag_in(w_tag), 
-                 .wr_en(w), .clk1(clk), .clk2(clk));
+tag_blockram tags(.tag_out(block_tag_out), .r_index(r_index), .w_index({w_index, w_way}), .tag_in(w_tag), 
+                 .wr_en(w), .clk(clk));
 
 next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_array), .dirty_array(dirty_array), 
-                         .w_tagcheck(w_tagcheck), .flushtype(flushtype), .hit(hit), .next_metadata(metadata_in));
+                         .w_tagcheck(w_tagcheck_reg), .flushtype(flushtype), .hit(hit), .next_metadata(metadata_in));
 
   assign rd_addr = {r_index, r_line[5:4]};
   assign wr_index = {w_index, w_line[5:4], w_way};
@@ -50,9 +52,9 @@ next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_arra
   genvar i;
   generate
     for (i = 0; i < 4; i++) begin
-      assign tag_data[i] = tag_fwded[(71-(i*18)):(54-(i*18))];      // splits up outputs of tag and data blockrams into their 4 individual values
-      assign data[i] = data_fwded[(511-(i*128)):(384-(i*128))];
-      assign match[i] = (r_tag==tag_data[i]) ? valid_array[i] : 1'b0; // compares the 4 tags from the tag_blockram to the r_tag input
+      assign tag_data[3-i] = tag_fwded[(71-(i*18)):(54-(i*18))];      // splits up outputs of tag and data blockrams into their 4 individual values
+      assign data[3-i] = data_fwded[(511-(i*128)):(384-(i*128))];
+      assign match[i] = (r_tag_reg == tag_data[i]) ? valid_array[i] : 1'b0; // compares the 4 tags from the tag_blockram to the r_tag input
     end
   endgenerate
 
@@ -76,9 +78,9 @@ next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_arra
   assign victimway[1] = (~plru[2] & (valid_array[1] & valid_array[0])) | ~(valid_array[3] & valid_array[2]);                            // caclulates way of victim
   assign victimway[0] = (((~plru[2]) ? ~plru[1] : ~plru[0]) & (valid_array[2] & valid_array[0])) | (~(valid_array[3] & valid_array[1]) & ~(valid_array[3] & ~valid_array[2]));
 
-  assign fwd_metadata = (r_index==r_index_reg);                                 // finds when metadata needs to be forwarded
-  assign metadata_fwded = (fwd_metadata_reg) ? metadata_reg : metadata_out;     // fwd logic for metadata
-  assign fwd_data = (rd_addr=={w_index, w_line[5:4]});                          // finds when tag/data needs to be forwarded
+  assign fwd_metadata = (r_index==r_index_reg) & r_reg & ~no_tagcheck_read;   // if it was a read in the previous cycle and it is currently a read                           // finds when metadata needs to be forwarded
+  assign metadata_fwded = fwd_metadata_reg ? metadata_reg : metadata_out;     // fwd logic for metadata
+  assign fwd_data = (rd_addr =={w_index, w_line[5:4]});                          // finds when tag/data needs to be forwarded
  assign data_fwded = {(fwd_data_reg & fwd_way_reg_onehot[3]) ? data_reg : block_data_out[511:384]     // fwd logic for data
                        , (fwd_data_reg & fwd_way_reg_onehot[2]) ? data_reg : block_data_out[383:256]
                        , (fwd_data_reg & fwd_way_reg_onehot[1]) ? data_reg : block_data_out[255:128]
@@ -100,6 +102,7 @@ next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_arra
       r_index_reg  <= 0;
     end
     else begin
+	  w_tagcheck_reg <= w_tagcheck;
       tag_reg <= w_tag;
       metadata_reg <= metadata_in;
       data_reg <= w_data;
@@ -107,6 +110,7 @@ next_metadata_comb next_metadata(.way(way), .plru(plru), .valid_array(valid_arra
       fwd_data_reg <= fwd_data;
       fwd_way_reg <= w_way;
       r_reg <= r;
+	  r_tag_reg <= r_tag;
       r_index_reg <= r_index;
     end
   end

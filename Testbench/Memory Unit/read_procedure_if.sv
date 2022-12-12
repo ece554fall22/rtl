@@ -25,13 +25,11 @@ interface read_procedure_if();
 	logic [WAY_PER_SET - 1 : 0] dut_valid_array;
 	logic [$clog2(WAY_PER_SET) : 0] dut_plru;
 	// Inputs and Outputs
-	logic last_write_from_mem;
 	logic [5:0] r_line;
 	logic [RAM_READ_SIZE - 1: 0] data_block;				
 	logic [(TAG_SIZE * WAY_PER_SET) - 1: 0] tag_block;	
 	logic [$clog2(WAY_PER_SET) - 1: 0] perf_way;				
 	set_metadata metadata_block;
-	logic pre_write_procedure_done;	
 	// Output
 	logic no_tagcheck_read;
 	logic perf_hit;
@@ -46,8 +44,9 @@ interface read_procedure_if();
 	logic [WORD_SIZE - 1:0] w_data;	
 	logic [TAG_SIZE - 1:0] w_tag;
 	logic [$clog2(WAY_PER_SET) - 1:0] no_tagcheck_way;	
+	logic access_type; // 1 on a write, 0 on a read
 	
 	// Data bank
 	logic [WORD_SIZE - 1:0] DATA_ARRAY [4];					// Hold data used in testing
-
+	logic [TAG_SIZE -1 : 0] TAG_ARRAY [5];					// tags across same index
 endinterface

@@ -16,8 +16,11 @@ module metadata_registers(clk, rst, rd_addr, wr_addr, wr_en, data_in, data_out);
       end
     end else if (wr_en)
       regs[wr_addr] <= data_in;			// writes on wr_en and reads unconditionally
-    data_out <= regs[rd_addr_reg];
-    rd_addr_reg <= rd_addr;			// pipelined rd request
+	  
+	data_out <= regs[rd_addr];
+	  
+    // data_out <= regs[rd_addr_reg];
+    // rd_addr_reg <= rd_addr;			// pipelined rd request
   end
 
 endmodule

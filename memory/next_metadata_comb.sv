@@ -25,7 +25,7 @@ module next_metadata_comb(way, plru, valid_array, dirty_array,
 
 	// decides the next dirty array
   assign next_dirty_array = (hit) ? dirty_array | (way_onehot & {4{w_tagcheck}}) :
-                          dirty_array & (~way_onehot | {4{|flushtype}});
+                          dirty_array & (~way_onehot | {4{|flushtype}}); // TO DO!! confirm if one read before a write after a write back
 
 always_comb begin
   case(flushtype)

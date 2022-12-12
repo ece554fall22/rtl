@@ -18,10 +18,10 @@ class data_cache_memory_class;
 	
 	logic [$clog2(NUM_OF_SETS) - 1: 0] most_recent_r_index;					// for updating metadata
 	metadata_memory metadata;												// Hold metadata
-	set_metadata next_set_metadata;				// next metadata that would be used for updating that of the specified set 
+	set_metadata next_set_metadata;											// next metadata that would be used for updating that of the specified set 
+	logic [$clog2(WAY_PER_SET) - 1:0] victimway_sig; 						// Signal for victimway
 	
-	
-	// Initialize the data to zeros.
+	// Initialize the data to zeros. (not the tag and memory banks)
 	function new();
 		integer i;
 		data_memory = '{default:'0};
@@ -199,12 +199,12 @@ class data_cache_memory_class;
 		// if data was found anywhere
 		hit = |data_found;
 		
-		
 		/********** Update Metadata ********/
 		
 		// Do not update metadata on a when writing back to memory 
 		
-		if (update_metadata & ~no_tagcheck_read) begin 
+		// Update metadata on every read
+		if (update_metadata) begin // & ~no_tagcheck_read) begin 
 			compute_next_metadata(
 									.hit(hit),
 									.way(way),
@@ -217,20 +217,25 @@ class data_cache_memory_class;
 				
 		end
 		
+		// For viewing victimway signal on waveform
+		victimway_sig = victimway;
+		
 		// Render victim way instead
 		if(~hit) begin
-			$display("Miss occurred: value: %b", hit);
 			way = victimway;
 		end
-		$display("Hit occurred: value: %b", hit);
-		$display("Victimway value: %b", victimway);
+//		$display("Hit value: %b", hit);
+//		$display("Victimway value: %b", victimway);
 	endtask
 	
 	/**
 	 * Updates the metadata after certain delay
 	 */
 	task delay_update_metadata(); 
-		metadata.data[most_recent_r_index] = next_set_metadata;
+		if(most_recent_r_index >= 0) begin
+			metadata.data[most_recent_r_index] = next_set_metadata;
+			most_recent_r_index = -1;
+		end
 	endtask
 	
 	/**
@@ -264,7 +269,7 @@ class data_cache_memory_class;
 		
 		// Update dirty
 		// Rule 1: Don't update a the dirty flag if it was not done for follow up write purposes
-
+	
 		if(hit) begin
 			if(read_access_type) begin // read with followup write
 				next_dirty = dirty;
@@ -385,7 +390,7 @@ class data_cache_memory_class;
 	);
 		// Helper signals
 		logic [WAY_PER_SET - 1:0]valid;							// Valid bits (one per way/tag)
-		bit any_valid;										// indicate if there is an invalid line
+		bit any_invalid;										// indicate if there is an invalid line
 		logic last_accessed_top_half_way_last_bit; 				// Indicate whether 11 or 10 was last accessed (represents the lower bit)
 		logic last_accessed_bottom_half_way_last_bit; 			// Indicate whether 01 or 00 was last accessed (represents the lower bit)
 		logic last_accessed_first_bit;							// Indicate whether 11/10 or 01/00 was accessed last (represents the higher bit (way[1]))
@@ -394,18 +399,20 @@ class data_cache_memory_class;
 		last_accessed_top_half_way_last_bit    = meta_data.last_accessed_top_half_way_last_bit;	 	// 1 indicates 11 was accessed last and 0 -> 10
 		last_accessed_bottom_half_way_last_bit = meta_data.last_accessed_bottom_half_way_last_bit; 	// 1 indicates 01 was accessed last and 0 -> 00
 		last_accessed_first_bit = meta_data.last_accessed_first_bit;
+		valid = meta_data.valid;
 		
+		any_invalid = 1'b0;
 		// Victim priority 11 -> 10 -> 01 -> 00
-		for(int i = WAY_PER_SET - 1; i > 0; i++) begin
-			if(valid[i]) begin
-				any_valid = 1'b1;
+		for(int i = WAY_PER_SET - 1; i >= 0; i--) begin
+			if(~valid[i]) begin
+				any_invalid = 1'b1;
 				victimway = WAY_PER_SET'(i); // 2 bits
 				break;
 			end
 		end
 	
 		// When there all lines in the set are valid
-		if(~any_valid) begin
+		if(~any_invalid) begin
 			if(last_accessed_first_bit) begin // 11/10 was last accessed
 				if(last_accessed_bottom_half_way_last_bit) begin // 1 -> 01 was last accessed
 					victimway = 2'b00;
@@ -413,7 +420,7 @@ class data_cache_memory_class;
 				else begin  // 0 -> 00 was last accessed
 					victimway = 2'b01;
 				end
-			end
+				end
 			else begin // 01/00 was last accessed 
 				if(last_accessed_top_half_way_last_bit) begin // 1 -> 11 was last accessed
 					victimway = 2'b10;
@@ -456,18 +463,12 @@ class data_cache_memory_class;
 		const ref logic [5:0] w_line,								// line which was compared to on the previous cycle
 		const ref logic [$clog2(WAY_PER_SET) - 1:0] w_way,			// Way in cache to be written to
 		const ref logic [WORD_SIZE - 1:0] w_data,					// data to be written to memory index 
-		const ref logic [TAG_SIZE - 1:0] w_tag,						// tag to be written for the given way
-		const ref logic last_write_from_mem							// assert on last write from memory to cache to make way valid
+		const ref logic [TAG_SIZE - 1:0] w_tag						// tag to be written for the given way						// assert on last write from memory to cache to make way valid
 	);
 	
 		// Write selected word on line to memory
 		data_memory[{w_index, w_line[5:4], w_way}] = w_data;
 		tag_memory[{w_index, w_way}] = w_tag;
-
-		// Update valid array as the way is newly fetched
-		if(last_write_from_mem) begin
-			metadata.data[w_index].valid |= w_way;
-		end
 	endtask
 	
 	
@@ -490,41 +491,42 @@ class data_cache_memory_class;
 		const ref logic [$clog2(WAY_PER_SET) : 0] perf_plru
 	);
 
-	
-		if((dut_tag_out !== perf_tag_out)) begin
-			$display("TAG failed");
+
+		if((|perf_valid_array[perf_way] | (|dut_valid_array[dut_way])) &&
+			(dut_tag_out !== perf_tag_out)) begin
+			$display("Time %t: TAG failed", $time);
 		end
 		
 		
-		if(dut_data_out !== perf_data_out) begin
-			$display("Data out failed");
+		if((|perf_valid_array[perf_way] | (|dut_valid_array[dut_way])) &&
+			dut_data_out !== perf_data_out) begin
+			$display("Time %t: Data out failed", $time);
 		end
 		
 		
 		if(dut_way !== perf_way) begin
-			$display("Way failed");
+			$display("Time %t: Way failed", $time);
 		end
 		
 		if(dut_hit !== perf_hit) begin
-			$display("HIT failed");
+			$display("Time %t: Hit failed", $time);
 		end
 		
 		if((|perf_valid_array[perf_way] | (|dut_valid_array[dut_way])) && 
-			dut_dirty !== perf_dirty) begin
-			
-			$display("Dirty failed");
+			(dut_hit | perf_hit) && dut_dirty !== perf_dirty) begin
+			$display("Time %t: Dirty failed", $time);
 		end
 		
 		if((|perf_valid_array | (|dut_valid_array)) && dut_dirty_array !== perf_dirty_array) begin
-				$display("Dirty array failed");
+			$display("Time %t: Dirty array failed", $time);	
 		end
 		
 		if(dut_valid_array !== perf_valid_array) begin
-			$display("Valid array failed");
+			$display("Time %t: Valid array failed", $time);
 		end
 		
 		if(dut_plru !== perf_plru) begin
-			$display("Plru array failed");
+			$display("Time %t: Plru array failed", $time);
 		end
 
 	endtask
