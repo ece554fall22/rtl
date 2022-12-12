@@ -1,0 +1,138 @@
+C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mem
+
+Top level modules:
+	mem
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module wb
+
+Top level modules:
+	wb
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fifo
+
+Top level modules:
+	fifo
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module decode
+
+Top level modules:
+	decode
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv {0 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module proc
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(50): Component name 'execute_control' does not refer to a scope.
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(50): Component name 'execute_control' does not refer to a scope.
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(50): Component name 'execute_control' does not refer to a scope.
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+** Error: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/proc.sv(6): 'control_bus' is an unknown type.
+Or did you omit the '()' for an instantiation?
+
+} {4.0 8.0 9.0 10.0 11.0 12.0 13.0 14.0 15.0 16.0 17.0 18.0 19.0 20.0 21.0 22.0 23.0 24.0 25.0 26.0 27.0 28.0 29.0 30.0 31.0 32.0 33.0 34.0 35.0 36.0} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vector_execute
+
+Top level modules:
+	vector_execute
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/systolic_array.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module systolic_array
+
+Top level modules:
+	systolic_array
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv} {2 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memB
+** Warning: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memB.sv(7): (vlog-13314) Defaulting port 'Bin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	memB
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv} {2 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fifo_preload
+** Warning: C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/fifo_preload.sv(11): (vlog-13314) Defaulting port 'd' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	fifo_preload
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpumac.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tpumac
+
+Top level modules:
+	tpumac
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module scalar_execute
+
+Top level modules:
+	scalar_execute
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fetch
+
+Top level modules:
+	fetch
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_mat_mul.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/tb_mat_mul.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_mat_mul
+
+Top level modules:
+	tb_mat_mul
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/memA.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module memA
+
+Top level modules:
+	memA
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Matrix Multiplier/tpuv1.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tpuv1
+
+Top level modules:
+	tpuv1
+
+} {} {}}

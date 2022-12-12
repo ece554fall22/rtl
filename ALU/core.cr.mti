@@ -1,0 +1,99 @@
+{C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/ram_single.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ram_single
+
+Top level modules:
+	ram_single
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Vector_ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vector_alu
+
+Top level modules:
+	vector_alu
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module mem
+
+Top level modules:
+	mem
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/wb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module wb
+
+Top level modules:
+	wb
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Scalar_ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/Scalar_ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/vector_register_file.sv} {1 {vlog -work work -sv -stats=none {C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\vector_register_file.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vector_register_file
+
+Top level modules:
+	vector_register_file
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/branch_jump_decoder.sv} {1 {vlog -work work -sv -stats=none {C:\Users\bmha2\OneDrive\Desktop\ECE554\rtl\Decode Modules\branch_jump_decoder.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module branch_jump_decoder
+
+Top level modules:
+	branch_jump_decoder
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/decode.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module decode
+
+Top level modules:
+	decode
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/vector_execute.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module vector_execute
+
+Top level modules:
+	vector_execute
+
+} {} {}} {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv} {1 {vlog -work work -sv -stats=none {C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Decode Modules/scalar_register_file.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module scalar_register_file
+
+Top level modules:
+	scalar_register_file
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/scalar_execute.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module scalar_execute
+
+Top level modules:
+	scalar_execute
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/Testbench/parse_trace.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module parse_trace
+
+Top level modules:
+	parse_trace
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/STAGES/fetch.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fetch
+
+Top level modules:
+	fetch
+
+} {} {}} C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/FP_ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/bmha2/OneDrive/Desktop/ECE554/rtl/ALU/FP_ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fp_alu
+
+Top level modules:
+	fp_alu
+
+} {} {}}

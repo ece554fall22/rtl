@@ -26,7 +26,7 @@ always_comb begin
     endcase
 end
 
-assign next_zero = out != 36'b0;
+assign next_zero = out == 36'b0;
 
 assign next_sign = out[35];
 
