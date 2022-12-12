@@ -4,4 +4,4 @@ work/
 *.do
 *.vstf
 *.vcd
-data_cache_tb
+data_cache_tb.sv
