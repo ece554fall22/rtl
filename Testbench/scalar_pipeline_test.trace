@@ -1,8 +1,3 @@
-*** 0x10c: 0x36720400 ***
-    inputs: rD=r7=0xb9cc20d40 rA=r4=0xc0e1de9ad rB=r1=0xb9cc20d40
-    scalar_writeback: rD=r7=0x7aadff6ed
-    asm: add r7, r4, r1
-
 *** 0x0: 0x1202e4bd ***
     inputs: rD=r0=0x0 imm=-72515
     scalar_writeback: rD=r0=0x2e4bd
