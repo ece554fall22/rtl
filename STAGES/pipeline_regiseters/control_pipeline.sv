@@ -1,4 +1,4 @@
-module control_pipeline(input clk, rst_n, control_bus control_q, control_bus control_d);
+module control_pipeline(input clk, rst_n, stall, control_bus control_q, control_bus control_d);
     always_ff @ (posedge clk, negedge rst_n) begin
         if(!rst_n) begin
         control_q.halt  <= '0;
@@ -44,8 +44,9 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.invert <= '0;
         control_q.scalar_vector_wb <= '0;
         control_q.vector_scalar_wb <= '0;
+        control_q.vecc_op <= '0;
         end 
-        else begin
+        else if(!stall) begin
         control_q.halt  <= control_d.halt;
         control_q.flushicache <= control_d.flushicache;
         control_q.data_cache_flush <= control_d.data_cache_flush;
@@ -89,6 +90,53 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.invert <= control_d.invert;
         control_q.scalar_vector_wb <= control_d.scalar_vector_wb;
         control_q.vector_scalar_wb <= control_d.vector_scalar_wb;
+        control_q.vecc_op <= control_d.vecc_op;
+        end
+        else begin
+        control_q.halt  <= '0;
+        control_q.flushicache <= '0;
+        control_q.data_cache_flush <= '0;
+        control_q.dirty <= '0;
+        control_q.clean <= '0;
+        control_q.matrix_mutplier_en <= '0;
+        control_q.vector_wr_en <= '0;
+        control_q.register_wr_en <= '0;
+        control_q.mem_read <='0;
+        control_q.mem_write <= '0;
+        control_q.vector_read_register1 <= '0;
+        control_q.vector_read_register2 <= '0;
+        control_q.scalar_read_register1 <= '0;
+        control_q.scalar_read_register2 <= '0;
+        control_q.vector_write_register  <= '0;
+        control_q.scalar_write_register <= '0; 
+        control_q.vector_alu_op  <= '0;
+        control_q.op_type <= '0;
+        control_q.w_type <= '0; 
+        control_q.r_type <= '0;
+        control_q.scalar_op_sel <= '0;
+        control_q.synch_op <= '0;
+        control_q.matmul_idx <= '0;
+        control_q.matmul_opcode <= '0;
+        control_q.matmul_high_low <= '0; 
+        control_q.synch_req <= '0;
+        control_q.branch_jump <= '0; 
+        control_q.branch_register <= '0; 
+        control_q.store_pc <= '0;
+        control_q.alu_operands <= '0;
+        control_q.imm_type <= '0; 
+        control_q.r_read1  <= '0;
+        control_q.r_read2 <= '0;
+        control_q.v_read1 <= '0;
+        control_q.v_read2 <= '0;
+        control_q.pc_select <= '0;
+        control_q.store_immediate <= '0;
+        control_q.mask <= '0;
+        control_q.scalar_alu_op <= '0;
+        control_q.imm_hl <= '0;
+        control_q.invert <= '0;
+        control_q.scalar_vector_wb <= '0;
+        control_q.vector_scalar_wb <= '0;
+        control_q.vecc_op <= '0;
         end
     end
 endmodule

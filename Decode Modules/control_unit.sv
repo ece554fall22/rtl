@@ -53,6 +53,7 @@ always_comb begin
     control.invert = 0;
     control.scalar_vector_wb = 0;
     control.vector_scalar_wb = 0;
+    control.vecc_op = 0;
     case (op_code)
         halt: begin
             control.halt = 1;
@@ -271,6 +272,7 @@ always_comb begin
             control.r_read1 = 1;
             control.r_read2 = 1;
             control.vector_scalar_wb = 1;
+            control.vecc_op = 1;
         end
         cmp: begin
             control.scalar_alu_op = 4'b1000;
@@ -283,6 +285,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vsub: begin
             control.vector_wr_en = 1;
@@ -290,6 +293,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vmult: begin
             control.vector_wr_en = 1;
@@ -297,6 +301,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vdiv: begin
         end
@@ -307,6 +312,7 @@ always_comb begin
             control.v_read2 = 1;
             control.mask = inst[3:0];
             control.vector_scalar_wb = 1;
+            control.vecc_op = 1;
         end
         Vdota: begin
             control.register_wr_en = 1;
@@ -318,11 +324,13 @@ always_comb begin
             control.r_read1 = 1;
             control.mask = inst[3:0];
             control.vector_scalar_wb = 1;
+            control.vecc_op = 1;
         end
         Vindx: begin
             control.register_wr_en = 1;
             control.vector_alu_op = VVindx;
             control.v_read1 = 1;
+            control.vecc_op = 1;
         end
         Vreduce: begin
             control.register_wr_en = 1;
@@ -330,24 +338,28 @@ always_comb begin
             control.v_read1 = 1;
             control.mask = inst[3:0];
             control.vector_scalar_wb = 1;
+            control.vecc_op = 1;
         end
         Vsplat: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVsplat;
             control.v_read1 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vswizzle: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVswizzle;
             control.v_read1 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vsadd: begin
             control.vector_wr_en = 1;
             control.vector_alu_op = VVsadd;
             control.v_read2 = 1;
             control.r_read1 = 1;
+            control.vecc_op = 1;
         end
         Vsmult: begin
             control.vector_wr_en = 1;
@@ -355,6 +367,7 @@ always_comb begin
             control.v_read2 = 1;
             control.r_read1 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vssub: begin
             control.vector_wr_en = 1;
@@ -362,6 +375,7 @@ always_comb begin
             control.v_read2 = 1;
             control.r_read1 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         vsma: begin
             control.vector_wr_en = 1;
@@ -372,6 +386,7 @@ always_comb begin
             control.v_read2 = 1;
             control.r_read1 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         writeA: begin
             control.matmul_opcode = 3'b001;
@@ -406,6 +421,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         Vmin: begin
             control.vector_wr_en = 1;
@@ -413,6 +429,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         VVcompsel: begin
             control.vector_wr_en = 1;
@@ -422,6 +439,7 @@ always_comb begin
             control.r_read1 = 1;
             control.r_read2 = 1;
             control.mask = inst[3:0];
+            control.vecc_op = 1;
         end
         ftoi: begin
             control.r_read1 = 1;
