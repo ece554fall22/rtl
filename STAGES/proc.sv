@@ -78,7 +78,7 @@ logic [35:0] immediate_w_h;
 
 assign immediate_w_h = immediate_w;
 
-//mem memory (.clk(clk), .rst(rst), .line(), .w_type(s_memory_control.w_type), .cache_data(), .alu_data(sdata_out_m), .mem_operation(s_memory_control.r_type), .register_wb(smem_data_m), .vector_wb({vmem_data_m[3], vmem_data_m[2], vmem_data_m[1], vmem_data_m[0]}));
+mem memory (.clk(clk), .rst(rst), .line(2'b0), .w_type(s_memory_control.w_type), .cache_data(127'b0), .alu_data(sdata_out_m), .mem_operation(s_memory_control.r_type), .register_wb(smem_data_m), .vector_wb({vmem_data_m[3], vmem_data_m[2], vmem_data_m[1], vmem_data_m[0]}));
 
 logic [35:0] swb_data;
 
