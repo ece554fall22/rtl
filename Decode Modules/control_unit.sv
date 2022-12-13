@@ -158,6 +158,7 @@ always_comb begin
             control.r_read1 = 1;
             control.r_read2 = 1;
             control.mask = inst[3:0];
+            control.scalar_vector_wb = 1;
         end
         vsti: begin
             control.mem_write = 1;
@@ -183,6 +184,7 @@ always_comb begin
             control.r_read1 = 1;
             control.r_read2 = 1;
             control.mask = inst[3:0];
+            control.scalar_vector_wb = 1;
         end
         vstr: begin
             control.mem_write = 1;
@@ -268,6 +270,7 @@ always_comb begin
             control.vector_alu_op = {2'b0, inst[2:0]};
             control.r_read1 = 1;
             control.r_read2 = 1;
+            control.vector_scalar_wb = 1;
         end
         cmp: begin
             control.scalar_alu_op = 4'b1000;
@@ -303,6 +306,7 @@ always_comb begin
             control.v_read1 = 1;
             control.v_read2 = 1;
             control.mask = inst[3:0];
+            control.vector_scalar_wb = 1;
         end
         Vdota: begin
             control.register_wr_en = 1;
@@ -313,6 +317,7 @@ always_comb begin
             control.v_read2 = 1;
             control.r_read1 = 1;
             control.mask = inst[3:0];
+            control.vector_scalar_wb = 1;
         end
         Vindx: begin
             control.register_wr_en = 1;
@@ -324,6 +329,7 @@ always_comb begin
             control.vector_alu_op = VVreduce;
             control.v_read1 = 1;
             control.mask = inst[3:0];
+            control.vector_scalar_wb = 1;
         end
         Vsplat: begin
             control.vector_wr_en = 1;

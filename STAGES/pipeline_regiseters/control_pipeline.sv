@@ -42,6 +42,8 @@ module control_pipeline(input clk, rst_n, control_bus control_q, control_bus con
         control_q.scalar_alu_op <= '0;
         control_q.imm_hl <= '0;
         control_q.invert <= '0;
+        control_q.scalar_vector_wb <= '0;
+        control_q.vector_scalar_wb <= '0;
         end 
         else begin
         control_q.halt  <= control_d.halt;
