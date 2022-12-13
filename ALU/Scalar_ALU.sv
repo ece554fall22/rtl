@@ -19,8 +19,8 @@ always_comb begin
         4'b0011: out = A & B;
         4'b0100: out = A | B;
         4'b0101: out = A ^ B;
-        4'b0110: out = A << B[3:0];
-        4'b0111: out = A >> B[3:0];
+        4'b0110: out = A >> B[3:0];
+        4'b0111: out = A << B[3:0];
         4'b1000: out = A - B;
         default: out = 32'b0;
     endcase
