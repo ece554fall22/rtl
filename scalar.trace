@@ -414,18 +414,18 @@
 
 *** 0x114: 0x36208806 ***
     inputs: rD=r2=0x7ef7beeb9 rA=r1=0x7a62aeeb0 rB=r2=0x7ef7beeb9
-    scalar_writeback: rD=r2=0x0
+    scalar_writeback: rD=r2=0x3d31577
     asm: shr r2, r1, r2
 
 
 *** 0x118: 0x36208807 ***
-    inputs: rD=r2=0x0 rA=r1=0x7a62aeeb0 rB=r2=0x0
-    scalar_writeback: rD=r2=0x7a62aeeb0
+    inputs: rD=r2=0x3d31577 rA=r1=0x7a62aeeb0 rB=r2=0x3d31577
+    scalar_writeback: rD=r2=0x315775800
     asm: shl r2, r1, r2
 
 
 *** 0x11c: 0x36208002 ***
-    inputs: rD=r2=0x7a62aeeb0 rA=r1=0x7a62aeeb0 rB=r0=0x49510009
+    inputs: rD=r2=0x315775800 rA=r1=0x7a62aeeb0 rB=r0=0x49510009
     scalar_writeback: rD=r2=0xa8d326430
     asm: mul r2, r1, r0
 
