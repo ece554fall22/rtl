@@ -36,7 +36,7 @@ initial begin
 
     // Open the tracer file in the current folder with "read" permission
     // fd = 0 if file doesn't exist
-    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test.trace", "r"); // will need to change based on user
+    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar.trace", "r"); // will need to change based on user
     if (fd) $display("Trace file opened successfully : %0d", fd);
     else begin
         $display("File not opened successfully : %0d", fd);
@@ -131,6 +131,9 @@ initial begin
                         continue;
                     end
                 end
+
+
+                $display("%x", rA_value ^ rB_value);
 
                 $display("Test Failed!");
                 $display("PC: %x", PC);
