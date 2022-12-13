@@ -36,7 +36,7 @@ initial begin
 
     // Open the tracer file in the current folder with "read" permission
     // fd = 0 if file doesn't exist
-    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test_no_lih.trace", "r"); // will need to change based on user
+    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test.trace", "r"); // will need to change based on user
     if (fd) $display("Trace file opened successfully : %0d", fd);
     else begin
         $display("File not opened successfully : %0d", fd);
@@ -92,22 +92,28 @@ initial begin
 
         else if(line.substr(0,19) == "    vector_writeback") begin
             $sscanf(line, "    vector_writeback: v%x = %x", wb_reg, wb_reg_value);
+            $display("3");
         end
 
         else if(line.substr(0,10) == "scalar_load") begin
             // TODO: do something
+            $display("3");
         end
 
         else if(line.substr(0,11) == "scalar_store") begin
             // TODO: do something
+            $display("3");
         end
 
         else if(line.substr(0,10) == "vector_load") begin
             // TODO: do something
+            $display("3");
         end
 
         else if(line.substr(0,11) == "vector_store") begin
             // TODO: do something
+            $display("3");
+            
         end
 
 
@@ -119,6 +125,13 @@ initial begin
             repeat (5) @(posedge clk);
 
             if(wb_reg !== proc1.s_writeback_control.scalar_write_register || wb_reg_value !== proc1.register_write_data) begin
+
+                if (line.substr(9,11) == "lil") begin
+                    if(wb_reg_value[17:0] === proc1.register_write_data[17:0]) begin
+                        continue;
+                    end
+                end
+
                 $display("Test Failed!");
                 $display("PC: %x", PC);
                 if(imm_used) begin
