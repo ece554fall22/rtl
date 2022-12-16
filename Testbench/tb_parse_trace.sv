@@ -1,6 +1,8 @@
 // Created by: Leo Garcia Calderon & Mark Xia
 
-module parse_trace;
+module tb_parse_trace;
+    logic vector;
+
     // first line
     bit [35:0] PC;
     bit [31:0] inst;
@@ -15,9 +17,40 @@ module parse_trace;
     bit [35:0] rB_value;
     logic imm_used;
 
+    bit [4:0] vD;
+
+    bit [31:0] vD0;
+    bit [31:0] vD1;
+    bit [31:0] vD2;
+    bit [31:0] vD3;
+
+    bit [4:0] vA;
+
+    bit [31:0] vA0;
+    bit [31:0] vA1;
+    bit [31:0] vA2;
+    bit [31:0] vA3;
+
+    bit [4:0] vB;
+
+    bit [31:0] vB0;
+    bit [31:0] vB1;
+    bit [31:0] vB2;
+    bit [31:0] vB3;
+
+    bit [3:0] vMask;
+
     // third line
     bit [4:0] wb_reg;
     bit [35:0] wb_reg_value;
+
+    // fourth line
+    bit [3:0] wb_v;
+    bit [31:0] wb_v0;
+    bit [31:0] wb_v1;
+    bit [31:0] wb_v2;
+    bit [31:0] wb_v3;
+
 
     logic clk, rst;
 
@@ -36,7 +69,7 @@ initial begin
 
     // Open the tracer file in the current folder with "read" permission
     // fd = 0 if file doesn't exist
-    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar_pipeline_test.trace", "r"); // will need to change based on user
+    fd = $fopen ("I:\\ece554\\rtl\\Testbench\\scalar.trace", "r"); // will need to change based on user
     if (fd) $display("Trace file opened successfully : %0d", fd);
     else begin
         $display("File not opened successfully : %0d", fd);
@@ -52,7 +85,7 @@ initial begin
 
     $display("0");
 
-
+    vector = 0;
 
     while (!$feof(fd)) begin
     // for(int i = 0; i < 4; i++) begin
@@ -80,7 +113,17 @@ initial begin
                 imm_used = 0;
             end
 
-            // TODO: vector inputs
+            // vD with rA
+            else if ($sscanf(line, "    inputs: vD=v%x=(%x,%x,%x,%x) rA=r%x=%x", vD, vD0, vD1, vD2, vD3, rA, rA_value) == 7) begin
+                vector = 1;
+            end
+
+            // vD with vA, vB
+            else if ($sscanf(line, "    inputs: vD=v%x=(%x, %x, %x, %x) vA=v%x=(%x, %x, %x, %x) vB=v%x=(%x, %x, %x, %x)", vD, vD0, vD1, vD2, vD3, vA, vA0, vA1, vA2, vA3, vB, vB0, vB1, vB2, vB3) == 15) begin
+                vector = 1;
+            end
+            
+
         end
         
 
@@ -90,47 +133,57 @@ initial begin
             $display("3");
         end
 
-        else if(line.substr(0,19) == "    vector_writeback") begin
-            $sscanf(line, "    vector_writeback: v%x = %x", wb_reg, wb_reg_value);
+        else if(line.substr(0,14) == "    vector_mask") begin
+            $sscanf(line, "    vector_mask: %b", vMask);
             $display("3");
-        end
+        end        
 
         else if(line.substr(0,10) == "scalar_load") begin
-            // TODO: do something
+            // TODO: memory instructions not ready yet
             $display("3");
         end
 
         else if(line.substr(0,11) == "scalar_store") begin
-            // TODO: do something
+            // TODO: memory instructions not ready yet
             $display("3");
         end
 
         else if(line.substr(0,10) == "vector_load") begin
-            // TODO: do something
+            // TODO: memory instructions not ready yet
             $display("3");
         end
 
         else if(line.substr(0,11) == "vector_store") begin
-            // TODO: do something
+            // TODO: memory instructions not ready yet
             $display("3");
             
         end
 
 
 ////////// fourth line //////////
+        else if(line.substr(0,19) == "    vector_writeback") begin
+            $sscanf(line, "vector_writeback: vD=v%x=(%x, %x, %x, %x)", wb_v, wb_v0, wb_v1, wb_v2, wb_v3);
+            $display("3");
+        end
+
         else if(line.substr(0,6) == "    asm") begin
 
             $display("4");
             assign proc1.inst_f = inst;
-            repeat (5) @(posedge clk);
+            @(posedge clk);
+            assign proc1.inst_f = 32'h02000000;
+            repeat (4) @(posedge clk);
 
-            if(wb_reg !== proc1.s_writeback_control.scalar_write_register || wb_reg_value !== proc1.register_write_data) begin
+            if((wb_reg !== proc1.s_writeback_control.scalar_write_register || wb_reg_value !== proc1.register_write_data) & !vector) begin
 
                 if (line.substr(9,11) == "lil") begin
                     if(wb_reg_value[17:0] === proc1.register_write_data[17:0]) begin
                         continue;
                     end
                 end
+
+
+                $display("%x", rA_value ^ rB_value);
 
                 $display("Test Failed!");
                 $display("PC: %x", PC);
@@ -153,6 +206,11 @@ initial begin
                 $display("Scalar Execute opcode: %x", proc1.sexecut.ALU.op);
                 $display("Scalar Execute Data Out: %x", proc1.sdata_out_e);
                 $stop();
+            end
+
+            else if((wb_v !== proc1.v_writeback_control.vector_write_register || wb_v0 !== proc1.vector_write_data[0] || wb_v1 !== proc1.vector_write_data[1] || wb_v2 !== proc1.vector_write_data[2] || wb_v3 !== proc1.vector_write_data[3]) & vector) begin
+                // todo: waiting for toolchain to verify trace file
+                $display("Vector Test failed!");
             end
         end
 
