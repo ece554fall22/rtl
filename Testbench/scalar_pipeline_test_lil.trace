@@ -1,0 +1,6389 @@
+*** 0x0: 0x1202e4bd ***
+    inputs: rD=r0=0x0 imm=-72515
+    scalar_writeback: rD=r0=0x2e4bd
+    asm: lil r0, 0x2e4bd
+
+
+*** 0x4: 0x1000a533 ***
+    inputs: rD=r0=0x2e4bd imm=42291
+    scalar_writeback: rD=r0=0x294cee4bd
+    asm: lil r0, 0xa533
+
+
+*** 0x8: 0x12120d40 ***
+    inputs: rD=r1=0x0 imm=-127680
+    scalar_writeback: rD=r1=0x20d40
+    asm: lil r1, 0x20d40
+
+
+*** 0xc: 0x1012e730 ***
+    inputs: rD=r1=0x20d40 imm=-71888
+    scalar_writeback: rD=r1=0xb9cc20d40
+    asm: lil r1, 0x2e730
+
+
+*** 0x10: 0x1221b39e ***
+    inputs: rD=r2=0x0 imm=111518
+    scalar_writeback: rD=r2=0x1b39e
+    asm: lil r2, 0x1b39e
+
+
+*** 0x14: 0x102087b5 ***
+    inputs: rD=r2=0x1b39e imm=34741
+    scalar_writeback: rD=r2=0x21ed5b39e
+    asm: lil r2, 0x87b5
+
+
+*** 0x18: 0x1230caa1 ***
+    inputs: rD=r3=0x0 imm=51873
+    scalar_writeback: rD=r3=0xcaa1
+    asm: lil r3, 0xcaa1
+
+
+*** 0x1c: 0x10303e18 ***
+    inputs: rD=r3=0xcaa1 imm=15896
+    scalar_writeback: rD=r3=0xf860caa1
+    asm: lil r3, 0x3e18
+
+
+*** 0x20: 0x1241e9ad ***
+    inputs: rD=r4=0x0 imm=125357
+    scalar_writeback: rD=r4=0x1e9ad
+    asm: lil r4, 0x1e9ad
+
+
+*** 0x24: 0x10430387 ***
+    inputs: rD=r4=0x1e9ad imm=-64633
+    scalar_writeback: rD=r4=0xc0e1de9ad
+    asm: lil r4, 0x30387
+
+
+*** 0x28: 0x1251bed8 ***
+    inputs: rD=r5=0x0 imm=114392
+    scalar_writeback: rD=r5=0x1bed8
+    asm: lil r5, 0x1bed8
+
+
+*** 0x2c: 0x10521aa0 ***
+    inputs: rD=r5=0x1bed8 imm=-124256
+    scalar_writeback: rD=r5=0x86a81bed8
+    asm: lil r5, 0x21aa0
+
+
+*** 0x30: 0x12606428 ***
+    inputs: rD=r6=0x0 imm=25640
+    scalar_writeback: rD=r6=0x6428
+    asm: lil r6, 0x6428
+
+
+*** 0x34: 0x10637779 ***
+    inputs: rD=r6=0x6428 imm=-34951
+    scalar_writeback: rD=r6=0xddde46428
+    asm: lil r6, 0x37779
+
+
+*** 0x38: 0x1272caa7 ***
+    inputs: rD=r7=0x0 imm=-79193
+    scalar_writeback: rD=r7=0x2caa7
+    asm: lil r7, 0x2caa7
+
+
+*** 0x3c: 0x1071ef02 ***
+    inputs: rD=r7=0x2caa7 imm=126722
+    scalar_writeback: rD=r7=0x7bc0acaa7
+    asm: lil r7, 0x1ef02
+
+
+*** 0x40: 0x128232d5 ***
+    inputs: rD=r8=0x0 imm=-118059
+    scalar_writeback: rD=r8=0x232d5
+    asm: lil r8, 0x232d5
+
+
+*** 0x44: 0x10829e78 ***
+    inputs: rD=r8=0x232d5 imm=-90504
+    scalar_writeback: rD=r8=0xa79e232d5
+    asm: lil r8, 0x29e78
+
+
+*** 0x48: 0x1291816c ***
+    inputs: rD=r9=0x0 imm=98668
+    scalar_writeback: rD=r9=0x1816c
+    asm: lil r9, 0x1816c
+
+
+*** 0x4c: 0x109185e8 ***
+    inputs: rD=r9=0x1816c imm=99816
+    scalar_writeback: rD=r9=0x617a1816c
+    asm: lil r9, 0x185e8
+
+
+*** 0x50: 0x12a0d24e ***
+    inputs: rD=r10=0x0 imm=53838
+    scalar_writeback: rD=r10=0xd24e
+    asm: lil r10, 0xd24e
+
+
+*** 0x54: 0x10a0ca91 ***
+    inputs: rD=r10=0xd24e imm=51857
+    scalar_writeback: rD=r10=0x32a44d24e
+    asm: lil r10, 0xca91
+
+
+*** 0x58: 0x12b3d565 ***
+    inputs: rD=r11=0x0 imm=-10907
+    scalar_writeback: rD=r11=0x3d565
+    asm: lil r11, 0x3d565
+
+
+*** 0x5c: 0x10b2a824 ***
+    inputs: rD=r11=0x3d565 imm=-88028
+    scalar_writeback: rD=r11=0xaa093d565
+    asm: lil r11, 0x2a824
+
+
+*** 0x60: 0x12c21cf3 ***
+    inputs: rD=r12=0x0 imm=-123661
+    scalar_writeback: rD=r12=0x21cf3
+    asm: lil r12, 0x21cf3
+
+
+*** 0x64: 0x10c2805f ***
+    inputs: rD=r12=0x21cf3 imm=-98209
+    scalar_writeback: rD=r12=0xa017e1cf3
+    asm: lil r12, 0x2805f
+
+
+*** 0x68: 0x12d036f2 ***
+    inputs: rD=r13=0x0 imm=14066
+    scalar_writeback: rD=r13=0x36f2
+    asm: lil r13, 0x36f2
+
+
+*** 0x6c: 0x10d1473d ***
+    inputs: rD=r13=0x36f2 imm=83773
+    scalar_writeback: rD=r13=0x51cf436f2
+    asm: lil r13, 0x1473d
+
+
+*** 0x70: 0x12e14583 ***
+    inputs: rD=r14=0x0 imm=83331
+    scalar_writeback: rD=r14=0x14583
+    asm: lil r14, 0x14583
+
+
+*** 0x74: 0x10e10a0b ***
+    inputs: rD=r14=0x14583 imm=68107
+    scalar_writeback: rD=r14=0x4282d4583
+    asm: lil r14, 0x10a0b
+
+
+*** 0x78: 0x12f06ba2 ***
+    inputs: rD=r15=0x0 imm=27554
+    scalar_writeback: rD=r15=0x6ba2
+    asm: lil r15, 0x6ba2
+
+
+*** 0x7c: 0x10f1a39a ***
+    inputs: rD=r15=0x6ba2 imm=107418
+    scalar_writeback: rD=r15=0x68e686ba2
+    asm: lil r15, 0x1a39a
+
+
+*** 0x80: 0x1300a9f2 ***
+    inputs: rD=r16=0x0 imm=43506
+    scalar_writeback: rD=r16=0xa9f2
+    asm: lil r16, 0xa9f2
+
+
+*** 0x84: 0x11001f61 ***
+    inputs: rD=r16=0xa9f2 imm=8033
+    scalar_writeback: rD=r16=0x7d84a9f2
+    asm: lil r16, 0x1f61
+
+
+*** 0x88: 0x1311e4cf ***
+    inputs: rD=r17=0x0 imm=124111
+    scalar_writeback: rD=r17=0x1e4cf
+    asm: lil r17, 0x1e4cf
+
+
+*** 0x8c: 0x111360fa ***
+    inputs: rD=r17=0x1e4cf imm=-40710
+    scalar_writeback: rD=r17=0xd83e9e4cf
+    asm: lil r17, 0x360fa
+
+
+*** 0x90: 0x1320cf30 ***
+    inputs: rD=r18=0x0 imm=53040
+    scalar_writeback: rD=r18=0xcf30
+    asm: lil r18, 0xcf30
+
+
+*** 0x94: 0x1121aefe ***
+    inputs: rD=r18=0xcf30 imm=110334
+    scalar_writeback: rD=r18=0x6bbf8cf30
+    asm: lil r18, 0x1aefe
+
+
+*** 0x98: 0x1333cda4 ***
+    inputs: rD=r19=0x0 imm=-12892
+    scalar_writeback: rD=r19=0x3cda4
+    asm: lil r19, 0x3cda4
+
+
+*** 0x9c: 0x1133cf84 ***
+    inputs: rD=r19=0x3cda4 imm=-12412
+    scalar_writeback: rD=r19=0xf3e13cda4
+    asm: lil r19, 0x3cf84
+
+
+*** 0xa0: 0x1342d9cc ***
+    inputs: rD=r20=0x0 imm=-75316
+    scalar_writeback: rD=r20=0x2d9cc
+    asm: lil r20, 0x2d9cc
+
+
+*** 0xa4: 0x11422c60 ***
+    inputs: rD=r20=0x2d9cc imm=-119712
+    scalar_writeback: rD=r20=0x8b182d9cc
+    asm: lil r20, 0x22c60
+
+
+*** 0xa8: 0x135006a4 ***
+    inputs: rD=r21=0x0 imm=1700
+    scalar_writeback: rD=r21=0x6a4
+    asm: lil r21, 0x6a4
+
+
+*** 0xac: 0x11537a5f ***
+    inputs: rD=r21=0x6a4 imm=-34209
+    scalar_writeback: rD=r21=0xde97c06a4
+    asm: lil r21, 0x37a5f
+
+
+*** 0xb0: 0x13639c88 ***
+    inputs: rD=r22=0x0 imm=-25464
+    scalar_writeback: rD=r22=0x39c88
+    asm: lil r22, 0x39c88
+
+
+*** 0xb4: 0x11620e06 ***
+    inputs: rD=r22=0x39c88 imm=-127482
+    scalar_writeback: rD=r22=0x8381b9c88
+    asm: lil r22, 0x20e06
+
+
+*** 0xb8: 0x1373b666 ***
+    inputs: rD=r23=0x0 imm=-18842
+    scalar_writeback: rD=r23=0x3b666
+    asm: lil r23, 0x3b666
+
+
+*** 0xbc: 0x11725a11 ***
+    inputs: rD=r23=0x3b666 imm=-108015
+    scalar_writeback: rD=r23=0x96847b666
+    asm: lil r23, 0x25a11
+
+
+*** 0xc0: 0x138084fe ***
+    inputs: rD=r24=0x0 imm=34046
+    scalar_writeback: rD=r24=0x84fe
+    asm: lil r24, 0x84fe
+
+
+*** 0xc4: 0x1182a456 ***
+    inputs: rD=r24=0x84fe imm=-89002
+    scalar_writeback: rD=r24=0xa915884fe
+    asm: lil r24, 0x2a456
+
+
+*** 0xc8: 0x1392b760 ***
+    inputs: rD=r25=0x0 imm=-84128
+    scalar_writeback: rD=r25=0x2b760
+    asm: lil r25, 0x2b760
+
+
+*** 0xcc: 0x1193d6ca ***
+    inputs: rD=r25=0x2b760 imm=-10550
+    scalar_writeback: rD=r25=0xf5b2ab760
+    asm: lil r25, 0x3d6ca
+
+
+*** 0xd0: 0x13a24b99 ***
+    inputs: rD=r26=0x0 imm=-111719
+    scalar_writeback: rD=r26=0x24b99
+    asm: lil r26, 0x24b99
+
+
+*** 0xd4: 0x11a0bcb3 ***
+    inputs: rD=r26=0x24b99 imm=48307
+    scalar_writeback: rD=r26=0x2f2ce4b99
+    asm: lil r26, 0xbcb3
+
+
+*** 0xd8: 0x13b1129f ***
+    inputs: rD=r27=0x0 imm=70303
+    scalar_writeback: rD=r27=0x1129f
+    asm: lil r27, 0x1129f
+
+
+*** 0xdc: 0x11b3f603 ***
+    inputs: rD=r27=0x1129f imm=-2557
+    scalar_writeback: rD=r27=0xfd80d129f
+    asm: lil r27, 0x3f603
+
+
+*** 0xe0: 0x13c23e58 ***
+    inputs: rD=r28=0x0 imm=-115112
+    scalar_writeback: rD=r28=0x23e58
+    asm: lil r28, 0x23e58
+
+
+*** 0xe4: 0x11c1d4a6 ***
+    inputs: rD=r28=0x23e58 imm=119974
+    scalar_writeback: rD=r28=0x7529a3e58
+    asm: lil r28, 0x1d4a6
+
+
+*** 0xe8: 0x13d30389 ***
+    inputs: rD=r29=0x0 imm=-64631
+    scalar_writeback: rD=r29=0x30389
+    asm: lil r29, 0x30389
+
+
+*** 0xec: 0x11d25d4e ***
+    inputs: rD=r29=0x30389 imm=-107186
+    scalar_writeback: rD=r29=0x9753b0389
+    asm: lil r29, 0x25d4e
+
+
+*** 0xf0: 0x13e33747 ***
+    inputs: rD=r30=0x0 imm=-51385
+    scalar_writeback: rD=r30=0x33747
+    asm: lil r30, 0x33747
+
+
+*** 0xf4: 0x11e06bd5 ***
+    inputs: rD=r30=0x33747 imm=27605
+    scalar_writeback: rD=r30=0x1af573747
+    asm: lil r30, 0x6bd5
+
+
+*** 0xf8: 0x13f30568 ***
+    inputs: rD=r31=0x0 imm=-64152
+    scalar_writeback: rD=r31=0x30568
+    asm: lil r31, 0x30568
+
+
+*** 0xfc: 0x11f392b3 ***
+    inputs: rD=r31=0x30568 imm=-27981
+    scalar_writeback: rD=r31=0xe4acf0568
+    asm: lil r31, 0x392b3
+
+
+*** 0x100: 0x36618405 ***
+    inputs: rD=r6=0xddde46428 rA=r3=0xf860caa1 rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r6=0xb64a2c7e1
+    asm: xor r6, r3, r1
+
+
+*** 0x104: 0x36601007 ***
+    inputs: rD=r6=0xb64a2c7e1 rA=r0=0x294cee4bd rB=r4=0xc0e1de9ad
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r0, r4
+
+
+*** 0x108: 0x36708403 ***
+    inputs: rD=r7=0x7bc0acaa7 rA=r1=0xb9cc20d40 rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r7=0xb9cc20d40
+    asm: and r7, r1, r1
+
+
+*** 0x10c: 0x36720400 ***
+    inputs: rD=r7=0xb9cc20d40 rA=r4=0xc0e1de9ad rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r7=0x7aadff6ed
+    asm: add r7, r4, r1
+
+
+*** 0x110: 0x38510000 ***
+    inputs: rD=r5=0x86a81bed8 rA=r2=0x21ed5b39e
+    scalar_writeback: rD=r5=0x7957e4127
+    asm: not r5, r2
+
+
+*** 0x114: 0x36229400 ***
+    inputs: rD=r2=0x21ed5b39e rA=r5=0x7957e4127 rB=r5=0x7957e4127
+    scalar_writeback: rD=r2=0xf2afc824e
+    asm: add r2, r5, r5
+
+
+*** 0x118: 0x36638401 ***
+    inputs: rD=r6=0x0 rA=r7=0x7aadff6ed rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r6=0xc0e1de9ad
+    asm: sub r6, r7, r1
+
+
+*** 0x11c: 0x36221c02 ***
+    inputs: rD=r2=0xf2afc824e rA=r4=0xc0e1de9ad rB=r7=0x7aadff6ed
+    scalar_writeback: rD=r2=0x3ff09329
+    asm: mul r2, r4, r7
+
+
+*** 0x120: 0x36721003 ***
+    inputs: rD=r7=0x7aadff6ed rA=r4=0xc0e1de9ad rB=r4=0xc0e1de9ad
+    scalar_writeback: rD=r7=0xc0e1de9ad
+    asm: and r7, r4, r4
+
+
+*** 0x124: 0x36401005 ***
+    inputs: rD=r4=0xc0e1de9ad rA=r0=0x294cee4bd rB=r4=0xc0e1de9ad
+    scalar_writeback: rD=r4=0xe9ad30d10
+    asm: xor r4, r0, r4
+
+
+*** 0x128: 0x36309802 ***
+    inputs: rD=r3=0xf860caa1 rA=r1=0xb9cc20d40 rB=r6=0xc0e1de9ad
+    scalar_writeback: rD=r3=0xa8d723440
+    asm: mul r3, r1, r6
+
+
+*** 0x12c: 0x36629c01 ***
+    inputs: rD=r6=0xc0e1de9ad rA=r5=0x7957e4127 rB=r7=0xc0e1de9ad
+    scalar_writeback: rD=r6=0xb8760577a
+    asm: sub r6, r5, r7
+
+
+*** 0x130: 0x36438802 ***
+    inputs: rD=r4=0xe9ad30d10 rA=r7=0xc0e1de9ad rB=r2=0x3ff09329
+    scalar_writeback: rD=r4=0x61528c3b5
+    asm: mul r4, r7, r2
+
+
+*** 0x134: 0x36238804 ***
+    inputs: rD=r2=0x3ff09329 rA=r7=0xc0e1de9ad rB=r2=0x3ff09329
+    scalar_writeback: rD=r2=0xc3ffdfbad
+    asm: or r2, r7, r2
+
+
+*** 0x138: 0x36421005 ***
+    inputs: rD=r4=0x61528c3b5 rA=r4=0x61528c3b5 rB=r4=0x61528c3b5
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r4, r4
+
+
+*** 0x13c: 0x36310406 ***
+    inputs: rD=r3=0xa8d723440 rA=r2=0xc3ffdfbad rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r3=0xc3ffdfbad
+    asm: shr r3, r2, r1
+
+
+*** 0x140: 0x36621407 ***
+    inputs: rD=r6=0xb8760577a rA=r4=0x0 rB=r5=0x7957e4127
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r4, r5
+
+
+*** 0x144: 0x36400402 ***
+    inputs: rD=r4=0x0 rA=r0=0x294cee4bd rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r4=0xf3890c840
+    asm: mul r4, r0, r1
+
+
+*** 0x148: 0x36421c00 ***
+    inputs: rD=r4=0xf3890c840 rA=r4=0xf3890c840 rB=r7=0xc0e1de9ad
+    scalar_writeback: rD=r4=0xb46aeb1ed
+    asm: add r4, r4, r7
+
+
+*** 0x14c: 0x36030c04 ***
+    inputs: rD=r0=0x294cee4bd rA=r6=0x0 rB=r3=0xc3ffdfbad
+    scalar_writeback: rD=r0=0xc3ffdfbad
+    asm: or r0, r6, r3
+
+
+*** 0x150: 0x36738407 ***
+    inputs: rD=r7=0xc0e1de9ad rA=r7=0xc0e1de9ad rB=r1=0xb9cc20d40
+    scalar_writeback: rD=r7=0xc0e1de9ad
+    asm: shl r7, r7, r1
+
+
+*** 0x154: 0x36531005 ***
+    inputs: rD=r5=0x7957e4127 rA=r6=0x0 rB=r4=0xb46aeb1ed
+    scalar_writeback: rD=r5=0xb46aeb1ed
+    asm: xor r5, r6, r4
+
+
+*** 0x158: 0x38130000 ***
+    inputs: rD=r1=0xb9cc20d40 rA=r6=0x0
+    scalar_writeback: rD=r1=0x4633df2bf
+    asm: not r1, r6
+
+
+*** 0x15c: 0x36321002 ***
+    inputs: rD=r3=0xc3ffdfbad rA=r4=0xb46aeb1ed rB=r4=0xb46aeb1ed
+    scalar_writeback: rD=r3=0x1f5d59569
+    asm: mul r3, r4, r4
+
+
+*** 0x160: 0x36008006 ***
+    inputs: rD=r0=0xc3ffdfbad rA=r1=0x4633df2bf rB=r0=0xc3ffdfbad
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r1, r0
+
+
+*** 0x164: 0x36218400 ***
+    inputs: rD=r2=0xc3ffdfbad rA=r3=0x1f5d59569 rB=r1=0x4633df2bf
+    scalar_writeback: rD=r2=0x659138828
+    asm: add r2, r3, r1
+
+
+*** 0x168: 0x36311804 ***
+    inputs: rD=r3=0x1f5d59569 rA=r2=0x659138828 rB=r6=0x0
+    scalar_writeback: rD=r3=0x659138828
+    asm: or r3, r2, r6
+
+
+*** 0x16c: 0x36431001 ***
+    inputs: rD=r4=0xb46aeb1ed rA=r6=0x0 rB=r4=0xb46aeb1ed
+    scalar_writeback: rD=r4=0x4b9514e13
+    asm: sub r4, r6, r4
+
+
+*** 0x170: 0x36730c01 ***
+    inputs: rD=r7=0xc0e1de9ad rA=r6=0x0 rB=r3=0x659138828
+    scalar_writeback: rD=r7=0x9a6ec77d8
+    asm: sub r7, r6, r3
+
+
+*** 0x174: 0x38538000 ***
+    inputs: rD=r5=0xb46aeb1ed rA=r7=0x9a6ec77d8
+    scalar_writeback: rD=r5=0x4b9514e12
+    asm: not r5, r7
+
+
+*** 0x178: 0x36018804 ***
+    inputs: rD=r0=0x0 rA=r3=0x659138828 rB=r2=0x659138828
+    scalar_writeback: rD=r0=0x659138828
+    asm: or r0, r3, r2
+
+
+*** 0x17c: 0x36318803 ***
+    inputs: rD=r3=0x659138828 rA=r3=0x659138828 rB=r2=0x659138828
+    scalar_writeback: rD=r3=0x659138828
+    asm: and r3, r3, r2
+
+
+*** 0x180: 0x38520000 ***
+    inputs: rD=r5=0x4b9514e12 rA=r4=0x4b9514e13
+    scalar_writeback: rD=r5=0xb46aeb1ed
+    asm: not r5, r4
+
+
+*** 0x184: 0x36428c05 ***
+    inputs: rD=r4=0x4b9514e13 rA=r5=0xb46aeb1ed rB=r3=0x659138828
+    scalar_writeback: rD=r4=0xd1fbd39c5
+    asm: xor r4, r5, r3
+
+
+*** 0x188: 0x36301c02 ***
+    inputs: rD=r3=0x659138828 rA=r0=0x659138828 rB=r7=0x9a6ec77d8
+    scalar_writeback: rD=r3=0x6b1a579c0
+    asm: mul r3, r0, r7
+
+
+*** 0x18c: 0x36629407 ***
+    inputs: rD=r6=0x0 rA=r5=0xb46aeb1ed rB=r5=0xb46aeb1ed
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r5, r5
+
+
+*** 0x190: 0x36329804 ***
+    inputs: rD=r3=0x6b1a579c0 rA=r5=0xb46aeb1ed rB=r6=0x0
+    scalar_writeback: rD=r3=0xb46aeb1ed
+    asm: or r3, r5, r6
+
+
+*** 0x194: 0x38428000 ***
+    inputs: rD=r4=0xd1fbd39c5 rA=r5=0xb46aeb1ed
+    scalar_writeback: rD=r4=0x2e042c63a
+    asm: not r4, r5
+
+
+*** 0x198: 0x36310803 ***
+    inputs: rD=r3=0xb46aeb1ed rA=r2=0x659138828 rB=r2=0x659138828
+    scalar_writeback: rD=r3=0x659138828
+    asm: and r3, r2, r2
+
+
+*** 0x19c: 0x36111006 ***
+    inputs: rD=r1=0x4633df2bf rA=r2=0x659138828 rB=r4=0x2e042c63a
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r2, r4
+
+
+*** 0x1a0: 0x36101007 ***
+    inputs: rD=r1=0x0 rA=r0=0x659138828 rB=r4=0x2e042c63a
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r0, r4
+
+
+*** 0x1a4: 0x36030802 ***
+    inputs: rD=r0=0x659138828 rA=r6=0x0 rB=r2=0x659138828
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r6, r2
+
+
+*** 0x1a8: 0x36731005 ***
+    inputs: rD=r7=0x9a6ec77d8 rA=r6=0x0 rB=r4=0x2e042c63a
+    scalar_writeback: rD=r7=0x2e042c63a
+    asm: xor r7, r6, r4
+
+
+*** 0x1ac: 0x36638003 ***
+    inputs: rD=r6=0x0 rA=r7=0x2e042c63a rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: and r6, r7, r0
+
+
+*** 0x1b0: 0x36711405 ***
+    inputs: rD=r7=0x2e042c63a rA=r2=0x659138828 rB=r5=0xb46aeb1ed
+    scalar_writeback: rD=r7=0xd1fbd39c5
+    asm: xor r7, r2, r5
+
+
+*** 0x1b4: 0x36000c03 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r3=0x659138828
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r0, r3
+
+
+*** 0x1b8: 0x36301806 ***
+    inputs: rD=r3=0x659138828 rA=r0=0x0 rB=r6=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r0, r6
+
+
+*** 0x1bc: 0x36438806 ***
+    inputs: rD=r4=0x2e042c63a rA=r7=0xd1fbd39c5 rB=r2=0x659138828
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r7, r2
+
+
+*** 0x1c0: 0x36218c02 ***
+    inputs: rD=r2=0x659138828 rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r3, r3
+
+
+*** 0x1c4: 0x36638406 ***
+    inputs: rD=r6=0x0 rA=r7=0xd1fbd39c5 rB=r1=0x0
+    scalar_writeback: rD=r6=0xd1fbd39c5
+    asm: shr r6, r7, r1
+
+
+*** 0x1c8: 0x36410802 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r2, r2
+
+
+*** 0x1cc: 0x38700000 ***
+    inputs: rD=r7=0xd1fbd39c5 rA=r0=0x0
+    scalar_writeback: rD=r7=0x2e042c63a
+    asm: not r7, r0
+
+
+*** 0x1d0: 0x36300402 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r1=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r0, r1
+
+
+*** 0x1d4: 0x36028800 ***
+    inputs: rD=r0=0x0 rA=r5=0xb46aeb1ed rB=r2=0x0
+    scalar_writeback: rD=r0=0xb46aeb1ed
+    asm: add r0, r5, r2
+
+
+*** 0x1d8: 0x36408800 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: add r4, r1, r2
+
+
+*** 0x1dc: 0x36231402 ***
+    inputs: rD=r2=0x0 rA=r6=0xd1fbd39c5 rB=r5=0xb46aeb1ed
+    scalar_writeback: rD=r2=0x85905b061
+    asm: mul r2, r6, r5
+
+
+*** 0x1e0: 0x38310000 ***
+    inputs: rD=r3=0x0 rA=r2=0x85905b061
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r2
+
+
+*** 0x1e4: 0x36029404 ***
+    inputs: rD=r0=0xb46aeb1ed rA=r5=0xb46aeb1ed rB=r5=0xb46aeb1ed
+    scalar_writeback: rD=r0=0xb46aeb1ed
+    asm: or r0, r5, r5
+
+
+*** 0x1e8: 0x36131002 ***
+    inputs: rD=r1=0x0 rA=r6=0xd1fbd39c5 rB=r4=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r6, r4
+
+
+*** 0x1ec: 0x36119001 ***
+    inputs: rD=r1=0x0 rA=r3=0xfffffffff rB=r4=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: sub r1, r3, r4
+
+
+*** 0x1f0: 0x36600405 ***
+    inputs: rD=r6=0xd1fbd39c5 rA=r0=0xb46aeb1ed rB=r1=0xfffffffff
+    scalar_writeback: rD=r6=0x4b9514e12
+    asm: xor r6, r0, r1
+
+
+*** 0x1f4: 0x36221c01 ***
+    inputs: rD=r2=0x85905b061 rA=r4=0x0 rB=r7=0x2e042c63a
+    scalar_writeback: rD=r2=0xd1fbd39c6
+    asm: sub r2, r4, r7
+
+
+*** 0x1f8: 0x36631802 ***
+    inputs: rD=r6=0x4b9514e12 rA=r6=0x4b9514e12 rB=r6=0x4b9514e12
+    scalar_writeback: rD=r6=0x88332f944
+    asm: mul r6, r6, r6
+
+
+*** 0x1fc: 0x36519c07 ***
+    inputs: rD=r5=0xb46aeb1ed rA=r3=0xfffffffff rB=r7=0x2e042c63a
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r3, r7
+
+
+*** 0x200: 0x38528000 ***
+    inputs: rD=r5=0x0 rA=r5=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: not r5, r5
+
+
+*** 0x204: 0x36511005 ***
+    inputs: rD=r5=0xfffffffff rA=r2=0xd1fbd39c6 rB=r4=0x0
+    scalar_writeback: rD=r5=0xd1fbd39c6
+    asm: xor r5, r2, r4
+
+
+*** 0x208: 0x36200c07 ***
+    inputs: rD=r2=0xd1fbd39c6 rA=r0=0xb46aeb1ed rB=r3=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r0, r3
+
+
+*** 0x20c: 0x38338000 ***
+    inputs: rD=r3=0xfffffffff rA=r7=0x2e042c63a
+    scalar_writeback: rD=r3=0x0
+    asm: not r3, r7
+
+
+*** 0x210: 0x36638003 ***
+    inputs: rD=r6=0x88332f944 rA=r7=0x2e042c63a rB=r0=0xb46aeb1ed
+    scalar_writeback: rD=r6=0x240028028
+    asm: and r6, r7, r0
+
+
+*** 0x214: 0x36739803 ***
+    inputs: rD=r7=0x2e042c63a rA=r7=0x2e042c63a rB=r6=0x240028028
+    scalar_writeback: rD=r7=0x240028028
+    asm: and r7, r7, r6
+
+
+*** 0x218: 0x38730000 ***
+    inputs: rD=r7=0x240028028 rA=r6=0x240028028
+    scalar_writeback: rD=r7=0xdbffd7fd7
+    asm: not r7, r6
+
+
+*** 0x21c: 0x36420002 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r0=0xb46aeb1ed
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r4, r0
+
+
+*** 0x220: 0x36711003 ***
+    inputs: rD=r7=0xdbffd7fd7 rA=r2=0x0 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r2, r4
+
+
+*** 0x224: 0x36719c04 ***
+    inputs: rD=r7=0x0 rA=r3=0x0 rB=r7=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r3, r7
+
+
+*** 0x228: 0x36539c07 ***
+    inputs: rD=r5=0xd1fbd39c6 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r7, r7
+
+
+*** 0x22c: 0x36418801 ***
+    inputs: rD=r4=0x0 rA=r3=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r3, r2
+
+
+*** 0x230: 0x36510806 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r2, r2
+
+
+*** 0x234: 0x36329003 ***
+    inputs: rD=r3=0x0 rA=r5=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: and r3, r5, r4
+
+
+*** 0x238: 0x36238401 ***
+    inputs: rD=r2=0x0 rA=r7=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r2=0x1
+    asm: sub r2, r7, r1
+
+
+*** 0x23c: 0x38220000 ***
+    inputs: rD=r2=0x1 rA=r4=0x0
+    scalar_writeback: rD=r2=0xffffffffe
+    asm: not r2, r4
+
+
+*** 0x240: 0x36509c02 ***
+    inputs: rD=r5=0x0 rA=r1=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r1, r7
+
+
+*** 0x244: 0x36008c01 ***
+    inputs: rD=r0=0xb46aeb1ed rA=r1=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: sub r0, r1, r3
+
+
+*** 0x248: 0x36618c02 ***
+    inputs: rD=r6=0x240028028 rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r3, r3
+
+
+*** 0x24c: 0x36211007 ***
+    inputs: rD=r2=0xffffffffe rA=r2=0xffffffffe rB=r4=0x0
+    scalar_writeback: rD=r2=0xffffffffe
+    asm: shl r2, r2, r4
+
+
+*** 0x250: 0x36411c01 ***
+    inputs: rD=r4=0x0 rA=r2=0xffffffffe rB=r7=0x0
+    scalar_writeback: rD=r4=0xffffffffe
+    asm: sub r4, r2, r7
+
+
+*** 0x254: 0x38538000 ***
+    inputs: rD=r5=0x0 rA=r7=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: not r5, r7
+
+
+*** 0x258: 0x36328000 ***
+    inputs: rD=r3=0x0 rA=r5=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r3=0xffffffffe
+    asm: add r3, r5, r0
+
+
+*** 0x25c: 0x36110407 ***
+    inputs: rD=r1=0xfffffffff rA=r2=0xffffffffe rB=r1=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r2, r1
+
+
+*** 0x260: 0x36519c05 ***
+    inputs: rD=r5=0xfffffffff rA=r3=0xffffffffe rB=r7=0x0
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: xor r5, r3, r7
+
+
+*** 0x264: 0x36009c05 ***
+    inputs: rD=r0=0xfffffffff rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r1, r7
+
+
+*** 0x268: 0x36331807 ***
+    inputs: rD=r3=0xffffffffe rA=r6=0x0 rB=r6=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shl r3, r6, r6
+
+
+*** 0x26c: 0x36221c02 ***
+    inputs: rD=r2=0xffffffffe rA=r4=0xffffffffe rB=r7=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r4, r7
+
+
+*** 0x270: 0x36411c06 ***
+    inputs: rD=r4=0xffffffffe rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r2, r7
+
+
+*** 0x274: 0x36009c03 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r1, r7
+
+
+*** 0x278: 0x38530000 ***
+    inputs: rD=r5=0xffffffffe rA=r6=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: not r5, r6
+
+
+*** 0x27c: 0x36700007 ***
+    inputs: rD=r7=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r0, r0
+
+
+*** 0x280: 0x36301800 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r6=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: add r3, r0, r6
+
+
+*** 0x284: 0x36618402 ***
+    inputs: rD=r6=0x0 rA=r3=0x0 rB=r1=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r3, r1
+
+
+*** 0x288: 0x36431407 ***
+    inputs: rD=r4=0x0 rA=r6=0x0 rB=r5=0x1
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r6, r5
+
+
+*** 0x28c: 0x36429801 ***
+    inputs: rD=r4=0x0 rA=r5=0x1 rB=r6=0x0
+    scalar_writeback: rD=r4=0x1
+    asm: sub r4, r5, r6
+
+
+*** 0x290: 0x36009c01 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r1, r7
+
+
+*** 0x294: 0x36718003 ***
+    inputs: rD=r7=0x0 rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r3, r0
+
+
+*** 0x298: 0x36730805 ***
+    inputs: rD=r7=0x0 rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: xor r7, r6, r2
+
+
+*** 0x29c: 0x36129807 ***
+    inputs: rD=r1=0x0 rA=r5=0x1 rB=r6=0x0
+    scalar_writeback: rD=r1=0x1
+    asm: shl r1, r5, r6
+
+
+*** 0x2a0: 0x38118000 ***
+    inputs: rD=r1=0x1 rA=r3=0x0
+    scalar_writeback: rD=r1=0xffffffffe
+    asm: not r1, r3
+
+
+*** 0x2a4: 0x36718004 ***
+    inputs: rD=r7=0x0 rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r3, r0
+
+
+*** 0x2a8: 0x36510805 ***
+    inputs: rD=r5=0x1 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: xor r5, r2, r2
+
+
+*** 0x2ac: 0x36101405 ***
+    inputs: rD=r1=0xffffffffe rA=r0=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r0, r5
+
+
+*** 0x2b0: 0x36719806 ***
+    inputs: rD=r7=0x0 rA=r3=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r3, r6
+
+
+*** 0x2b4: 0x36630800 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: add r6, r6, r2
+
+
+*** 0x2b8: 0x36231401 ***
+    inputs: rD=r2=0x0 rA=r6=0x0 rB=r5=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r6, r5
+
+
+*** 0x2bc: 0x36601402 ***
+    inputs: rD=r6=0x0 rA=r0=0x0 rB=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r0, r5
+
+
+*** 0x2c0: 0x38108000 ***
+    inputs: rD=r1=0x0 rA=r1=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: not r1, r1
+
+
+*** 0x2c4: 0x36131007 ***
+    inputs: rD=r1=0xfffffffff rA=r6=0x0 rB=r4=0x1
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r6, r4
+
+
+*** 0x2c8: 0x36709406 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r1, r5
+
+
+*** 0x2cc: 0x36618002 ***
+    inputs: rD=r6=0x0 rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r3, r0
+
+
+*** 0x2d0: 0x36321c05 ***
+    inputs: rD=r3=0x0 rA=r4=0x1 rB=r7=0x0
+    scalar_writeback: rD=r3=0x1
+    asm: xor r3, r4, r7
+
+
+*** 0x2d4: 0x36128001 ***
+    inputs: rD=r1=0x0 rA=r5=0x0 rB=r0=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: sub r1, r5, r0
+
+
+*** 0x2d8: 0x38710000 ***
+    inputs: rD=r7=0x0 rA=r2=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r2
+
+
+*** 0x2dc: 0x36210001 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r0=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r2, r0
+
+
+*** 0x2e0: 0x36721401 ***
+    inputs: rD=r7=0xfffffffff rA=r4=0x1 rB=r5=0x0
+    scalar_writeback: rD=r7=0x1
+    asm: sub r7, r4, r5
+
+
+*** 0x2e4: 0x38520000 ***
+    inputs: rD=r5=0x0 rA=r4=0x1
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: not r5, r4
+
+
+*** 0x2e8: 0x36639407 ***
+    inputs: rD=r6=0x0 rA=r7=0x1 rB=r5=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r7, r5
+
+
+*** 0x2ec: 0x36419806 ***
+    inputs: rD=r4=0x1 rA=r3=0x1 rB=r6=0x0
+    scalar_writeback: rD=r4=0x1
+    asm: shr r4, r3, r6
+
+
+*** 0x2f0: 0x36738406 ***
+    inputs: rD=r7=0x1 rA=r7=0x1 rB=r1=0x0
+    scalar_writeback: rD=r7=0x1
+    asm: shr r7, r7, r1
+
+
+*** 0x2f4: 0x36508406 ***
+    inputs: rD=r5=0xfffffffff rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r1, r1
+
+
+*** 0x2f8: 0x36529803 ***
+    inputs: rD=r5=0x0 rA=r5=0x0 rB=r6=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r5, r6
+
+
+*** 0x2fc: 0x36408406 ***
+    inputs: rD=r4=0x1 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r1, r1
+
+
+*** 0x300: 0x36539806 ***
+    inputs: rD=r5=0x0 rA=r7=0x1 rB=r6=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: shr r5, r7, r6
+
+
+*** 0x304: 0x36100803 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r2=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r0, r2
+
+
+*** 0x308: 0x36229800 ***
+    inputs: rD=r2=0x0 rA=r5=0x1 rB=r6=0x0
+    scalar_writeback: rD=r2=0x1
+    asm: add r2, r5, r6
+
+
+*** 0x30c: 0x38500000 ***
+    inputs: rD=r5=0x1 rA=r0=0x0
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: not r5, r0
+
+
+*** 0x310: 0x38520000 ***
+    inputs: rD=r5=0xffffffffe rA=r4=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: not r5, r4
+
+
+*** 0x314: 0x36008c07 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r3=0x1
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r1, r3
+
+
+*** 0x318: 0x36400807 ***
+    inputs: rD=r4=0x0 rA=r0=0x0 rB=r2=0x1
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r0, r2
+
+
+*** 0x31c: 0x36709803 ***
+    inputs: rD=r7=0x1 rA=r1=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r1, r6
+
+
+*** 0x320: 0x36230007 ***
+    inputs: rD=r2=0x1 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r6, r0
+
+
+*** 0x324: 0x36119403 ***
+    inputs: rD=r1=0x0 rA=r3=0x1 rB=r5=0x1
+    scalar_writeback: rD=r1=0x1
+    asm: and r1, r3, r5
+
+
+*** 0x328: 0x36628805 ***
+    inputs: rD=r6=0x0 rA=r5=0x1 rB=r2=0x0
+    scalar_writeback: rD=r6=0x1
+    asm: xor r6, r5, r2
+
+
+*** 0x32c: 0x36508001 ***
+    inputs: rD=r5=0x1 rA=r1=0x1 rB=r0=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: sub r5, r1, r0
+
+
+*** 0x330: 0x36000007 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r0, r0
+
+
+*** 0x334: 0x36001001 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r0, r4
+
+
+*** 0x338: 0x36409c02 ***
+    inputs: rD=r4=0x0 rA=r1=0x1 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r1, r7
+
+
+*** 0x33c: 0x36429004 ***
+    inputs: rD=r4=0x0 rA=r5=0x1 rB=r4=0x0
+    scalar_writeback: rD=r4=0x1
+    asm: or r4, r5, r4
+
+
+*** 0x340: 0x36631401 ***
+    inputs: rD=r6=0x1 rA=r6=0x1 rB=r5=0x1
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r6, r5
+
+
+*** 0x344: 0x36630c02 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r3=0x1
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r6, r3
+
+
+*** 0x348: 0x36531803 ***
+    inputs: rD=r5=0x1 rA=r6=0x0 rB=r6=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r6, r6
+
+
+*** 0x34c: 0x36429800 ***
+    inputs: rD=r4=0x1 rA=r5=0x0 rB=r6=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: add r4, r5, r6
+
+
+*** 0x350: 0x36708803 ***
+    inputs: rD=r7=0x0 rA=r1=0x1 rB=r2=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r1, r2
+
+
+*** 0x354: 0x36609804 ***
+    inputs: rD=r6=0x0 rA=r1=0x1 rB=r6=0x0
+    scalar_writeback: rD=r6=0x1
+    asm: or r6, r1, r6
+
+
+*** 0x358: 0x36330c01 ***
+    inputs: rD=r3=0x1 rA=r6=0x1 rB=r3=0x1
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r6, r3
+
+
+*** 0x35c: 0x36209404 ***
+    inputs: rD=r2=0x0 rA=r1=0x1 rB=r5=0x0
+    scalar_writeback: rD=r2=0x1
+    asm: or r2, r1, r5
+
+
+*** 0x360: 0x38138000 ***
+    inputs: rD=r1=0x1 rA=r7=0x0
+    scalar_writeback: rD=r1=0xffffffffe
+    asm: not r1, r7
+
+
+*** 0x364: 0x36111c05 ***
+    inputs: rD=r1=0xffffffffe rA=r2=0x1 rB=r7=0x0
+    scalar_writeback: rD=r1=0x1
+    asm: xor r1, r2, r7
+
+
+*** 0x368: 0x36139802 ***
+    inputs: rD=r1=0x1 rA=r7=0x0 rB=r6=0x1
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r7, r6
+
+
+*** 0x36c: 0x36019004 ***
+    inputs: rD=r0=0x0 rA=r3=0x0 rB=r4=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r3, r4
+
+
+*** 0x370: 0x36221802 ***
+    inputs: rD=r2=0x1 rA=r4=0x0 rB=r6=0x1
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r4, r6
+
+
+*** 0x374: 0x36010c06 ***
+    inputs: rD=r0=0x0 rA=r2=0x0 rB=r3=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r2, r3
+
+
+*** 0x378: 0x36128005 ***
+    inputs: rD=r1=0x0 rA=r5=0x0 rB=r0=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r5, r0
+
+
+*** 0x37c: 0x36228805 ***
+    inputs: rD=r2=0x0 rA=r5=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r5, r2
+
+
+*** 0x380: 0x36330807 ***
+    inputs: rD=r3=0x0 rA=r6=0x1 rB=r2=0x0
+    scalar_writeback: rD=r3=0x1
+    asm: shl r3, r6, r2
+
+
+*** 0x384: 0x36009807 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r6=0x1
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r1, r6
+
+
+*** 0x388: 0x36530804 ***
+    inputs: rD=r5=0x0 rA=r6=0x1 rB=r2=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: or r5, r6, r2
+
+
+*** 0x38c: 0x36219404 ***
+    inputs: rD=r2=0x0 rA=r3=0x1 rB=r5=0x1
+    scalar_writeback: rD=r2=0x1
+    asm: or r2, r3, r5
+
+
+*** 0x390: 0x38500000 ***
+    inputs: rD=r5=0x1 rA=r0=0x0
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: not r5, r0
+
+
+*** 0x394: 0x36639000 ***
+    inputs: rD=r6=0x1 rA=r7=0x0 rB=r4=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: add r6, r7, r4
+
+
+*** 0x398: 0x36200005 ***
+    inputs: rD=r2=0x1 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r0, r0
+
+
+*** 0x39c: 0x36208802 ***
+    inputs: rD=r2=0x0 rA=r1=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r1, r2
+
+
+*** 0x3a0: 0x36729000 ***
+    inputs: rD=r7=0x0 rA=r5=0xffffffffe rB=r4=0x0
+    scalar_writeback: rD=r7=0xffffffffe
+    asm: add r7, r5, r4
+
+
+*** 0x3a4: 0x36420800 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: add r4, r4, r2
+
+
+*** 0x3a8: 0x36008402 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r1, r1
+
+
+*** 0x3ac: 0x36008401 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r1, r1
+
+
+*** 0x3b0: 0x38238000 ***
+    inputs: rD=r2=0x0 rA=r7=0xffffffffe
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: not r2, r7
+
+
+*** 0x3b4: 0x36418c04 ***
+    inputs: rD=r4=0x0 rA=r3=0x1 rB=r3=0x1
+    scalar_writeback: rD=r4=0x1
+    asm: or r4, r3, r3
+
+
+*** 0x3b8: 0x36419804 ***
+    inputs: rD=r4=0x1 rA=r3=0x1 rB=r6=0x0
+    scalar_writeback: rD=r4=0x1
+    asm: or r4, r3, r6
+
+
+*** 0x3bc: 0x36400005 ***
+    inputs: rD=r4=0x1 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r0, r0
+
+
+*** 0x3c0: 0x36409004 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r4=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: or r4, r1, r4
+
+
+*** 0x3c4: 0x36318801 ***
+    inputs: rD=r3=0x1 rA=r3=0x1 rB=r2=0xfffffffff
+    scalar_writeback: rD=r3=0x2
+    asm: sub r3, r3, r2
+
+
+*** 0x3c8: 0x36519403 ***
+    inputs: rD=r5=0xffffffffe rA=r3=0x2 rB=r5=0xffffffffe
+    scalar_writeback: rD=r5=0x2
+    asm: and r5, r3, r5
+
+
+*** 0x3cc: 0x36119406 ***
+    inputs: rD=r1=0x0 rA=r3=0x2 rB=r5=0x2
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r3, r5
+
+
+*** 0x3d0: 0x36729802 ***
+    inputs: rD=r7=0xffffffffe rA=r5=0x2 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r5, r6
+
+
+*** 0x3d4: 0x36408406 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r1, r1
+
+
+*** 0x3d8: 0x36129404 ***
+    inputs: rD=r1=0x0 rA=r5=0x2 rB=r5=0x2
+    scalar_writeback: rD=r1=0x2
+    asm: or r1, r5, r5
+
+
+*** 0x3dc: 0x36001804 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r6=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r0, r6
+
+
+*** 0x3e0: 0x36129006 ***
+    inputs: rD=r1=0x2 rA=r5=0x2 rB=r4=0x0
+    scalar_writeback: rD=r1=0x2
+    asm: shr r1, r5, r4
+
+
+*** 0x3e4: 0x36131406 ***
+    inputs: rD=r1=0x2 rA=r6=0x0 rB=r5=0x2
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r6, r5
+
+
+*** 0x3e8: 0x36230c07 ***
+    inputs: rD=r2=0xfffffffff rA=r6=0x0 rB=r3=0x2
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r6, r3
+
+
+*** 0x3ec: 0x36528801 ***
+    inputs: rD=r5=0x2 rA=r5=0x2 rB=r2=0x0
+    scalar_writeback: rD=r5=0x2
+    asm: sub r5, r5, r2
+
+
+*** 0x3f0: 0x36128c07 ***
+    inputs: rD=r1=0x0 rA=r5=0x2 rB=r3=0x2
+    scalar_writeback: rD=r1=0x8
+    asm: shl r1, r5, r3
+
+
+*** 0x3f4: 0x36308007 ***
+    inputs: rD=r3=0x2 rA=r1=0x8 rB=r0=0x0
+    scalar_writeback: rD=r3=0x8
+    asm: shl r3, r1, r0
+
+
+*** 0x3f8: 0x36220005 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r0=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r4, r0
+
+
+*** 0x3fc: 0x36709002 ***
+    inputs: rD=r7=0x0 rA=r1=0x8 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r1, r4
+
+
+*** 0x400: 0x36500c07 ***
+    inputs: rD=r5=0x2 rA=r0=0x0 rB=r3=0x8
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r0, r3
+
+
+*** 0x404: 0x36729405 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: xor r7, r5, r5
+
+
+*** 0x408: 0x36100005 ***
+    inputs: rD=r1=0x8 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r0, r0
+
+
+*** 0x40c: 0x36110403 ***
+    inputs: rD=r1=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r2, r1
+
+
+*** 0x410: 0x36028402 ***
+    inputs: rD=r0=0x0 rA=r5=0x0 rB=r1=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r5, r1
+
+
+*** 0x414: 0x36101800 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r6=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: add r1, r0, r6
+
+
+*** 0x418: 0x38600000 ***
+    inputs: rD=r6=0x0 rA=r0=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r0
+
+
+*** 0x41c: 0x36530c00 ***
+    inputs: rD=r5=0x0 rA=r6=0xfffffffff rB=r3=0x8
+    scalar_writeback: rD=r5=0x7
+    asm: add r5, r6, r3
+
+
+*** 0x420: 0x36421807 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r4, r6
+
+
+*** 0x424: 0x36508004 ***
+    inputs: rD=r5=0x7 rA=r1=0x0 rB=r0=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r1, r0
+
+
+*** 0x428: 0x36200402 ***
+    inputs: rD=r2=0x0 rA=r0=0x0 rB=r1=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r0, r1
+
+
+*** 0x42c: 0x36109c05 ***
+    inputs: rD=r1=0x0 rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r1, r7
+
+
+*** 0x430: 0x36729004 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r5, r4
+
+
+*** 0x434: 0x36009c07 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r1, r7
+
+
+*** 0x438: 0x36511c05 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: xor r5, r2, r7
+
+
+*** 0x43c: 0x36430807 ***
+    inputs: rD=r4=0x0 rA=r6=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: shl r4, r6, r2
+
+
+*** 0x440: 0x36128c02 ***
+    inputs: rD=r1=0x0 rA=r5=0x0 rB=r3=0x8
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r5, r3
+
+
+*** 0x444: 0x38030000 ***
+    inputs: rD=r0=0x0 rA=r6=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r6
+
+
+*** 0x448: 0x36128803 ***
+    inputs: rD=r1=0x0 rA=r5=0x0 rB=r2=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r5, r2
+
+
+*** 0x44c: 0x36438404 ***
+    inputs: rD=r4=0xfffffffff rA=r7=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: or r4, r7, r1
+
+
+*** 0x450: 0x36408400 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: add r4, r1, r1
+
+
+*** 0x454: 0x36221c06 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r7=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r4, r7
+
+
+*** 0x458: 0x36720803 ***
+    inputs: rD=r7=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r4, r2
+
+
+*** 0x45c: 0x36510403 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r2, r1
+
+
+*** 0x460: 0x36438007 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r7, r0
+
+
+*** 0x464: 0x36610c05 ***
+    inputs: rD=r6=0xfffffffff rA=r2=0x0 rB=r3=0x8
+    scalar_writeback: rD=r6=0x8
+    asm: xor r6, r2, r3
+
+
+*** 0x468: 0x36518004 ***
+    inputs: rD=r5=0x0 rA=r3=0x8 rB=r0=0xfffffffff
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: or r5, r3, r0
+
+
+*** 0x46c: 0x36338806 ***
+    inputs: rD=r3=0x8 rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r7, r2
+
+
+*** 0x470: 0x36309c00 ***
+    inputs: rD=r3=0x0 rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: add r3, r1, r7
+
+
+*** 0x474: 0x36209806 ***
+    inputs: rD=r2=0x0 rA=r1=0x0 rB=r6=0x8
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r1, r6
+
+
+*** 0x478: 0x36601006 ***
+    inputs: rD=r6=0x8 rA=r0=0xfffffffff rB=r4=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: shr r6, r0, r4
+
+
+*** 0x47c: 0x36109007 ***
+    inputs: rD=r1=0x0 rA=r1=0x0 rB=r4=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r1, r4
+
+
+*** 0x480: 0x36410805 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r2, r2
+
+
+*** 0x484: 0x36200c04 ***
+    inputs: rD=r2=0x0 rA=r0=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: or r2, r0, r3
+
+
+*** 0x488: 0x36620003 ***
+    inputs: rD=r6=0xfffffffff rA=r4=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: and r6, r4, r0
+
+
+*** 0x48c: 0x36011405 ***
+    inputs: rD=r0=0xfffffffff rA=r2=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r2, r5
+
+
+*** 0x490: 0x36018001 ***
+    inputs: rD=r0=0x0 rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r3, r0
+
+
+*** 0x494: 0x38308000 ***
+    inputs: rD=r3=0x0 rA=r1=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r1
+
+
+*** 0x498: 0x36219c06 ***
+    inputs: rD=r2=0xfffffffff rA=r3=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: shr r2, r3, r7
+
+
+*** 0x49c: 0x36729c00 ***
+    inputs: rD=r7=0x0 rA=r5=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: add r7, r5, r7
+
+
+*** 0x4a0: 0x36711c03 ***
+    inputs: rD=r7=0xfffffffff rA=r2=0xfffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: and r7, r2, r7
+
+
+*** 0x4a4: 0x36739c03 ***
+    inputs: rD=r7=0xfffffffff rA=r7=0xfffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: and r7, r7, r7
+
+
+*** 0x4a8: 0x38018000 ***
+    inputs: rD=r0=0x0 rA=r3=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r3
+
+
+*** 0x4ac: 0x36128405 ***
+    inputs: rD=r1=0x0 rA=r5=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: xor r1, r5, r1
+
+
+*** 0x4b0: 0x36138407 ***
+    inputs: rD=r1=0xfffffffff rA=r7=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r7, r1
+
+
+*** 0x4b4: 0x36511407 ***
+    inputs: rD=r5=0xfffffffff rA=r2=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r2, r5
+
+
+*** 0x4b8: 0x36030c06 ***
+    inputs: rD=r0=0xfffffffff rA=r6=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r6, r3
+
+
+*** 0x4bc: 0x36100c00 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: add r1, r0, r3
+
+
+*** 0x4c0: 0x36301001 ***
+    inputs: rD=r3=0xfffffffff rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r0, r4
+
+
+*** 0x4c4: 0x38630000 ***
+    inputs: rD=r6=0x0 rA=r6=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r6
+
+
+*** 0x4c8: 0x36011c04 ***
+    inputs: rD=r0=0x0 rA=r2=0xfffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: or r0, r2, r7
+
+
+*** 0x4cc: 0x36210c00 ***
+    inputs: rD=r2=0xfffffffff rA=r2=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: add r2, r2, r3
+
+
+*** 0x4d0: 0x38218000 ***
+    inputs: rD=r2=0xfffffffff rA=r3=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: not r2, r3
+
+
+*** 0x4d4: 0x36120402 ***
+    inputs: rD=r1=0xfffffffff rA=r4=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r4, r1
+
+
+*** 0x4d8: 0x36031c01 ***
+    inputs: rD=r0=0xfffffffff rA=r6=0xfffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r6, r7
+
+
+*** 0x4dc: 0x38628000 ***
+    inputs: rD=r6=0xfffffffff rA=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: not r6, r5
+
+
+*** 0x4e0: 0x36211c05 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: xor r2, r2, r7
+
+
+*** 0x4e4: 0x36030004 ***
+    inputs: rD=r0=0x0 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r6, r0
+
+
+*** 0x4e8: 0x36130000 ***
+    inputs: rD=r1=0x0 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: add r1, r6, r0
+
+
+*** 0x4ec: 0x36539405 ***
+    inputs: rD=r5=0x0 rA=r7=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: xor r5, r7, r5
+
+
+*** 0x4f0: 0x36518c02 ***
+    inputs: rD=r5=0xfffffffff rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r3, r3
+
+
+*** 0x4f4: 0x36101c06 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r0, r7
+
+
+*** 0x4f8: 0x36501802 ***
+    inputs: rD=r5=0x0 rA=r0=0x0 rB=r6=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r0, r6
+
+
+*** 0x4fc: 0x36428804 ***
+    inputs: rD=r4=0x0 rA=r5=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: or r4, r5, r2
+
+
+*** 0x500: 0x36510405 ***
+    inputs: rD=r5=0x0 rA=r2=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: xor r5, r2, r1
+
+
+*** 0x504: 0x36021003 ***
+    inputs: rD=r0=0x0 rA=r4=0xfffffffff rB=r4=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: and r0, r4, r4
+
+
+*** 0x508: 0x36731800 ***
+    inputs: rD=r7=0xfffffffff rA=r6=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r6, r6
+
+
+*** 0x50c: 0x36138c00 ***
+    inputs: rD=r1=0x0 rA=r7=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: add r1, r7, r3
+
+
+*** 0x510: 0x36331002 ***
+    inputs: rD=r3=0x0 rA=r6=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r6, r4
+
+
+*** 0x514: 0x36120406 ***
+    inputs: rD=r1=0x0 rA=r4=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: shr r1, r4, r1
+
+
+*** 0x518: 0x36130c06 ***
+    inputs: rD=r1=0xfffffffff rA=r6=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r6, r3
+
+
+*** 0x51c: 0x36309804 ***
+    inputs: rD=r3=0x0 rA=r1=0x0 rB=r6=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r1, r6
+
+
+*** 0x520: 0x36408800 ***
+    inputs: rD=r4=0xfffffffff rA=r1=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: add r4, r1, r2
+
+
+*** 0x524: 0x36401806 ***
+    inputs: rD=r4=0xfffffffff rA=r0=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: shr r4, r0, r6
+
+
+*** 0x528: 0x36409c01 ***
+    inputs: rD=r4=0xfffffffff rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r1, r7
+
+
+*** 0x52c: 0x38638000 ***
+    inputs: rD=r6=0x0 rA=r7=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r7
+
+
+*** 0x530: 0x36731402 ***
+    inputs: rD=r7=0x0 rA=r6=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r7=0x1
+    asm: mul r7, r6, r5
+
+
+*** 0x534: 0x38628000 ***
+    inputs: rD=r6=0xfffffffff rA=r5=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: not r6, r5
+
+
+*** 0x538: 0x36610c04 ***
+    inputs: rD=r6=0x0 rA=r2=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r2, r3
+
+
+*** 0x53c: 0x36601807 ***
+    inputs: rD=r6=0xfffffffff rA=r0=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r0, r6
+
+
+*** 0x540: 0x36111806 ***
+    inputs: rD=r1=0x0 rA=r2=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: shr r1, r2, r6
+
+
+*** 0x544: 0x36430c06 ***
+    inputs: rD=r4=0x0 rA=r6=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r6, r3
+
+
+*** 0x548: 0x36311c06 ***
+    inputs: rD=r3=0x0 rA=r2=0xfffffffff rB=r7=0x1
+    scalar_writeback: rD=r3=0x7ffffffff
+    asm: shr r3, r2, r7
+
+
+*** 0x54c: 0x36609c07 ***
+    inputs: rD=r6=0x0 rA=r1=0xfffffffff rB=r7=0x1
+    scalar_writeback: rD=r6=0xffffffffe
+    asm: shl r6, r1, r7
+
+
+*** 0x550: 0x36321405 ***
+    inputs: rD=r3=0x7ffffffff rA=r4=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r4, r5
+
+
+*** 0x554: 0x36111806 ***
+    inputs: rD=r1=0xfffffffff rA=r2=0xfffffffff rB=r6=0xffffffffe
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r2, r6
+
+
+*** 0x558: 0x36430c00 ***
+    inputs: rD=r4=0x0 rA=r6=0xffffffffe rB=r3=0xfffffffff
+    scalar_writeback: rD=r4=0xffffffffd
+    asm: add r4, r6, r3
+
+
+*** 0x55c: 0x36700806 ***
+    inputs: rD=r7=0x1 rA=r0=0xfffffffff rB=r2=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r0, r2
+
+
+*** 0x560: 0x36308003 ***
+    inputs: rD=r3=0xfffffffff rA=r1=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: and r3, r1, r0
+
+
+*** 0x564: 0x38320000 ***
+    inputs: rD=r3=0x0 rA=r4=0xffffffffd
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r4
+
+
+*** 0x568: 0x38308000 ***
+    inputs: rD=r3=0xfffffffff rA=r1=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: not r3, r1
+
+
+*** 0x56c: 0x36100c03 ***
+    inputs: rD=r1=0x0 rA=r0=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r0, r3
+
+
+*** 0x570: 0x36608804 ***
+    inputs: rD=r6=0xffffffffe rA=r1=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r1, r2
+
+
+*** 0x574: 0x36001806 ***
+    inputs: rD=r0=0xfffffffff rA=r0=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r0, r6
+
+
+*** 0x578: 0x36100c07 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r0, r3
+
+
+*** 0x57c: 0x36511400 ***
+    inputs: rD=r5=0xfffffffff rA=r2=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: add r5, r2, r5
+
+
+*** 0x580: 0x36620407 ***
+    inputs: rD=r6=0xfffffffff rA=r4=0xffffffffd rB=r1=0x0
+    scalar_writeback: rD=r6=0xffffffffd
+    asm: shl r6, r4, r1
+
+
+*** 0x584: 0x36121403 ***
+    inputs: rD=r1=0x0 rA=r4=0xffffffffd rB=r5=0xffffffffe
+    scalar_writeback: rD=r1=0xffffffffc
+    asm: and r1, r4, r5
+
+
+*** 0x588: 0x36228000 ***
+    inputs: rD=r2=0xfffffffff rA=r5=0xffffffffe rB=r0=0x0
+    scalar_writeback: rD=r2=0xffffffffe
+    asm: add r2, r5, r0
+
+
+*** 0x58c: 0x36401401 ***
+    inputs: rD=r4=0xffffffffd rA=r0=0x0 rB=r5=0xffffffffe
+    scalar_writeback: rD=r4=0x2
+    asm: sub r4, r0, r5
+
+
+*** 0x590: 0x38220000 ***
+    inputs: rD=r2=0xffffffffe rA=r4=0x2
+    scalar_writeback: rD=r2=0x1
+    asm: not r2, r4
+
+
+*** 0x594: 0x36228406 ***
+    inputs: rD=r2=0x1 rA=r5=0xffffffffe rB=r1=0xffffffffc
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r5, r1
+
+
+*** 0x598: 0x36230404 ***
+    inputs: rD=r2=0x0 rA=r6=0xffffffffd rB=r1=0xffffffffc
+    scalar_writeback: rD=r2=0xffffffffd
+    asm: or r2, r6, r1
+
+
+*** 0x59c: 0x38028000 ***
+    inputs: rD=r0=0x0 rA=r5=0xffffffffe
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r5
+
+
+*** 0x5a0: 0x36218000 ***
+    inputs: rD=r2=0xffffffffd rA=r3=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: add r2, r3, r0
+
+
+*** 0x5a4: 0x38028000 ***
+    inputs: rD=r0=0xfffffffff rA=r5=0xffffffffe
+    scalar_writeback: rD=r0=0x0
+    asm: not r0, r5
+
+
+*** 0x5a8: 0x36300003 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: and r3, r0, r0
+
+
+*** 0x5ac: 0x36721801 ***
+    inputs: rD=r7=0x0 rA=r4=0x2 rB=r6=0xffffffffd
+    scalar_writeback: rD=r7=0x5
+    asm: sub r7, r4, r6
+
+
+*** 0x5b0: 0x36521c02 ***
+    inputs: rD=r5=0xffffffffe rA=r4=0x2 rB=r7=0x5
+    scalar_writeback: rD=r5=0xa
+    asm: mul r5, r4, r7
+
+
+*** 0x5b4: 0x36600806 ***
+    inputs: rD=r6=0xffffffffd rA=r0=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r0, r2
+
+
+*** 0x5b8: 0x36321005 ***
+    inputs: rD=r3=0x0 rA=r4=0x2 rB=r4=0x2
+    scalar_writeback: rD=r3=0x0
+    asm: xor r3, r4, r4
+
+
+*** 0x5bc: 0x36531c05 ***
+    inputs: rD=r5=0xa rA=r6=0x0 rB=r7=0x5
+    scalar_writeback: rD=r5=0x5
+    asm: xor r5, r6, r7
+
+
+*** 0x5c0: 0x38630000 ***
+    inputs: rD=r6=0x0 rA=r6=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r6
+
+
+*** 0x5c4: 0x36720c07 ***
+    inputs: rD=r7=0x5 rA=r4=0x2 rB=r3=0x0
+    scalar_writeback: rD=r7=0x2
+    asm: shl r7, r4, r3
+
+
+*** 0x5c8: 0x36709404 ***
+    inputs: rD=r7=0x2 rA=r1=0xffffffffc rB=r5=0x5
+    scalar_writeback: rD=r7=0xffffffffd
+    asm: or r7, r1, r5
+
+
+*** 0x5cc: 0x36428003 ***
+    inputs: rD=r4=0x2 rA=r5=0x5 rB=r0=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r5, r0
+
+
+*** 0x5d0: 0x36030000 ***
+    inputs: rD=r0=0x0 rA=r6=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: add r0, r6, r0
+
+
+*** 0x5d4: 0x36419c03 ***
+    inputs: rD=r4=0x0 rA=r3=0x0 rB=r7=0xffffffffd
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r3, r7
+
+
+*** 0x5d8: 0x36631805 ***
+    inputs: rD=r6=0xfffffffff rA=r6=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: xor r6, r6, r6
+
+
+*** 0x5dc: 0x36400404 ***
+    inputs: rD=r4=0x0 rA=r0=0xfffffffff rB=r1=0xffffffffc
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: or r4, r0, r1
+
+
+*** 0x5e0: 0x36310006 ***
+    inputs: rD=r3=0x0 rA=r2=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r2, r0
+
+
+*** 0x5e4: 0x36311004 ***
+    inputs: rD=r3=0x0 rA=r2=0xfffffffff rB=r4=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: or r3, r2, r4
+
+
+*** 0x5e8: 0x36709805 ***
+    inputs: rD=r7=0xffffffffd rA=r1=0xffffffffc rB=r6=0x0
+    scalar_writeback: rD=r7=0xffffffffc
+    asm: xor r7, r1, r6
+
+
+*** 0x5ec: 0x36410c04 ***
+    inputs: rD=r4=0xfffffffff rA=r2=0xfffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: or r4, r2, r3
+
+
+*** 0x5f0: 0x36631002 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r6, r4
+
+
+*** 0x5f4: 0x36039803 ***
+    inputs: rD=r0=0xfffffffff rA=r7=0xffffffffc rB=r6=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r7, r6
+
+
+*** 0x5f8: 0x36329403 ***
+    inputs: rD=r3=0xfffffffff rA=r5=0x5 rB=r5=0x5
+    scalar_writeback: rD=r3=0x5
+    asm: and r3, r5, r5
+
+
+*** 0x5fc: 0x36108c04 ***
+    inputs: rD=r1=0xffffffffc rA=r1=0xffffffffc rB=r3=0x5
+    scalar_writeback: rD=r1=0xffffffffd
+    asm: or r1, r1, r3
+
+
+*** 0x600: 0x36221c00 ***
+    inputs: rD=r2=0xfffffffff rA=r4=0xfffffffff rB=r7=0xffffffffc
+    scalar_writeback: rD=r2=0xffffffffb
+    asm: add r2, r4, r7
+
+
+*** 0x604: 0x36119807 ***
+    inputs: rD=r1=0xffffffffd rA=r3=0x5 rB=r6=0x0
+    scalar_writeback: rD=r1=0x5
+    asm: shl r1, r3, r6
+
+
+*** 0x608: 0x36000c05 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r3=0x5
+    scalar_writeback: rD=r0=0x5
+    asm: xor r0, r0, r3
+
+
+*** 0x60c: 0x36028801 ***
+    inputs: rD=r0=0x5 rA=r5=0x5 rB=r2=0xffffffffb
+    scalar_writeback: rD=r0=0xa
+    asm: sub r0, r5, r2
+
+
+*** 0x610: 0x36711400 ***
+    inputs: rD=r7=0xffffffffc rA=r2=0xffffffffb rB=r5=0x5
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r2, r5
+
+
+*** 0x614: 0x36628404 ***
+    inputs: rD=r6=0x0 rA=r5=0x5 rB=r1=0x5
+    scalar_writeback: rD=r6=0x5
+    asm: or r6, r5, r1
+
+
+*** 0x618: 0x36239406 ***
+    inputs: rD=r2=0xffffffffb rA=r7=0x0 rB=r5=0x5
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r7, r5
+
+
+*** 0x61c: 0x38708000 ***
+    inputs: rD=r7=0x0 rA=r1=0x5
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r1
+
+
+*** 0x620: 0x36129407 ***
+    inputs: rD=r1=0x5 rA=r5=0x5 rB=r5=0x5
+    scalar_writeback: rD=r1=0xa0
+    asm: shl r1, r5, r5
+
+
+*** 0x624: 0x36228800 ***
+    inputs: rD=r2=0x0 rA=r5=0x5 rB=r2=0x0
+    scalar_writeback: rD=r2=0x5
+    asm: add r2, r5, r2
+
+
+*** 0x628: 0x36010c07 ***
+    inputs: rD=r0=0xa rA=r2=0x5 rB=r3=0x5
+    scalar_writeback: rD=r0=0xa0
+    asm: shl r0, r2, r3
+
+
+*** 0x62c: 0x36629402 ***
+    inputs: rD=r6=0x5 rA=r5=0x5 rB=r5=0x5
+    scalar_writeback: rD=r6=0x19
+    asm: mul r6, r5, r5
+
+
+*** 0x630: 0x38338000 ***
+    inputs: rD=r3=0x5 rA=r7=0xfffffffff
+    scalar_writeback: rD=r3=0xffffffffa
+    asm: not r3, r7
+
+
+*** 0x634: 0x36408405 ***
+    inputs: rD=r4=0xfffffffff rA=r1=0xa0 rB=r1=0xa0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r1, r1
+
+
+*** 0x638: 0x36011407 ***
+    inputs: rD=r0=0xa0 rA=r2=0x5 rB=r5=0x5
+    scalar_writeback: rD=r0=0xa0
+    asm: shl r0, r2, r5
+
+
+*** 0x63c: 0x38238000 ***
+    inputs: rD=r2=0x5 rA=r7=0xfffffffff
+    scalar_writeback: rD=r2=0xffffffffa
+    asm: not r2, r7
+
+
+*** 0x640: 0x36319400 ***
+    inputs: rD=r3=0xffffffffa rA=r3=0xffffffffa rB=r5=0x5
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: add r3, r3, r5
+
+
+*** 0x644: 0x36700c07 ***
+    inputs: rD=r7=0xfffffffff rA=r0=0xa0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r0, r3
+
+
+*** 0x648: 0x38508000 ***
+    inputs: rD=r5=0x5 rA=r1=0xa0
+    scalar_writeback: rD=r5=0xffffffffa
+    asm: not r5, r1
+
+
+*** 0x64c: 0x36209005 ***
+    inputs: rD=r2=0xffffffffa rA=r1=0xa0 rB=r4=0x0
+    scalar_writeback: rD=r2=0xa0
+    asm: xor r2, r1, r4
+
+
+*** 0x650: 0x36530401 ***
+    inputs: rD=r5=0xffffffffa rA=r6=0x19 rB=r1=0xa0
+    scalar_writeback: rD=r5=0xfffffff79
+    asm: sub r5, r6, r1
+
+
+*** 0x654: 0x36430407 ***
+    inputs: rD=r4=0x0 rA=r6=0x19 rB=r1=0xa0
+    scalar_writeback: rD=r4=0x900000000
+    asm: shl r4, r6, r1
+
+
+*** 0x658: 0x36620c03 ***
+    inputs: rD=r6=0x19 rA=r4=0x900000000 rB=r3=0xfffffffff
+    scalar_writeback: rD=r6=0x900000000
+    asm: and r6, r4, r3
+
+
+*** 0x65c: 0x36238c05 ***
+    inputs: rD=r2=0xa0 rA=r7=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: xor r2, r7, r3
+
+
+*** 0x660: 0x36330002 ***
+    inputs: rD=r3=0xfffffffff rA=r6=0x900000000 rB=r0=0xa0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r6, r0
+
+
+*** 0x664: 0x38338000 ***
+    inputs: rD=r3=0x0 rA=r7=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r7
+
+
+*** 0x668: 0x38238000 ***
+    inputs: rD=r2=0xfffffffff rA=r7=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: not r2, r7
+
+
+*** 0x66c: 0x38018000 ***
+    inputs: rD=r0=0xa0 rA=r3=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffff5f
+    asm: not r0, r3
+
+
+*** 0x670: 0x36230c05 ***
+    inputs: rD=r2=0x0 rA=r6=0x900000000 rB=r3=0xfffffffff
+    scalar_writeback: rD=r2=0x6ffffffff
+    asm: xor r2, r6, r3
+
+
+*** 0x674: 0x36019c04 ***
+    inputs: rD=r0=0xfffffff5f rA=r3=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: or r0, r3, r7
+
+
+*** 0x678: 0x36500c00 ***
+    inputs: rD=r5=0xfffffff79 rA=r0=0xfffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: add r5, r0, r3
+
+
+*** 0x67c: 0x36120006 ***
+    inputs: rD=r1=0xa0 rA=r4=0x900000000 rB=r0=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r4, r0
+
+
+*** 0x680: 0x38200000 ***
+    inputs: rD=r2=0x6ffffffff rA=r0=0xfffffffff
+    scalar_writeback: rD=r2=0x900000000
+    asm: not r2, r0
+
+
+*** 0x684: 0x38410000 ***
+    inputs: rD=r4=0x900000000 rA=r2=0x900000000
+    scalar_writeback: rD=r4=0x6ffffffff
+    asm: not r4, r2
+
+
+*** 0x688: 0x36739000 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r4=0x6ffffffff
+    scalar_writeback: rD=r7=0x6ffffffff
+    asm: add r7, r7, r4
+
+
+*** 0x68c: 0x36238c07 ***
+    inputs: rD=r2=0x900000000 rA=r7=0x6ffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r7, r3
+
+
+*** 0x690: 0x36618006 ***
+    inputs: rD=r6=0x900000000 rA=r3=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r3, r0
+
+
+*** 0x694: 0x36231007 ***
+    inputs: rD=r2=0x0 rA=r6=0x0 rB=r4=0x6ffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r6, r4
+
+
+*** 0x698: 0x36438005 ***
+    inputs: rD=r4=0x6ffffffff rA=r7=0x6ffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r4=0x900000000
+    asm: xor r4, r7, r0
+
+
+*** 0x69c: 0x36118403 ***
+    inputs: rD=r1=0x0 rA=r3=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r3, r1
+
+
+*** 0x6a0: 0x36300006 ***
+    inputs: rD=r3=0xfffffffff rA=r0=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r0, r0
+
+
+*** 0x6a4: 0x36208c00 ***
+    inputs: rD=r2=0x0 rA=r1=0x0 rB=r3=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: add r2, r1, r3
+
+
+*** 0x6a8: 0x36610802 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r2, r2
+
+
+*** 0x6ac: 0x36720002 ***
+    inputs: rD=r7=0x6ffffffff rA=r4=0x900000000 rB=r0=0xfffffffff
+    scalar_writeback: rD=r7=0x700000000
+    asm: mul r7, r4, r0
+
+
+*** 0x6b0: 0x38620000 ***
+    inputs: rD=r6=0x0 rA=r4=0x900000000
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r4
+
+
+*** 0x6b4: 0x36500c05 ***
+    inputs: rD=r5=0xffffffffe rA=r0=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: xor r5, r0, r3
+
+
+*** 0x6b8: 0x36209401 ***
+    inputs: rD=r2=0x0 rA=r1=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r2=0x1
+    asm: sub r2, r1, r5
+
+
+*** 0x6bc: 0x36128805 ***
+    inputs: rD=r1=0x0 rA=r5=0xfffffffff rB=r2=0x1
+    scalar_writeback: rD=r1=0xffffffffe
+    asm: xor r1, r5, r2
+
+
+*** 0x6c0: 0x36428806 ***
+    inputs: rD=r4=0x900000000 rA=r5=0xfffffffff rB=r2=0x1
+    scalar_writeback: rD=r4=0x7ffffffff
+    asm: shr r4, r5, r2
+
+
+*** 0x6c4: 0x36719803 ***
+    inputs: rD=r7=0x700000000 rA=r3=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r3, r6
+
+
+*** 0x6c8: 0x38318000 ***
+    inputs: rD=r3=0x0 rA=r3=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r3
+
+
+*** 0x6cc: 0x36431805 ***
+    inputs: rD=r4=0x7ffffffff rA=r6=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r6, r6
+
+
+*** 0x6d0: 0x36421802 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r4, r6
+
+
+*** 0x6d4: 0x36111004 ***
+    inputs: rD=r1=0xffffffffe rA=r2=0x1 rB=r4=0x0
+    scalar_writeback: rD=r1=0x1
+    asm: or r1, r2, r4
+
+
+*** 0x6d8: 0x36318805 ***
+    inputs: rD=r3=0xfffffffff rA=r3=0xfffffffff rB=r2=0x1
+    scalar_writeback: rD=r3=0xffffffffe
+    asm: xor r3, r3, r2
+
+
+*** 0x6dc: 0x36308802 ***
+    inputs: rD=r3=0xffffffffe rA=r1=0x1 rB=r2=0x1
+    scalar_writeback: rD=r3=0x1
+    asm: mul r3, r1, r2
+
+
+*** 0x6e0: 0x36338404 ***
+    inputs: rD=r3=0x1 rA=r7=0x0 rB=r1=0x1
+    scalar_writeback: rD=r3=0x1
+    asm: or r3, r7, r1
+
+
+*** 0x6e4: 0x36010804 ***
+    inputs: rD=r0=0xfffffffff rA=r2=0x1 rB=r2=0x1
+    scalar_writeback: rD=r0=0x1
+    asm: or r0, r2, r2
+
+
+*** 0x6e8: 0x36238801 ***
+    inputs: rD=r2=0x1 rA=r7=0x0 rB=r2=0x1
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: sub r2, r7, r2
+
+
+*** 0x6ec: 0x36509803 ***
+    inputs: rD=r5=0xfffffffff rA=r1=0x1 rB=r6=0xfffffffff
+    scalar_writeback: rD=r5=0x1
+    asm: and r5, r1, r6
+
+
+*** 0x6f0: 0x36609807 ***
+    inputs: rD=r6=0xfffffffff rA=r1=0x1 rB=r6=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r1, r6
+
+
+*** 0x6f4: 0x36328c00 ***
+    inputs: rD=r3=0x1 rA=r5=0x1 rB=r3=0x1
+    scalar_writeback: rD=r3=0x2
+    asm: add r3, r5, r3
+
+
+*** 0x6f8: 0x38520000 ***
+    inputs: rD=r5=0x1 rA=r4=0x0
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: not r5, r4
+
+
+*** 0x6fc: 0x36100805 ***
+    inputs: rD=r1=0x1 rA=r0=0x1 rB=r2=0xfffffffff
+    scalar_writeback: rD=r1=0xffffffffe
+    asm: xor r1, r0, r2
+
+
+*** 0x700: 0x36400807 ***
+    inputs: rD=r4=0x0 rA=r0=0x1 rB=r2=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r0, r2
+
+
+*** 0x704: 0x36218006 ***
+    inputs: rD=r2=0xfffffffff rA=r3=0x2 rB=r0=0x1
+    scalar_writeback: rD=r2=0x1
+    asm: shr r2, r3, r0
+
+
+*** 0x708: 0x36321c02 ***
+    inputs: rD=r3=0x2 rA=r4=0x0 rB=r7=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r4, r7
+
+
+*** 0x70c: 0x36000c04 ***
+    inputs: rD=r0=0x1 rA=r0=0x1 rB=r3=0x0
+    scalar_writeback: rD=r0=0x1
+    asm: or r0, r0, r3
+
+
+*** 0x710: 0x36631001 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r4=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r6, r4
+
+
+*** 0x714: 0x36418c05 ***
+    inputs: rD=r4=0x0 rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r3, r3
+
+
+*** 0x718: 0x36310c07 ***
+    inputs: rD=r3=0x0 rA=r2=0x1 rB=r3=0x0
+    scalar_writeback: rD=r3=0x1
+    asm: shl r3, r2, r3
+
+
+*** 0x71c: 0x36138c00 ***
+    inputs: rD=r1=0xffffffffe rA=r7=0x0 rB=r3=0x1
+    scalar_writeback: rD=r1=0x1
+    asm: add r1, r7, r3
+
+
+*** 0x720: 0x36111806 ***
+    inputs: rD=r1=0x1 rA=r2=0x1 rB=r6=0x0
+    scalar_writeback: rD=r1=0x1
+    asm: shr r1, r2, r6
+
+
+*** 0x724: 0x38210000 ***
+    inputs: rD=r2=0x1 rA=r2=0x1
+    scalar_writeback: rD=r2=0xffffffffe
+    asm: not r2, r2
+
+
+*** 0x728: 0x36229806 ***
+    inputs: rD=r2=0xffffffffe rA=r5=0xffffffffe rB=r6=0x0
+    scalar_writeback: rD=r2=0xffffffffe
+    asm: shr r2, r5, r6
+
+
+*** 0x72c: 0x38608000 ***
+    inputs: rD=r6=0x0 rA=r1=0x1
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r1
+
+
+*** 0x730: 0x36111002 ***
+    inputs: rD=r1=0x1 rA=r2=0xffffffffe rB=r4=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r2, r4
+
+
+*** 0x734: 0x36029807 ***
+    inputs: rD=r0=0x1 rA=r5=0xffffffffe rB=r6=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r5, r6
+
+
+*** 0x738: 0x36620c06 ***
+    inputs: rD=r6=0xfffffffff rA=r4=0x0 rB=r3=0x1
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r4, r3
+
+
+*** 0x73c: 0x36200402 ***
+    inputs: rD=r2=0xffffffffe rA=r0=0x0 rB=r1=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r0, r1
+
+
+*** 0x740: 0x36509c01 ***
+    inputs: rD=r5=0xffffffffe rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r1, r7
+
+
+*** 0x744: 0x36020807 ***
+    inputs: rD=r0=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r4, r2
+
+
+*** 0x748: 0x36328006 ***
+    inputs: rD=r3=0x1 rA=r5=0x0 rB=r0=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r5, r0
+
+
+*** 0x74c: 0x36511407 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r5=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r2, r5
+
+
+*** 0x750: 0x36519406 ***
+    inputs: rD=r5=0x0 rA=r3=0x0 rB=r5=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r3, r5
+
+
+*** 0x754: 0x36639c04 ***
+    inputs: rD=r6=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r7, r7
+
+
+*** 0x758: 0x36420c06 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r4, r3
+
+
+*** 0x75c: 0x36611402 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r2, r5
+
+
+*** 0x760: 0x36321005 ***
+    inputs: rD=r3=0x0 rA=r4=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: xor r3, r4, r4
+
+
+*** 0x764: 0x36601001 ***
+    inputs: rD=r6=0x0 rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r0, r4
+
+
+*** 0x768: 0x38338000 ***
+    inputs: rD=r3=0x0 rA=r7=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r7
+
+
+*** 0x76c: 0x36210407 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r2, r1
+
+
+*** 0x770: 0x38628000 ***
+    inputs: rD=r6=0x0 rA=r5=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r5
+
+
+*** 0x774: 0x36501005 ***
+    inputs: rD=r5=0x0 rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: xor r5, r0, r4
+
+
+*** 0x778: 0x36630000 ***
+    inputs: rD=r6=0xfffffffff rA=r6=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: add r6, r6, r0
+
+
+*** 0x77c: 0x36221005 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r4=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r4, r4
+
+
+*** 0x780: 0x38438000 ***
+    inputs: rD=r4=0x0 rA=r7=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: not r4, r7
+
+
+*** 0x784: 0x36021c07 ***
+    inputs: rD=r0=0x0 rA=r4=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: shl r0, r4, r7
+
+
+*** 0x788: 0x36439403 ***
+    inputs: rD=r4=0xfffffffff rA=r7=0x0 rB=r5=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r7, r5
+
+
+*** 0x78c: 0x36120806 ***
+    inputs: rD=r1=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r4, r2
+
+
+*** 0x790: 0x38100000 ***
+    inputs: rD=r1=0x0 rA=r0=0xfffffffff
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: not r1, r0
+
+
+*** 0x794: 0x38218000 ***
+    inputs: rD=r2=0x0 rA=r3=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: not r2, r3
+
+
+*** 0x798: 0x36619802 ***
+    inputs: rD=r6=0xfffffffff rA=r3=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r6=0x1
+    asm: mul r6, r3, r6
+
+
+*** 0x79c: 0x36218006 ***
+    inputs: rD=r2=0xfffffffff rA=r3=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r3, r0
+
+
+*** 0x7a0: 0x36029005 ***
+    inputs: rD=r0=0xfffffffff rA=r5=0x0 rB=r4=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r5, r4
+
+
+*** 0x7a4: 0x36320c06 ***
+    inputs: rD=r3=0xfffffffff rA=r4=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r4, r3
+
+
+*** 0x7a8: 0x36219002 ***
+    inputs: rD=r2=0x0 rA=r3=0x0 rB=r4=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r3, r4
+
+
+*** 0x7ac: 0x36538802 ***
+    inputs: rD=r5=0x0 rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r7, r2
+
+
+*** 0x7b0: 0x36208405 ***
+    inputs: rD=r2=0x0 rA=r1=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r1, r1
+
+
+*** 0x7b4: 0x36619c04 ***
+    inputs: rD=r6=0x1 rA=r3=0x0 rB=r7=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r3, r7
+
+
+*** 0x7b8: 0x38038000 ***
+    inputs: rD=r0=0x0 rA=r7=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r7
+
+
+*** 0x7bc: 0x36028002 ***
+    inputs: rD=r0=0xfffffffff rA=r5=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r5, r0
+
+
+*** 0x7c0: 0x38338000 ***
+    inputs: rD=r3=0x0 rA=r7=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r7
+
+
+*** 0x7c4: 0x36030407 ***
+    inputs: rD=r0=0x0 rA=r6=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r6, r1
+
+
+*** 0x7c8: 0x36428c00 ***
+    inputs: rD=r4=0x0 rA=r5=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: add r4, r5, r3
+
+
+*** 0x7cc: 0x36109801 ***
+    inputs: rD=r1=0xfffffffff rA=r1=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: sub r1, r1, r6
+
+
+*** 0x7d0: 0x36628806 ***
+    inputs: rD=r6=0x0 rA=r5=0x0 rB=r2=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r5, r2
+
+
+*** 0x7d4: 0x38120000 ***
+    inputs: rD=r1=0xfffffffff rA=r4=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: not r1, r4
+
+
+*** 0x7d8: 0x36709401 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: sub r7, r1, r5
+
+
+*** 0x7dc: 0x36409806 ***
+    inputs: rD=r4=0xfffffffff rA=r1=0x0 rB=r6=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r1, r6
+
+
+*** 0x7e0: 0x36411401 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r5=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r2, r5
+
+
+*** 0x7e4: 0x36328002 ***
+    inputs: rD=r3=0xfffffffff rA=r5=0x0 rB=r0=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r5, r0
+
+
+*** 0x7e8: 0x36731801 ***
+    inputs: rD=r7=0x0 rA=r6=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: sub r7, r6, r6
+
+
+*** 0x7ec: 0x36730c00 ***
+    inputs: rD=r7=0x0 rA=r6=0x0 rB=r3=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r6, r3
+
+
+*** 0x7f0: 0x36631405 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: xor r6, r6, r5
+
+
+*** 0x7f4: 0x36420806 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r4, r2
+
+
+*** 0x7f8: 0x36030004 ***
+    inputs: rD=r0=0x0 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r6, r0
+
+
+*** 0x7fc: 0x36208c04 ***
+    inputs: rD=r2=0x0 rA=r1=0x0 rB=r3=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: or r2, r1, r3
+
+
+*** 0x800: 0x36728404 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r1=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r5, r1
+
+
+*** 0x804: 0x36119407 ***
+    inputs: rD=r1=0x0 rA=r3=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r3, r5
+
+
+*** 0x808: 0x36221404 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r5=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: or r2, r4, r5
+
+
+*** 0x80c: 0x36210c07 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r3=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r2, r3
+
+
+*** 0x810: 0x36020807 ***
+    inputs: rD=r0=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r4, r2
+
+
+*** 0x814: 0x36121804 ***
+    inputs: rD=r1=0x0 rA=r4=0x0 rB=r6=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: or r1, r4, r6
+
+
+*** 0x818: 0x36408405 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r1, r1
+
+
+*** 0x81c: 0x36109407 ***
+    inputs: rD=r1=0x0 rA=r1=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r1, r5
+
+
+*** 0x820: 0x36230801 ***
+    inputs: rD=r2=0x0 rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r6, r2
+
+
+*** 0x824: 0x36729407 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r5, r5
+
+
+*** 0x828: 0x36739404 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r7, r5
+
+
+*** 0x82c: 0x38620000 ***
+    inputs: rD=r6=0x0 rA=r4=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r4
+
+
+*** 0x830: 0x36739c06 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r7, r7
+
+
+*** 0x834: 0x36508c01 ***
+    inputs: rD=r5=0x0 rA=r1=0x0 rB=r3=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r1, r3
+
+
+*** 0x838: 0x36039402 ***
+    inputs: rD=r0=0x0 rA=r7=0x0 rB=r5=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r7, r5
+
+
+*** 0x83c: 0x36320c02 ***
+    inputs: rD=r3=0x0 rA=r4=0x0 rB=r3=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r4, r3
+
+
+*** 0x840: 0x36411003 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r4=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r2, r4
+
+
+*** 0x844: 0x36708807 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r2=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r1, r2
+
+
+*** 0x848: 0x36111404 ***
+    inputs: rD=r1=0x0 rA=r2=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: or r1, r2, r5
+
+
+*** 0x84c: 0x36621801 ***
+    inputs: rD=r6=0xfffffffff rA=r4=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r6=0x1
+    asm: sub r6, r4, r6
+
+
+*** 0x850: 0x36438403 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r7, r1
+
+
+*** 0x854: 0x36119802 ***
+    inputs: rD=r1=0x0 rA=r3=0x0 rB=r6=0x1
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r3, r6
+
+
+*** 0x858: 0x36139805 ***
+    inputs: rD=r1=0x0 rA=r7=0x0 rB=r6=0x1
+    scalar_writeback: rD=r1=0x1
+    asm: xor r1, r7, r6
+
+
+*** 0x85c: 0x38428000 ***
+    inputs: rD=r4=0x0 rA=r5=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: not r4, r5
+
+
+*** 0x860: 0x36311401 ***
+    inputs: rD=r3=0x0 rA=r2=0x0 rB=r5=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r2, r5
+
+
+*** 0x864: 0x36738c03 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r3=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r7, r3
+
+
+*** 0x868: 0x36730406 ***
+    inputs: rD=r7=0x0 rA=r6=0x1 rB=r1=0x1
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r6, r1
+
+
+*** 0x86c: 0x36331c06 ***
+    inputs: rD=r3=0x0 rA=r6=0x1 rB=r7=0x0
+    scalar_writeback: rD=r3=0x1
+    asm: shr r3, r6, r7
+
+
+*** 0x870: 0x36438802 ***
+    inputs: rD=r4=0xfffffffff rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r7, r2
+
+
+*** 0x874: 0x36600005 ***
+    inputs: rD=r6=0x1 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: xor r6, r0, r0
+
+
+*** 0x878: 0x36418405 ***
+    inputs: rD=r4=0x0 rA=r3=0x1 rB=r1=0x1
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r3, r1
+
+
+*** 0x87c: 0x36001405 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r5=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r0, r5
+
+
+*** 0x880: 0x36008803 ***
+    inputs: rD=r0=0x0 rA=r1=0x1 rB=r2=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r1, r2
+
+
+*** 0x884: 0x36609006 ***
+    inputs: rD=r6=0x0 rA=r1=0x1 rB=r4=0x0
+    scalar_writeback: rD=r6=0x1
+    asm: shr r6, r1, r4
+
+
+*** 0x888: 0x36021404 ***
+    inputs: rD=r0=0x0 rA=r4=0x0 rB=r5=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r4, r5
+
+
+*** 0x88c: 0x36031803 ***
+    inputs: rD=r0=0x0 rA=r6=0x1 rB=r6=0x1
+    scalar_writeback: rD=r0=0x1
+    asm: and r0, r6, r6
+
+
+*** 0x890: 0x36129401 ***
+    inputs: rD=r1=0x1 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: sub r1, r5, r5
+
+
+*** 0x894: 0x36619801 ***
+    inputs: rD=r6=0x1 rA=r3=0x1 rB=r6=0x1
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r3, r6
+
+
+*** 0x898: 0x36728007 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r0=0x1
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r5, r0
+
+
+*** 0x89c: 0x36210c02 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r3=0x1
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r2, r3
+
+
+*** 0x8a0: 0x36739407 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r7, r5
+
+
+*** 0x8a4: 0x36531006 ***
+    inputs: rD=r5=0x0 rA=r6=0x0 rB=r4=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r6, r4
+
+
+*** 0x8a8: 0x36729406 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r5, r5
+
+
+*** 0x8ac: 0x36009407 ***
+    inputs: rD=r0=0x1 rA=r1=0x0 rB=r5=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r1, r5
+
+
+*** 0x8b0: 0x36311c05 ***
+    inputs: rD=r3=0x1 rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: xor r3, r2, r7
+
+
+*** 0x8b4: 0x36509001 ***
+    inputs: rD=r5=0x0 rA=r1=0x0 rB=r4=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r1, r4
+
+
+*** 0x8b8: 0x36611004 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r4=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r2, r4
+
+
+*** 0x8bc: 0x36020c06 ***
+    inputs: rD=r0=0x0 rA=r4=0x0 rB=r3=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r4, r3
+
+
+*** 0x8c0: 0x36608406 ***
+    inputs: rD=r6=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r1, r1
+
+
+*** 0x8c4: 0x36319404 ***
+    inputs: rD=r3=0x0 rA=r3=0x0 rB=r5=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r3, r5
+
+
+*** 0x8c8: 0x38010000 ***
+    inputs: rD=r0=0x0 rA=r2=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r2
+
+
+*** 0x8cc: 0x36321407 ***
+    inputs: rD=r3=0x0 rA=r4=0x0 rB=r5=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shl r3, r4, r5
+
+
+*** 0x8d0: 0x36101805 ***
+    inputs: rD=r1=0x0 rA=r0=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: xor r1, r0, r6
+
+
+*** 0x8d4: 0x36309005 ***
+    inputs: rD=r3=0x0 rA=r1=0xfffffffff rB=r4=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r1, r4
+
+
+*** 0x8d8: 0x36701404 ***
+    inputs: rD=r7=0x0 rA=r0=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: or r7, r0, r5
+
+
+*** 0x8dc: 0x36110c03 ***
+    inputs: rD=r1=0xfffffffff rA=r2=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r2, r3
+
+
+*** 0x8e0: 0x36328404 ***
+    inputs: rD=r3=0xfffffffff rA=r5=0x0 rB=r1=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r5, r1
+
+
+*** 0x8e4: 0x38330000 ***
+    inputs: rD=r3=0x0 rA=r6=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r6
+
+
+*** 0x8e8: 0x36539c02 ***
+    inputs: rD=r5=0x0 rA=r7=0xfffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r5=0x1
+    asm: mul r5, r7, r7
+
+
+*** 0x8ec: 0x36429c07 ***
+    inputs: rD=r4=0x0 rA=r5=0x1 rB=r7=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r5, r7
+
+
+*** 0x8f0: 0x36721806 ***
+    inputs: rD=r7=0xfffffffff rA=r4=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r4, r6
+
+
+*** 0x8f4: 0x38018000 ***
+    inputs: rD=r0=0xfffffffff rA=r3=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: not r0, r3
+
+
+*** 0x8f8: 0x36409402 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r5=0x1
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r1, r5
+
+
+*** 0x8fc: 0x36128c07 ***
+    inputs: rD=r1=0x0 rA=r5=0x1 rB=r3=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r5, r3
+
+
+*** 0x900: 0x36708407 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r1, r1
+
+
+*** 0x904: 0x36410406 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r2, r1
+
+
+*** 0x908: 0x36200402 ***
+    inputs: rD=r2=0x0 rA=r0=0x0 rB=r1=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r0, r1
+
+
+*** 0x90c: 0x36638001 ***
+    inputs: rD=r6=0x0 rA=r7=0x0 rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r7, r0
+
+
+*** 0x910: 0x36030c06 ***
+    inputs: rD=r0=0x0 rA=r6=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r6, r3
+
+
+*** 0x914: 0x36501402 ***
+    inputs: rD=r5=0x1 rA=r0=0x0 rB=r5=0x1
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r0, r5
+
+
+*** 0x918: 0x36530006 ***
+    inputs: rD=r5=0x0 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r6, r0
+
+
+*** 0x91c: 0x36038004 ***
+    inputs: rD=r0=0x0 rA=r7=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r7, r0
+
+
+*** 0x920: 0x38110000 ***
+    inputs: rD=r1=0x0 rA=r2=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: not r1, r2
+
+
+*** 0x924: 0x36321806 ***
+    inputs: rD=r3=0xfffffffff rA=r4=0x0 rB=r6=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r4, r6
+
+
+*** 0x928: 0x38238000 ***
+    inputs: rD=r2=0x0 rA=r7=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: not r2, r7
+
+
+*** 0x92c: 0x36718c02 ***
+    inputs: rD=r7=0x0 rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r3, r3
+
+
+*** 0x930: 0x36439005 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r4=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r7, r4
+
+
+*** 0x934: 0x36410c07 ***
+    inputs: rD=r4=0x0 rA=r2=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: shl r4, r2, r3
+
+
+*** 0x938: 0x36728004 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r5, r0
+
+
+*** 0x93c: 0x36128801 ***
+    inputs: rD=r1=0xfffffffff rA=r5=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r1=0x1
+    asm: sub r1, r5, r2
+
+
+*** 0x940: 0x36020404 ***
+    inputs: rD=r0=0x0 rA=r4=0xfffffffff rB=r1=0x1
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: or r0, r4, r1
+
+
+*** 0x944: 0x36209004 ***
+    inputs: rD=r2=0xfffffffff rA=r1=0x1 rB=r4=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: or r2, r1, r4
+
+
+*** 0x948: 0x36100805 ***
+    inputs: rD=r1=0x1 rA=r0=0xfffffffff rB=r2=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r0, r2
+
+
+*** 0x94c: 0x36020c01 ***
+    inputs: rD=r0=0xfffffffff rA=r4=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: sub r0, r4, r3
+
+
+*** 0x950: 0x36211c00 ***
+    inputs: rD=r2=0xfffffffff rA=r2=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: add r2, r2, r7
+
+
+*** 0x954: 0x36728004 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: or r7, r5, r0
+
+
+*** 0x958: 0x36400c01 ***
+    inputs: rD=r4=0xfffffffff rA=r0=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: sub r4, r0, r3
+
+
+*** 0x95c: 0x36209006 ***
+    inputs: rD=r2=0xfffffffff rA=r1=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r1, r4
+
+
+*** 0x960: 0x36211401 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r5=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r2, r5
+
+
+*** 0x964: 0x36629401 ***
+    inputs: rD=r6=0x0 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r5, r5
+
+
+*** 0x968: 0x36428006 ***
+    inputs: rD=r4=0xfffffffff rA=r5=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r5, r0
+
+
+*** 0x96c: 0x36031806 ***
+    inputs: rD=r0=0xfffffffff rA=r6=0x0 rB=r6=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r6, r6
+
+
+*** 0x970: 0x36421c02 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r4, r7
+
+
+*** 0x974: 0x36130c01 ***
+    inputs: rD=r1=0x0 rA=r6=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: sub r1, r6, r3
+
+
+*** 0x978: 0x36138c03 ***
+    inputs: rD=r1=0x0 rA=r7=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r7, r3
+
+
+*** 0x97c: 0x38508000 ***
+    inputs: rD=r5=0x0 rA=r1=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: not r5, r1
+
+
+*** 0x980: 0x36301004 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r0, r4
+
+
+*** 0x984: 0x36301001 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r0, r4
+
+
+*** 0x988: 0x36309002 ***
+    inputs: rD=r3=0x0 rA=r1=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r1, r4
+
+
+*** 0x98c: 0x36011004 ***
+    inputs: rD=r0=0x0 rA=r2=0x0 rB=r4=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r2, r4
+
+
+*** 0x990: 0x36628404 ***
+    inputs: rD=r6=0x0 rA=r5=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r5, r1
+
+
+*** 0x994: 0x36311407 ***
+    inputs: rD=r3=0x0 rA=r2=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: shl r3, r2, r5
+
+
+*** 0x998: 0x36319404 ***
+    inputs: rD=r3=0x0 rA=r3=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: or r3, r3, r5
+
+
+*** 0x99c: 0x36028007 ***
+    inputs: rD=r0=0x0 rA=r5=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: shl r0, r5, r0
+
+
+*** 0x9a0: 0x36131405 ***
+    inputs: rD=r1=0x0 rA=r6=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r6, r5
+
+
+*** 0x9a4: 0x36738402 ***
+    inputs: rD=r7=0xfffffffff rA=r7=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r7, r1
+
+
+*** 0x9a8: 0x36321004 ***
+    inputs: rD=r3=0xfffffffff rA=r4=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r4, r4
+
+
+*** 0x9ac: 0x36109405 ***
+    inputs: rD=r1=0x0 rA=r1=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: xor r1, r1, r5
+
+
+*** 0x9b0: 0x36730c05 ***
+    inputs: rD=r7=0x0 rA=r6=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: xor r7, r6, r3
+
+
+*** 0x9b4: 0x36630005 ***
+    inputs: rD=r6=0xfffffffff rA=r6=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: xor r6, r6, r0
+
+
+*** 0x9b8: 0x38638000 ***
+    inputs: rD=r6=0x0 rA=r7=0xfffffffff
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r7
+
+
+*** 0x9bc: 0x36429401 ***
+    inputs: rD=r4=0x0 rA=r5=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r5, r5
+
+
+*** 0x9c0: 0x36239406 ***
+    inputs: rD=r2=0x0 rA=r7=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r7, r5
+
+
+*** 0x9c4: 0x38738000 ***
+    inputs: rD=r7=0xfffffffff rA=r7=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: not r7, r7
+
+
+*** 0x9c8: 0x36401c01 ***
+    inputs: rD=r4=0x0 rA=r0=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: sub r4, r0, r7
+
+
+*** 0x9cc: 0x36218801 ***
+    inputs: rD=r2=0x0 rA=r3=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r3, r2
+
+
+*** 0x9d0: 0x36529801 ***
+    inputs: rD=r5=0xfffffffff rA=r5=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r5, r6
+
+
+*** 0x9d4: 0x36700405 ***
+    inputs: rD=r7=0x0 rA=r0=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: xor r7, r0, r1
+
+
+*** 0x9d8: 0x36131c05 ***
+    inputs: rD=r1=0xfffffffff rA=r6=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: xor r1, r6, r7
+
+
+*** 0x9dc: 0x36600406 ***
+    inputs: rD=r6=0xfffffffff rA=r0=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r0, r1
+
+
+*** 0x9e0: 0x36001807 ***
+    inputs: rD=r0=0xfffffffff rA=r0=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: shl r0, r0, r6
+
+
+*** 0x9e4: 0x36200405 ***
+    inputs: rD=r2=0x0 rA=r0=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r0, r1
+
+
+*** 0x9e8: 0x38728000 ***
+    inputs: rD=r7=0x0 rA=r5=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r5
+
+
+*** 0x9ec: 0x36429402 ***
+    inputs: rD=r4=0xfffffffff rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r5, r5
+
+
+*** 0x9f0: 0x36338800 ***
+    inputs: rD=r3=0x0 rA=r7=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: add r3, r7, r2
+
+
+*** 0x9f4: 0x36411c01 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r4=0x1
+    asm: sub r4, r2, r7
+
+
+*** 0x9f8: 0x36729802 ***
+    inputs: rD=r7=0xfffffffff rA=r5=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r5, r6
+
+
+*** 0x9fc: 0x36400405 ***
+    inputs: rD=r4=0x1 rA=r0=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r0, r1
+
+
+*** 0xa00: 0x36328405 ***
+    inputs: rD=r3=0xfffffffff rA=r5=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r5, r1
+
+
+*** 0xa04: 0x36320405 ***
+    inputs: rD=r3=0xfffffffff rA=r4=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r4, r1
+
+
+*** 0xa08: 0x36739000 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r7, r4
+
+
+*** 0xa0c: 0x36039000 ***
+    inputs: rD=r0=0xfffffffff rA=r7=0x0 rB=r4=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: add r0, r7, r4
+
+
+*** 0xa10: 0x36708c06 ***
+    inputs: rD=r7=0x0 rA=r1=0xfffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r1, r3
+
+
+*** 0xa14: 0x38228000 ***
+    inputs: rD=r2=0x0 rA=r5=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: not r2, r5
+
+
+*** 0xa18: 0x38730000 ***
+    inputs: rD=r7=0x0 rA=r6=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r6
+
+
+*** 0xa1c: 0x36638405 ***
+    inputs: rD=r6=0x0 rA=r7=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: xor r6, r7, r1
+
+
+*** 0xa20: 0x38700000 ***
+    inputs: rD=r7=0xfffffffff rA=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: not r7, r0
+
+
+*** 0xa24: 0x36730c07 ***
+    inputs: rD=r7=0x0 rA=r6=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r6, r3
+
+
+*** 0xa28: 0x36708402 ***
+    inputs: rD=r7=0x0 rA=r1=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r7=0x1
+    asm: mul r7, r1, r1
+
+
+*** 0xa2c: 0x36629807 ***
+    inputs: rD=r6=0x0 rA=r5=0x0 rB=r6=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r5, r6
+
+
+*** 0xa30: 0x36028c05 ***
+    inputs: rD=r0=0x0 rA=r5=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: xor r0, r5, r3
+
+
+*** 0xa34: 0x36029404 ***
+    inputs: rD=r0=0xfffffffff rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r5, r5
+
+
+*** 0xa38: 0x36538800 ***
+    inputs: rD=r5=0x0 rA=r7=0x1 rB=r2=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: add r5, r7, r2
+
+
+*** 0xa3c: 0x36631c07 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r7=0x1
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r6, r7
+
+
+*** 0xa40: 0x36128403 ***
+    inputs: rD=r1=0xfffffffff rA=r5=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r5, r1
+
+
+*** 0xa44: 0x38020000 ***
+    inputs: rD=r0=0x0 rA=r4=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r4
+
+
+*** 0xa48: 0x36430c03 ***
+    inputs: rD=r4=0x0 rA=r6=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r6, r3
+
+
+*** 0xa4c: 0x36400c01 ***
+    inputs: rD=r4=0x0 rA=r0=0xfffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r0, r3
+
+
+*** 0xa50: 0x36338404 ***
+    inputs: rD=r3=0xfffffffff rA=r7=0x1 rB=r1=0x0
+    scalar_writeback: rD=r3=0x1
+    asm: or r3, r7, r1
+
+
+*** 0xa54: 0x36519804 ***
+    inputs: rD=r5=0x0 rA=r3=0x1 rB=r6=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: or r5, r3, r6
+
+
+*** 0xa58: 0x36608c04 ***
+    inputs: rD=r6=0x0 rA=r1=0x0 rB=r3=0x1
+    scalar_writeback: rD=r6=0x1
+    asm: or r6, r1, r3
+
+
+*** 0xa5c: 0x36218000 ***
+    inputs: rD=r2=0xfffffffff rA=r3=0x1 rB=r0=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: add r2, r3, r0
+
+
+*** 0xa60: 0x36410005 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: xor r4, r2, r0
+
+
+*** 0xa64: 0x36520402 ***
+    inputs: rD=r5=0x1 rA=r4=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r4, r1
+
+
+*** 0xa68: 0x36311c03 ***
+    inputs: rD=r3=0x1 rA=r2=0x0 rB=r7=0x1
+    scalar_writeback: rD=r3=0x0
+    asm: and r3, r2, r7
+
+
+*** 0xa6c: 0x36731806 ***
+    inputs: rD=r7=0x1 rA=r6=0x1 rB=r6=0x1
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r6, r6
+
+
+*** 0xa70: 0x38128000 ***
+    inputs: rD=r1=0x0 rA=r5=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: not r1, r5
+
+
+*** 0xa74: 0x36520400 ***
+    inputs: rD=r5=0x0 rA=r4=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: add r5, r4, r1
+
+
+*** 0xa78: 0x36138802 ***
+    inputs: rD=r1=0xfffffffff rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r7, r2
+
+
+*** 0xa7c: 0x36511801 ***
+    inputs: rD=r5=0xffffffffe rA=r2=0x0 rB=r6=0x1
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: sub r5, r2, r6
+
+
+*** 0xa80: 0x36628801 ***
+    inputs: rD=r6=0x1 rA=r5=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: sub r6, r5, r2
+
+
+*** 0xa84: 0x36029c07 ***
+    inputs: rD=r0=0xfffffffff rA=r5=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: shl r0, r5, r7
+
+
+*** 0xa88: 0x38428000 ***
+    inputs: rD=r4=0xfffffffff rA=r5=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: not r4, r5
+
+
+*** 0xa8c: 0x36139403 ***
+    inputs: rD=r1=0x0 rA=r7=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r7, r5
+
+
+*** 0xa90: 0x36431803 ***
+    inputs: rD=r4=0x0 rA=r6=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: and r4, r6, r6
+
+
+*** 0xa94: 0x36119803 ***
+    inputs: rD=r1=0x0 rA=r3=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r3, r6
+
+
+*** 0xa98: 0x36101400 ***
+    inputs: rD=r1=0x0 rA=r0=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r1=0xffffffffe
+    asm: add r1, r0, r5
+
+
+*** 0xa9c: 0x36111c00 ***
+    inputs: rD=r1=0xffffffffe rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: add r1, r2, r7
+
+
+*** 0xaa0: 0x36508001 ***
+    inputs: rD=r5=0xfffffffff rA=r1=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r5=0x1
+    asm: sub r5, r1, r0
+
+
+*** 0xaa4: 0x36431c00 ***
+    inputs: rD=r4=0xfffffffff rA=r6=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: add r4, r6, r7
+
+
+*** 0xaa8: 0x36710002 ***
+    inputs: rD=r7=0x0 rA=r2=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r2, r0
+
+
+*** 0xaac: 0x36219402 ***
+    inputs: rD=r2=0x0 rA=r3=0x0 rB=r5=0x1
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r3, r5
+
+
+*** 0xab0: 0x36720802 ***
+    inputs: rD=r7=0x0 rA=r4=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r4, r2
+
+
+*** 0xab4: 0x36638401 ***
+    inputs: rD=r6=0xfffffffff rA=r7=0x0 rB=r1=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r7, r1
+
+
+*** 0xab8: 0x36639c03 ***
+    inputs: rD=r6=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: and r6, r7, r7
+
+
+*** 0xabc: 0x36028806 ***
+    inputs: rD=r0=0xfffffffff rA=r5=0x1 rB=r2=0x0
+    scalar_writeback: rD=r0=0x1
+    asm: shr r0, r5, r2
+
+
+*** 0xac0: 0x38528000 ***
+    inputs: rD=r5=0x1 rA=r5=0x1
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: not r5, r5
+
+
+*** 0xac4: 0x36010401 ***
+    inputs: rD=r0=0x1 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r2, r1
+
+
+*** 0xac8: 0x36431000 ***
+    inputs: rD=r4=0xfffffffff rA=r6=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: add r4, r6, r4
+
+
+*** 0xacc: 0x36120806 ***
+    inputs: rD=r1=0x0 rA=r4=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: shr r1, r4, r2
+
+
+*** 0xad0: 0x36119803 ***
+    inputs: rD=r1=0xfffffffff rA=r3=0x0 rB=r6=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r3, r6
+
+
+*** 0xad4: 0x36238801 ***
+    inputs: rD=r2=0x0 rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r7, r2
+
+
+*** 0xad8: 0x36231407 ***
+    inputs: rD=r2=0x0 rA=r6=0x0 rB=r5=0xffffffffe
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r6, r5
+
+
+*** 0xadc: 0x36638802 ***
+    inputs: rD=r6=0x0 rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r7, r2
+
+
+*** 0xae0: 0x36338004 ***
+    inputs: rD=r3=0x0 rA=r7=0x0 rB=r0=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r7, r0
+
+
+*** 0xae4: 0x36531402 ***
+    inputs: rD=r5=0xffffffffe rA=r6=0x0 rB=r5=0xffffffffe
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r6, r5
+
+
+*** 0xae8: 0x36000004 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: or r0, r0, r0
+
+
+*** 0xaec: 0x36538405 ***
+    inputs: rD=r5=0x0 rA=r7=0x0 rB=r1=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: xor r5, r7, r1
+
+
+*** 0xaf0: 0x36120001 ***
+    inputs: rD=r1=0x0 rA=r4=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: sub r1, r4, r0
+
+
+*** 0xaf4: 0x36019c03 ***
+    inputs: rD=r0=0x0 rA=r3=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r3, r7
+
+
+*** 0xaf8: 0x36639406 ***
+    inputs: rD=r6=0x0 rA=r7=0x0 rB=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r7, r5
+
+
+*** 0xafc: 0x36228c03 ***
+    inputs: rD=r2=0x0 rA=r5=0x0 rB=r3=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: and r2, r5, r3
+
+
+*** 0xb00: 0x36000407 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r0, r1
+
+
+*** 0xb04: 0x38400000 ***
+    inputs: rD=r4=0xfffffffff rA=r0=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: not r4, r0
+
+
+*** 0xb08: 0x36118002 ***
+    inputs: rD=r1=0xfffffffff rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r3, r0
+
+
+*** 0xb0c: 0x36608401 ***
+    inputs: rD=r6=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r1, r1
+
+
+*** 0xb10: 0x36438c00 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: add r4, r7, r3
+
+
+*** 0xb14: 0x36418804 ***
+    inputs: rD=r4=0x0 rA=r3=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: or r4, r3, r2
+
+
+*** 0xb18: 0x38738000 ***
+    inputs: rD=r7=0x0 rA=r7=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r7
+
+
+*** 0xb1c: 0x36329c02 ***
+    inputs: rD=r3=0x0 rA=r5=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r5, r7
+
+
+*** 0xb20: 0x36338002 ***
+    inputs: rD=r3=0x0 rA=r7=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r7, r0
+
+
+*** 0xb24: 0x36608404 ***
+    inputs: rD=r6=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r1, r1
+
+
+*** 0xb28: 0x36528401 ***
+    inputs: rD=r5=0x0 rA=r5=0x0 rB=r1=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r5, r1
+
+
+*** 0xb2c: 0x36008802 ***
+    inputs: rD=r0=0x0 rA=r1=0x0 rB=r2=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r1, r2
+
+
+*** 0xb30: 0x36018002 ***
+    inputs: rD=r0=0x0 rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r3, r0
+
+
+*** 0xb34: 0x36100c00 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: add r1, r0, r3
+
+
+*** 0xb38: 0x36010401 ***
+    inputs: rD=r0=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r2, r1
+
+
+*** 0xb3c: 0x36409005 ***
+    inputs: rD=r4=0x0 rA=r1=0x0 rB=r4=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r1, r4
+
+
+*** 0xb40: 0x36221c04 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: or r2, r4, r7
+
+
+*** 0xb44: 0x36500006 ***
+    inputs: rD=r5=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r0, r0
+
+
+*** 0xb48: 0x36609c07 ***
+    inputs: rD=r6=0x0 rA=r1=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r1, r7
+
+
+*** 0xb4c: 0x36329c05 ***
+    inputs: rD=r3=0x0 rA=r5=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r5, r7
+
+
+*** 0xb50: 0x36410005 ***
+    inputs: rD=r4=0x0 rA=r2=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: xor r4, r2, r0
+
+
+*** 0xb54: 0x36510006 ***
+    inputs: rD=r5=0x0 rA=r2=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: shr r5, r2, r0
+
+
+*** 0xb58: 0x36700000 ***
+    inputs: rD=r7=0xfffffffff rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r0, r0
+
+
+*** 0xb5c: 0x36319805 ***
+    inputs: rD=r3=0xfffffffff rA=r3=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r3, r6
+
+
+*** 0xb60: 0x36209002 ***
+    inputs: rD=r2=0xfffffffff rA=r1=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r1, r4
+
+
+*** 0xb64: 0x36700804 ***
+    inputs: rD=r7=0x0 rA=r0=0x0 rB=r2=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: or r7, r0, r2
+
+
+*** 0xb68: 0x36510c00 ***
+    inputs: rD=r5=0xfffffffff rA=r2=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: add r5, r2, r3
+
+
+*** 0xb6c: 0x36019406 ***
+    inputs: rD=r0=0x0 rA=r3=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r3, r5
+
+
+*** 0xb70: 0x36330801 ***
+    inputs: rD=r3=0xfffffffff rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r6, r2
+
+
+*** 0xb74: 0x36039c05 ***
+    inputs: rD=r0=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r7, r7
+
+
+*** 0xb78: 0x36420404 ***
+    inputs: rD=r4=0xfffffffff rA=r4=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: or r4, r4, r1
+
+
+*** 0xb7c: 0x36631002 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r6, r4
+
+
+*** 0xb80: 0x36230002 ***
+    inputs: rD=r2=0x0 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r6, r0
+
+
+*** 0xb84: 0x38110000 ***
+    inputs: rD=r1=0x0 rA=r2=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: not r1, r2
+
+
+*** 0xb88: 0x36620804 ***
+    inputs: rD=r6=0x0 rA=r4=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r4, r2
+
+
+*** 0xb8c: 0x36631402 ***
+    inputs: rD=r6=0xfffffffff rA=r6=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r6=0x1
+    asm: mul r6, r6, r5
+
+
+*** 0xb90: 0x36439c06 ***
+    inputs: rD=r4=0xfffffffff rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r7, r7
+
+
+*** 0xb94: 0x36039c03 ***
+    inputs: rD=r0=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r7, r7
+
+
+*** 0xb98: 0x36138804 ***
+    inputs: rD=r1=0xfffffffff rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: or r1, r7, r2
+
+
+*** 0xb9c: 0x36730c07 ***
+    inputs: rD=r7=0x0 rA=r6=0x1 rB=r3=0x0
+    scalar_writeback: rD=r7=0x1
+    asm: shl r7, r6, r3
+
+
+*** 0xba0: 0x36630803 ***
+    inputs: rD=r6=0x1 rA=r6=0x1 rB=r2=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: and r6, r6, r2
+
+
+*** 0xba4: 0x36029006 ***
+    inputs: rD=r0=0x0 rA=r5=0xfffffffff rB=r4=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: shr r0, r5, r4
+
+
+*** 0xba8: 0x36221801 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r6=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r4, r6
+
+
+*** 0xbac: 0x36108404 ***
+    inputs: rD=r1=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: or r1, r1, r1
+
+
+*** 0xbb0: 0x36201407 ***
+    inputs: rD=r2=0x0 rA=r0=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r0, r5
+
+
+*** 0xbb4: 0x36300c04 ***
+    inputs: rD=r3=0x0 rA=r0=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: or r3, r0, r3
+
+
+*** 0xbb8: 0x36509801 ***
+    inputs: rD=r5=0xfffffffff rA=r1=0x0 rB=r6=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r1, r6
+
+
+*** 0xbbc: 0x36229002 ***
+    inputs: rD=r2=0x0 rA=r5=0x0 rB=r4=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r5, r4
+
+
+*** 0xbc0: 0x38428000 ***
+    inputs: rD=r4=0x0 rA=r5=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: not r4, r5
+
+
+*** 0xbc4: 0x36301405 ***
+    inputs: rD=r3=0xfffffffff rA=r0=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r0, r5
+
+
+*** 0xbc8: 0x38000000 ***
+    inputs: rD=r0=0xfffffffff rA=r0=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: not r0, r0
+
+
+*** 0xbcc: 0x36510c05 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r3=0xfffffffff
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: xor r5, r2, r3
+
+
+*** 0xbd0: 0x36620804 ***
+    inputs: rD=r6=0x0 rA=r4=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r4, r2
+
+
+*** 0xbd4: 0x36030400 ***
+    inputs: rD=r0=0x0 rA=r6=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: add r0, r6, r1
+
+
+*** 0xbd8: 0x36121403 ***
+    inputs: rD=r1=0x0 rA=r4=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: and r1, r4, r5
+
+
+*** 0xbdc: 0x36419801 ***
+    inputs: rD=r4=0xfffffffff rA=r3=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r3, r6
+
+
+*** 0xbe0: 0x36429c06 ***
+    inputs: rD=r4=0x0 rA=r5=0xfffffffff rB=r7=0x1
+    scalar_writeback: rD=r4=0x7ffffffff
+    asm: shr r4, r5, r7
+
+
+*** 0xbe4: 0x36718002 ***
+    inputs: rD=r7=0x1 rA=r3=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r7=0x1
+    asm: mul r7, r3, r0
+
+
+*** 0xbe8: 0x36030c00 ***
+    inputs: rD=r0=0xfffffffff rA=r6=0xfffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r0=0xffffffffe
+    asm: add r0, r6, r3
+
+
+*** 0xbec: 0x36420403 ***
+    inputs: rD=r4=0x7ffffffff rA=r4=0x7ffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r4=0x7ffffffff
+    asm: and r4, r4, r1
+
+
+*** 0xbf0: 0x36719000 ***
+    inputs: rD=r7=0x1 rA=r3=0xfffffffff rB=r4=0x7ffffffff
+    scalar_writeback: rD=r7=0x7fffffffe
+    asm: add r7, r3, r4
+
+
+*** 0xbf4: 0x36138001 ***
+    inputs: rD=r1=0xfffffffff rA=r7=0x7fffffffe rB=r0=0xffffffffe
+    scalar_writeback: rD=r1=0x800000000
+    asm: sub r1, r7, r0
+
+
+*** 0xbf8: 0x36308405 ***
+    inputs: rD=r3=0xfffffffff rA=r1=0x800000000 rB=r1=0x800000000
+    scalar_writeback: rD=r3=0x0
+    asm: xor r3, r1, r1
+
+
+*** 0xbfc: 0x36518c01 ***
+    inputs: rD=r5=0xfffffffff rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: sub r5, r3, r3
+
+
+*** 0xc00: 0x38028000 ***
+    inputs: rD=r0=0xffffffffe rA=r5=0x0
+    scalar_writeback: rD=r0=0x1
+    asm: not r0, r5
+
+
+*** 0xc04: 0x36719005 ***
+    inputs: rD=r7=0x7fffffffe rA=r3=0x0 rB=r4=0x7ffffffff
+    scalar_writeback: rD=r7=0x7ffffffff
+    asm: xor r7, r3, r4
+
+
+*** 0xc08: 0x38338000 ***
+    inputs: rD=r3=0x0 rA=r7=0x7ffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: not r3, r7
+
+
+*** 0xc0c: 0x36538404 ***
+    inputs: rD=r5=0x0 rA=r7=0x7ffffffff rB=r1=0x800000000
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: or r5, r7, r1
+
+
+*** 0xc10: 0x36118006 ***
+    inputs: rD=r1=0x800000000 rA=r3=0xfffffffff rB=r0=0x1
+    scalar_writeback: rD=r1=0x7ffffffff
+    asm: shr r1, r3, r0
+
+
+*** 0xc14: 0x36301005 ***
+    inputs: rD=r3=0xfffffffff rA=r0=0x1 rB=r4=0x7ffffffff
+    scalar_writeback: rD=r3=0x7fffffffe
+    asm: xor r3, r0, r4
+
+
+*** 0xc18: 0x36701803 ***
+    inputs: rD=r7=0x7ffffffff rA=r0=0x1 rB=r6=0xfffffffff
+    scalar_writeback: rD=r7=0x1
+    asm: and r7, r0, r6
+
+
+*** 0xc1c: 0x36201802 ***
+    inputs: rD=r2=0x0 rA=r0=0x1 rB=r6=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: mul r2, r0, r6
+
+
+*** 0xc20: 0x36531800 ***
+    inputs: rD=r5=0xfffffffff rA=r6=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r5=0xffffffffe
+    asm: add r5, r6, r6
+
+
+*** 0xc24: 0x36221407 ***
+    inputs: rD=r2=0xfffffffff rA=r4=0x7ffffffff rB=r5=0xffffffffe
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r4, r5
+
+
+*** 0xc28: 0x36418400 ***
+    inputs: rD=r4=0x7ffffffff rA=r3=0x7fffffffe rB=r1=0x7ffffffff
+    scalar_writeback: rD=r4=0xffffffffd
+    asm: add r4, r3, r1
+
+
+*** 0xc2c: 0x36628807 ***
+    inputs: rD=r6=0xfffffffff rA=r5=0xffffffffe rB=r2=0x0
+    scalar_writeback: rD=r6=0xffffffffe
+    asm: shl r6, r5, r2
+
+
+*** 0xc30: 0x36220404 ***
+    inputs: rD=r2=0x0 rA=r4=0xffffffffd rB=r1=0x7ffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: or r2, r4, r1
+
+
+*** 0xc34: 0x36100807 ***
+    inputs: rD=r1=0x7ffffffff rA=r0=0x1 rB=r2=0xfffffffff
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r0, r2
+
+
+*** 0xc38: 0x36418405 ***
+    inputs: rD=r4=0xffffffffd rA=r3=0x7fffffffe rB=r1=0x0
+    scalar_writeback: rD=r4=0x7fffffffe
+    asm: xor r4, r3, r1
+
+
+*** 0xc3c: 0x36419006 ***
+    inputs: rD=r4=0x7fffffffe rA=r3=0x7fffffffe rB=r4=0x7fffffffe
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r3, r4
+
+
+*** 0xc40: 0x38428000 ***
+    inputs: rD=r4=0x0 rA=r5=0xffffffffe
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: not r4, r5
+
+
+*** 0xc44: 0x36129004 ***
+    inputs: rD=r1=0x0 rA=r5=0xffffffffe rB=r4=0xfffffffff
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: or r1, r5, r4
+
+
+*** 0xc48: 0x36210002 ***
+    inputs: rD=r2=0xfffffffff rA=r2=0xfffffffff rB=r0=0x1
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: mul r2, r2, r0
+
+
+*** 0xc4c: 0x36129c06 ***
+    inputs: rD=r1=0xfffffffff rA=r5=0xffffffffe rB=r7=0x1
+    scalar_writeback: rD=r1=0x7ffffffff
+    asm: shr r1, r5, r7
+
+
+*** 0xc50: 0x36429406 ***
+    inputs: rD=r4=0xfffffffff rA=r5=0xffffffffe rB=r5=0xffffffffe
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r5, r5
+
+
+*** 0xc54: 0x36421004 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r4=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: or r4, r4, r4
+
+
+*** 0xc58: 0x36130405 ***
+    inputs: rD=r1=0x7ffffffff rA=r6=0xffffffffe rB=r1=0x7ffffffff
+    scalar_writeback: rD=r1=0x800000001
+    asm: xor r1, r6, r1
+
+
+*** 0xc5c: 0x36231c00 ***
+    inputs: rD=r2=0xfffffffff rA=r6=0xffffffffe rB=r7=0x1
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: add r2, r6, r7
+
+
+*** 0xc60: 0x36030804 ***
+    inputs: rD=r0=0x1 rA=r6=0xffffffffe rB=r2=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: or r0, r6, r2
+
+
+*** 0xc64: 0x36220405 ***
+    inputs: rD=r2=0xfffffffff rA=r4=0x0 rB=r1=0x800000001
+    scalar_writeback: rD=r2=0x800000001
+    asm: xor r2, r4, r1
+
+
+*** 0xc68: 0x36208400 ***
+    inputs: rD=r2=0x800000001 rA=r1=0x800000001 rB=r1=0x800000001
+    scalar_writeback: rD=r2=0x2
+    asm: add r2, r1, r1
+
+
+*** 0xc6c: 0x36239c02 ***
+    inputs: rD=r2=0x2 rA=r7=0x1 rB=r7=0x1
+    scalar_writeback: rD=r2=0x1
+    asm: mul r2, r7, r7
+
+
+*** 0xc70: 0x36528c00 ***
+    inputs: rD=r5=0xffffffffe rA=r5=0xffffffffe rB=r3=0x7fffffffe
+    scalar_writeback: rD=r5=0x7fffffffc
+    asm: add r5, r5, r3
+
+
+*** 0xc74: 0x36021404 ***
+    inputs: rD=r0=0xfffffffff rA=r4=0x0 rB=r5=0x7fffffffc
+    scalar_writeback: rD=r0=0x7fffffffc
+    asm: or r0, r4, r5
+
+
+*** 0xc78: 0x36420801 ***
+    inputs: rD=r4=0x0 rA=r4=0x0 rB=r2=0x1
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: sub r4, r4, r2
+
+
+*** 0xc7c: 0x36600402 ***
+    inputs: rD=r6=0xffffffffe rA=r0=0x7fffffffc rB=r1=0x800000001
+    scalar_writeback: rD=r6=0x7fffffffc
+    asm: mul r6, r0, r1
+
+
+*** 0xc80: 0x36701c02 ***
+    inputs: rD=r7=0x1 rA=r0=0x7fffffffc rB=r7=0x1
+    scalar_writeback: rD=r7=0x7fffffffc
+    asm: mul r7, r0, r7
+
+
+*** 0xc84: 0x36419000 ***
+    inputs: rD=r4=0xfffffffff rA=r3=0x7fffffffe rB=r4=0xfffffffff
+    scalar_writeback: rD=r4=0x7fffffffd
+    asm: add r4, r3, r4
+
+
+*** 0xc88: 0x36719800 ***
+    inputs: rD=r7=0x7fffffffc rA=r3=0x7fffffffe rB=r6=0x7fffffffc
+    scalar_writeback: rD=r7=0xffffffffa
+    asm: add r7, r3, r6
+
+
+*** 0xc8c: 0x36111401 ***
+    inputs: rD=r1=0x800000001 rA=r2=0x1 rB=r5=0x7fffffffc
+    scalar_writeback: rD=r1=0x800000005
+    asm: sub r1, r2, r5
+
+
+*** 0xc90: 0x36611804 ***
+    inputs: rD=r6=0x7fffffffc rA=r2=0x1 rB=r6=0x7fffffffc
+    scalar_writeback: rD=r6=0x7fffffffd
+    asm: or r6, r2, r6
+
+
+*** 0xc94: 0x38020000 ***
+    inputs: rD=r0=0x7fffffffc rA=r4=0x7fffffffd
+    scalar_writeback: rD=r0=0x800000003
+    asm: not r0, r4
+
+
+*** 0xc98: 0x36519404 ***
+    inputs: rD=r5=0x7fffffffc rA=r3=0x7fffffffe rB=r5=0x7fffffffc
+    scalar_writeback: rD=r5=0x7fffffffe
+    asm: or r5, r3, r5
+
+
+*** 0xc9c: 0x36210c05 ***
+    inputs: rD=r2=0x1 rA=r2=0x1 rB=r3=0x7fffffffe
+    scalar_writeback: rD=r2=0x7ffffffff
+    asm: xor r2, r2, r3
+
+
+*** 0xca0: 0x38030000 ***
+    inputs: rD=r0=0x800000003 rA=r6=0x7fffffffd
+    scalar_writeback: rD=r0=0x7fffffffc
+    asm: not r0, r6
+
+
+*** 0xca4: 0x36538404 ***
+    inputs: rD=r5=0x7fffffffe rA=r7=0xffffffffa rB=r1=0x800000005
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: or r5, r7, r1
+
+
+*** 0xca8: 0x36701006 ***
+    inputs: rD=r7=0xffffffffa rA=r0=0x7fffffffc rB=r4=0x7fffffffd
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r0, r4
+
+
+*** 0xcac: 0x36009806 ***
+    inputs: rD=r0=0x7fffffffc rA=r1=0x800000005 rB=r6=0x7fffffffd
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r1, r6
+
+
+*** 0xcb0: 0x36728007 ***
+    inputs: rD=r7=0x0 rA=r5=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: shl r7, r5, r0
+
+
+*** 0xcb4: 0x36421801 ***
+    inputs: rD=r4=0x7fffffffd rA=r4=0x7fffffffd rB=r6=0x7fffffffd
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r4, r6
+
+
+*** 0xcb8: 0x36511c07 ***
+    inputs: rD=r5=0xfffffffff rA=r2=0x7ffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r2, r7
+
+
+*** 0xcbc: 0x36301800 ***
+    inputs: rD=r3=0x7fffffffe rA=r0=0x0 rB=r6=0x7fffffffd
+    scalar_writeback: rD=r3=0x7fffffffd
+    asm: add r3, r0, r6
+
+
+*** 0xcc0: 0x36519806 ***
+    inputs: rD=r5=0x0 rA=r3=0x7fffffffd rB=r6=0x7fffffffd
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r3, r6
+
+
+*** 0xcc4: 0x36239800 ***
+    inputs: rD=r2=0x7ffffffff rA=r7=0xfffffffff rB=r6=0x7fffffffd
+    scalar_writeback: rD=r2=0x7fffffffc
+    asm: add r2, r7, r6
+
+
+*** 0xcc8: 0x36329804 ***
+    inputs: rD=r3=0x7fffffffd rA=r5=0x0 rB=r6=0x7fffffffd
+    scalar_writeback: rD=r3=0x7fffffffd
+    asm: or r3, r5, r6
+
+
+*** 0xccc: 0x38130000 ***
+    inputs: rD=r1=0x800000005 rA=r6=0x7fffffffd
+    scalar_writeback: rD=r1=0x7fffffffa
+    asm: not r1, r6
+
+
+*** 0xcd0: 0x36301400 ***
+    inputs: rD=r3=0x7fffffffd rA=r0=0x0 rB=r5=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: add r3, r0, r5
+
+
+*** 0xcd4: 0x36300800 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r2=0x7fffffffc
+    scalar_writeback: rD=r3=0x7fffffffc
+    asm: add r3, r0, r2
+
+
+*** 0xcd8: 0x38130000 ***
+    inputs: rD=r1=0x7fffffffa rA=r6=0x7fffffffd
+    scalar_writeback: rD=r1=0x800000005
+    asm: not r1, r6
+
+
+*** 0xcdc: 0x36319002 ***
+    inputs: rD=r3=0x7fffffffc rA=r3=0x7fffffffc rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r3, r4
+
+
+*** 0xce0: 0x36428c03 ***
+    inputs: rD=r4=0x0 rA=r5=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r5, r3
+
+
+*** 0xce4: 0x36701806 ***
+    inputs: rD=r7=0xfffffffff rA=r0=0x0 rB=r6=0x7fffffffd
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r0, r6
+
+
+*** 0xce8: 0x36618400 ***
+    inputs: rD=r6=0x7fffffffd rA=r3=0x0 rB=r1=0x800000005
+    scalar_writeback: rD=r6=0x800000005
+    asm: add r6, r3, r1
+
+
+*** 0xcec: 0x36330c05 ***
+    inputs: rD=r3=0x0 rA=r6=0x800000005 rB=r3=0x0
+    scalar_writeback: rD=r3=0x800000005
+    asm: xor r3, r6, r3
+
+
+*** 0xcf0: 0x36528401 ***
+    inputs: rD=r5=0x0 rA=r5=0x0 rB=r1=0x800000005
+    scalar_writeback: rD=r5=0x7fffffffb
+    asm: sub r5, r5, r1
+
+
+*** 0xcf4: 0x36119c03 ***
+    inputs: rD=r1=0x800000005 rA=r3=0x800000005 rB=r7=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: and r1, r3, r7
+
+
+*** 0xcf8: 0x36311006 ***
+    inputs: rD=r3=0x800000005 rA=r2=0x7fffffffc rB=r4=0x0
+    scalar_writeback: rD=r3=0x7fffffffc
+    asm: shr r3, r2, r4
+
+
+*** 0xcfc: 0x36731002 ***
+    inputs: rD=r7=0x0 rA=r6=0x800000005 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r6, r4
+
+
+*** 0xd00: 0x38330000 ***
+    inputs: rD=r3=0x7fffffffc rA=r6=0x800000005
+    scalar_writeback: rD=r3=0x800000003
+    asm: not r3, r6
+
+
+*** 0xd04: 0x38600000 ***
+    inputs: rD=r6=0x800000005 rA=r0=0x0
+    scalar_writeback: rD=r6=0x7fffffffa
+    asm: not r6, r0
+
+
+*** 0xd08: 0x36619004 ***
+    inputs: rD=r6=0x7fffffffa rA=r3=0x800000003 rB=r4=0x0
+    scalar_writeback: rD=r6=0x800000003
+    asm: or r6, r3, r4
+
+
+*** 0xd0c: 0x36300c00 ***
+    inputs: rD=r3=0x800000003 rA=r0=0x0 rB=r3=0x800000003
+    scalar_writeback: rD=r3=0x800000003
+    asm: add r3, r0, r3
+
+
+*** 0xd10: 0x36709c07 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r7=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r1, r7
+
+
+*** 0xd14: 0x36121800 ***
+    inputs: rD=r1=0x0 rA=r4=0x0 rB=r6=0x800000003
+    scalar_writeback: rD=r1=0x800000003
+    asm: add r1, r4, r6
+
+
+*** 0xd18: 0x38608000 ***
+    inputs: rD=r6=0x800000003 rA=r1=0x800000003
+    scalar_writeback: rD=r6=0x7fffffffc
+    asm: not r6, r1
+
+
+*** 0xd1c: 0x36308806 ***
+    inputs: rD=r3=0x800000003 rA=r1=0x800000003 rB=r2=0x7fffffffc
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r1, r2
+
+
+*** 0xd20: 0x36111c04 ***
+    inputs: rD=r1=0x800000003 rA=r2=0x7fffffffc rB=r7=0x0
+    scalar_writeback: rD=r1=0x7fffffffc
+    asm: or r1, r2, r7
+
+
+*** 0xd24: 0x36620803 ***
+    inputs: rD=r6=0x7fffffffc rA=r4=0x0 rB=r2=0x7fffffffc
+    scalar_writeback: rD=r6=0x0
+    asm: and r6, r4, r2
+
+
+*** 0xd28: 0x36300400 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r1=0x7fffffffc
+    scalar_writeback: rD=r3=0x7fffffffc
+    asm: add r3, r0, r1
+
+
+*** 0xd2c: 0x36538803 ***
+    inputs: rD=r5=0x7fffffffb rA=r7=0x0 rB=r2=0x7fffffffc
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r7, r2
+
+
+*** 0xd30: 0x36529403 ***
+    inputs: rD=r5=0x0 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r5, r5
+
+
+*** 0xd34: 0x36409802 ***
+    inputs: rD=r4=0x0 rA=r1=0x7fffffffc rB=r6=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r1, r6
+
+
+*** 0xd38: 0x36631001 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r4=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: sub r6, r6, r4
+
+
+*** 0xd3c: 0x36301007 ***
+    inputs: rD=r3=0x7fffffffc rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shl r3, r0, r4
+
+
+*** 0xd40: 0x36300001 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r0, r0
+
+
+*** 0xd44: 0x36611802 ***
+    inputs: rD=r6=0x0 rA=r2=0x7fffffffc rB=r6=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r2, r6
+
+
+*** 0xd48: 0x36210407 ***
+    inputs: rD=r2=0x7fffffffc rA=r2=0x7fffffffc rB=r1=0x7fffffffc
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r2, r1
+
+
+*** 0xd4c: 0x36130407 ***
+    inputs: rD=r1=0x7fffffffc rA=r6=0x0 rB=r1=0x7fffffffc
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r6, r1
+
+
+*** 0xd50: 0x36510c07 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r3=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r2, r3
+
+
+*** 0xd54: 0x36719000 ***
+    inputs: rD=r7=0x0 rA=r3=0x0 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r3, r4
+
+
+*** 0xd58: 0x36529806 ***
+    inputs: rD=r5=0x0 rA=r5=0x0 rB=r6=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r5, r6
+
+
+*** 0xd5c: 0x36728006 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r5, r0
+
+
+*** 0xd60: 0x38430000 ***
+    inputs: rD=r4=0x0 rA=r6=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: not r4, r6
+
+
+*** 0xd64: 0x36230804 ***
+    inputs: rD=r2=0x0 rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: or r2, r6, r2
+
+
+*** 0xd68: 0x36518004 ***
+    inputs: rD=r5=0x0 rA=r3=0x0 rB=r0=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r3, r0
+
+
+*** 0xd6c: 0x36708400 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r1, r1
+
+
+*** 0xd70: 0x36311c01 ***
+    inputs: rD=r3=0x0 rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r2, r7
+
+
+*** 0xd74: 0x36511c03 ***
+    inputs: rD=r5=0x0 rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r2, r7
+
+
+*** 0xd78: 0x36530803 ***
+    inputs: rD=r5=0x0 rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r6, r2
+
+
+*** 0xd7c: 0x36338802 ***
+    inputs: rD=r3=0x0 rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r7, r2
+
+
+*** 0xd80: 0x36208405 ***
+    inputs: rD=r2=0x0 rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: xor r2, r1, r1
+
+
+*** 0xd84: 0x36029801 ***
+    inputs: rD=r0=0x0 rA=r5=0x0 rB=r6=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r5, r6
+
+
+*** 0xd88: 0x36438c01 ***
+    inputs: rD=r4=0xfffffffff rA=r7=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r7, r3
+
+
+*** 0xd8c: 0x36030c02 ***
+    inputs: rD=r0=0x0 rA=r6=0x0 rB=r3=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r6, r3
+
+
+*** 0xd90: 0x36610c04 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r3=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r2, r3
+
+
+*** 0xd94: 0x36110806 ***
+    inputs: rD=r1=0x0 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r2, r2
+
+
+*** 0xd98: 0x36119404 ***
+    inputs: rD=r1=0x0 rA=r3=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: or r1, r3, r5
+
+
+*** 0xd9c: 0x36019802 ***
+    inputs: rD=r0=0x0 rA=r3=0x0 rB=r6=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r3, r6
+
+
+*** 0xda0: 0x38728000 ***
+    inputs: rD=r7=0x0 rA=r5=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r5
+
+
+*** 0xda4: 0x36521c04 ***
+    inputs: rD=r5=0x0 rA=r4=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: or r5, r4, r7
+
+
+*** 0xda8: 0x36719400 ***
+    inputs: rD=r7=0xfffffffff rA=r3=0x0 rB=r5=0xfffffffff
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: add r7, r3, r5
+
+
+*** 0xdac: 0x36221c07 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r4, r7
+
+
+*** 0xdb0: 0x36219c03 ***
+    inputs: rD=r2=0x0 rA=r3=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: and r2, r3, r7
+
+
+*** 0xdb4: 0x36539800 ***
+    inputs: rD=r5=0xfffffffff rA=r7=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: add r5, r7, r6
+
+
+*** 0xdb8: 0x36020001 ***
+    inputs: rD=r0=0x0 rA=r4=0x0 rB=r0=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: sub r0, r4, r0
+
+
+*** 0xdbc: 0x36601c04 ***
+    inputs: rD=r6=0x0 rA=r0=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r0, r7
+
+
+*** 0xdc0: 0x36139007 ***
+    inputs: rD=r1=0x0 rA=r7=0xfffffffff rB=r4=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: shl r1, r7, r4
+
+
+*** 0xdc4: 0x36729004 ***
+    inputs: rD=r7=0xfffffffff rA=r5=0xfffffffff rB=r4=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: or r7, r5, r4
+
+
+*** 0xdc8: 0x38120000 ***
+    inputs: rD=r1=0xfffffffff rA=r4=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: not r1, r4
+
+
+*** 0xdcc: 0x36100007 ***
+    inputs: rD=r1=0x0 rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shl r1, r0, r0
+
+
+*** 0xdd0: 0x36530c05 ***
+    inputs: rD=r5=0xfffffffff rA=r6=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: xor r5, r6, r3
+
+
+*** 0xdd4: 0x36220806 ***
+    inputs: rD=r2=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: shr r2, r4, r2
+
+
+*** 0xdd8: 0x36128804 ***
+    inputs: rD=r1=0x0 rA=r5=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: or r1, r5, r2
+
+
+*** 0xddc: 0x36439c03 ***
+    inputs: rD=r4=0x0 rA=r7=0xfffffffff rB=r7=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: and r4, r7, r7
+
+
+*** 0xde0: 0x36601004 ***
+    inputs: rD=r6=0xfffffffff rA=r0=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: or r6, r0, r4
+
+
+*** 0xde4: 0x36400007 ***
+    inputs: rD=r4=0xfffffffff rA=r0=0x0 rB=r0=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r0, r0
+
+
+*** 0xde8: 0x36638003 ***
+    inputs: rD=r6=0xfffffffff rA=r7=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: and r6, r7, r0
+
+
+*** 0xdec: 0x36411801 ***
+    inputs: rD=r4=0x0 rA=r2=0x0 rB=r6=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r2, r6
+
+
+*** 0xdf0: 0x36401c01 ***
+    inputs: rD=r4=0x0 rA=r0=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r4=0x1
+    asm: sub r4, r0, r7
+
+
+*** 0xdf4: 0x36701c02 ***
+    inputs: rD=r7=0xfffffffff rA=r0=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r0, r7
+
+
+*** 0xdf8: 0x36338c04 ***
+    inputs: rD=r3=0x0 rA=r7=0x0 rB=r3=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r7, r3
+
+
+*** 0xdfc: 0x38028000 ***
+    inputs: rD=r0=0x0 rA=r5=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r5
+
+
+*** 0xe00: 0x36529c02 ***
+    inputs: rD=r5=0xfffffffff rA=r5=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r5, r7
+
+
+*** 0xe04: 0x36610804 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r2=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r2, r2
+
+
+*** 0xe08: 0x36738405 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: xor r7, r7, r1
+
+
+*** 0xe0c: 0x36008405 ***
+    inputs: rD=r0=0xfffffffff rA=r1=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r1, r1
+
+
+*** 0xe10: 0x36238001 ***
+    inputs: rD=r2=0x0 rA=r7=0xfffffffff rB=r0=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: sub r2, r7, r0
+
+
+*** 0xe14: 0x36209802 ***
+    inputs: rD=r2=0xfffffffff rA=r1=0xfffffffff rB=r6=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: mul r2, r1, r6
+
+
+*** 0xe18: 0x36501c03 ***
+    inputs: rD=r5=0x0 rA=r0=0x0 rB=r7=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: and r5, r0, r7
+
+
+*** 0xe1c: 0x36520401 ***
+    inputs: rD=r5=0x0 rA=r4=0x1 rB=r1=0xfffffffff
+    scalar_writeback: rD=r5=0x2
+    asm: sub r5, r4, r1
+
+
+*** 0xe20: 0x36718c06 ***
+    inputs: rD=r7=0xfffffffff rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r3, r3
+
+
+*** 0xe24: 0x38730000 ***
+    inputs: rD=r7=0x0 rA=r6=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r6
+
+
+*** 0xe28: 0x36039407 ***
+    inputs: rD=r0=0x0 rA=r7=0xfffffffff rB=r5=0x2
+    scalar_writeback: rD=r0=0xffffffffc
+    asm: shl r0, r7, r5
+
+
+*** 0xe2c: 0x36101406 ***
+    inputs: rD=r1=0xfffffffff rA=r0=0xffffffffc rB=r5=0x2
+    scalar_writeback: rD=r1=0x3ffffffff
+    asm: shr r1, r0, r5
+
+
+*** 0xe30: 0x36420002 ***
+    inputs: rD=r4=0x1 rA=r4=0x1 rB=r0=0xffffffffc
+    scalar_writeback: rD=r4=0xffffffffc
+    asm: mul r4, r4, r0
+
+
+*** 0xe34: 0x38410000 ***
+    inputs: rD=r4=0xffffffffc rA=r2=0x0
+    scalar_writeback: rD=r4=0x3
+    asm: not r4, r2
+
+
+*** 0xe38: 0x36721002 ***
+    inputs: rD=r7=0xfffffffff rA=r4=0x3 rB=r4=0x3
+    scalar_writeback: rD=r7=0x9
+    asm: mul r7, r4, r4
+
+
+*** 0xe3c: 0x36028801 ***
+    inputs: rD=r0=0xffffffffc rA=r5=0x2 rB=r2=0x0
+    scalar_writeback: rD=r0=0x2
+    asm: sub r0, r5, r2
+
+
+*** 0xe40: 0x36600003 ***
+    inputs: rD=r6=0x0 rA=r0=0x2 rB=r0=0x2
+    scalar_writeback: rD=r6=0x2
+    asm: and r6, r0, r0
+
+
+*** 0xe44: 0x36110c00 ***
+    inputs: rD=r1=0x3ffffffff rA=r2=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: add r1, r2, r3
+
+
+*** 0xe48: 0x36221c03 ***
+    inputs: rD=r2=0x0 rA=r4=0x3 rB=r7=0x9
+    scalar_writeback: rD=r2=0x1
+    asm: and r2, r4, r7
+
+
+*** 0xe4c: 0x36220800 ***
+    inputs: rD=r2=0x1 rA=r4=0x3 rB=r2=0x1
+    scalar_writeback: rD=r2=0x4
+    asm: add r2, r4, r2
+
+
+*** 0xe50: 0x36010003 ***
+    inputs: rD=r0=0x2 rA=r2=0x4 rB=r0=0x2
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r2, r0
+
+
+*** 0xe54: 0x38638000 ***
+    inputs: rD=r6=0x2 rA=r7=0x9
+    scalar_writeback: rD=r6=0xffffffffd
+    asm: not r6, r7
+
+
+*** 0xe58: 0x38220000 ***
+    inputs: rD=r2=0x4 rA=r4=0x3
+    scalar_writeback: rD=r2=0xffffffffb
+    asm: not r2, r4
+
+
+*** 0xe5c: 0x36519802 ***
+    inputs: rD=r5=0x2 rA=r3=0x0 rB=r6=0xffffffffd
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r3, r6
+
+
+*** 0xe60: 0x36409805 ***
+    inputs: rD=r4=0x3 rA=r1=0x0 rB=r6=0xffffffffd
+    scalar_writeback: rD=r4=0xffffffffd
+    asm: xor r4, r1, r6
+
+
+*** 0xe64: 0x36419803 ***
+    inputs: rD=r4=0xffffffffd rA=r3=0x0 rB=r6=0xffffffffd
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r3, r6
+
+
+*** 0xe68: 0x36138402 ***
+    inputs: rD=r1=0x0 rA=r7=0x9 rB=r1=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r7, r1
+
+
+*** 0xe6c: 0x36038805 ***
+    inputs: rD=r0=0x0 rA=r7=0x9 rB=r2=0xffffffffb
+    scalar_writeback: rD=r0=0xffffffff2
+    asm: xor r0, r7, r2
+
+
+*** 0xe70: 0x36410c01 ***
+    inputs: rD=r4=0x0 rA=r2=0xffffffffb rB=r3=0x0
+    scalar_writeback: rD=r4=0xffffffffb
+    asm: sub r4, r2, r3
+
+
+*** 0xe74: 0x36701003 ***
+    inputs: rD=r7=0x9 rA=r0=0xffffffff2 rB=r4=0xffffffffb
+    scalar_writeback: rD=r7=0xffffffff2
+    asm: and r7, r0, r4
+
+
+*** 0xe78: 0x36701001 ***
+    inputs: rD=r7=0xffffffff2 rA=r0=0xffffffff2 rB=r4=0xffffffffb
+    scalar_writeback: rD=r7=0xffffffff7
+    asm: sub r7, r0, r4
+
+
+*** 0xe7c: 0x36029c07 ***
+    inputs: rD=r0=0xffffffff2 rA=r5=0x0 rB=r7=0xffffffff7
+    scalar_writeback: rD=r0=0x0
+    asm: shl r0, r5, r7
+
+
+*** 0xe80: 0x36619005 ***
+    inputs: rD=r6=0xffffffffd rA=r3=0x0 rB=r4=0xffffffffb
+    scalar_writeback: rD=r6=0xffffffffb
+    asm: xor r6, r3, r4
+
+
+*** 0xe84: 0x38418000 ***
+    inputs: rD=r4=0xffffffffb rA=r3=0x0
+    scalar_writeback: rD=r4=0x4
+    asm: not r4, r3
+
+
+*** 0xe88: 0x36500c06 ***
+    inputs: rD=r5=0x0 rA=r0=0x0 rB=r3=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: shr r5, r0, r3
+
+
+*** 0xe8c: 0x36011805 ***
+    inputs: rD=r0=0x0 rA=r2=0xffffffffb rB=r6=0xffffffffb
+    scalar_writeback: rD=r0=0x0
+    asm: xor r0, r2, r6
+
+
+*** 0xe90: 0x36131405 ***
+    inputs: rD=r1=0x0 rA=r6=0xffffffffb rB=r5=0x0
+    scalar_writeback: rD=r1=0xffffffffb
+    asm: xor r1, r6, r5
+
+
+*** 0xe94: 0x36539406 ***
+    inputs: rD=r5=0x0 rA=r7=0xffffffff7 rB=r5=0x0
+    scalar_writeback: rD=r5=0xffffffff7
+    asm: shr r5, r7, r5
+
+
+*** 0xe98: 0x36308801 ***
+    inputs: rD=r3=0x0 rA=r1=0xffffffffb rB=r2=0xffffffffb
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r1, r2
+
+
+*** 0xe9c: 0x36201004 ***
+    inputs: rD=r2=0xffffffffb rA=r0=0x0 rB=r4=0x4
+    scalar_writeback: rD=r2=0x4
+    asm: or r2, r0, r4
+
+
+*** 0xea0: 0x36328801 ***
+    inputs: rD=r3=0x0 rA=r5=0xffffffff7 rB=r2=0x4
+    scalar_writeback: rD=r3=0xffffffff3
+    asm: sub r3, r5, r2
+
+
+*** 0xea4: 0x36710802 ***
+    inputs: rD=r7=0xffffffff7 rA=r2=0x4 rB=r2=0x4
+    scalar_writeback: rD=r7=0x10
+    asm: mul r7, r2, r2
+
+
+*** 0xea8: 0x36421407 ***
+    inputs: rD=r4=0x4 rA=r4=0x4 rB=r5=0xffffffff7
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r4, r5
+
+
+*** 0xeac: 0x36411c03 ***
+    inputs: rD=r4=0x0 rA=r2=0x4 rB=r7=0x10
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r2, r7
+
+
+*** 0xeb0: 0x36731803 ***
+    inputs: rD=r7=0x10 rA=r6=0xffffffffb rB=r6=0xffffffffb
+    scalar_writeback: rD=r7=0xffffffffb
+    asm: and r7, r6, r6
+
+
+*** 0xeb4: 0x36231804 ***
+    inputs: rD=r2=0x4 rA=r6=0xffffffffb rB=r6=0xffffffffb
+    scalar_writeback: rD=r2=0xffffffffb
+    asm: or r2, r6, r6
+
+
+*** 0xeb8: 0x36501807 ***
+    inputs: rD=r5=0xffffffff7 rA=r0=0x0 rB=r6=0xffffffffb
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r0, r6
+
+
+*** 0xebc: 0x36108c05 ***
+    inputs: rD=r1=0xffffffffb rA=r1=0xffffffffb rB=r3=0xffffffff3
+    scalar_writeback: rD=r1=0x8
+    asm: xor r1, r1, r3
+
+
+*** 0xec0: 0x36339406 ***
+    inputs: rD=r3=0xffffffff3 rA=r7=0xffffffffb rB=r5=0x0
+    scalar_writeback: rD=r3=0xffffffffb
+    asm: shr r3, r7, r5
+
+
+*** 0xec4: 0x38328000 ***
+    inputs: rD=r3=0xffffffffb rA=r5=0x0
+    scalar_writeback: rD=r3=0x4
+    asm: not r3, r5
+
+
+*** 0xec8: 0x36409c04 ***
+    inputs: rD=r4=0x0 rA=r1=0x8 rB=r7=0xffffffffb
+    scalar_writeback: rD=r4=0xffffffffb
+    asm: or r4, r1, r7
+
+
+*** 0xecc: 0x36208005 ***
+    inputs: rD=r2=0xffffffffb rA=r1=0x8 rB=r0=0x0
+    scalar_writeback: rD=r2=0x8
+    asm: xor r2, r1, r0
+
+
+*** 0xed0: 0x36710804 ***
+    inputs: rD=r7=0xffffffffb rA=r2=0x8 rB=r2=0x8
+    scalar_writeback: rD=r7=0x8
+    asm: or r7, r2, r2
+
+
+*** 0xed4: 0x36208003 ***
+    inputs: rD=r2=0x8 rA=r1=0x8 rB=r0=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: and r2, r1, r0
+
+
+*** 0xed8: 0x36201005 ***
+    inputs: rD=r2=0x0 rA=r0=0x0 rB=r4=0xffffffffb
+    scalar_writeback: rD=r2=0xffffffffb
+    asm: xor r2, r0, r4
+
+
+*** 0xedc: 0x36439807 ***
+    inputs: rD=r4=0xffffffffb rA=r7=0x8 rB=r6=0xffffffffb
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r7, r6
+
+
+*** 0xee0: 0x36021400 ***
+    inputs: rD=r0=0x0 rA=r4=0x0 rB=r5=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: add r0, r4, r5
+
+
+*** 0xee4: 0x36320c06 ***
+    inputs: rD=r3=0x4 rA=r4=0x0 rB=r3=0x4
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r4, r3
+
+
+*** 0xee8: 0x36211003 ***
+    inputs: rD=r2=0xffffffffb rA=r2=0xffffffffb rB=r4=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: and r2, r2, r4
+
+
+*** 0xeec: 0x38600000 ***
+    inputs: rD=r6=0xffffffffb rA=r0=0x0
+    scalar_writeback: rD=r6=0x4
+    asm: not r6, r0
+
+
+*** 0xef0: 0x36329806 ***
+    inputs: rD=r3=0x0 rA=r5=0x0 rB=r6=0x4
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r5, r6
+
+
+*** 0xef4: 0x36719c06 ***
+    inputs: rD=r7=0x8 rA=r3=0x0 rB=r7=0x8
+    scalar_writeback: rD=r7=0x0
+    asm: shr r7, r3, r7
+
+
+*** 0xef8: 0x36601405 ***
+    inputs: rD=r6=0x4 rA=r0=0x0 rB=r5=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: xor r6, r0, r5
+
+
+*** 0xefc: 0x36030802 ***
+    inputs: rD=r0=0x0 rA=r6=0x0 rB=r2=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r6, r2
+
+
+*** 0xf00: 0x36009802 ***
+    inputs: rD=r0=0x0 rA=r1=0x8 rB=r6=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r1, r6
+
+
+*** 0xf04: 0x36610000 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: add r6, r2, r0
+
+
+*** 0xf08: 0x36630007 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: shl r6, r6, r0
+
+
+*** 0xf0c: 0x36501400 ***
+    inputs: rD=r5=0x0 rA=r0=0x0 rB=r5=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: add r5, r0, r5
+
+
+*** 0xf10: 0x36721401 ***
+    inputs: rD=r7=0x0 rA=r4=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: sub r7, r4, r5
+
+
+*** 0xf14: 0x38708000 ***
+    inputs: rD=r7=0x0 rA=r1=0x8
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: not r7, r1
+
+
+*** 0xf18: 0x36120c05 ***
+    inputs: rD=r1=0x8 rA=r4=0x0 rB=r3=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r4, r3
+
+
+*** 0xf1c: 0x36610004 ***
+    inputs: rD=r6=0x0 rA=r2=0x0 rB=r0=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: or r6, r2, r0
+
+
+*** 0xf20: 0x36730003 ***
+    inputs: rD=r7=0xfffffffff rA=r6=0x0 rB=r0=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r6, r0
+
+
+*** 0xf24: 0x36310400 ***
+    inputs: rD=r3=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: add r3, r2, r1
+
+
+*** 0xf28: 0x36110402 ***
+    inputs: rD=r1=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r2, r1
+
+
+*** 0xf2c: 0x36429c02 ***
+    inputs: rD=r4=0x0 rA=r5=0x0 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r5, r7
+
+
+*** 0xf30: 0x38010000 ***
+    inputs: rD=r0=0x0 rA=r2=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r2
+
+
+*** 0xf34: 0x36618001 ***
+    inputs: rD=r6=0x0 rA=r3=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r6=0x1
+    asm: sub r6, r3, r0
+
+
+*** 0xf38: 0x36521404 ***
+    inputs: rD=r5=0x0 rA=r4=0x0 rB=r5=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r4, r5
+
+
+*** 0xf3c: 0x36300405 ***
+    inputs: rD=r3=0x0 rA=r0=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r0, r1
+
+
+*** 0xf40: 0x36438805 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r7, r2
+
+
+*** 0xf44: 0x36728001 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r7=0x1
+    asm: sub r7, r5, r0
+
+
+*** 0xf48: 0x36539c07 ***
+    inputs: rD=r5=0x0 rA=r7=0x1 rB=r7=0x1
+    scalar_writeback: rD=r5=0x2
+    asm: shl r5, r7, r7
+
+
+*** 0xf4c: 0x36210401 ***
+    inputs: rD=r2=0x0 rA=r2=0x0 rB=r1=0x0
+    scalar_writeback: rD=r2=0x0
+    asm: sub r2, r2, r1
+
+
+*** 0xf50: 0x36301c06 ***
+    inputs: rD=r3=0xfffffffff rA=r0=0xfffffffff rB=r7=0x1
+    scalar_writeback: rD=r3=0x7ffffffff
+    asm: shr r3, r0, r7
+
+
+*** 0xf54: 0x38418000 ***
+    inputs: rD=r4=0x0 rA=r3=0x7ffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: not r4, r3
+
+
+*** 0xf58: 0x36130402 ***
+    inputs: rD=r1=0x0 rA=r6=0x1 rB=r1=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: mul r1, r6, r1
+
+
+*** 0xf5c: 0x36329406 ***
+    inputs: rD=r3=0x7ffffffff rA=r5=0x2 rB=r5=0x2
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r5, r5
+
+
+*** 0xf60: 0x36539c07 ***
+    inputs: rD=r5=0x2 rA=r7=0x1 rB=r7=0x1
+    scalar_writeback: rD=r5=0x2
+    asm: shl r5, r7, r7
+
+
+*** 0xf64: 0x36131805 ***
+    inputs: rD=r1=0x0 rA=r6=0x1 rB=r6=0x1
+    scalar_writeback: rD=r1=0x0
+    asm: xor r1, r6, r6
+
+
+*** 0xf68: 0x36008406 ***
+    inputs: rD=r0=0xfffffffff rA=r1=0x0 rB=r1=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: shr r0, r1, r1
+
+
+*** 0xf6c: 0x36238007 ***
+    inputs: rD=r2=0x0 rA=r7=0x1 rB=r0=0x0
+    scalar_writeback: rD=r2=0x1
+    asm: shl r2, r7, r0
+
+
+*** 0xf70: 0x36231804 ***
+    inputs: rD=r2=0x1 rA=r6=0x1 rB=r6=0x1
+    scalar_writeback: rD=r2=0x1
+    asm: or r2, r6, r6
+
+
+*** 0xf74: 0x36720401 ***
+    inputs: rD=r7=0x1 rA=r4=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r7=0xfffffffff
+    asm: sub r7, r4, r1
+
+
+*** 0xf78: 0x36231003 ***
+    inputs: rD=r2=0x1 rA=r6=0x1 rB=r4=0xfffffffff
+    scalar_writeback: rD=r2=0x1
+    asm: and r2, r6, r4
+
+
+*** 0xf7c: 0x36509805 ***
+    inputs: rD=r5=0x2 rA=r1=0x0 rB=r6=0x1
+    scalar_writeback: rD=r5=0x1
+    asm: xor r5, r1, r6
+
+
+*** 0xf80: 0x38718000 ***
+    inputs: rD=r7=0xfffffffff rA=r3=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: not r7, r3
+
+
+*** 0xf84: 0x36219005 ***
+    inputs: rD=r2=0x1 rA=r3=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: xor r2, r3, r4
+
+
+*** 0xf88: 0x38020000 ***
+    inputs: rD=r0=0x0 rA=r4=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: not r0, r4
+
+
+*** 0xf8c: 0x36609002 ***
+    inputs: rD=r6=0x1 rA=r1=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r1, r4
+
+
+*** 0xf90: 0x36409002 ***
+    inputs: rD=r4=0xfffffffff rA=r1=0x0 rB=r4=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: mul r4, r1, r4
+
+
+*** 0xf94: 0x36529005 ***
+    inputs: rD=r5=0x1 rA=r5=0x1 rB=r4=0x0
+    scalar_writeback: rD=r5=0x1
+    asm: xor r5, r5, r4
+
+
+*** 0xf98: 0x36720802 ***
+    inputs: rD=r7=0x0 rA=r4=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: mul r7, r4, r2
+
+
+*** 0xf9c: 0x36728807 ***
+    inputs: rD=r7=0x0 rA=r5=0x1 rB=r2=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r5, r2
+
+
+*** 0xfa0: 0x38608000 ***
+    inputs: rD=r6=0x0 rA=r1=0x0
+    scalar_writeback: rD=r6=0xfffffffff
+    asm: not r6, r1
+
+
+*** 0xfa4: 0x36509004 ***
+    inputs: rD=r5=0x1 rA=r1=0x0 rB=r4=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r1, r4
+
+
+*** 0xfa8: 0x36518c04 ***
+    inputs: rD=r5=0x0 rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r3, r3
+
+
+*** 0xfac: 0x36538404 ***
+    inputs: rD=r5=0x0 rA=r7=0x0 rB=r1=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r7, r1
+
+
+*** 0xfb0: 0x36338c05 ***
+    inputs: rD=r3=0x0 rA=r7=0x0 rB=r3=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: xor r3, r7, r3
+
+
+*** 0xfb4: 0x36709403 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: and r7, r1, r5
+
+
+*** 0xfb8: 0x36739001 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r4=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: sub r7, r7, r4
+
+
+*** 0xfbc: 0x38030000 ***
+    inputs: rD=r0=0xfffffffff rA=r6=0xfffffffff
+    scalar_writeback: rD=r0=0x0
+    asm: not r0, r6
+
+
+*** 0xfc0: 0x36739c05 ***
+    inputs: rD=r7=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: xor r7, r7, r7
+
+
+*** 0xfc4: 0x36720807 ***
+    inputs: rD=r7=0x0 rA=r4=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r7=0x0
+    asm: shl r7, r4, r2
+
+
+*** 0xfc8: 0x36708c05 ***
+    inputs: rD=r7=0x0 rA=r1=0x0 rB=r3=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: xor r7, r1, r3
+
+
+*** 0xfcc: 0x36011c02 ***
+    inputs: rD=r0=0x0 rA=r2=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r2, r7
+
+
+*** 0xfd0: 0x36230407 ***
+    inputs: rD=r2=0xfffffffff rA=r6=0xfffffffff rB=r1=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: shl r2, r6, r1
+
+
+*** 0xfd4: 0x36439405 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r5=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: xor r4, r7, r5
+
+
+*** 0xfd8: 0x36129406 ***
+    inputs: rD=r1=0x0 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r1=0x0
+    asm: shr r1, r5, r5
+
+
+*** 0xfdc: 0x36401007 ***
+    inputs: rD=r4=0x0 rA=r0=0x0 rB=r4=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: shl r4, r0, r4
+
+
+*** 0xfe0: 0x38130000 ***
+    inputs: rD=r1=0x0 rA=r6=0xfffffffff
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: not r1, r6
+
+
+*** 0xfe4: 0x36729c01 ***
+    inputs: rD=r7=0x0 rA=r5=0x0 rB=r7=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: sub r7, r5, r7
+
+
+*** 0xfe8: 0x36311801 ***
+    inputs: rD=r3=0x0 rA=r2=0xfffffffff rB=r6=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: sub r3, r2, r6
+
+
+*** 0xfec: 0x36419806 ***
+    inputs: rD=r4=0x0 rA=r3=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r4=0x0
+    asm: shr r4, r3, r6
+
+
+*** 0xff0: 0x36509407 ***
+    inputs: rD=r5=0x0 rA=r1=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r5=0xfffffffff
+    asm: shl r5, r1, r5
+
+
+*** 0xff4: 0x36209c01 ***
+    inputs: rD=r2=0xfffffffff rA=r1=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: sub r2, r1, r7
+
+
+*** 0xff8: 0x36000400 ***
+    inputs: rD=r0=0x0 rA=r0=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: add r0, r0, r1
+
+
+*** 0xffc: 0x36731402 ***
+    inputs: rD=r7=0x0 rA=r6=0xfffffffff rB=r5=0xfffffffff
+    scalar_writeback: rD=r7=0x1
+    asm: mul r7, r6, r5
+
+
+*** 0x1000: 0x36500407 ***
+    inputs: rD=r5=0xfffffffff rA=r0=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r0, r1
+
+
+*** 0x1004: 0x36311406 ***
+    inputs: rD=r3=0x0 rA=r2=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: shr r3, r2, r5
+
+
+*** 0x1008: 0x36410c03 ***
+    inputs: rD=r4=0x0 rA=r2=0xfffffffff rB=r3=0xfffffffff
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: and r4, r2, r3
+
+
+*** 0x100c: 0x36429c04 ***
+    inputs: rD=r4=0xfffffffff rA=r5=0x0 rB=r7=0x1
+    scalar_writeback: rD=r4=0x1
+    asm: or r4, r5, r7
+
+
+*** 0x1010: 0x36309405 ***
+    inputs: rD=r3=0xfffffffff rA=r1=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: xor r3, r1, r5
+
+
+*** 0x1014: 0x36210404 ***
+    inputs: rD=r2=0xfffffffff rA=r2=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r2=0xfffffffff
+    asm: or r2, r2, r1
+
+
+*** 0x1018: 0x36109405 ***
+    inputs: rD=r1=0xfffffffff rA=r1=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: xor r1, r1, r5
+
+
+*** 0x101c: 0x36411404 ***
+    inputs: rD=r4=0x1 rA=r2=0xfffffffff rB=r5=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: or r4, r2, r5
+
+
+*** 0x1020: 0x36300403 ***
+    inputs: rD=r3=0xfffffffff rA=r0=0xfffffffff rB=r1=0xfffffffff
+    scalar_writeback: rD=r3=0xfffffffff
+    asm: and r3, r0, r1
+
+
+*** 0x1024: 0x36729401 ***
+    inputs: rD=r7=0x1 rA=r5=0x0 rB=r5=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: sub r7, r5, r5
+
+
+*** 0x1028: 0x36238807 ***
+    inputs: rD=r2=0xfffffffff rA=r7=0x0 rB=r2=0xfffffffff
+    scalar_writeback: rD=r2=0x0
+    asm: shl r2, r7, r2
+
+
+*** 0x102c: 0x36338802 ***
+    inputs: rD=r3=0xfffffffff rA=r7=0x0 rB=r2=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: mul r3, r7, r2
+
+
+*** 0x1030: 0x36308006 ***
+    inputs: rD=r3=0x0 rA=r1=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: shr r3, r1, r0
+
+
+*** 0x1034: 0x36430801 ***
+    inputs: rD=r4=0xfffffffff rA=r6=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r4=0xfffffffff
+    asm: sub r4, r6, r2
+
+
+*** 0x1038: 0x36518407 ***
+    inputs: rD=r5=0x0 rA=r3=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: shl r5, r3, r1
+
+
+*** 0x103c: 0x36318c07 ***
+    inputs: rD=r3=0x0 rA=r3=0x0 rB=r3=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: shl r3, r3, r3
+
+
+*** 0x1040: 0x36120c00 ***
+    inputs: rD=r1=0xfffffffff rA=r4=0xfffffffff rB=r3=0x0
+    scalar_writeback: rD=r1=0xfffffffff
+    asm: add r1, r4, r3
+
+
+*** 0x1044: 0x36329807 ***
+    inputs: rD=r3=0x0 rA=r5=0x0 rB=r6=0xfffffffff
+    scalar_writeback: rD=r3=0x0
+    asm: shl r3, r5, r6
+
+
+*** 0x1048: 0x36611c06 ***
+    inputs: rD=r6=0xfffffffff rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r2, r7
+
+
+*** 0x104c: 0x36630406 ***
+    inputs: rD=r6=0x0 rA=r6=0x0 rB=r1=0xfffffffff
+    scalar_writeback: rD=r6=0x0
+    asm: shr r6, r6, r1
+
+
+*** 0x1050: 0x36021c00 ***
+    inputs: rD=r0=0xfffffffff rA=r4=0xfffffffff rB=r7=0x0
+    scalar_writeback: rD=r0=0xfffffffff
+    asm: add r0, r4, r7
+
+
+*** 0x1054: 0x36528002 ***
+    inputs: rD=r5=0x0 rA=r5=0x0 rB=r0=0xfffffffff
+    scalar_writeback: rD=r5=0x0
+    asm: mul r5, r5, r0
+
+
+*** 0x1058: 0x36518804 ***
+    inputs: rD=r5=0x0 rA=r3=0x0 rB=r2=0x0
+    scalar_writeback: rD=r5=0x0
+    asm: or r5, r3, r2
+
+
+*** 0x105c: 0x36411c03 ***
+    inputs: rD=r4=0xfffffffff rA=r2=0x0 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: and r4, r2, r7
+
+
+*** 0x1060: 0x36320804 ***
+    inputs: rD=r3=0x0 rA=r4=0x0 rB=r2=0x0
+    scalar_writeback: rD=r3=0x0
+    asm: or r3, r4, r2
+
+
+*** 0x1064: 0x36439c00 ***
+    inputs: rD=r4=0x0 rA=r7=0x0 rB=r7=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: add r4, r7, r7
+
+
+*** 0x1068: 0x36700000 ***
+    inputs: rD=r7=0x0 rA=r0=0xfffffffff rB=r0=0xfffffffff
+    scalar_writeback: rD=r7=0xffffffffe
+    asm: add r7, r0, r0
+
+
+*** 0x106c: 0x36628c02 ***
+    inputs: rD=r6=0x0 rA=r5=0x0 rB=r3=0x0
+    scalar_writeback: rD=r6=0x0
+    asm: mul r6, r5, r3
+
+
+*** 0x1070: 0x36509c01 ***
+    inputs: rD=r5=0x0 rA=r1=0xfffffffff rB=r7=0xffffffffe
+    scalar_writeback: rD=r5=0x1
+    asm: sub r5, r1, r7
+
+
+*** 0x1074: 0x36008803 ***
+    inputs: rD=r0=0xfffffffff rA=r1=0xfffffffff rB=r2=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: and r0, r1, r2
+
+
+*** 0x1078: 0x38138000 ***
+    inputs: rD=r1=0xfffffffff rA=r7=0xffffffffe
+    scalar_writeback: rD=r1=0x0
+    asm: not r1, r7
+
+
+*** 0x107c: 0x36400c01 ***
+    inputs: rD=r4=0x0 rA=r0=0x0 rB=r3=0x0
+    scalar_writeback: rD=r4=0x0
+    asm: sub r4, r0, r3
+
+
+*** 0x1080: 0x36129801 ***
+    inputs: rD=r1=0x0 rA=r5=0x1 rB=r6=0x0
+    scalar_writeback: rD=r1=0x1
+    asm: sub r1, r5, r6
+
+
+*** 0x1084: 0x36510405 ***
+    inputs: rD=r5=0x1 rA=r2=0x0 rB=r1=0x1
+    scalar_writeback: rD=r5=0x1
+    asm: xor r5, r2, r1
+
+
+*** 0x1088: 0x36719800 ***
+    inputs: rD=r7=0xffffffffe rA=r3=0x0 rB=r6=0x0
+    scalar_writeback: rD=r7=0x0
+    asm: add r7, r3, r6
+
+
+*** 0x108c: 0x36301400 ***
+    inputs: rD=r3=0x0 rA=r0=0x0 rB=r5=0x1
+    scalar_writeback: rD=r3=0x1
+    asm: add r3, r0, r5
+
+
+*** 0x1090: 0x36409000 ***
+    inputs: rD=r4=0x0 rA=r1=0x1 rB=r4=0x0
+    scalar_writeback: rD=r4=0x1
+    asm: add r4, r1, r4
+
+
+*** 0x1094: 0x36029c02 ***
+    inputs: rD=r0=0x0 rA=r5=0x1 rB=r7=0x0
+    scalar_writeback: rD=r0=0x0
+    asm: mul r0, r5, r7
+
+
+*** 0x1098: 0x36331404 ***
+    inputs: rD=r3=0x1 rA=r6=0x0 rB=r5=0x1
+    scalar_writeback: rD=r3=0x1
+    asm: or r3, r6, r5
+
+
+*** 0x109c: 0x38418000 ***
+    inputs: rD=r4=0x1 rA=r3=0x1
+    scalar_writeback: rD=r4=0xffffffffe
+    asm: not r4, r3
+
+
+*** 0x10a0: 0x0 ***
+    inputs:
+    asm: halt
+
+
