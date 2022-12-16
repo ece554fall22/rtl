@@ -1,3 +1,4 @@
+# Created by Leo and Mark
 #!/usr/bin/env python3
 
 import click
@@ -44,11 +45,12 @@ def cli(instr_count, constrain_regs, seed):
     # seed in random values for all registers
     print(';; preseed values for registers')
     for r in ALLREGS:
-        mask = abs(rands(rng,4))
+        #mask = abs(rands(rng,4))
         #print(f'vsplat v{r}, r{r}, 0xF')
+        mask = bin(15)
         v = rng.choice(regset)
         s = rng.choice(regset)
-        print(f'vsplat {mask:#b}, v{v}, r{s}')
+        print(f'vsplat {mask}, v{v}, r{s}')
 
     # then generate `instr_count` random ops
     print(';; random scalar arithmetic')
@@ -57,8 +59,10 @@ def cli(instr_count, constrain_regs, seed):
         vD = rng.choice(regset)
         vA = rng.choice(regset)
         vB = rng.choice(regset)
-        mask = abs(rands(rng, 4))
-        print(f'{op:4} {mask:#b}, v{vD}, v{vA}, v{vB}')
+        #mask = abs(rands(rng, 4))
+        mask = bin(15)
+        #print(f'{op:4} {mask:#b}, v{vD}, v{vA}, v{vB}')
+        print(f'{op:4} {mask}, v{vD}, v{vA}, v{vB}')
 
 if __name__ == '__main__':
     cli()
